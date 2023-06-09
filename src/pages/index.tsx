@@ -8,15 +8,16 @@ import {
   BsGithub,
   BsLinkedin,
   BsSpeaker,
+  BsLaptop,
+  BsGear,
+  BsPencil,
   BsEnvelope,
 } from "react-icons/bs";
 import { Gradient } from "../utils/gradient/gradient";
 import Link from "next/link";
 
 const Home: NextPage = () => {
-  const [showHome, setShowHome] = useState(true);
-  const [showBlog, setShowBlog] = useState(false);
-  const [showContact, setShowContact] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("home");
 
   useEffect(() => {
     const gradient = new Gradient();
@@ -37,9 +38,9 @@ const Home: NextPage = () => {
         />
         <div className="relative text-white">
           <div className="flex flex-col items-center gap-4 align-middle">
-            <div className="flex space-x-4">
-              <h1 className="md:text-8xl text-5xl font-bold ">Hi! I&apos;m</h1>
-              <h1 className="md:text-8xl text-5xl font-bold mix-blend-difference">
+            <div className="flex space-x-2 md:space-x-4">
+              <h1 className="text-5xl font-bold md:text-8xl ">Hi! I&apos;m</h1>
+              <h1 className="text-5xl font-bold mix-blend-difference md:text-8xl">
                 Gustavo
               </h1>
             </div>
@@ -50,35 +51,36 @@ const Home: NextPage = () => {
               </p>
               <p className="text-2xl">software developer</p>
             </div>
-            
           </div>
         </div>
         <div className="absolute bottom-8 ">
-            <div className="flex items-center gap-8 rounded-full bg-black bg-opacity-60 bg-clip-padding px-8 py-4 shadow-lg backdrop-blur">
-              <div
-                className={`duration-400 transition ease-in-out hover:text-white ${
-                  showHome ? "text-white" : "text-gray-400"
-                } `}
-              >
-                <BsPerson size={32} />
-              </div>
-              <div
-                className={`duration-400 transition ease-in-out hover:text-white ${
-                  showBlog ? "text-white" : "text-gray-400"
-                } `}
+          <div className="flex items-center gap-8 rounded-full bg-black bg-opacity-60 bg-clip-padding px-8 py-4 shadow-lg backdrop-blur">
+            <div
+              className={`duration-400 transition ease-in-out hover:text-white ${
+                selectedTab === "home" ? "text-white" : "text-gray-400"
+              } `}
+                            onClick={() => setSelectedTab("home")}
 
-              >
-                <BsTextIndentLeft size={32} />
-              </div>
-              <div
-                className={`duration-400 transition ease-in-out hover:text-white ${
-                  showContact ? "text-white" : "text-gray-400"
-                } `}
-                onClick={() => setShowContact(!showContact)}
-              >
-                <BsEnvelope size={32} />
-              </div>
+            >
+              <BsPerson size={32} />
             </div>
+            <div
+              className={`duration-400 transition ease-in-out hover:text-white ${
+                selectedTab === "home2" ? "text-white" : "text-gray-400"
+              } `}
+              onClick={() => setSelectedTab("home2")}
+            >
+              <BsGear size={32} />
+            </div>
+            <div
+              className={`duration-400 transition ease-in-out hover:text-white ${
+                selectedTab === "home3" ? "text-white" : "text-gray-400"
+              } `}
+              onClick={() => setSelectedTab("home3")}
+            >
+              <BsLaptop size={32} />
+            </div>
+          </div>
         </div>
       </main>
     </>
