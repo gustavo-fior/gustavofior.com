@@ -38,8 +38,8 @@ const Home: NextPage = () => {
         <div className="relative text-white">
           <div className="flex flex-col items-center gap-4 align-middle">
             <div className="flex space-x-4">
-              <h1 className="md:text-8xl text-6xl font-bold ">Hi! I&apos;m</h1>
-              <h1 className="md:text-8xl text-6xl font-bold mix-blend-difference">
+              <h1 className="md:text-8xl text-5xl font-bold ">Hi! I&apos;m</h1>
+              <h1 className="md:text-8xl text-5xl font-bold mix-blend-difference">
                 Gustavo
               </h1>
             </div>
