@@ -1,20 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import {
-  BsArrowRightShort,
-  BsTextIndentLeft,
-  BsPerson,
-  BsGithub,
-  BsLinkedin,
-  BsSpeaker,
-  BsLaptop,
-  BsGear,
-  BsPencil,
-  BsEnvelope,
-} from "react-icons/bs";
+import { BsGear, BsLaptop, BsPerson } from "react-icons/bs";
 import { Gradient } from "../utils/gradient/gradient";
-import Link from "next/link";
 
 const Home: NextPage = () => {
   const [selectedTab, setSelectedTab] = useState("home");
@@ -45,11 +33,11 @@ const Home: NextPage = () => {
               </h1>
             </div>
             <div className="flex space-x-1.5">
-              <p className="text-2xl">A</p>
-              <p className="bg-gradient-to-tr from-green-500 to-yellow-300 bg-clip-text text-2xl text-transparent">
+              <p className="text-2xl text-slate-300 font-light">A</p>
+              <p className="bg-gradient-to-tr font-light from-green-500 to-yellow-300 bg-clip-text text-2xl text-transparent">
                 brazilian
               </p>
-              <p className="text-2xl">software developer</p>
+              <p className="text-2xl font-light text-slate-300">software developer</p>
             </div>
           </div>
         </div>
@@ -59,8 +47,7 @@ const Home: NextPage = () => {
               className={`duration-400 transition ease-in-out hover:text-white ${
                 selectedTab === "home" ? "text-white" : "text-gray-400"
               } `}
-                            onClick={() => setSelectedTab("home")}
-
+              onClick={() => setSelectedTab("home")}
             >
               <BsPerson size={32} />
             </div>

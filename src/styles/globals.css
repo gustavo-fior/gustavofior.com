@@ -1,15 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter');
 
 @layer components {
 	#gradient-canvas {
 		width: 100%;
 		height: 100%;
-		--gradient-color-1: #043D5D; 
-		--gradient-color-2: #032E46; 
-		--gradient-color-3: #23B684;  
-		--gradient-color-4: #0F595E;
+		--gradient-color-1: #042234; 
+		--gradient-color-2: #032030; 
+		--gradient-color-3: #166a4e;  
+		--gradient-color-4: #093639;
 		z-index: 0;
 	}
 }
