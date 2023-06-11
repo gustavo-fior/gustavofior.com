@@ -3,10 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import {
-  BsArrowRightShort,
-  BsEnvelope,
+  BsEnvelopeFill,
   BsGithub,
-  BsLinkedin,
+  BsHouseFill,
+  BsLinkedin
 } from "react-icons/bs";
 import { Gradient } from "../utils/gradient/gradient";
 
@@ -28,7 +28,16 @@ const Home: NextPage = () => {
           className="fixed inset-0"
           data-transition-in
         />
-        <div className="absolute z-50 flex w-full items-center justify-end px-24 py-16">
+        <div className="absolute z-50 flex w-full items-center justify-between px-24 py-16">
+          <div className="flex gap-4">
+            <Link href="/">
+              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+                <div className="flex items-center gap-2">
+                  <BsHouseFill size={24} color="white" />
+                </div>
+              </div>
+            </Link>
+          </div>
           <div className="flex gap-4">
             <Link href="https://github.com/gustavo-fior">
               <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
@@ -47,14 +56,14 @@ const Home: NextPage = () => {
             <Link href="mailto:gustavo_fior@outlook.com">
               <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
                 <div className="flex items-center gap-2">
-                  <BsEnvelope size={24} color="white" />
+                  <BsEnvelopeFill size={24} color="white" />
                 </div>
               </div>
             </Link>
           </div>
         </div>
         <div className="relative flex flex-grow flex-col items-center justify-center px-24 text-white">
-          <h1 className="font-bold text-3xl">Still some work to do :/</h1>
+          <h1 className="text-3xl font-bold">Still some work to do :/</h1>
         </div>
       </main>
     </>
