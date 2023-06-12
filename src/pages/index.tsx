@@ -68,7 +68,7 @@ const Home: NextPage = () => {
                   <span className="bg-gradient-to-tr from-green-500 to-yellow-300 bg-clip-text text-transparent">
                     brazilian{" "}
                   </span>
-                  software developer who loves to code,
+                  software developer who loves to code,{" "}
                   <br className="hidden md:inline" />
                   surf and learn new things.
                 </p>
