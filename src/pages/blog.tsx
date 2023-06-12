@@ -3,11 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import {
-  BsEnvelope,
   BsEnvelopeFill,
   BsGithub,
   BsHouseFill,
-  BsLinkedin
+  BsLinkedin,
 } from "react-icons/bs";
 import { Gradient } from "../utils/gradient/gradient";
 
@@ -29,7 +28,7 @@ const Home: NextPage = () => {
           className="fixed inset-0"
           data-transition-in
         />
-        <div className="flex w-full items-center justify-between px-24 py-16">
+        <div className="flex w-full items-center justify-center py-12 sm:justify-between sm:px-24 md:py-16">
           <div className="pr-4">
             <Link href="/">
               <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
@@ -63,8 +62,21 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-        <div className="relative flex flex-grow flex-col items-center justify-center px-24 text-white">
-          <h1 className="text-3xl font-bold">Still some work to do :/</h1>
+        <div className="relative flex flex-grow flex-col px-16 pb-24 pt-4 text-white md:px-96">
+          <h1 className="pb-6 text-4xl font-bold md:text-5xl">
+            🚀 Some day...
+          </h1>
+          <div className="pb-4 text-lg text-slate-300">
+            <p>Sorry, I promise that I&#39;ll code this soon.</p>
+            <br/>
+            <p>
+              Remind me to do it reaching me out on{" "}
+              <Link href="https://instagram.com/gustavo.fior">
+                <span className="underline">Instagram</span>
+              </Link>
+              ! :)
+            </p>
+          </div>
         </div>
       </main>
     </>
