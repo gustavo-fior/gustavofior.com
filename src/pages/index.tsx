@@ -6,7 +6,7 @@ import {
   BsArrowRightShort,
   BsEnvelopeFill,
   BsGithub,
-  BsLinkedin
+  BsLinkedin,
 } from "react-icons/bs";
 import { Gradient } from "../utils/gradient/gradient";
 
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           className="fixed inset-0"
           data-transition-in
         />
-        <div className="absolute z-50 flex w-full items-center justify-end px-24 py-16">
+        <div className="absolute z-50 flex w-full items-center justify-end px-8 py-16 md:px-24">
           <div className="flex gap-4">
             <Link href="https://github.com/gustavo-fior">
               <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
@@ -53,33 +53,33 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-        <div className="relative flex flex-grow flex-col justify-center px-24 text-white">
+        <div className="relative flex flex-grow flex-col justify-center px-8 text-white md:px-24">
           <div className="flex h-full flex-col">
-            <div className="flex space-x-2 md:space-x-4">
-              <h1 className="text-5xl font-bold md:text-7xl ">Hi! I&apos;m</h1>
-              <h1 className="text-5xl font-bold mix-blend-difference md:text-7xl">
+            <div className="flex flex-wrap md:space-x-4">
+              <h1 className="text-5xl font-bold lg:text-7xl">Hi! I&apos;m</h1>
+              <h1 className="text-5xl font-bold mix-blend-difference lg:text-7xl">
                 Gustavo
               </h1>
             </div>
             <div className="pb-5 pt-3">
-              <div className="flex">
-                <p className="text-xl text-slate-400">A</p>
-                <p className="bg-gradient-to-tr from-green-500 to-yellow-300 bg-clip-text px-1.5 text-xl text-transparent">
-                  brazilian
-                </p>
-                <p className="text-xl text-slate-400">
+              <div className="flex flex-wrap">
+                <p className=" text-xl text-slate-300">
+                  A{" "}
+                  <span className="bg-gradient-to-tr from-green-500 to-yellow-300 bg-clip-text text-transparent">
+                    brazilian{" "}
+                  </span>
                   software developer who loves to code,
+                  <br className="hidden md:inline" />
+                  surf and learn new things.
                 </p>
               </div>
-              <p className="text-xl text-slate-400">
-                surf and learn new things.
-              </p>
             </div>
+
             <div className="flex items-center gap-4">
               <Link href="/about">
-                <div className="rounded-full transition duration-200 hover:bg-opacity-80 ease-in-out bg-white px-4 py-1.5">
+                <div className="rounded-full bg-white px-4 py-1.5 transition duration-200 ease-in-out hover:bg-opacity-80">
                   <div className="flex items-center gap-2">
-                    <p>👱🏻‍♂️</p>
+                    <p>🙋🏼‍♂️</p>
                     <p className="mix-blend-difference">About me</p>
                   </div>
                 </div>

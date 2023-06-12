@@ -29,8 +29,8 @@ const Home: NextPage = () => {
           className="fixed inset-0"
           data-transition-in
         />
-        <div className="absolute z-50 flex w-full items-center justify-between px-24 py-16">
-          <div className="flex gap-4">
+        <div className="flex w-full items-center justify-between px-24 py-16">
+          <div className="pr-4">
             <Link href="/">
               <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
                 <div className="flex items-center gap-2">
