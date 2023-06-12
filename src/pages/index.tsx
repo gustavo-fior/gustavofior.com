@@ -56,9 +56,9 @@ const Home: NextPage = () => {
         <div className="relative flex flex-grow flex-col justify-center px-8 text-white md:px-24">
           <div className="flex h-full flex-col">
             <div className="flex flex-wrap md:space-x-4">
-              <h1 className="text-5xl font-bold lg:text-7xl">Hi! I&apos;m</h1>
-              <h1 className="text-5xl font-bold mix-blend-difference lg:text-7xl">
-                Gustavo
+              <h1 className="text-5xl font-bold lg:text-7xl">
+                Hi! I&apos;m{" "}
+                <span className="mix-blend-difference">Gustavo</span>
               </h1>
             </div>
             <div className="pb-5 pt-3">
