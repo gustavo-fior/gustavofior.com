@@ -31,21 +31,21 @@ const Home: NextPage = () => {
         <div className="absolute z-50 flex w-full items-center justify-end px-8 py-16 md:px-24">
           <div className="flex gap-4">
             <Link href="https://github.com/gustavo-fior">
-              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+              <div className="rounded-full bg-white bg-opacity-20 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-40">
                 <div className="flex items-center gap-2">
                   <BsGithub size={24} color="white" />
                 </div>
               </div>
             </Link>
             <Link href="https://linkedin.com/in/gustavo-fior-a910781b4/">
-              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+              <div className="rounded-full bg-white bg-opacity-20 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-40">
                 <div className="flex items-center gap-2">
                   <BsLinkedin size={24} color="white" />
                 </div>
               </div>
             </Link>
             <Link href="mailto:gustavo_fior@outlook.com">
-              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+              <div className="rounded-full bg-white bg-opacity-20 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-40">
                 <div className="flex items-center gap-2">
                   <BsEnvelopeFill size={24} color="white" />
                 </div>
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
                 </div>
               </Link>
               <Link href="/blog">
-                <div className="group rounded-full bg-white bg-opacity-30 px-4 py-1.5 drop-shadow-lg backdrop-blur-lg duration-200 hover:bg-opacity-50">
+                <div className="group rounded-full bg-white bg-opacity-20 px-4 py-1.5 drop-shadow-lg backdrop-blur-lg duration-200 hover:bg-opacity-40">
                   <div className="flex items-center gap-2">
                     <p>My blog</p>
                     <div className="flex items-center transition-transform duration-500 group-hover:translate-x-1">

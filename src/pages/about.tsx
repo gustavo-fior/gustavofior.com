@@ -157,7 +157,7 @@ const Home: NextPage = () => {
               </p>
               <br/>
 
-              <div className="rounded-lg bg-white bg-opacity-30 px-8 py-4 drop-shadow-lg backdrop-blur-lg">
+              <div className="rounded-lg bg-white bg-opacity-20 px-6 py-4 drop-shadow-lg backdrop-blur-lg">
                 <p className="text-white">The life of every human being is a journey towards oneself.</p>
                 <p className="italic">Herman Hesse, <Link
                   href="https://pt.wikipedia.org/wiki/Demian"
