@@ -2,13 +2,8 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
-import {
-  BsEnvelopeFill,
-  BsGithub,
-  BsHouseFill,
-  BsLinkedin,
-} from "react-icons/bs";
 import { Gradient } from "../utils/gradient/gradient";
+import Header from "~/components/Header";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -28,40 +23,7 @@ const Home: NextPage = () => {
           className="fixed inset-0"
           data-transition-in
         />
-        <div className="flex w-full items-center justify-center py-12 sm:justify-between sm:px-24 md:py-16">
-          <div className="pr-4">
-            <Link href="/">
-              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
-                <div className="flex items-center gap-2">
-                  <BsHouseFill size={24} color="white" />
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="flex gap-4">
-            <Link href="https://github.com/gustavo-fior">
-              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
-                <div className="flex items-center gap-2">
-                  <BsGithub size={24} color="white" />
-                </div>
-              </div>
-            </Link>
-            <Link href="https://linkedin.com/in/gustavo-fior-a910781b4/">
-              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
-                <div className="flex items-center gap-2">
-                  <BsLinkedin size={24} color="white" />
-                </div>
-              </div>
-            </Link>
-            <Link href="mailto:gustavo_fior@outlook.com">
-              <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
-                <div className="flex items-center gap-2">
-                  <BsEnvelopeFill size={24} color="white" />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
+        <Header />
         <div className="relative flex justify-center px-12 pb-24 pt-4 text-white">
           <div className="flex w-[40rem] flex-col">
             <h1 className="pb-4 text-4xl font-bold md:text-5xl">🙋🏼‍♂️ About me</h1>

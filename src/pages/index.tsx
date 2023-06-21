@@ -9,6 +9,7 @@ import {
   BsLinkedin,
 } from "react-icons/bs";
 import { Gradient } from "../utils/gradient/gradient";
+import Header from "~/components/Header";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -28,32 +29,8 @@ const Home: NextPage = () => {
           className="fixed inset-0"
           data-transition-in
         />
-        <div className="absolute z-50 flex w-full items-center justify-end px-8 py-16 md:px-24">
-          <div className="flex gap-4">
-            <Link href="https://github.com/gustavo-fior">
-              <div className="rounded-full bg-white bg-opacity-20 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-40">
-                <div className="flex items-center gap-2">
-                  <BsGithub size={24} color="white" />
-                </div>
-              </div>
-            </Link>
-            <Link href="https://linkedin.com/in/gustavo-fior-a910781b4/">
-              <div className="rounded-full bg-white bg-opacity-20 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-40">
-                <div className="flex items-center gap-2">
-                  <BsLinkedin size={24} color="white" />
-                </div>
-              </div>
-            </Link>
-            <Link href="mailto:gustavo_fior@outlook.com">
-              <div className="rounded-full bg-white bg-opacity-20 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-40">
-                <div className="flex items-center gap-2">
-                  <BsEnvelopeFill size={24} color="white" />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-        <div className="relative flex flex-grow flex-col justify-center px-8 text-white md:px-24">
+        <Header />
+        <div className="relative pb-48 flex flex-grow flex-col justify-center px-8 text-white md:px-24">
           <div className="flex h-full flex-col">
             <div className="flex flex-wrap md:space-x-4">
               <h1 className="text-5xl font-bold lg:text-7xl">
