@@ -3,13 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import {
-  BsArrowRightShort,
-  BsEnvelopeFill,
-  BsGithub,
-  BsLinkedin,
+  BsArrowRightShort
 } from "react-icons/bs";
-import { Gradient } from "../utils/gradient/gradient";
 import Header from "~/components/Header";
+import { Gradient } from "../utils/gradient/gradient";
 
 const Home: NextPage = () => {
   useEffect(() => {

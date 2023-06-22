@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import Header from "~/components/Header";
-import { Gradient } from "../utils/gradient/gradient";
+import { Gradient } from "../../utils/gradient/gradient";
 
 const Home: NextPage = () => {
 
