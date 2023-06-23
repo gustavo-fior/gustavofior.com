@@ -1,18 +1,12 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
 import {
   BsArrowRightShort
 } from "react-icons/bs";
 import Header from "~/components/Header";
-import { Gradient } from "../utils/gradient/gradient";
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    const gradient = new Gradient();
-    gradient.initGradient("#gradient-canvas");
-  }, []);
 
   return (
     <>
@@ -20,12 +14,6 @@ const Home: NextPage = () => {
         <title>Gustavo&apos;s home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex max-h-screen min-h-screen flex-col text-white">
-        <canvas
-          id="gradient-canvas"
-          className="fixed inset-0"
-          data-transition-in
-        />
         <Header />
         <div className="relative pb-48 flex flex-grow flex-col justify-center px-8 text-white md:px-24">
           <div className="flex h-full flex-col">
@@ -71,7 +59,6 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </main>
     </>
   );
 };
