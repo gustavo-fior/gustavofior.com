@@ -29,6 +29,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "superjson": "1.12.2",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "zod": "^3.21.4"
   },
   "devDependencies": {

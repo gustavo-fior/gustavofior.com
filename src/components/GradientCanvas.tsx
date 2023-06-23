@@ -8,7 +8,13 @@ const GradientCanvas = () => {
   }, []);
 
   return (
-    <canvas id="gradient-canvas" className="fixed inset-0" data-transition-in />
+    <div className="relative">
+      <canvas
+        id="gradient-canvas"
+        className="fixed inset-0 h-full w-full"
+        data-transition-in
+      />
+    </div>
   );
 };
 
