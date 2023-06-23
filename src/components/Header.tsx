@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
+  BsArrowLeft,
+  BsArrowLeftCircle,
+  BsArrowLeftShort,
+  BsEnvelopeAt,
+  BsEnvelopeCheck,
   BsEnvelopeFill,
+  BsEnvelopeOpen,
   BsGithub,
   BsHouseFill,
   BsLinkedin,
@@ -20,7 +26,7 @@ const Header: React.FC = () => {
           {asPath !== "/" ? (
             <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
               <div className="flex items-center gap-2">
-                <BsHouseFill
+                <BsArrowLeftShort
                   size={24}
                   color="white"
                 />
