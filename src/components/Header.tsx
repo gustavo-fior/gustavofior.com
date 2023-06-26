@@ -12,9 +12,9 @@ const Header: React.FC = () => {
   const { asPath } = router;
 
   return (
-    <div className="flex w-full items-center justify-center py-12 sm:justify-between sm:px-24 md:py-16">
+    <div className={`flex w-full ${asPath === "/" ? "absolute" : ""} items-center justify-center py-12 sm:justify-between sm:px-24 md:py-16`}>
       <div className="pr-4">
-        <Link href="/">
+        <Link href={asPath.includes("/blog/post/") ? "/blog": "/"}>
           {asPath !== "/" ? (
             <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
               <div className="flex items-center gap-2">

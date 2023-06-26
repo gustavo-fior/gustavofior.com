@@ -2,7 +2,6 @@ import Link from "next/link";
 
 type PostPreviewProps = {
   title: string;
-  emoji: string;
   description: string;
   date: string;
   slug: string;
@@ -10,17 +9,15 @@ type PostPreviewProps = {
 
 const PostPreview = ({
   title,
-  emoji,
   description,
   date,
   slug,
 }: PostPreviewProps) => {
   return (
-    <Link href={slug}>
+    <Link href={`/blog/post/${slug}`}>
       <div className="flex justify-between rounded-lg px-6 py-4 transition duration-300 ease-in-out hover:bg-white hover:bg-opacity-20 hover:drop-shadow-lg hover:backdrop-blur-lg ">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-bold">
-            <span className="pr-3">{emoji}</span>
             {title}
           </h2>
           <p className="text-slate-300">{description}</p>

@@ -1,10 +1,34 @@
-import { type NextPage } from "next";
+import { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import Header from "~/components/Header";
 import PostPreview from "~/components/PostPreview";
+import matter from "gray-matter";
+import path from "path";
+import fs from "fs";
+import { useEffect, useState } from "react";
+import ContentWrapper from "~/components/ContentWrapper";
 
-const Home: NextPage = () => {
+interface BlogPageProps {
+  posts: PostMetadata[];
+}
+
+interface PostMetadata {
+  title: string;
+  slug: string;
+  description: string;
+  date: string;
+}
+
+const Blog: NextPage<BlogPageProps> = () => {
+  const [postsMetadata, setPostsMetadata] = useState<PostMetadata[]>([]);
+
+  useEffect(() => {
+    fetch("/api/metadata")
+      .then((response) => response.json())
+      .then((data: PostMetadata[]) => setPostsMetadata(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <>
       <Head>
@@ -12,38 +36,24 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="relative flex justify-center px-12 pb-24 pt-4 text-white">
-        <div className="flex w-[40rem] flex-col">
-          <h1 className="pb-12 text-4xl font-bold md:text-5xl">📜 Posts</h1>
-          <div className="flex flex-col gap-4">
-            <PostPreview
-              title="Wish you were here"
-              emoji="🌊"
-              description="This is a dummy description!"
-              date="June 21, 2032"
-              slug="/"
-            />
-            <hr className="mx-6 border-slate-500" />
-            <PostPreview
-              title="The surface"
-              emoji="🦀"
-              description="This is a dummy description!"
-              date="June 21, 2032"
-              slug="/"
-            />
-            <hr className="mx-6 border-slate-500" />
-            <PostPreview
-              title="LLMs"
-              emoji="🖥️"
-              description="This is a dummy description!"
-              date="June 21, 2032"
-              slug="/"
-            />
-          </div>
+      <ContentWrapper>
+        <h1 className="pb-12 text-4xl font-bold md:text-5xl">Posts</h1>
+        <div className="flex flex-col gap-4">
+          {postsMetadata.map((post) => {
+            return (
+              <PostPreview
+                key={post.slug}
+                title={post.title}
+                description={post.description}
+                date={post.date}
+                slug={post.slug}
+              />
+            );
+          })}
         </div>
-      </div>
+      </ContentWrapper>
     </>
   );
 };
 
-export default Home;
+export default Blog;
