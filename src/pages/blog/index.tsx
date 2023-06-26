@@ -1,4 +1,4 @@
-import { type NextPage } from "next";
+import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import ContentWrapper from "~/components/ContentWrapper";
 import Header from "~/components/Header";
@@ -47,7 +47,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   );
 };
 
-export function getServerSideProps() {
+export const getStaticProps: GetStaticProps<BlogPageProps> = () => {
   const postsDirectory = path.join(process.cwd(), "src", "posts");
   const fileNames = fs.readdirSync(postsDirectory);
 
@@ -62,14 +62,12 @@ export function getServerSideProps() {
     return data as PostMetadata;
   });
 
-  return postsMetadata;
-
   return {
     props: {
       postsMetadata,
     },
   };
-}
+};
 
 
 export default Blog;
