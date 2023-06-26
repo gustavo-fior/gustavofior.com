@@ -1,15 +1,15 @@
+import fs from "fs";
+import matter from "gray-matter";
 import { NextPage } from "next";
 import Head from "next/head";
+import path from "path";
+import { useState } from "react";
+import ContentWrapper from "~/components/ContentWrapper";
 import Header from "~/components/Header";
 import PostPreview from "~/components/PostPreview";
-import matter from "gray-matter";
-import path from "path";
-import fs from "fs";
-import { useEffect, useState } from "react";
-import ContentWrapper from "~/components/ContentWrapper";
 
 interface BlogPageProps {
-  posts: PostMetadata[];
+  postsMetadata: PostMetadata[];
 }
 
 interface PostMetadata {
@@ -19,16 +19,7 @@ interface PostMetadata {
   date: string;
 }
 
-const Blog: NextPage<BlogPageProps> = () => {
-  const [postsMetadata, setPostsMetadata] = useState<PostMetadata[]>([]);
-
-  useEffect(() => {
-    fetch("/api/metadata")
-      .then((response) => response.json())
-      .then((data: PostMetadata[]) => setPostsMetadata(data))
-      .catch((error) => console.error(error));
-  }, []);
-
+const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   return (
     <>
       <Head>
@@ -55,5 +46,27 @@ const Blog: NextPage<BlogPageProps> = () => {
     </>
   );
 };
+
+export function getServerSideProps() {
+  const postsDirectory = path.join(process.cwd(), "src", "posts");
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  const mdxFiles = fileNames.filter(
+    (fileName) => path.extname(fileName) === ".mdx"
+  );
+
+  const postsMetadata: PostMetadata[] = mdxFiles.map((fileName) => {
+    const filePath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContents);
+    return data as PostMetadata;
+  });
+
+  return {
+    props: {
+      postsMetadata,
+    },
+  };
+}
 
 export default Blog;
