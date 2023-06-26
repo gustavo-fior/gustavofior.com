@@ -1,12 +1,9 @@
-import fs from "fs";
-import matter from "gray-matter";
-import { NextPage } from "next";
+import { type NextPage } from "next";
 import Head from "next/head";
-import path from "path";
-import { useState } from "react";
 import ContentWrapper from "~/components/ContentWrapper";
 import Header from "~/components/Header";
 import PostPreview from "~/components/PostPreview";
+import { getPostsMetadata } from "./postMetadata";
 
 interface BlogPageProps {
   postsMetadata: PostMetadata[];
@@ -18,6 +15,7 @@ interface PostMetadata {
   description: string;
   date: string;
 }
+
 
 const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   return (
@@ -48,19 +46,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 };
 
 export function getServerSideProps() {
-  const postsDirectory = path.join(process.cwd(), "src", "posts");
-  const fileNames = fs.readdirSync(postsDirectory);
-
-  const mdxFiles = fileNames.filter(
-    (fileName) => path.extname(fileName) === ".mdx"
-  );
-
-  const postsMetadata: PostMetadata[] = mdxFiles.map((fileName) => {
-    const filePath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(fileContents);
-    return data as PostMetadata;
-  });
+  const postsMetadata = getPostsMetadata();
 
   return {
     props: {
@@ -68,5 +54,6 @@ export function getServerSideProps() {
     },
   };
 }
+
 
 export default Blog;
