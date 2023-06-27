@@ -1,11 +1,11 @@
-import fs from "fs";
-import matter from "gray-matter";
-import { type NextPage } from "next";
+import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
-import path from "path";
 import ContentWrapper from "~/components/ContentWrapper";
 import Header from "~/components/Header";
 import PostPreview from "~/components/PostPreview";
+import path from "path";
+import fs from "fs";
+import matter from "gray-matter";
 
 interface BlogPageProps {
   postsMetadata: PostMetadata[];
@@ -17,7 +17,6 @@ interface PostMetadata {
   description: string;
   date: string;
 }
-
 
 const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   return (
@@ -47,7 +46,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   );
 };
 
-export function getServerSideProps() {
+export const getStaticProps: GetStaticProps<BlogPageProps> = () => {
   const postsDirectory = path.join(process.cwd(), "src", "posts");
   const fileNames = fs.readdirSync(postsDirectory);
 
@@ -67,6 +66,6 @@ export function getServerSideProps() {
       postsMetadata,
     },
   };
-}
+};
 
 export default Blog;
