@@ -1,4 +1,4 @@
-const withMDX = require('@next/mdx')({
+const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
@@ -17,5 +17,7 @@ module.exports = withMDX({
         hostname: "**",
       },
     ],
+    loader: "custom",
+    loaderFile: "./src/utils/imageLoader.js",
   },
 });
