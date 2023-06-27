@@ -20,6 +20,7 @@
     "@trpc/next": "^10.26.0",
     "@trpc/react-query": "^10.26.0",
     "@trpc/server": "^10.26.0",
+    "cmdk": "^0.2.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.8.0",
     "next": "^13.4.2",

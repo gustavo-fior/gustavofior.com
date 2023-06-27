@@ -1,6 +1,9 @@
 import { MDXProvider } from "@mdx-js/react";
 import { type Components } from "@mdx-js/react/lib";
+import { Command } from "cmdk";
 import { type AppType } from "next/app";
+import { useEffect, useState } from "react";
+import CommandMenu from "~/components/CommandMenu";
 import GradientCanvas from "~/components/GradientCanvas";
 import Code from "~/components/md/Code";
 import CustomImage from "~/components/md/CustomImage";
@@ -28,16 +31,33 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     a: LinkText,
     blockquote: Quote,
     ul: UnorderedList,
-    ol: OrderedList ,
+    ol: OrderedList,
     img: CustomImage,
     pre: Code,
   };
+
+  const [open, setOpen] = useState(false);
+
+  // Toggle the menu when ⌘K is pressed
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+        console.log("toggle");
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
 
   return (
     <main className="flex max-h-screen min-h-screen flex-col overflow-auto text-white scrollbar-hide">
       <MDXProvider components={components as unknown as Components}>
         <GradientCanvas />
         <div className="z-10">
+          <CommandMenu open={open} setOpen={setOpen} />
           <Component {...pageProps} />
         </div>
       </MDXProvider>
