@@ -1,20 +1,33 @@
-import { Command } from 'cmdk';
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { Command } from "cmdk";
 
-interface CommandMenuProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}
+const CommandMenu = () => {
+  const [open, setOpen] = useState<boolean>(false);
 
-const CommandMenu: React.FC<CommandMenuProps> = ({ open, setOpen }) => {
+  // Toggle the menu when ⌘K is pressed
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+
+        console.log("Opening menu");
+
+        setOpen((open) => !open);
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
   return (
     <Command.Dialog
       open={open}
-      onOpenChange={setOpen}
       label="Global Command Menu"
+      className="z-50 bg-red-500 w-52 h-52"
     >
-      <Command.Input />
-      <Command.List>
+      <Command.Input className="bg-red-500 w-52 h-52"/>
+      <Command.List className="bg-red-500 w-52 h-52">
         <Command.Empty>No results found.</Command.Empty>
 
         <Command.Group heading="Letters">

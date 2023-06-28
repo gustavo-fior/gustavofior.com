@@ -1,9 +1,15 @@
 import { MDXProvider } from "@mdx-js/react";
 import { type Components } from "@mdx-js/react/lib";
-import { Command } from "cmdk";
+import {
+  KBarAnimator,
+  KBarPortal,
+  KBarPositioner,
+  KBarProvider,
+  KBarResults,
+  KBarSearch,
+  useMatches,
+} from "kbar";
 import { type AppType } from "next/app";
-import { useEffect, useState } from "react";
-import CommandMenu from "~/components/CommandMenu";
 import GradientCanvas from "~/components/GradientCanvas";
 import Code from "~/components/md/Code";
 import CustomImage from "~/components/md/CustomImage";
@@ -36,33 +42,66 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     pre: Code,
   };
 
-  const [open, setOpen] = useState(false);
-
-  // Toggle the menu when ⌘K is pressed
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setOpen((open) => !open);
-        console.log("toggle");
-      }
-    };
-
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
-  }, []);
+  const actions = [
+    {
+      id: "blog",
+      name: "Blog",
+      shortcut: ["b"],
+      keywords: "writing words",
+      perform: () => (window.location.pathname = "blog"),
+    },
+    {
+      id: "contact",
+      name: "Contact",
+      shortcut: ["c"],
+      keywords: "email",
+      perform: () => (window.location.pathname = "contact"),
+    },
+  ];
 
   return (
-    <main className="flex max-h-screen min-h-screen flex-col overflow-auto text-white scrollbar-hide">
+    <KBarProvider actions={actions}>
       <MDXProvider components={components as unknown as Components}>
-        <GradientCanvas />
-        <div className="z-10">
-          <CommandMenu open={open} setOpen={setOpen} />
-          <Component {...pageProps} />
-        </div>
+        <main className="flex max-h-screen min-h-screen flex-col overflow-auto text-white scrollbar-hide">
+          <GradientCanvas />
+          <div className="z-10">
+            <KBarPortal>
+              <KBarPositioner>
+                <KBarAnimator>
+                  <KBarSearch />
+                  <RenderResults />
+                </KBarAnimator>
+              </KBarPositioner>
+            </KBarPortal>
+            <Component {...pageProps} />
+          </div>
+        </main>
       </MDXProvider>
-    </main>
+    </KBarProvider>
   );
 };
+
+function RenderResults() {
+  const { results } = useMatches();
+
+  return (
+    <KBarResults
+      items={results}
+      onRender={({ item, active }) =>
+        typeof item === "string" ? (
+          <div>{item}</div>
+        ) : (
+          <div
+            style={{
+              background: active ? "#eee" : "transparent",
+            }}
+          >
+            {item.name}
+          </div>
+        )
+      }
+    />
+  );
+}
 
 export default api.withTRPC(MyApp);
