@@ -66,9 +66,14 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           <GradientCanvas />
           <div className="z-10">
             <KBarPortal>
-              <KBarPositioner>
-                <KBarAnimator>
-                  <KBarSearch />
+              <KBarPositioner className="fixed inset-0 z-50 bg-black bg-opacity-40 backdrop-blur-sm backdrop-filter">
+                <KBarAnimator className="w-full max-w-2xl overflow-hidden rounded-lg">
+                  <KBarSearch
+                    className="w-full p-4 drop-shadow-lg text-lg
+                     backdrop-blur-lg text-white bg-white bg-opacity-20"
+                    placeholder="Search..."
+                  />
+
                   <RenderResults />
                 </KBarAnimator>
               </KBarPositioner>
@@ -81,13 +86,19 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   );
 };
 
-function RenderResults() {
+function RenderResults(): JSX.Element {
   const { results } = useMatches();
 
   return (
     <KBarResults
       items={results}
-      onRender={({ item, active }) =>
+      onRender={({
+        item,
+        active,
+      }: {
+        item: string | { name: string };
+        active: boolean;
+      }): JSX.Element =>
         typeof item === "string" ? (
           <div>{item}</div>
         ) : (
