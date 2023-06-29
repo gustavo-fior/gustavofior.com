@@ -1,24 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
 import { type Components } from "@mdx-js/react/lib";
-import {
-  KBarAnimator,
-  KBarPortal,
-  KBarPositioner,
-  KBarProvider,
-  KBarResults,
-  KBarSearch,
-  useMatches,
-} from "kbar";
 import { type AppType } from "next/app";
-import { useRouter } from "next/router";
-import {
-  BsEnvelopeFill,
-  BsFillFilePersonFill,
-  BsGithub,
-  BsLinkedin,
-  BsPenFill,
-  BsPersonFill,
-} from "react-icons/bs";
 import CommandBar from "~/components/CommandBar";
 import GradientCanvas from "~/components/GradientCanvas";
 import Code from "~/components/md/Code";
