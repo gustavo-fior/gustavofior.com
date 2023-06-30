@@ -5,6 +5,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 import Header from "~/components/Header";
 
 const Home: NextPage = () => {
+
   return (
     <>
       <Head>
@@ -21,17 +22,15 @@ const Home: NextPage = () => {
             </h1>
           </div>
           <div className="pb-5 pt-3">
-            <div className="flex flex-wrap">
-              <p className=" text-xl text-slate-300">
-                A{" "}
-                <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
-                  brazilian{" "}
-                </span>
-                software developer who loves to code,{" "}
-                <br className="hidden md:inline" />
-                surf and learn new things.
-              </p>
-            </div>
+            <p className=" text-xl text-slate-300">
+              A{" "}
+              <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
+                brazilian{" "}
+              </span>
+              software developer who loves to code, surf and{" "}
+              <br className="hidden md:inline" />
+              learn new things. <span className="text-white hidden sm:inline">Try <span className="bg-white bg-opacity-20 rounded-md p-0.5">⌘</span> <span className="bg-white py-0.5 px-1.5 bg-opacity-20 rounded-md">k</span></span>
+            </p>
           </div>
 
           <div className="flex items-center gap-4">
@@ -44,7 +43,7 @@ const Home: NextPage = () => {
               </div>
             </Link>
             <Link href="/blog">
-              <div className="rounded-full bg-white bg-opacity-20 px-4 py-1.5 drop-shadow-lg backdrop-blur-lg duration-200 hover:bg-opacity-40">
+              <div className="rounded-full bg-white bg-opacity-20 px-4 py-1.5 duration-200 hover:bg-opacity-40">
                 <div className="flex items-center gap-2">
                   <p>My blog</p>
                   <div className="flex items-center transition-transform duration-500 group-hover:translate-x-1">
