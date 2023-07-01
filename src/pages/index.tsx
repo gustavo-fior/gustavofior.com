@@ -43,7 +43,7 @@ const Home: NextPage = () => {
               </div>
             </Link>
             <Link href="/blog">
-              <div className="rounded-full bg-white bg-opacity-20 px-4 py-1.5 duration-200 hover:bg-opacity-40">
+              <div className="group rounded-full bg-white bg-opacity-20 px-4 py-1.5 drop-shadow-lg backdrop-blur-lg duration-200 hover:bg-opacity-40">
                 <div className="flex items-center gap-2">
                   <p>My blog</p>
                   <div className="flex items-center transition-transform duration-500 group-hover:translate-x-1">
