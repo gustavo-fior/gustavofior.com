@@ -19,6 +19,11 @@ interface PostMetadata {
 }
 
 const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
+  // Sort the postsMetadata array by date in descending order
+  const sortedPostsMetadata = postsMetadata.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
   return (
     <>
       <Head>
@@ -29,7 +34,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       <ContentWrapper>
         <h1 className="pb-12 text-4xl font-bold md:text-5xl">Posts</h1>
         <div className="flex flex-col gap-4">
-          {postsMetadata.map((post) => {
+          {sortedPostsMetadata.map((post) => {
             return (
               <PostPreview
                 key={post.slug}

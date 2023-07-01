@@ -78,7 +78,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
           <KBarAnimator className="w-full max-w-2xl overflow-hidden rounded-lg">
             <KBarSearch
               className="w-full border-none bg-white bg-opacity-20 px-6
-         py-4 text-lg text-white outline-none drop-shadow-lg backdrop-blur-lg"
+         py-4 text-lg text-white outline-none drop-shadow-lg backdrop-blur-lg rounded-b-none"
               placeholder="Search..."
             />
             <RenderResults />
@@ -92,6 +92,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
 
 function RenderResults(): JSX.Element {
   const { results } = useMatches();
+  const isMobile = window.innerWidth < 768;
 
   return (
     <KBarResults
@@ -110,14 +111,16 @@ function RenderResults(): JSX.Element {
               <span>{item.icon}</span>
               {item.name}
             </div>
-            <div className="flex items-center gap-2">
-              <span className="rounded-md bg-slate-400 bg-opacity-10 px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
-                g
-              </span>
-              <span className="rounded-md bg-slate-400 bg-opacity-10 px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
-                {item.shortcut}
-              </span>
-            </div>
+            {isMobile ? null : (
+              <div className="flex items-center gap-2">
+                <span className="rounded-md bg-slate-400 bg-opacity-10 px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
+                  g
+                </span>
+                <span className="rounded-md bg-slate-400 bg-opacity-10 px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
+                  {item.shortcut}
+                </span>
+              </div>
+            )}
           </div>
         )
       }
