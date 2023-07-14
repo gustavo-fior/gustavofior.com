@@ -1,10 +1,22 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import Header from "~/components/Header";
 
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    const load = document.getElementsByClassName("load");
+    if (load.length > 0) {
+      for (let i = 0; i < load.length; i++) {
+          console.log(load[i]);
+
+        load[i]?.classList.remove("-translate-y-6");
+      } 
+    }
+  }, []);
 
   return (
     <>
@@ -16,12 +28,12 @@ const Home: NextPage = () => {
 
       <div className="flex h-screen flex-col justify-center px-8 align-middle text-white md:px-24">
         <div className="flex flex-col">
-          <div className="flex flex-wrap md:space-x-4">
+          <div className="flex flex-wrap md:space-x-4  -translate-y-6 transition duration-1000 load">
             <h1 className="text-5xl font-bold lg:text-7xl">
               Hi! I&apos;m <span className="mix-blend-difference">Gustavo</span>
             </h1>
           </div>
-          <div className="pb-5 pt-3">
+          <div className="pb-5 pt-3  -translate-y-6 transition duration-700 load">
             <p className=" text-xl text-slate-300">
               A{" "}
               <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
@@ -33,7 +45,7 @@ const Home: NextPage = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4  -translate-y-6 transition duration-500 load">
             <Link href="/about">
               <div className="rounded-full bg-white px-4 py-1.5 transition duration-200 ease-in-out hover:bg-opacity-80">
                 <div className="flex items-center gap-2">
