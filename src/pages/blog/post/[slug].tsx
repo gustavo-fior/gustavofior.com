@@ -13,6 +13,7 @@ interface PostMetadata {
   description: string;
   date: string;
   readTime: string;
+  emoji: string;
 }
 
 interface PostProps {
@@ -25,7 +26,7 @@ const Post = ({ metadata, content }: PostProps) => {
     <div>
       <Header />
       <ContentWrapper>
-      <PostHeader title={metadata.title} date={metadata.date} readTime={metadata.readTime} />
+      <PostHeader title={metadata.title} date={metadata.date} readTime={metadata.readTime} emoji={metadata.emoji} />
         <MDXRemote {...content} />
       </ContentWrapper>
     </div>

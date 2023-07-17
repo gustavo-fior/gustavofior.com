@@ -16,6 +16,7 @@ interface PostMetadata {
   slug: string;
   description: string;
   date: string;
+  emoji: string;
 }
 
 const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
@@ -42,6 +43,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 description={post.description}
                 date={post.date}
                 slug={post.slug}
+                emoji={post.emoji}
               />
             );
           })}
