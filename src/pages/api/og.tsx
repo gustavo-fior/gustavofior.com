@@ -19,12 +19,12 @@ export default async function handler(): Promise<ImageResponse> {
           alignItems: 'center',
         }}
       >
-        <img width="1056" height="594" src={imageData as unknown as string}/>
+        <img width="960" height="540" src={imageData as unknown as string}/>
       </div>
     ),
     {
-      width: 1056,
-      height: 594,
+      width: 960,
+      height: 540,
     },
   );
 }
