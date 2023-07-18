@@ -25,7 +25,7 @@ const CustomImage = ({ src, alt, width = 1920, height = 1080 }: ImageProps) => {
         className="rounded-lg"
       />
       {alt ? (
-        <div className="text-sm text-slate-400 pt-3 pb-1 italic">{alt}</div>
+        <div className="text-sm text-slate-300 pt-3 pb-1 italic">{alt}</div>
       ) : null}
     </div>
   ) : null;

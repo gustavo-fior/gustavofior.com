@@ -75,7 +75,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
     <KBarProvider actions={actions}>
       <KBarPortal>
         <KBarPositioner className="fixed inset-0 z-50 bg-black bg-opacity-60 backdrop-blur-md backdrop-filter">
-          <KBarAnimator className="w-full max-w-2xl overflow-hidden rounded-lg">
+          <KBarAnimator className="w-full max-w-2xl overflow-hidden rounded-lg shadow-2xl shadow-[#166a4e]">
             <KBarSearch
               className="w-full border-none bg-white bg-opacity-20 px-6
          py-4 text-lg text-white outline-none drop-shadow-lg backdrop-blur-lg rounded-b-none"
