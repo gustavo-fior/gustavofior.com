@@ -10,14 +10,14 @@ const About: NextPage = () => {
       <Head>
         <title>Gustavo&apos;s home</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:image"
-          content="https:/gustavofior.com/api/og"
-        />
+        <meta property="og:image" content="https:/www.gustavofior.com/api/og" />
       </Head>
       <Header />
       <ContentWrapper>
-        <h1 className="pb-4 text-4xl font-bold md:text-5xl">🙋🏼‍♂️ About me</h1>
+        <h1 className="pb-6 text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+          🙋🏼‍♂️
+        </h1>
+        <h1 className="pb-4 text-4xl font-bold md:text-5xl">About me</h1>
         <h3 className="pb-4 text-slate-400 md:text-lg">
           June 12, 2023 • <span className="italic">2 min read</span>
         </h3>

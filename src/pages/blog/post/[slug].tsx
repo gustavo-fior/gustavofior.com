@@ -7,6 +7,7 @@ import path from "path";
 import Header from "~/components/Header";
 import PostHeader from "~/components/PostHeader";
 import ContentWrapper from "~/components/ContentWrapper";
+import Head from "next/head";
 
 interface PostMetadata {
   title: string;
@@ -24,9 +25,19 @@ interface PostProps {
 const Post = ({ metadata, content }: PostProps) => {
   return (
     <div>
+      <Head>
+        <title>Gustavo&apos;s home</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="https:/www.gustavofior.com/api/og" />
+      </Head>
       <Header />
       <ContentWrapper>
-      <PostHeader title={metadata.title} date={metadata.date} readTime={metadata.readTime} emoji={metadata.emoji} />
+        <PostHeader
+          title={metadata.title}
+          date={metadata.date}
+          readTime={metadata.readTime}
+          emoji={metadata.emoji}
+        />
         <MDXRemote {...content} />
       </ContentWrapper>
     </div>
@@ -73,7 +84,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async ({ params }) => {
   return {
     props: {
       metadata: data as PostMetadata,
-      content: mdxSource as MDXRemoteSerializeResult,  
+      content: mdxSource as MDXRemoteSerializeResult,
     },
   };
 };
