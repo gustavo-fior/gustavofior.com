@@ -9,11 +9,11 @@ const GradientCanvas = () => {
 
   return (
     <div className="relative">
-      <canvas
-        id="gradient-canvas"
-        className="fixed inset-0 h-full w-full"
-        data-transition-in
-      />
+        <canvas
+          id="gradient-canvas"
+          className="fixed inset-0 h-full w-full"
+          data-transition-in
+        />
     </div>
   );
 };

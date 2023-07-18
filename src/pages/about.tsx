@@ -10,6 +10,10 @@ const About: NextPage = () => {
       <Head>
         <title>Gustavo&apos;s home</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:image"
+          content="https:/gustavofior.com/api/og"
+        />
       </Head>
       <Header />
       <ContentWrapper>
