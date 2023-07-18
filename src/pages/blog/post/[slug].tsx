@@ -81,6 +81,10 @@ export const getStaticProps: GetStaticProps<PostProps> = async ({ params }) => {
 
   const mdxSource = await serialize(content, { scope: data });
 
+  // add read time to metadata object
+  const readTime = Math.ceil(content.split(" ").length / 200);
+  data.readTime = `${readTime} min`;
+
   return {
     props: {
       metadata: data as PostMetadata,
