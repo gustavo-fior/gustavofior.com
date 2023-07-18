@@ -32,7 +32,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content="https:/www.gustavofior.com/api/og"
+          content="https://www.gustavofior.com/api/og"
         />
       </Head>
       <Header />
