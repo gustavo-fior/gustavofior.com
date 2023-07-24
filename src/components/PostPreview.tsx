@@ -19,8 +19,8 @@ const PostPreview = ({
     <Link href={`/blog/post/${slug}`}>
       <div className="flex justify-between rounded-lg px-6 py-4 transition duration-300 ease-in-out hover:bg-white hover:bg-opacity-20 hover:drop-shadow-lg hover:backdrop-blur-lg ">
         <div className="flex flex-col gap-3">
-          <div className="flex gap-2">
-            <h2 className="text-2xl">{emoji}</h2>
+          <div className="flex gap-3">
+            <h2 className="text-2xl hidden sm:block">{emoji}</h2>
             <h2 className="text-2xl font-bold">{title}</h2>
           </div>
           <p className="text-slate-300">{description}</p>

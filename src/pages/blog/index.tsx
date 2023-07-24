@@ -37,7 +37,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <Header />
       <ContentWrapper>
-        <h1 className="pb-12 text-4xl font-bold md:text-5xl">Posts</h1>
+        <h1 className="pb-12 text-4xl pl-6 font-bold md:text-5xl">Posts</h1>
         <div className="flex flex-col gap-4">
           {sortedPostsMetadata.map((post) => {
             return (
