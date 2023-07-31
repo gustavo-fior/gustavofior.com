@@ -17,6 +17,7 @@ import Strong from "~/components/md/Strong";
 import UnorderedList from "~/components/md/UnorderedList";
 import "~/styles/globals.css";
 import { api } from "~/utils/api";
+import { Analytics } from "@vercel/analytics/react";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const components = {
@@ -35,16 +36,19 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   };
 
   return (
-    <CommandBar>
-      <MDXProvider components={components as unknown as Components}>
-        <main className="flex max-h-screen min-h-screen flex-col overflow-auto text-white scrollbar-hide">
-          <GradientCanvas />
-          <div className="z-10 ">
-            <Component {...pageProps} />
-          </div>
-        </main>
-      </MDXProvider>
-    </CommandBar>
+    <>
+      <Analytics />
+      <CommandBar>
+        <MDXProvider components={components as unknown as Components}>
+          <main className="flex max-h-screen min-h-screen flex-col overflow-auto text-white scrollbar-hide">
+            <GradientCanvas />
+            <div className="z-10 ">
+              <Component {...pageProps} />
+            </div>
+          </main>
+        </MDXProvider>
+      </CommandBar>
+    </>
   );
 };
 
