@@ -1,0 +1,47 @@
+---
+title: "Overengineering = procrastination ?"
+description: "Overengineering is a problem and sometimes a disguise for procrastination."
+date: "August 18, 2023"
+slug: "overengineering"
+emoji: "🛠️"
+---
+
+As it’s usual for posts in this blog, I get the ideas from the most unexpected places… Today's topic came from this conversation:
+
+![This is portuguese btw...](/images/whatsapp.png)
+
+I will share some thoughts on why [overengineering](https://en.wikipedia.org/wiki/Overengineering) is one of the worst traps that you can fall into while creating stuff and how it can be a beautiful face for procrastination. But first, let's discuss the definition of overengineering…
+
+### Definition
+
+Basically, overengineering is the process of elaborating on a solution when the elaboration was not needed. This is similar (but not the same) to perfectionism or paying too much attention to the details. It starts to become a disguise for procrastination when your obsession is just an unconscious way you found to avoid doing what matters (maybe because you will need to actively seek information and that’s harder than doing more of what you already did).
+<br/>
+Sometimes, this occurs when some problem already has a working solution, but you are still trying to make it better, prettier, or smaller even when the effort-result trade-off is not worth it anymore.
+<br/>
+[Ocamm's razor](https://en.wikipedia.org/wiki/Occam%27s_razor) is a great principle that can provide a great view of some solutions to this problem. It says that **when you have a lot of explanations for something, you should look for the one with the smallest amount of assumptions**. That can be translated to our scenario as something like “try to go for the simpler solution”. In software engineering, a field flooded with paradigms and [infinite ways to over-complicate things](https://en.wikipedia.org/wiki/Fundamental_theorem_of_software_engineering), we call this [K.I.S.S.](https://en.wikipedia.org/wiki/KISS_principle) 
+<br/>
+For example, when you are building a backend application, there are going to be a lot of scenarios where you think an abstraction would solve the problem. Then you build it with the goal of making it easier to solve the same problem in the future. The thing is, most times you’re not going to have the same problem again and you should’ve gone with a simpler solution. Of course, there are scenarios where an abstraction is needed and that’s up to you. In my opinion, it becomes a need when the simpler solution becomes more complex to maintain than creating this new abstraction to deal with the problem. [Don’t overcomplicate things unnecessarily](https://grugbrain.dev/#grug-on-complexity).
+
+### The problem
+
+Maybe you're thinking something like: *“Yeah, that can become an issue, but I have other bigger problems”* and that might be true, but the point is that sooner or later, you'll face this. What's tricky about this one is that it is really easy to fall into. What looks like is that you’re making something better, but deep down you know that you are just unnecessarily polishing more of what's already **good enough**. Sometimes you don't realize that and when you do, a considerable amount of time and effort was lost on something that’s not what you’re trying to accomplish.
+<br/>
+Another aspect that can be tricky about this is that overengineering **feels** like progress. You think that by doing all this extra work, you are making your project way better and that's addictive. Think about it. You have the skills to make it better and the motivation created by this false sensation of huge progress. It's natural to fall into the temptation of doing just [one more thing](https://www.youtube.com/watch?v=cO-2NAl7Sm0&ab_channel=allaboutSteveJobs.com). Just one more redesign. Just one more iteration.  
+<br/>
+That's why one of the top lessons from YC material is to **[launch fast](https://www.youtube.com/watch?v=fetC2EpDtN8)**. They don't want the founders to be lost in this overengineering infinite spiral eternally. 
+<br/>
+At the end of the day, the ones who win are the ones who ship. If you are crafting eternally, you are never going to put it out. The magic is that there are some things that you can't see, even if you keep engineering it a lot. You (or your team) are [heavily biased](https://en.wikipedia.org/wiki/Confirmation_bias) and your product will only evolve when users from other perspectives test it. It can only receive this type of feedback if it's out there. 
+<br/>
+***Just ship it, done is better than perfect!***
+<br/>
+Of course that the examples I'm going to use here are from the software development world, that's what I’m immersed in every single day…
+
+### Examples
+
+I’ll be pretty blunt, I work in a fintech that’s building a bank. We have no clients and have been developing the project for the past year. We **never** launched, but we’ve been discussing for months about implementing a Kubernetes cluster. Like, there is so much stuff that we should pay more attention to than having this cluster. Lots of simpler solutions would get us to the market faster. One can argue that if we go for simpler solutions, we won’t scale. Thats true, but we don’t even know if we will need to scale in the first place. Maybe we won’t have as many users as we think we will. On the other hand, if we happen to become popular and have a lot of customers, we can always build that Kubernetes cluster later.
+<br/>
+Another example is at [Mind](https://getmind.app/), where we iterated over Figma files for over a month just to get a UI that looked good for us. We’ve been overdesigning features and still didn’t launch our MVP. To be fair, there are other obstacles like documentation and funding, but this is definitely a big one. So we placed a deadline and we hope to launch it by the end of this month. 🙏🏻
+<br/>
+Like I already said in [this post](https://www.gustavofior.com/blog/post/external-motivation), a great way to stop this is by setting deadlines for tasks. Defining a maximum period of time for doing something and instantly hopping away after doing it is nice. Another strategy that I think might work is limiting how much redesign you can do. For example, Abdul and I will set a weekend for us to iterate over Mind’s UI before we launch our MVP. After that, it’s over. New changes are going to wait or will be [deployed publically](https://gabygoldberg.medium.com/the-building-in-public-how-to-guide-219d417f00c1).
+<br/>
+As always, thanks to Abdul Haidar for reading drafts of this and helping with the ideas.
