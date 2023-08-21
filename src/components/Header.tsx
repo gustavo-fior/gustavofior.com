@@ -9,6 +9,7 @@ import {
   BsGithub,
   BsLinkedin,
 } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -24,43 +25,44 @@ const Header: React.FC = () => {
       <div className={`${asPath === "/" ? "" : "pr-4"}`}>
         <Link href={asPath.includes("/blog/post/") ? "/blog" : "/"}>
           {asPath !== "/" ? (
-            <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+            <motion.div whileHover={{scale: 1.05}} className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
               <div className="flex items-center gap-2">
                 <BsArrowLeftShort size={24} color="white" />
               </div>
-            </div>
+            </motion.div>
           ) : null}
         </Link>
       </div>
       <div className={`flex gap-4`}>
-        <div
+        <motion.div
           onClick={() => query.toggle()}
+          whileHover={{scale: 1.05}}
           className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:cursor-pointer hover:bg-opacity-50"
         >
           <div className="flex items-center gap-2">
             <BsCommand size={24} color="white" />
           </div>
-        </div>
-        <Link href="https://github.com/gustavo-fior">
-          <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+        </motion.div>
+        <Link target="_blank" href="https://github.com/gustavo-fior">
+          <motion.div whileTap={{scale: 0.8}} whileHover={{scale: 1.05}} className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
             <div className="flex items-center gap-2">
               <BsGithub size={24} color="white" />
             </div>
-          </div>
+          </motion.div>
         </Link>
-        <Link href="https://linkedin.com/in/gustavo-fior-a910781b4/">
-          <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+        <Link target="_blank" href="https://linkedin.com/in/gustavo-fior-a910781b4/">
+          <motion.div whileTap={{scale: 0.8}} whileHover={{scale: 1.05}} className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
             <div className="flex items-center gap-2">
               <BsLinkedin size={24} color="white" />
             </div>
-          </div>
+          </motion.div>
         </Link>
-        <Link href="mailto:gustavo_fior@outlook.com">
-          <div className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+        <Link target="_blank" href="mailto:gustavo_fior@outlook.com">
+          <motion.div whileTap={{scale: 0.8}} whileHover={{scale: 1.05}} className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
             <div className="flex items-center gap-2">
               <BsEnvelopeFill size={24} color="white" />
             </div>
-          </div>
+          </motion.div>
         </Link>
       </div>
     </div>

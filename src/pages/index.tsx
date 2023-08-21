@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import Header from "~/components/Header";
+import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
 
@@ -11,8 +12,6 @@ const Home: NextPage = () => {
     const load = document.getElementsByClassName("load");
     if (load.length > 0) {
       for (let i = 0; i < load.length; i++) {
-          console.log(load[i]);
-
         load[i]?.classList.remove("-translate-y-6");
       } 
     }
@@ -51,12 +50,12 @@ const Home: NextPage = () => {
 
           <div className="flex items-center gap-4  -translate-y-6 transition duration-500 load">
             <Link href="/about">
-              <div className="rounded-full bg-white px-4 py-1.5 transition duration-200 ease-in-out hover:bg-opacity-80">
+              <motion.div whileHover={{scale: 1.015}} className="rounded-full bg-white px-4 py-1.5 transition duration-200 ease-in-out hover:bg-opacity-80">
                 <div className="flex items-center gap-2">
                   <p>🙋🏼‍♂️</p>
                   <p className="mix-blend-difference">About me</p>
                 </div>
-              </div>
+              </motion.div>
             </Link>
             <Link href="/blog">
               <div className="group rounded-full bg-white bg-opacity-20 px-4 py-1.5 drop-shadow-lg backdrop-blur-lg duration-200 hover:bg-opacity-40">

@@ -1,5 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
 import { type Components } from "@mdx-js/react/lib";
+import { Analytics } from "@vercel/analytics/react";
 import { type AppType } from "next/app";
 import CommandBar from "~/components/CommandBar";
 import GradientCanvas from "~/components/GradientCanvas";
@@ -17,7 +18,6 @@ import Strong from "~/components/md/Strong";
 import UnorderedList from "~/components/md/UnorderedList";
 import "~/styles/globals.css";
 import { api } from "~/utils/api";
-import { Analytics } from "@vercel/analytics/react";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const components = {
@@ -42,9 +42,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <MDXProvider components={components as unknown as Components}>
           <main className="flex max-h-screen min-h-screen flex-col overflow-auto text-white scrollbar-hide">
             <GradientCanvas />
-            <div className="z-10 ">
-              <Component {...pageProps} />
-            </div>
+              <div className="z-10 ">
+                <Component {...pageProps} />
+              </div>
           </main>
         </MDXProvider>
       </CommandBar>

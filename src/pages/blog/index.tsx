@@ -1,11 +1,13 @@
+import { Variants, motion } from "framer-motion";
+import fs from "fs";
+import matter from "gray-matter";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
+import path from "path";
+import { useEffect, useState } from "react";
 import ContentWrapper from "~/components/ContentWrapper";
 import Header from "~/components/Header";
 import PostPreview from "~/components/PostPreview";
-import path from "path";
-import fs from "fs";
-import matter from "gray-matter";
 
 interface BlogPageProps {
   postsMetadata: PostMetadata[];
@@ -25,6 +27,21 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const itemVariants: Variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 24 },
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  };
+
+  useEffect(() => {
+    setIsOpen(true);
+  }, []);
+
   return (
     <>
       <Head>
@@ -37,21 +54,44 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <Header />
       <ContentWrapper>
-        <h1 className="pb-12 text-4xl pl-6 font-bold md:text-5xl">Posts</h1>
-        <div className="flex flex-col gap-4">
-          {sortedPostsMetadata.map((post) => {
-            return (
-              <PostPreview
-                key={post.slug}
-                title={post.title}
-                description={post.description}
-                date={post.date}
-                slug={post.slug}
-                emoji={post.emoji}
-              />
-            );
-          })}
-        </div>
+        <h1 className="pb-12 pl-6 text-4xl font-bold md:text-5xl">Posts</h1>
+        <motion.div initial={false} animate={isOpen ? "open" : "closed"}>
+          <motion.ul
+            className="flex flex-col gap-4"
+            variants={{
+              open: {
+                transition: {
+                  type: "spring",
+                  bounce: 0,
+                  duration: 0.7,
+                  delayChildren: 0.3,
+                  staggerChildren: 0.05,
+                },
+              },
+              closed: {
+                transition: {
+                  type: "spring",
+                  bounce: 0,
+                  duration: 0.3,
+                },
+              },
+            }}
+          >
+            {sortedPostsMetadata.map((post) => {
+              return (
+                <motion.li key={post.slug} variants={itemVariants}>
+                  <PostPreview
+                    title={post.title}
+                    description={post.description}
+                    date={post.date}
+                    slug={post.slug}
+                    emoji={post.emoji}
+                  />
+                </motion.li>
+              );
+            })}
+          </motion.ul>
+        </motion.div>
       </ContentWrapper>
     </>
   );
