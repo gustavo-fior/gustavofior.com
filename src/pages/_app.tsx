@@ -40,7 +40,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Analytics />
       <CommandBar>
         <MDXProvider components={components as unknown as Components}>
-          <main className="flex max-h-screen min-h-screen flex-col overflow-auto text-white scrollbar-hide">
+          <main className="flex max-h-screen min-h-screen flex-col text-white firefox-scrollbar-fix">
             <GradientCanvas />
               <div className="z-10 ">
                 <Component {...pageProps} />

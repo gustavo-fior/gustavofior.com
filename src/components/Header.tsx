@@ -25,7 +25,7 @@ const Header: React.FC = () => {
       <div className={`${asPath === "/" ? "" : "pr-4"}`}>
         <Link href={asPath.includes("/blog/post/") ? "/blog" : "/"}>
           {asPath !== "/" ? (
-            <motion.div whileHover={{scale: 1.05}} className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
+            <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.8}} className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50">
               <div className="flex items-center gap-2">
                 <BsArrowLeftShort size={24} color="white" />
               </div>

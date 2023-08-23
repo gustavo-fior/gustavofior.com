@@ -17,4 +17,14 @@
   ::selection {
     background: #053853;
   }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  firefox-scrollbar-fix {
+    scrollbar-width: none;
+  }
 }
+
+
