@@ -8,6 +8,8 @@ import Header from "~/components/Header";
 import PostHeader from "~/components/PostHeader";
 import ContentWrapper from "~/components/ContentWrapper";
 import Head from "next/head";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface PostMetadata {
   title: string;
@@ -22,23 +24,47 @@ interface PostProps {
   content: MDXRemoteSerializeResult;
 }
 
+const postVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 300, damping: 24 },
+  },
+  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+};
+
 const Post = ({ metadata, content }: PostProps) => {
+  const [isPostOpen, setIsPostOpen] = useState(false);
+
+  useEffect(() => {
+    setIsPostOpen(true);
+  }, []);
+
   return (
     <div>
       <Head>
         <title>Gustavo&apos;s home</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content="https://www.gustavofior.com/api/og" />
+        <meta
+          property="og:image"
+          content="https://www.gustavofior.com/api/og"
+        />
       </Head>
       <Header />
       <ContentWrapper>
-        <PostHeader
-          title={metadata.title}
-          date={metadata.date}
-          readTime={metadata.readTime}
-          emoji={metadata.emoji}
-        />
-        <MDXRemote {...content} />
+        <motion.div
+          initial={false}
+          animate={isPostOpen ? "open" : "closed"}
+          variants={postVariants}
+        >
+          <PostHeader
+            title={metadata.title}
+            date={metadata.date}
+            readTime={metadata.readTime}
+            emoji={metadata.emoji}
+          />
+          <MDXRemote {...content} />
+        </motion.div>
       </ContentWrapper>
     </div>
   );

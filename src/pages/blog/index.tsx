@@ -1,4 +1,4 @@
-import { Variants, motion } from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { type GetStaticProps, type NextPage } from "next";
