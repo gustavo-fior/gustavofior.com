@@ -31,12 +31,12 @@ const Home: NextPage = () => {
 
       <div className="flex h-screen flex-col justify-center px-8 align-middle text-white md:px-24">
         <div className="flex flex-col">
-          <div className="flex flex-wrap md:space-x-4  -translate-y-6 transition duration-1000 load">
+          <div className="flex flex-wrap md:space-x-4 -translate-y-6 transition duration-1000 load">
             <h1 className="text-5xl font-bold lg:text-7xl">
-              Hi! I&apos;m <span className="mix-blend-difference">Gustavo</span>
+              Hi! I&apos;m <span className=" mix-blend-difference text-white top-20">Gustavo</span>
             </h1>
           </div>
-          <div className="pb-5 pt-3  -translate-y-6 transition duration-700 load">
+          <div className="pb-5 pt-3 -translate-y-6 transition duration-700 load">
             <p className=" text-xl text-slate-300">
               A{" "}
               <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
