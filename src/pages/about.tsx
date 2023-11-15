@@ -89,7 +89,7 @@ const About: NextPage = () => {
             <br />
             <p>
               I keep a record of{" "}
-              <LinkText href="bookmarks.gustavofior.com/bookmarks/public/clnkrbko900011151mn3ah1bd">
+              <LinkText href="https://bookmarks.gustavofior.com/bookmarks/public/clnkrbko900011151mn3ah1bd">
                 cool stuff
               </LinkText>{" "}
               I see on the internet, and you can pretty much tell what I&apos;m
