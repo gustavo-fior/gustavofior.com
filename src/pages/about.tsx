@@ -89,11 +89,16 @@ const About: NextPage = () => {
             <br />
             <p>
               I keep a record of{" "}
-              <LinkText href="https://gustavofior.notion.site/Cool-Stuff-f4f54a6fe8fe4bc1bc34c588966fb631?pvs=4">
+              <LinkText href="https://bookmarks.gustavofior.com/bookmarks/public/clnkrbko900011151mn3ah1bd">
                 cool stuff
               </LinkText>{" "}
               I see on the internet, and you can pretty much tell what I&apos;m
-              interested in by looking at it.
+              interested in by looking at it. Btw, this a tool I built to
+              organize my bookmarks,{" "}
+              <LinkText href="https://github.com/gustavo-fior/bookmarks">
+                it&apos;s open source
+              </LinkText>{" "}
+              and <LinkText href="https://bookmarks.gustavofior.com">free</LinkText>!
             </p>
             <br />
             <p>
