@@ -6,6 +6,6 @@ This project is part of an attempt for me to step out of my comfort zone and sta
 
 I've been coding backend apps for the most part of my life and want to try new stuff. 
 
-If you have some ideas or comments, want to reach out, or just spotted some bad code, please create an issue or send me a message on [Twitter](https://x.com/heyimgustavo).
+If you have some ideas or comments, want to reach out, or just spotted some bad code, please create an issue or send me a message on [Twitter/X](https://x.com/heyimgustavo).
 
-Byeee :)
+TODO: Add [ContentLayer](https://contentlayer.dev/)
