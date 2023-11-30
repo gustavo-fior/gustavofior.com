@@ -8,4 +8,6 @@ I've been coding backend apps for the most part of my life and want to try new s
 
 If you have some ideas or comments, want to reach out, or just spotted some bad code, please create an issue or send me a message on [Twitter/X](https://x.com/heyimgustavo).
 
-TODO: Add [ContentLayer](https://contentlayer.dev/)
+TODO: 
+- Add [ContentLayer](https://contentlayer.dev/)
+- Add custom og images to blogposts
