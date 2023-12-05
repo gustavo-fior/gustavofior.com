@@ -12,11 +12,6 @@ export default async function handler(request: NextRequest) {
     const hasTitle = s.has("title");
     const title = hasTitle ? s.get("title")?.slice(0, 100) : "Post";
 
-    const hasDescription = s.has("description");
-    const description = hasDescription
-      ? s.get("description")?.slice(0, 100)
-      : "Just some thoughts...";
-
     const hasEmoji = s.has("emoji");
     const emoji = hasEmoji ? s.get("emoji") : "🦖";
 
@@ -46,18 +41,6 @@ export default async function handler(request: NextRequest) {
             >
               {title}
             </div>
-            <div
-              style={{
-                fontSize: 30,
-                fontStyle: "Inter",
-                fontWeight: 400,
-                marginTop: 8,
-                padding: "0 120px",
-                color: "white",
-              }}
-            >
-              {description}
-            </div>
           </img>
         </div>
       ),
@@ -66,7 +49,6 @@ export default async function handler(request: NextRequest) {
         height: 630,
         fonts: [
           { data: await fetch(new URL("../../../../assets/Inter-Bold.ttf", import.meta.url)).then((res) => res.arrayBuffer()), name: "Inter", style: "normal", weight: 700 },
-          { data: await fetch(new URL("../../../../assets/Inter-Regular.ttf", import.meta.url)).then((res) => res.arrayBuffer()), name: "Inter", style: "normal", weight: 400 },
         ],
       }
     );

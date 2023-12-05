@@ -47,7 +47,7 @@ const Post = ({ metadata, content }: PostProps) => {
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&description=${metadata.description}&emoji=${metadata.emoji}`}
+          content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}
         />
       </Head>
       <Header />
