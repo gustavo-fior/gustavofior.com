@@ -45,8 +45,14 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   return (
     <>
       <Head>
-        <title>Gustavo&apos;s home</title>
+        <title>Gustavo&apos;s posts</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Just some thoughts" />
+        <meta property="og:title" content="Gustavo's posts" />
+        <meta property="og:description" content="Just some thoughts" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.gustavofior.com" />
+        <meta property="og:site_name" content="Gustavo Fior" />
         <meta
           property="og:image"
           content="https://www.gustavofior.com/api/og"

@@ -43,8 +43,14 @@ const Post = ({ metadata, content }: PostProps) => {
   return (
     <div>
       <Head>
-        <title>Gustavo&apos;s home</title>
+        <title>{metadata.title} | Gustavo Fior</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={metadata.description} />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.gustavofior.com" />
+        <meta property="og:site_name" content="Gustavo Fior" />
         <meta
           property="og:image"
           content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}

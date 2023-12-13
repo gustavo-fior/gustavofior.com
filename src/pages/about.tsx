@@ -27,6 +27,12 @@ const About: NextPage = () => {
       <Head>
         <title>Gustavo&apos;s home</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Welcome to my house" />
+        <meta property="og:title" content="Gustavo's home" />
+        <meta property="og:description" content="Welcome to my house" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.gustavofior.com" />
+        <meta property="og:site_name" content="Gustavo Fior" />
         <meta
           property="og:image"
           content="https://www.gustavofior.com/api/og"
@@ -98,7 +104,9 @@ const About: NextPage = () => {
               <LinkText href="https://github.com/gustavo-fior/bookmarks">
                 it&apos;s open source
               </LinkText>{" "}
-              and <LinkText href="https://bookmarks.gustavofior.com">free</LinkText>!
+              and{" "}
+              <LinkText href="https://bookmarks.gustavofior.com">free</LinkText>
+              !
             </p>
             <br />
             <p>
