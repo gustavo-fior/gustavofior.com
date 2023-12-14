@@ -1,10 +1,9 @@
+import { motion, type Variants } from "framer-motion";
 import { type NextPage } from "next";
 import Head from "next/head";
-import ContentWrapper from "~/components/ContentWrapper";
-import Header from "~/components/Header";
-import LinkText from "~/components/md/LinkText";
-import { type Variants, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import ContentWrapper from "~/components/ContentWrapper";
+import LinkText from "~/components/md/LinkText";
 
 const About: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +37,6 @@ const About: NextPage = () => {
           content="https://www.gustavofior.com/api/og"
         />
       </Head>
-      <Header />
       <ContentWrapper>
         <motion.div
           initial={false}

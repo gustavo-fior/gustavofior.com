@@ -1,4 +1,4 @@
-import { type Variants, motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { type GetStaticProps, type NextPage } from "next";
@@ -6,7 +6,6 @@ import Head from "next/head";
 import path from "path";
 import { useEffect, useState } from "react";
 import ContentWrapper from "~/components/ContentWrapper";
-import Header from "~/components/Header";
 import PostPreview from "~/components/PostPreview";
 
 interface BlogPageProps {
@@ -58,7 +57,6 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           content="https://www.gustavofior.com/api/og"
         />
       </Head>
-      <Header />
       <ContentWrapper>
         <h1 className="pb-12 pl-6 text-4xl font-bold md:text-5xl">Posts</h1>
         <motion.div initial={false} animate={isOpen ? "open" : "closed"}>

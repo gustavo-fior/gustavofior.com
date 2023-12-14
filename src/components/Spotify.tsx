@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 type Song = {
   isPlaying: boolean;
@@ -11,36 +11,32 @@ type Song = {
   songUrl: string;
 };
 
-const Spotify = () => {
-  const [song, setSong] = useState<Song | null>(null);
+const Spotify = ({ song }: { song: Song }) => {
 
   useEffect(() => {
-    const apiUrl = "/api/spotify/song";
-
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        setSong(data as Song);
-      })
-      .catch((error) => {
-        console.error("Error fetching data from API:", error);
-      });
+    const load = document.getElementsByClassName("load");
+    if (load.length > 0) {
+      for (let i = 0; i < load.length; i++) {
+        load[i]?.classList.remove("-translate-y-3");
+        load[i]?.classList.remove("opacity-0");
+      }
+    }
   }, []);
 
   return (
-    <Link href={song?.songUrl ?? ""}>
-      <div className="rounded-full bg-white bg-opacity-20 py-2 pl-3 pr-5 drop-shadow-lg backdrop-blur-lg duration-200 hover:bg-opacity-40">
+    <Link href={song?.songUrl ?? ""} target="_blank">
+      <div className="rounded-full load -translate-y-3 opacity-0 bg-white bg-opacity-0 py-2 pl-6 pr-8 drop-shadow-lg backdrop-blur-lg duration-700 hover:bg-opacity-40">
         <div className="flex items-center gap-2">
           {song?.isPlaying ? <></> : <></>}
 
           <div className="flex items-center gap-3 transition-transform duration-500">
             <Image
-            // image with opacity gradient from tl to br
               className="rounded-full bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent"
               src={song?.albumImageUrl ?? ""}
               alt="Album cover"
               priority
               fill
+              sizes="100px"
               style={{
                 objectFit: "cover",
               }}

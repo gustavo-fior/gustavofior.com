@@ -1,15 +1,14 @@
+import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { type GetStaticPaths, type GetStaticProps } from "next";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import path from "path";
-import Header from "~/components/Header";
-import PostHeader from "~/components/PostHeader";
-import ContentWrapper from "~/components/ContentWrapper";
 import Head from "next/head";
+import path from "path";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import ContentWrapper from "~/components/ContentWrapper";
+import PostHeader from "~/components/PostHeader";
 
 interface PostMetadata {
   title: string;
@@ -56,7 +55,6 @@ const Post = ({ metadata, content }: PostProps) => {
           content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}
         />
       </Head>
-      <Header />
       <ContentWrapper>
         <motion.div
           initial={false}

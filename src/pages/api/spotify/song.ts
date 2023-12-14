@@ -46,7 +46,7 @@ const getLastSong = async (_: NextApiRequest, res: NextApiResponse) => {
     isPlaying = false;
     title = song.items[0].track.name;
     artist = song.items[0].track.artists
-      .map((_artist) => _artist.name)
+      .map((_artist: { name: unknown; }) => _artist.name)
       .join(", ");
     album = song.items[0].track.album.name;
     albumImageUrl = song.items[0].track.album.images[0].url;
@@ -55,7 +55,7 @@ const getLastSong = async (_: NextApiRequest, res: NextApiResponse) => {
     song = await currentPlaying.json();
     isPlaying = song.is_playing;
     title = song.item.name;
-    artist = song.item.artists.map((_artist) => _artist.name).join(", ");
+    artist = song.item.artists.map((_artist: { name: unknown; }) => _artist.name).join(", ");
     album = song.item.album.name;
     albumImageUrl = song.item.album.images[0].url;
     songUrl = song.item.external_urls.spotify;

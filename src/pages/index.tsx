@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
-import Header from "~/components/Header";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -12,6 +11,7 @@ const Home: NextPage = () => {
     if (load.length > 0) {
       for (let i = 0; i < load.length; i++) {
         load[i]?.classList.remove("-translate-y-6");
+        load[i]?.classList.remove("opacity-0");
       }
     }
   }, []);
@@ -32,10 +32,9 @@ const Home: NextPage = () => {
           content="https://www.gustavofior.com/api/og"
         />
       </Head>
-      <Header />
       <div className="flex h-screen flex-col justify-center px-8 align-middle text-white md:px-24">
         <div className="flex flex-col">
-          <div className="load flex -translate-y-6 flex-wrap transition duration-1000 md:space-x-4">
+          <div className="load flex -translate-y-6 flex-wrap opacity-0 transition duration-1000 md:space-x-4">
             <h1 className="text-5xl font-bold lg:text-7xl">
               Hi! I&apos;m{" "}
               <span className=" top-20 text-white mix-blend-difference">
@@ -43,7 +42,7 @@ const Home: NextPage = () => {
               </span>
             </h1>
           </div>
-          <div className="load -translate-y-6 pb-5 pt-3 transition duration-700">
+          <div className="load -translate-y-6 pb-5 pt-3 opacity-0 transition duration-700">
             <p className=" text-xl text-slate-300">
               A{" "}
               <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
@@ -64,7 +63,7 @@ const Home: NextPage = () => {
             </p>
           </div>
 
-          <div className="load flex -translate-y-6  items-center gap-4 transition duration-500">
+          <div className="load flex -translate-y-6 items-center  gap-4 opacity-0 transition duration-500">
             <Link href="/about">
               <motion.div
                 whileHover={{ scale: 1.015 }}
