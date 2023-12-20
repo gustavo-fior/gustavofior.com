@@ -51,11 +51,9 @@ const Header = () => {
         asPath === "/" ? "absolute" : ""
       } h-48 items-center justify-center py-12 sm:justify-between sm:px-24 md:py-16`}
     >
-
-<div className="sm:block hidden">
-
-      {showSong && asPath === "/" && song && <Spotify song={song} />}
-</div>
+      
+        {showSong && asPath === "/" && song && <div className="hidden sm:block"><Spotify song={song} /></div>}
+      
 
       <div className={`${asPath === "/" ? "" : "pr-4"}`}>
         <Link href={asPath.includes("/blog/post/") ? "/blog" : "/"}>
