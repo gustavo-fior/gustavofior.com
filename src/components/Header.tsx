@@ -39,7 +39,7 @@ const Header = () => {
           setSong(data as Song);
           setTimeout(() => {
             setShowSong(true);
-          }, 300);
+          }, 2000);
         })
         .catch((error) => {
           console.error("Error fetching data from API:", error);
