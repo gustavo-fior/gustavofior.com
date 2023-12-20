@@ -12,7 +12,6 @@ type Song = {
 };
 
 const Spotify = ({ song }: { song: Song }) => {
-
   useEffect(() => {
     const load = document.getElementsByClassName("load");
     if (load.length > 0) {
@@ -25,13 +24,11 @@ const Spotify = ({ song }: { song: Song }) => {
 
   return (
     <Link href={song?.songUrl ?? ""} target="_blank">
-      <div className="rounded-full load -translate-y-3 opacity-0 bg-white bg-opacity-0 py-2 pl-6 pr-8 drop-shadow-lg backdrop-blur-lg duration-700 hover:bg-opacity-40">
+      <div className="load group -translate-y-3 rounded-full bg-white bg-opacity-0 py-2 pl-3 pr-5 opacity-0 drop-shadow-lg backdrop-blur-lg duration-700 ">
         <div className="flex items-center gap-2">
-          {song?.isPlaying ? <></> : <></>}
-
-          <div className="flex items-center gap-3 transition-transform duration-500">
+          <div className="flex items-center gap-3 transition duration-300 group-hover:opacity-70 ">
             <Image
-              className="rounded-full bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent"
+              className="rounded-full"
               src={song?.albumImageUrl ?? ""}
               alt="Album cover"
               priority
@@ -41,13 +38,43 @@ const Spotify = ({ song }: { song: Song }) => {
                 objectFit: "cover",
               }}
             />
-            <div className="z-50 flex flex-col">
-              <p className="truncate text-sm font-medium text-white">
-                {song?.title ?? "Not Playing"}
-              </p>
-              <p className="truncate text-xs text-slate-300">
-                {song?.artist ?? "Spotify"} • {song?.album ?? "Not Playing"}
-              </p>
+            <div className="absolute inset-0 rounded-full border-2 border-black bg-black opacity-70"></div>
+            <div className="absolute inset-0 rounded-full backdrop-blur-sm"></div>
+
+            <div className="z-50 flex gap-2">
+              <Image
+                className="rounded-full"
+                src={song?.albumImageUrl ?? ""}
+                alt="Album cover"
+                priority
+                width={32}
+                height={32}
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+
+              <div className="flex flex-col">
+                <div className="flex flex-row gap-2">
+                  <p className="truncate text-sm font-semibold text-white">
+                    {song?.title ?? "Not Playing"}
+                  </p>
+                  <Image
+                    src="/gifs/waveform.gif"
+                    alt="Waveform"
+                    width={480}
+                    height={480}
+                    style={{
+                      objectFit: "scale-down",
+                      width: "1rem",
+                      height: "1rem",
+                    }}
+                  />
+                </div>
+                <p className="truncate text-xs text-slate-300">
+                  {song?.artist ?? "Spotify"} • {song?.album ?? "Not Playing"}
+                </p>
+              </div>
             </div>
           </div>
         </div>

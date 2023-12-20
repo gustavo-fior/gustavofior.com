@@ -30,32 +30,20 @@ const Header = () => {
   const [song, setSong] = useState<Song | null>(null);
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      console.log("App is changing to: ", url);
+    const apiUrl = "/api/spotify/song";
 
-      if (url === "/") {
-        const apiUrl = "/api/spotify/song";
-
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((data) => {
-            setSong(data as Song);
-            setShowSong(true);
-          })
-          .catch((error) => {
-            console.error("Error fetching data from API:", error);
-          });
-      } else {
-        setShowSong(false);
-      }
-    };
-
-    router.events.on("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+    if (asPath === "/") {
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          setSong(data as Song);
+          setShowSong(true);
+        })
+        .catch((error) => {
+          console.error("Error fetching data from API:", error);
+        });
+    }
+  }, [asPath]);
 
   return (
     <div
@@ -63,7 +51,11 @@ const Header = () => {
         asPath === "/" ? "absolute" : ""
       } h-48 items-center justify-center py-12 sm:justify-between sm:px-24 md:py-16`}
     >
-      {showSong && song && <Spotify song={song} />}
+
+<div className="sm:block hidden">
+
+      {showSong && asPath === "/" && song && <Spotify song={song} />}
+</div>
 
       <div className={`${asPath === "/" ? "" : "pr-4"}`}>
         <Link href={asPath.includes("/blog/post/") ? "/blog" : "/"}>
@@ -71,10 +63,9 @@ const Header = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.75 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.8 }}
-              className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50"
+              transition={{ duration: 0.4 }}
+              whileTap={{ scale: 0.9 }}
+              className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-300 ease-in-out hover:bg-opacity-50"
             >
               <div className="flex items-center gap-2">
                 <BsArrowLeftShort size={24} color="white" />
@@ -88,9 +79,9 @@ const Header = () => {
           onClick={() => query.toggle()}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.75 }}
-          whileHover={{ scale: 1.05 }}
-          className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:cursor-pointer hover:bg-opacity-50"
+          transition={{ duration: 0.4 }}
+          whileTap={{ scale: 0.9 }}
+          className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-300 ease-in-out hover:cursor-pointer hover:bg-opacity-50"
         >
           <div className="flex items-center gap-2">
             <BsCommand size={24} color="white" />
@@ -99,11 +90,10 @@ const Header = () => {
         <Link target="_blank" href="https://github.com/gustavo-fior">
           <motion.div
             initial={{ opacity: 0 }}
-            transition={{ duration: 0.75 }}
+            transition={{ duration: 0.4 }}
             animate={{ opacity: 1 }}
-            whileTap={{ scale: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50"
+            whileTap={{ scale: 0.9 }}
+            className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-300 ease-in-out hover:bg-opacity-50"
           >
             <div className="flex items-center gap-2">
               <BsGithub size={24} color="white" />
@@ -117,10 +107,9 @@ const Header = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.75 }}
-            whileTap={{ scale: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50"
+            transition={{ duration: 0.4 }}
+            whileTap={{ scale: 0.9 }}
+            className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-300 ease-in-out hover:bg-opacity-50"
           >
             <div className="flex items-center gap-2">
               <BsLinkedin size={24} color="white" />
@@ -131,10 +120,9 @@ const Header = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.75 }}
-            whileTap={{ scale: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-200 ease-in-out hover:bg-opacity-50"
+            transition={{ duration: 0.4 }}
+            whileTap={{ scale: 0.9 }}
+            className="rounded-full bg-white bg-opacity-30 p-3 drop-shadow-lg backdrop-blur-lg transition duration-300 ease-in-out hover:bg-opacity-50"
           >
             <div className="flex items-center gap-2">
               <BsEnvelopeFill size={24} color="white" />
