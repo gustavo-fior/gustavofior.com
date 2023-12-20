@@ -33,7 +33,6 @@ const Spotify = ({ song }: { song: Song }) => {
               alt="Album cover"
               priority
               fill
-              sizes="100px"
               style={{
                 objectFit: "cover",
               }}
@@ -47,17 +46,17 @@ const Spotify = ({ song }: { song: Song }) => {
                 src={song?.albumImageUrl ?? ""}
                 alt="Album cover"
                 priority
-                width={32}
-                height={32}
+                width={36}
+                height={36}
                 style={{
                   objectFit: "cover",
                 }}
               />
 
               <div className="flex flex-col">
-                <div className="flex flex-row gap-2">
-                  <p className="truncate text-sm font-semibold text-white">
-                    {song?.title ?? "Not Playing"}
+                <div className="flex gap-2">
+                  <p className="truncate text-sm font-bold text-white">
+                    {song?.title ? song?.title.length > 25 ? song?.title.substring(0, 25) + "..." : song?.title : "Not Playing"}
                   </p>
                   <Image
                     src="/gifs/waveform.gif"
@@ -69,10 +68,11 @@ const Spotify = ({ song }: { song: Song }) => {
                       width: "1rem",
                       height: "1rem",
                     }}
+                    className="flex-shrink-0" 
                   />
                 </div>
                 <p className="truncate text-xs text-slate-300">
-                  {song?.artist ?? "Spotify"} • {song?.album ?? "Not Playing"}
+                  {song?.artist ? song?.artist.length > 25 ? song?.artist.substring(0,25) + "..." : song?.artist : "Spotify"} • {song?.album ?? "Not Playing"}
                 </p>
               </div>
             </div>
