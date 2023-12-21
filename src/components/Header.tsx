@@ -37,7 +37,7 @@ const Header = () => {
         .then((response) => response.json())
         .then((data) => {
           setSong(data as Song);
-            setShowSong(true);
+          setShowSong(true);
         })
         .catch((error) => {
           console.error("Error fetching data from API:", error);
@@ -51,9 +51,11 @@ const Header = () => {
         asPath === "/" ? "absolute" : ""
       } h-48 items-center justify-center py-12 sm:justify-between sm:px-24 md:py-16`}
     >
-      
-        {showSong && asPath === "/" && song && <div className="hidden sm:block"><Spotify song={song} /></div>}
-      
+      {showSong && asPath === "/" && song && (
+        <div className="hidden sm:block">
+            <Spotify song={song} />
+        </div>
+      )}
 
       <div className={`${asPath === "/" ? "" : "pr-4"}`}>
         <Link href={asPath.includes("/blog/post/") ? "/blog" : "/"}>

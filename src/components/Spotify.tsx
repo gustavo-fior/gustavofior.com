@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 type Song = {
   isPlaying: boolean;
@@ -12,20 +12,14 @@ type Song = {
 };
 
 const Spotify = ({ song }: { song: Song }) => {
-  useEffect(() => {
-    const load = document.getElementsByClassName("load");
-    if (load.length > 0) {
-      for (let i = 0; i < load.length; i++) {
-        load[i]?.classList.remove("-translate-y-3");
-        load[i]?.classList.remove("opacity-0");
-      }
-    }
-  }, []);
-
   return (
-    <div className="load -translate-y-3 opacity-0 transition duration-700 ease-in-out">
+    <motion.div
+    initial={{ opacity: 0, y: -6 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4 }}
+    >
       <Link href={song?.songUrl ?? ""} target="_blank">
-        <div className="group  rounded-full   py-2 pl-2 pr-5 backdrop-blur-lg ">
+        <div className="group rounded-full py-2 pl-2 pr-5 backdrop-blur-lg ">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-3 transition duration-300 group-hover:opacity-80 ">
               <Image
@@ -94,7 +88,7 @@ const Spotify = ({ song }: { song: Song }) => {
           </div>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
