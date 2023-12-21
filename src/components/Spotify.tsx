@@ -13,11 +13,15 @@ type Song = {
 
 const Spotify = ({ song }: { song: Song }) => {
   useEffect(() => {
-    const load = document.getElementsByClassName("load");
-    if (load.length > 0) {
-      for (let i = 0; i < load.length; i++) {
-        load[i]?.classList.remove("-translate-y-3");
-        load[i]?.classList.remove("opacity-0");
+    if (typeof window !== "undefined") {
+      console.log("useEffect is running on the client side");
+
+      const load = document.getElementsByClassName("load");
+      if (load.length > 0) {
+        for (let i = 0; i < load.length; i++) {
+          load[i]?.classList.remove("-translate-y-3");
+          load[i]?.classList.remove("opacity-0");
+        }
       }
     }
   }, []);
