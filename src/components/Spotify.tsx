@@ -26,6 +26,7 @@ const Spotify = ({ song }: { song: Song }) => {
                 className="rounded-full"
                 src={song?.albumImageUrl ?? ""}
                 alt="Album cover"
+                priority
                 fill
                 style={{
                   objectFit: "cover",
@@ -45,6 +46,7 @@ const Spotify = ({ song }: { song: Song }) => {
                   className="rounded-full"
                   src={song?.albumImageUrl ?? ""}
                   alt="Album cover"
+                  priority
                   width={36}
                   height={36}
                   style={{
@@ -66,6 +68,7 @@ const Spotify = ({ song }: { song: Song }) => {
                       alt="Waveform"
                       width={480}
                       height={480}
+                      priority
                       style={{
                         objectFit: "scale-down",
                         width: "1rem",
