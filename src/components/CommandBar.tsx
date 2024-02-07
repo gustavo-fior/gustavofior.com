@@ -80,6 +80,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
               className="w-full border-none bg-white bg-opacity-20 px-6
          py-4 text-lg text-white outline-none drop-shadow-lg backdrop-blur-lg rounded-b-none"
               placeholder="Search..."
+              style={{ backdropFilter: "blur(10px)", color: "white" }}
             />
             <RenderResults />
           </KBarAnimator>
@@ -113,10 +114,10 @@ function RenderResults(): JSX.Element {
             </div>
             {isMobile ? null : (
               <div className="flex items-center gap-2">
-                <span className="rounded-md bg-slate-400 bg-opacity-10 px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
+                <span className="rounded-md bg-slate-500 px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
                   g
                 </span>
-                <span className="rounded-md bg-slate-400 bg-opacity-10 px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
+                <span className="rounded-md bg-gray-600  px-2 py-0.5 text-white drop-shadow-lg backdrop-blur-lg">
                   {item.shortcut}
                 </span>
               </div>
