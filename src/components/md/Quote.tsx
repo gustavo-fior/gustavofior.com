@@ -4,7 +4,7 @@ interface QuoteProps {
 
 const Quote = ({ children }: QuoteProps) => {
   return (
-    <blockquote className="rounded-lg bg-white bg-opacity-20 px-6 py-4 drop-shadow-lg backdrop-blur-lg">
+    <blockquote className="rounded-lg bg-zinc-900 py-4 px-5 text-[#e64100]">
       {children}
     </blockquote>
   );

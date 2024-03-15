@@ -3,7 +3,6 @@ import { type Components } from "@mdx-js/react/lib";
 import { Analytics } from "@vercel/analytics/react";
 import { type AppType } from "next/app";
 import CommandBar from "~/components/CommandBar";
-import GradientCanvas from "~/components/GradientCanvas";
 import Header from "~/components/Header";
 import Code from "~/components/md/Code";
 import CustomImage from "~/components/md/CustomImage";
@@ -41,12 +40,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Analytics />
       <CommandBar>
         <MDXProvider components={components as unknown as Components}>
-          <main className="firefox-scrollbar-fix flex max-h-screen min-h-screen flex-col text-white">
-            <GradientCanvas />
-            <div className="z-10 ">
-              <Header />
+          <main className="firefox-scrollbar-fix text-white bg-zinc-950">
+              {/* <Header /> */}
               <Component {...pageProps} />
-            </div>
           </main>
         </MDXProvider>
       </CommandBar>

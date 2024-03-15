@@ -5,20 +5,23 @@ interface PostHeaderProps {
   emoji: string;
 }
 
-const PostHeader = ({
-  title,
-  readTime,
-  date,
-  emoji
-}: PostHeaderProps) => {
+const PostHeader = ({ title, readTime, date, emoji }: PostHeaderProps) => {
   return (
-      <div className="pb-4">
-        <h1 className="pb-6 text-5xl font-bold md:text-6xl lg:text-7xl">{emoji}</h1>
-        <h1 className="pb-4 text-3xl sm:text-4xl font-bold md:text-5xl">{title}</h1>
-        <h3 className="pb-4 text-slate-400 md:text-lg">
-          {date} • <span className="italic">{readTime}</span>
+    <div className="flex flex-row pb-8 gap-4 pt-24 align-middle items-center">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl">
+        {emoji}
+      </h1>
+      <div>
+        <h1 className="pb-1 text-lg font-bold sm:text-xl md:text-2xl">
+          {title}
+        </h1>
+        <h3 className="text-zinc-500 text-sm md:text-base">
+          {date} <span className="text-[#e64100]">•</span>{" "}
+          <span className="italic">{readTime}</span>
         </h3>
       </div>
+      
+    </div>
   );
 };
 

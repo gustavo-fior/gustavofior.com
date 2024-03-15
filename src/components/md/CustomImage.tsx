@@ -16,16 +16,16 @@ const CustomImage = ({ src, alt, width = 1920, height = 1080 }: ImageProps) => {
   }, []);
 
   return shouldRender ? (
-    <div className="my-8 rounded-lg text-center p-2 md:p-3 bg-white bg-opacity-20 drop-shadow-lg backdrop-blur-lg">
+    <div className="my-8 rounded-lg text-center p-1 md:p-2 bg-zinc-900">
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
-        className="rounded-lg"
+        className="rounded-md"
       />
       {alt ? (
-        <div className="text-sm text-slate-300 pt-3 pb-1 italic">{alt}</div>
+        <div className="text-sm text-zinc-500 pt-2">{alt}</div>
       ) : null}
     </div>
   ) : null;

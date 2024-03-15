@@ -7,9 +7,14 @@ interface LinkTextProps {
 
 const LinkText = ({ children, href }: LinkTextProps) => {
   return (
-    <Link href={href} className="text-[#0abd7c] underline" target="_blank">
+    <Link
+      href={href}
+      className="text-[#e64100] underline transition duration-200 ease-in-out hover:text-[#e64100a9]"
+      target="_blank"
+    >
       {children}
     </Link>
-  );};
+  );
+};
 
 export default LinkText;

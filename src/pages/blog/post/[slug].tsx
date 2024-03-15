@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { type GetStaticPaths, type GetStaticProps } from "next";
@@ -6,7 +5,6 @@ import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import path from "path";
-import { useEffect, useState } from "react";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostHeader from "~/components/PostHeader";
 
@@ -23,21 +21,7 @@ interface PostProps {
   content: MDXRemoteSerializeResult;
 }
 
-const postVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-};
-
 const Post = ({ metadata, content }: PostProps) => {
-  const [isPostOpen, setIsPostOpen] = useState(false);
-
-  useEffect(() => {
-    setIsPostOpen(true);
-  }, []);
 
   return (
     <div>
@@ -56,19 +40,13 @@ const Post = ({ metadata, content }: PostProps) => {
         />
       </Head>
       <ContentWrapper>
-        <motion.div
-          initial={false}
-          animate={isPostOpen ? "open" : "closed"}
-          variants={postVariants}
-        >
-          <PostHeader
-            title={metadata.title}
-            date={metadata.date}
-            readTime={metadata.readTime}
-            emoji={metadata.emoji}
-          />
-          <MDXRemote {...content} />
-        </motion.div>
+        <PostHeader
+          title={metadata.title}
+          date={metadata.date}
+          readTime={metadata.readTime}
+          emoji={metadata.emoji}
+        />
+        <MDXRemote {...content} />
       </ContentWrapper>
     </div>
   );
