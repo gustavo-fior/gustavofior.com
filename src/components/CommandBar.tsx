@@ -9,13 +9,6 @@ import {
 } from "kbar";
 import { useRouter } from "next/router";
 import { type ReactNode } from "react";
-import {
-  BsEnvelopeFill,
-  BsFillFilePersonFill,
-  BsGithub,
-  BsLinkedin,
-  BsPenFill,
-} from "react-icons/bs";
 
 type CommandBarProps = {
   children: ReactNode;
@@ -30,7 +23,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
       name: "Blog",
       shortcut: ["b"],
       keywords: "blog",
-      icon: <BsPenFill size={16} />,
+      icon: null,
       perform: () => router.push("/blog"),
     },
     {
@@ -38,7 +31,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
       name: "About me",
       shortcut: ["a"],
       keywords: "about",
-      icon: <BsFillFilePersonFill size={16} />,
+      icon: null,
       perform: () => router.push("/about"),
     },
     {
@@ -46,7 +39,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
       name: "Github",
       shortcut: ["i"],
       keywords: "github",
-      icon: <BsGithub size={16} />,
+      icon: null,
       section: "Socials",
       perform: () => router.push("https://github.com/gustavo-fior"),
     },
@@ -55,7 +48,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
       name: "Email",
       shortcut: ["e"],
       keywords: "contact",
-      icon: <BsEnvelopeFill size={16} />,
+      icon: null,
       section: "Socials",
       perform: () => router.push("mailto:gustavo_fior@outlook.com"),
     },
@@ -64,7 +57,7 @@ const CommandBar: React.FC<CommandBarProps> = ({ children }) => {
       name: "LinkedIn",
       shortcut: ["l"],
       keywords: "linkedin",
-      icon: <BsLinkedin size={16} />,
+      icon: null,
       section: "Socials",
       perform: () =>
         router.push("https://linkedin.com/in/gustavo-fior-a910781b4/"),

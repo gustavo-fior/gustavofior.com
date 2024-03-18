@@ -1,21 +1,16 @@
+import {
+  EnvelopeClosedIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+} from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
-import { BsArrowRightShort } from "react-icons/bs";
+import ContentWrapper from "~/components/ContentWrapper";
+import { primaryOrange } from "~/utils/colors";
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    const load = document.getElementsByClassName("load");
-    if (load.length > 0) {
-      for (let i = 0; i < load.length; i++) {
-        load[i]?.classList.remove("-translate-y-6");
-        load[i]?.classList.remove("opacity-0");
-      }
-    }
-  }, []);
-
   return (
     <>
       <Head>
@@ -32,7 +27,66 @@ const Home: NextPage = () => {
           content="https://www.gustavofior.com/api/og"
         />
       </Head>
-      <div className="flex h-screen flex-col justify-center px-8 align-middle text-white md:px-24">
+      <ContentWrapper>
+        <div className="flex flex-row items-center justify-between pb-8 pt-24">
+          <div>
+            <h1 className="text-2xl font-bold md:text-3xl">Gustavo Fior</h1>
+            <div
+              className={`mt-1 border-[0.1rem] border-[${primaryOrange}] w-48 rounded-full`}
+            />
+          </div>
+          <div className={`flex gap-5`}>
+            <Link target="_blank" href="mailto:gustavo_fior@outlook.com">
+              <motion.div
+                whileTap={{ scale: 0.9 }}
+                className=" transition duration-200 ease-in-out"
+              >
+                <EnvelopeClosedIcon
+                  className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
+                />
+              </motion.div>
+            </Link>
+            <Link target="_blank" href="https://github.com/gustavo-fior">
+              <motion.div
+                whileTap={{ scale: 0.9 }}
+                className="transition duration-200 ease-in-out"
+              >
+                <GitHubLogoIcon
+                  className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
+                />
+              </motion.div>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://linkedin.com/in/gustavo-fior-a910781b4/"
+            >
+              <motion.div
+                whileTap={{ scale: 0.9 }}
+                className=" transition duration-200 ease-in-out"
+              >
+                <LinkedInLogoIcon
+                  className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
+                />
+              </motion.div>
+            </Link>
+          </div>
+        </div>
+        <p className="text-base text-zinc-400">
+          A{" "}
+          <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
+            brazilian{" "}
+          </span>
+          software developer who loves to code, surf and learn new things.{" "}
+          <span className="hidden text-white sm:inline">
+            Try{" "}
+            <span className="rounded-md bg-white bg-opacity-20 p-0.5">⌘</span>{" "}
+            <span className="rounded-md bg-white bg-opacity-20 px-1.5 py-0.5">
+              k
+            </span>
+          </span>
+        </p>
+      </ContentWrapper>
+      {/* <div className="flex h-screen flex-col justify-center px-8 align-middle text-white md:px-24">
         <div className="flex flex-col">
           <div className="load flex -translate-y-6 flex-wrap opacity-0 transition duration-1000 md:space-x-4">
             <h1 className="text-5xl font-bold lg:text-7xl">
@@ -87,7 +141,7 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

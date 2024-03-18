@@ -40,9 +40,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Analytics />
       <CommandBar>
         <MDXProvider components={components as unknown as Components}>
-          <main className="firefox-scrollbar-fix text-white bg-zinc-950">
-              {/* <Header /> */}
-              <Component {...pageProps} />
+          {/* div to keep zinc background fixed (not show white bg when scrolled further in mac) */}
+
+          <main className="firefox-scrollbar-fix bg-zinc-950 text-white">
+            {/* <Header /> */}
+            <Component {...pageProps} />
           </main>
         </MDXProvider>
       </CommandBar>
