@@ -42,7 +42,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <MDXProvider components={components as unknown as Components}>
           {/* div to keep zinc background fixed (not show white bg when scrolled further in mac) */}
 
-          <main className="firefox-scrollbar-fix bg-zinc-950 text-white">
+          <main className="firefox-scrollbar-fix bg-zinc-950 text-white min-h-screen">
             {/* <Header /> */}
             <Component {...pageProps} />
           </main>

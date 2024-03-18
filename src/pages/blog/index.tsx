@@ -43,8 +43,8 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <ContentWrapper>
         <h1 className="pt-24 text-2xl font-bold md:text-3xl">Posts</h1>
-        <div className="border-[0.1rem] mt-1 border-[#e64100] w-[5.5rem] mb-12 rounded-full"/>
-        <motion.ul className="flex flex-col gap-4">
+        <div className="border-[0.1rem] mt-1 border-[#e64100] w-[5.5rem] mb-8 rounded-full"/>
+        <motion.ul className="flex flex-col">
           {sortedPostsMetadata.map((post) => {
             return (
               <motion.li key={post.slug}>

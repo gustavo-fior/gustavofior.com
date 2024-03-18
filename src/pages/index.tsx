@@ -1,16 +1,35 @@
-import {
-  EnvelopeClosedIcon,
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-} from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
-import { type NextPage } from "next";
+import fs from "fs";
+import matter from "gray-matter";
+import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
+import path from "path";
 import Link from "next/link";
+import { BsArrowRightShort } from "react-icons/bs";
+import { HiEnvelope } from "react-icons/hi2";
+import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import ContentWrapper from "~/components/ContentWrapper";
+import LinkText from "~/components/md/LinkText";
 import { primaryOrange } from "~/utils/colors";
+import PostPreview from "~/components/PostPreview";
 
-const Home: NextPage = () => {
+interface BlogPageProps {
+  postsMetadata: PostMetadata[];
+}
+
+interface PostMetadata {
+  title: string;
+  slug: string;
+  description: string;
+  date: string;
+  emoji: string;
+}
+
+const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
+  const sortedPostsMetadata = postsMetadata
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
+
   return (
     <>
       <Head>
@@ -28,20 +47,19 @@ const Home: NextPage = () => {
         />
       </Head>
       <ContentWrapper>
-        <div className="flex flex-row items-center justify-between pb-8 pt-24">
-          <div>
-            <h1 className="text-2xl font-bold md:text-3xl">Gustavo Fior</h1>
-            <div
-              className={`mt-1 border-[0.1rem] border-[${primaryOrange}] w-48 rounded-full`}
-            />
-          </div>
-          <div className={`flex gap-5`}>
+        <div className="flex flex-col items-center justify-between pb-8 pt-24 sm:flex-row">
+          <h1
+            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
+          >
+            Gustavo Fior
+          </h1>
+          <div className={`mt-6 flex gap-10 sm:mt-0 sm:gap-5`}>
             <Link target="_blank" href="mailto:gustavo_fior@outlook.com">
               <motion.div
                 whileTap={{ scale: 0.9 }}
                 className=" transition duration-200 ease-in-out"
               >
-                <EnvelopeClosedIcon
+                <HiEnvelope
                   className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
                 />
               </motion.div>
@@ -51,7 +69,7 @@ const Home: NextPage = () => {
                 whileTap={{ scale: 0.9 }}
                 className="transition duration-200 ease-in-out"
               >
-                <GitHubLogoIcon
+                <RxGithubLogo
                   className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
                 />
               </motion.div>
@@ -64,76 +82,49 @@ const Home: NextPage = () => {
                 whileTap={{ scale: 0.9 }}
                 className=" transition duration-200 ease-in-out"
               >
-                <LinkedInLogoIcon
+                <RxLinkedinLogo
                   className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
                 />
               </motion.div>
             </Link>
           </div>
         </div>
-        <p className="text-base text-zinc-400">
+        <p className="text-base text-white">
           A{" "}
-          <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
+          <span className="bg-gradient-to-tr from-green-500 to-yellow-300 to-60% bg-clip-text text-transparent">
             brazilian{" "}
           </span>
           software developer who loves to code, surf and learn new things.{" "}
-          <span className="hidden text-white sm:inline">
-            Try{" "}
-            <span className="rounded-md bg-white bg-opacity-20 p-0.5">⌘</span>{" "}
-            <span className="rounded-md bg-white bg-opacity-20 px-1.5 py-0.5">
-              k
-            </span>
+          <span className="hidden text-zinc-400 sm:inline">
+            Try <span className="rounded-md bg-zinc-800 p-0.5">⌘</span>{" "}
+            <span className="rounded-md bg-zinc-800 px-1.5 py-0.5">k</span>
           </span>
         </p>
-      </ContentWrapper>
-      {/* <div className="flex h-screen flex-col justify-center px-8 align-middle text-white md:px-24">
-        <div className="flex flex-col">
-          <div className="load flex -translate-y-6 flex-wrap opacity-0 transition duration-1000 md:space-x-4">
-            <h1 className="text-5xl font-bold lg:text-7xl">
-              Hi! I&apos;m{" "}
-              <span className=" top-20 text-white mix-blend-difference">
-                Gustavo
-              </span>
-            </h1>
-          </div>
-          <div className="load -translate-y-6 pb-5 pt-3 opacity-0 transition duration-700">
-            <p className=" text-xl text-slate-300">
-              A{" "}
-              <span className="bg-gradient-to-tr from-green-500  to-yellow-300 to-60% bg-clip-text text-transparent">
-                brazilian{" "}
-              </span>
-              software developer who loves to code, surf and{" "}
-              <br className="hidden md:inline" />
-              learn new things.{" "}
-              <span className="hidden text-white sm:inline">
-                Try{" "}
-                <span className="rounded-md bg-white bg-opacity-20 p-0.5">
-                  ⌘
-                </span>{" "}
-                <span className="rounded-md bg-white bg-opacity-20 px-1.5 py-0.5">
-                  k
-                </span>
-              </span>
-            </p>
-          </div>
-
-          <div className="load flex -translate-y-6 items-center  gap-4 opacity-0 transition duration-500">
-            <Link href="/about">
-              <motion.div
-                whileHover={{ scale: 1.015 }}
-                className="rounded-full bg-white px-4 py-1.5 transition duration-200 ease-in-out hover:bg-opacity-80"
-              >
-                <div className="flex items-center gap-2">
-                  <p>🙋🏼‍♂️</p>
-                  <p className="mix-blend-difference">About me</p>
-                </div>
-              </motion.div>
-            </Link>
+        <br />
+        <ul className="mb-12 space-y-2 whitespace-pre text-base text-zinc-400">
+          <li>📍 Curitiba, Brazil (UTC-3)</li>
+          <li>
+            💻 Software Engineer @{" "}
+            <LinkText href="https://sbcash.com.br">SB Cash</LinkText>
+          </li>
+          <li>🎓 B.Sc Business @ FAE</li>
+        </ul>
+        <div className="flex flex-row items-center justify-between pb-8">
+          <h2
+            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
+          >
+            Blog
+          </h2>
+          <div className={`mt-6 flex gap-10 sm:mt-0 sm:gap-5`}>
             <Link href="/blog">
-              <div className="group rounded-full bg-white bg-opacity-20 px-4 py-1.5 drop-shadow-lg backdrop-blur-lg duration-200 hover:bg-opacity-40">
+              <div className="group">
                 <div className="flex items-center gap-2">
-                  <p>My blog</p>
-                  <div className="flex items-center transition-transform duration-500 group-hover:translate-x-1">
+                  <p
+                    className={`underline transition duration-200 ease-in-out `}
+                  >
+                    Older posts
+                  </p>
+                  <div className="flex items-center transition-transform duration-300 group-hover:translate-x-0.5">
                     <BsArrowRightShort size={24} />
                   </div>
                 </div>
@@ -141,9 +132,43 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-      </div> */}
+        <ul className="flex flex-col">
+          {sortedPostsMetadata.map((postMetadata) => (
+            <motion.li key={postMetadata.slug}>
+              <PostPreview
+                title={postMetadata.title}
+                description={postMetadata.description}
+                date={postMetadata.date}
+                slug={postMetadata.slug}
+              />
+            </motion.li>
+          ))}
+        </ul>
+      </ContentWrapper>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<BlogPageProps> = () => {
+  const postsDirectory = path.join(process.cwd(), "src", "posts");
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  const mdxFiles = fileNames.filter(
+    (fileName) => path.extname(fileName) === ".mdx"
+  );
+
+  const postsMetadata: PostMetadata[] = mdxFiles.map((fileName) => {
+    const filePath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContents);
+    return data as PostMetadata;
+  });
+
+  return {
+    props: {
+      postsMetadata,
+    },
+  };
 };
 
 export default Home;
