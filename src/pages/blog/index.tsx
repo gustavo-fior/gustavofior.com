@@ -7,11 +7,11 @@ import path from "path";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostPreview from "~/components/PostPreview";
 
-interface BlogPageProps {
+export interface BlogPageProps {
   postsMetadata: PostMetadata[];
 }
 
-interface PostMetadata {
+export interface PostMetadata {
   title: string;
   slug: string;
   description: string;

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-type Song = {
+export type Song = {
   isPlaying: boolean;
   title: string;
   artist: string;
@@ -17,9 +17,10 @@ const Spotify = ({ song }: { song: Song }) => {
     initial={{ opacity: 0, y: -6 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4 }}
+    className="fixed bottom-4 left-4 z-50"
     >
       <Link href={song?.songUrl ?? ""} target="_blank">
-        <div className="group rounded-full py-2 pl-2 pr-5 backdrop-blur-lg ">
+        <div className="group rounded-lg bg-zinc-900 p-1 md:p-2">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-3 transition duration-300 group-hover:opacity-80 ">
               <Image

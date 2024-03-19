@@ -3,32 +3,43 @@ import fs from "fs";
 import matter from "gray-matter";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
-import path from "path";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import path from "path";
+import { useEffect, useState } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import { HiEnvelope } from "react-icons/hi2";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import ContentWrapper from "~/components/ContentWrapper";
+import PostPreview from "~/components/PostPreview";
+import Spotify, { type Song } from "~/components/Spotify";
 import LinkText from "~/components/md/LinkText";
 import { primaryOrange } from "~/utils/colors";
-import PostPreview from "~/components/PostPreview";
-
-interface BlogPageProps {
-  postsMetadata: PostMetadata[];
-}
-
-interface PostMetadata {
-  title: string;
-  slug: string;
-  description: string;
-  date: string;
-  emoji: string;
-}
+import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
+  const [showSong, setShowSong] = useState<boolean>(false);
+  const [song, setSong] = useState<Song | null>(null);
+  const { asPath } = useRouter();
   const sortedPostsMetadata = postsMetadata
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
+
+    useEffect(() => {
+      const apiUrl = "/api/spotify/song";
+  
+      if (asPath === "/") {
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            setSong(data as Song);
+            setShowSong(true);
+          })
+          .catch((error) => {
+            console.error("Error fetching data from API:", error);
+          });
+      }
+    }, [asPath]);
 
   return (
     <>
@@ -47,6 +58,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         />
       </Head>
       <ContentWrapper>
+        {showSong && song && <Spotify song={song} />}
         <div className="flex flex-col items-center justify-between pb-8 pt-24 sm:flex-row">
           <h1
             className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
@@ -108,6 +120,20 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <LinkText href="https://sbcash.com.br">SB Cash</LinkText>
           </li>
           <li>🎓 B.Sc Business @ FAE</li>
+        </ul>
+        <div className="flex flex-row items-center justify-between pb-8">
+          <h2
+            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
+          >
+            Work
+          </h2>
+        </div>
+        <ul className="flex flex-row justify-between pb-8">
+          <div className="rounded-lg bg-zinc-900 p-1 md:p-2 border-[1px] border-zinc-800">
+            <div className="h-[10rem] w-[12rem] rounded-md bg-zinc-800"></div>
+            <p className="mt-4 pl-1 font-semibold text-white">Bookmarks</p>
+            <p className="pl-1 text-zinc-400">A simple bookmark manager</p>
+          </div>
         </ul>
         <div className="flex flex-row items-center justify-between pb-8">
           <h2
