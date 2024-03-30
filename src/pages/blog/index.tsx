@@ -43,9 +43,8 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           content="https://www.gustavofior.com/api/og"
         />
       </Head>
-      <BackButton />
       <ContentWrapper>
-        {/* back button */}
+        <BackButton />
         <h1 className="text-2xl font-bold md:text-3xl">Posts</h1>
         <div
           className={`mb-8 mt-1 w-[5.5rem] rounded-full border-[0.1rem] border-[${primaryOrange}]`}

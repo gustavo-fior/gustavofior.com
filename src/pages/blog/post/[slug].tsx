@@ -39,9 +39,9 @@ const Post = ({ metadata, content }: PostProps) => {
           content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}
         />
       </Head>
-      <BackButton />
 
       <ContentWrapper>
+        <BackButton />
         <PostHeader
           title={metadata.title}
           date={metadata.date}
