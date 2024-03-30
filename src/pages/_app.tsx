@@ -3,7 +3,6 @@ import { type Components } from "@mdx-js/react/lib";
 import { Analytics } from "@vercel/analytics/react";
 import { type AppType } from "next/app";
 import CommandBar from "~/components/CommandBar";
-import Header from "~/components/Header";
 import Code from "~/components/md/Code";
 import CustomImage from "~/components/md/CustomImage";
 import H1 from "~/components/md/H1";
@@ -40,8 +39,6 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Analytics />
       <CommandBar>
         <MDXProvider components={components as unknown as Components}>
-          {/* div to keep zinc background fixed (not show white bg when scrolled further in mac) */}
-
           <main className="firefox-scrollbar-fix bg-zinc-950 text-white min-h-screen">
             {/* <Header /> */}
             <Component {...pageProps} />

@@ -5,6 +5,7 @@ import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import path from "path";
+import BackButton from "~/components/BackButton";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostHeader from "~/components/PostHeader";
 
@@ -22,7 +23,6 @@ interface PostProps {
 }
 
 const Post = ({ metadata, content }: PostProps) => {
-
   return (
     <div>
       <Head>
@@ -39,6 +39,8 @@ const Post = ({ metadata, content }: PostProps) => {
           content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}
         />
       </Head>
+      <BackButton />
+
       <ContentWrapper>
         <PostHeader
           title={metadata.title}

@@ -12,7 +12,7 @@ import { HiEnvelope } from "react-icons/hi2";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostPreview from "~/components/PostPreview";
-import Spotify, { type Song } from "~/components/Spotify";
+import { type Song } from "~/components/Spotify";
 import LinkText from "~/components/md/LinkText";
 import { primaryOrange } from "~/utils/colors";
 import { type BlogPageProps, type PostMetadata } from "./blog";
@@ -25,21 +25,21 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
-    useEffect(() => {
-      const apiUrl = "/api/spotify/song";
-  
-      if (asPath === "/") {
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((data) => {
-            setSong(data as Song);
-            setShowSong(true);
-          })
-          .catch((error) => {
-            console.error("Error fetching data from API:", error);
-          });
-      }
-    }, [asPath]);
+  useEffect(() => {
+    const apiUrl = "/api/spotify/song";
+
+    if (asPath === "/") {
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          setSong(data as Song);
+          setShowSong(true);
+        })
+        .catch((error) => {
+          console.error("Error fetching data from API:", error);
+        });
+    }
+  }, [asPath]);
 
   return (
     <>
@@ -58,10 +58,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         />
       </Head>
       <ContentWrapper>
-        {showSong && song && <Spotify song={song} />}
+        {/* {showSong && song && <Spotify song={song} />} */}
         <div className="flex flex-col items-center justify-between pb-8 pt-24 sm:flex-row">
           <h1
-            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
+            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-1`}
           >
             Gustavo Fior
           </h1>
@@ -101,16 +101,16 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </Link>
           </div>
         </div>
-        <p className="text-base text-white">
+        <p className="mt-6 text-base text-white sm:mt-0">
           A{" "}
           <span className="bg-gradient-to-tr from-green-500 to-yellow-300 to-60% bg-clip-text text-transparent">
             brazilian{" "}
           </span>
           software developer who loves to code, surf and learn new things.{" "}
-          <span className="hidden text-zinc-400 sm:inline">
+          {/* <span className="hidden text-zinc-400 sm:inline">
             Try <span className="rounded-md bg-zinc-800 p-0.5">⌘</span>{" "}
             <span className="rounded-md bg-zinc-800 px-1.5 py-0.5">k</span>
-          </span>
+          </span> */}
         </p>
         <br />
         <ul className="mb-12 space-y-2 whitespace-pre text-base text-zinc-400">
@@ -121,11 +121,11 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </li>
           <li>🎓 B.Sc Business @ FAE</li>
         </ul>
-        <div className="flex flex-row items-center justify-between pb-8">
+        {/* <div className="flex flex-row items-center justify-between pb-8">
           <h2
             className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
           >
-            Work
+            Projects
           </h2>
         </div>
         <ul className="flex flex-row justify-between pb-8">
@@ -134,23 +134,25 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <p className="mt-4 pl-1 font-semibold text-white">Bookmarks</p>
             <p className="pl-1 text-zinc-400">A simple bookmark manager</p>
           </div>
-        </ul>
+        </ul> */}
         <div className="flex flex-row items-center justify-between pb-8">
-          <h2
-            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
-          >
-            Blog
-          </h2>
-          <div className={`mt-6 flex gap-10 sm:mt-0 sm:gap-5`}>
+          <div>
+            <h2
+              className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white`}
+            >
+              Blog
+            </h2>
+          </div>
+          <div className={`flex gap-5`}>
             <Link href="/blog">
               <div className="group">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 align-middle group-hover:text-zinc-400">
                   <p
                     className={`underline transition duration-200 ease-in-out `}
                   >
                     Older posts
                   </p>
-                  <div className="flex items-center transition-transform duration-300 group-hover:translate-x-0.5">
+                  <div className="hidden items-center transition-transform duration-300 group-hover:translate-x-0.5 sm:flex">
                     <BsArrowRightShort size={24} />
                   </div>
                 </div>

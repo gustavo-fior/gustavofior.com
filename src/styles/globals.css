@@ -25,6 +25,14 @@
   firefox-scrollbar-fix {
     scrollbar-width: none;
   }
+
+  html {
+    background-color: #09090b;
+  }
+  
+  body {
+    background-color: #09090b;
+  }
 }
 
 

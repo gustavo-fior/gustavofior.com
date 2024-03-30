@@ -4,8 +4,10 @@ import matter from "gray-matter";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import path from "path";
+import BackButton from "~/components/BackButton";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostPreview from "~/components/PostPreview";
+import { primaryOrange } from "~/utils/colors";
 
 export interface BlogPageProps {
   postsMetadata: PostMetadata[];
@@ -41,9 +43,13 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           content="https://www.gustavofior.com/api/og"
         />
       </Head>
+      <BackButton />
       <ContentWrapper>
-        <h1 className="pt-24 text-2xl font-bold md:text-3xl">Posts</h1>
-        <div className="border-[0.1rem] mt-1 border-[#e64100] w-[5.5rem] mb-8 rounded-full"/>
+        {/* back button */}
+        <h1 className="text-2xl font-bold md:text-3xl">Posts</h1>
+        <div
+          className={`mb-8 mt-1 w-[5.5rem] rounded-full border-[0.1rem] border-[${primaryOrange}]`}
+        />
         <motion.ul className="flex flex-col">
           {sortedPostsMetadata.map((post) => {
             return (
