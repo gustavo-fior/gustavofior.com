@@ -1,18 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Inter");
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;900&display=swap');
 
 @layer components {
-  #gradient-canvas {
-    width: 100%;
-    height: 100%;
-    --gradient-color-1: #042234;
-    --gradient-color-2: #032030;
-    --gradient-color-3: #166a4e;
-    --gradient-color-4: #093639;
-    z-index: 0;
-  }
 
   ::selection {
     background: #e641008f;
@@ -32,6 +24,12 @@
   
   body {
     background-color: #09090b;
+  }
+}
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
   }
 }
 

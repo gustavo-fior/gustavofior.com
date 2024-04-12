@@ -45,10 +45,11 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <ContentWrapper>
         <BackButton />
-        <h1 className="text-2xl font-bold md:text-3xl">Posts</h1>
-        <div
-          className={`mb-8 mt-1 w-[5.5rem] rounded-full border-[0.1rem] border-[${primaryOrange}]`}
-        />
+        <h1
+          className={` w-min border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-1 mb-8`}
+        >
+          Posts
+        </h1>
         <motion.ul className="flex flex-col">
           {sortedPostsMetadata.map((post) => {
             return (

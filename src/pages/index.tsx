@@ -113,8 +113,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </span> */}
         </p>
         <br />
-        <ul className="mb-12 space-y-2 whitespace-pre text-base text-zinc-400">
-          <li>📍 Curitiba, Brazil (UTC-3)</li>
+        <ul className="mb-12 space-y-2 text-base text-zinc-400">
+          <li>📍 Curitiba, Brazil</li>
           <li>
             💻 Software Engineer @{" "}
             <LinkText href="https://sbcash.com.br">SB Cash</LinkText>
@@ -136,13 +136,11 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </div>
         </ul> */}
         <div className="flex flex-row items-center justify-between pb-8">
-          <div>
-            <h2
-              className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white`}
-            >
-              Blog
-            </h2>
-          </div>
+          <h2
+            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-1`}
+          >
+            Blog
+          </h2>
           <div className={`flex gap-5`}>
             <Link href="/blog">
               <div className="group">
