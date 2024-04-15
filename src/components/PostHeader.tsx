@@ -1,4 +1,3 @@
-import { primaryOrange } from "~/utils/colors";
 
 interface PostHeaderProps {
   title: string;
@@ -16,7 +15,7 @@ const PostHeader = ({ title, readTime, date, emoji }: PostHeaderProps) => {
             {title}
           </h1>
           <h3 className="text-sm text-neutral-500 md:text-base">
-            {date} <span className={`text-[${primaryOrange}]`}>•</span>{" "}
+            {date} <span className={`text-[#e64100]`}>•</span>{" "}
             <span className="italic">{readTime}</span>
           </h3>
         </div>
