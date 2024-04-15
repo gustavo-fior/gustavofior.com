@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import { MDXProvider } from "@mdx-js/react";
 import { type Components } from "@mdx-js/react/lib";
 import { Analytics } from "@vercel/analytics/react";
 import { type AppType } from "next/app";
-import CommandBar from "~/components/CommandBar";
+import Head from "next/head";
 import Code from "~/components/md/Code";
 import CustomImage from "~/components/md/CustomImage";
 import H1 from "~/components/md/H1";
@@ -37,14 +38,26 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Analytics />
-      <CommandBar>
-        <MDXProvider components={components as unknown as Components}>
-          <main className="firefox-scrollbar-fix bg-zinc-950 text-white min-h-screen">
-            {/* <Header /> */}
-            <Component {...pageProps} />
-          </main>
-        </MDXProvider>
-      </CommandBar>
+      <MDXProvider components={components as unknown as Components}>
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <main className="firefox-scrollbar-fix min-h-screen bg-neutral-900 text-neutral-200">
+          {/* <Header /> */}
+          <Component {...pageProps} />
+        </main>
+      </MDXProvider>
     </>
   );
 };

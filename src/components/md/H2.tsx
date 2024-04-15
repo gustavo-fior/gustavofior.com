@@ -5,7 +5,7 @@ interface H2Props {
 }
 
 const H2 = ({ children }: H2Props) => {
-  return <h2 className="text-2xl font-bold py-2">{children}</h2>;
+  return <h2 className="text-2xl text-neutral-200 font-medium py-2">{children}</h2>;
 };
 
 export default H2;

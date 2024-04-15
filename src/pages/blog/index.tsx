@@ -7,7 +7,6 @@ import path from "path";
 import BackButton from "~/components/BackButton";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostPreview from "~/components/PostPreview";
-import { primaryOrange } from "~/utils/colors";
 
 export interface BlogPageProps {
   postsMetadata: PostMetadata[];
@@ -46,7 +45,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       <ContentWrapper>
         <BackButton />
         <h1
-          className={` w-min border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-1 mb-8`}
+          className={`text-lg font-semibold mb-8 text-neutral-400`}
         >
           Posts
         </h1>

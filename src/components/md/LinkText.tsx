@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { primaryOrange } from "~/utils/colors";
 
 interface LinkTextProps {
   href: string;
@@ -10,7 +9,7 @@ const LinkText = ({ children, href }: LinkTextProps) => {
   return (
     <Link
       href={href}
-      className={`text-[${primaryOrange}] underline transition duration-200 ease-in-out hover:text-[#e64100a9]`}
+      className={`underline transition duration-200 ease-in-out text-neutral-200 decoration-neutral-500 hover:decoration-[#e64100]`}
       target="_blank"
     >
       {children}

@@ -5,7 +5,7 @@ interface LiProps {
 }
 
 const Li = ({ children }: LiProps) => {
-  return <li className="py-1">{children}</li>;
+  return <li className="py-1 text-neutral-400">{children}</li>;
 };
 
 export default Li;

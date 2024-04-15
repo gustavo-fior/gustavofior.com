@@ -2,7 +2,7 @@ import { RxArrowLeft } from "react-icons/rx";
 
 const BackButton = () => {
   return (
-    <div className="py-12">
+    <div className="pt-12 pb-6">
 
       <RxArrowLeft
         className={`cursor-pointer text-2xl transition duration-200 ease-in-out hover:text-[#e64100]`}

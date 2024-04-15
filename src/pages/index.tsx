@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
@@ -7,7 +8,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import path from "path";
 import { useEffect, useState } from "react";
-import { BsArrowRightShort } from "react-icons/bs";
 import { HiEnvelope } from "react-icons/hi2";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import ContentWrapper from "~/components/ContentWrapper";
@@ -58,21 +58,20 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         />
       </Head>
       <ContentWrapper>
-        {/* {showSong && song && <Spotify song={song} />} */}
-        <div className="flex flex-col items-center justify-between pb-8 pt-24 sm:flex-row">
+        <div className="flex items-center justify-between sm:pb-8 pt-16 sm:pt-32">
           <h1
-            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-1`}
+            className={`text-lg font-semibold text-neutral-500`}
           >
             Gustavo Fior
           </h1>
-          <div className={`mt-6 flex gap-10 sm:mt-0 sm:gap-5`}>
+          <div className={`flex gap-8 sm:gap-5`}>
             <Link target="_blank" href="mailto:gustavo_fior@outlook.com">
               <motion.div
                 whileTap={{ scale: 0.9 }}
                 className=" transition duration-200 ease-in-out"
               >
                 <HiEnvelope
-                  className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
+                  className={`h-5 w-5 text-neutral-200 hover:text-[${primaryOrange}] transition-colors duration-200`}
                 />
               </motion.div>
             </Link>
@@ -82,7 +81,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 className="transition duration-200 ease-in-out"
               >
                 <RxGithubLogo
-                  className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
+                  className={`h-5 w-5 text-neutral-200 hover:text-[${primaryOrange}] transition-colors duration-200`}
                 />
               </motion.div>
             </Link>
@@ -95,70 +94,23 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 className=" transition duration-200 ease-in-out"
               >
                 <RxLinkedinLogo
-                  className={`h-6 w-6 text-white hover:text-[${primaryOrange}] transition-colors duration-200`}
+                  className={`h-5 w-5 text-neutral-200 hover:text-[${primaryOrange}] transition-colors duration-200`}
                 />
               </motion.div>
             </Link>
           </div>
         </div>
-        <p className="mt-6 text-base text-white sm:mt-0">
-          A{" "}
-          <span className="bg-gradient-to-tr from-green-500 to-yellow-300 to-60% bg-clip-text text-transparent">
-            brazilian{" "}
-          </span>
-          software developer who loves to code, surf and learn new things.{" "}
-          {/* <span className="hidden text-zinc-400 sm:inline">
-            Try <span className="rounded-md bg-zinc-800 p-0.5">⌘</span>{" "}
-            <span className="rounded-md bg-zinc-800 px-1.5 py-0.5">k</span>
-          </span> */}
+        <p className="mt-12 pb-6 text-base text-neutral-200 sm:mt-0">
+          Just a brazilian guy who loves to code, surf and learn new things.
         </p>
-        <br />
-        <ul className="mb-12 space-y-2 text-base text-zinc-400">
-          <li>📍 Curitiba, Brazil</li>
-          <li>
-            💻 Software Engineer @{" "}
-            <LinkText href="https://sbcash.com.br">SB Cash</LinkText>
-          </li>
-          <li>🎓 B.Sc Business @ FAE</li>
-        </ul>
-        {/* <div className="flex flex-row items-center justify-between pb-8">
-          <h2
-            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-2`}
-          >
-            Projects
-          </h2>
-        </div>
-        <ul className="flex flex-row justify-between pb-8">
-          <div className="rounded-lg bg-zinc-900 p-1 md:p-2 border-[1px] border-zinc-800">
-            <div className="h-[10rem] w-[12rem] rounded-md bg-zinc-800"></div>
-            <p className="mt-4 pl-1 font-semibold text-white">Bookmarks</p>
-            <p className="pl-1 text-zinc-400">A simple bookmark manager</p>
-          </div>
-        </ul> */}
-        <div className="flex flex-row items-center justify-between pb-8">
-          <h2
-            className={`border-[${primaryOrange}] border-b-[0.2rem] text-3xl font-bold text-white md:pb-1`}
-          >
-            Blog
-          </h2>
-          <div className={`flex gap-5`}>
-            <Link href="/blog">
-              <div className="group">
-                <div className="flex items-center gap-1 align-middle group-hover:text-zinc-400">
-                  <p
-                    className={`underline transition duration-200 ease-in-out `}
-                  >
-                    Older posts
-                  </p>
-                  <div className="hidden items-center transition-transform duration-300 group-hover:translate-x-0.5 sm:flex">
-                    <BsArrowRightShort size={24} />
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-        <ul className="flex flex-col">
+
+        <p className="mt-1 pb-12 text-base text-neutral-200 sm:mt-0">
+          Currently living in Curitiba, Brazil and working as a Software
+          Engineer at <LinkText href="https://sbcash.com.br">SB Cash</LinkText>.
+          I also have a B.Sc in Business from FAE.
+        </p>
+        <h2 className={`pb-8 text-lg font-semibold text-neutral-500`}>Blog</h2>
+        <ul className="flex flex-col pb-4">
           {sortedPostsMetadata.map((postMetadata) => (
             <motion.li key={postMetadata.slug}>
               <PostPreview
@@ -170,6 +122,27 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </motion.li>
           ))}
         </ul>
+        <div className={`flex justify-end`}>
+          {/* <Link href="/blog">
+            <div className="group">
+              <div className="flex items-center gap-1 align-middle text-neutral-500 group-hover:text-neutral-300">
+                <p className={`underline transition duration-200 ease-in-out `}>
+                  Older posts
+                </p>
+                <div className="hidden items-center transition-transform duration-300 group-hover:translate-x-0.5 sm:flex">
+                  <BsArrowRightShort size={20} />
+                </div>
+              </div>
+            </div>
+          </Link> */}
+          <Link
+            href="/blog"
+            className={`text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#e64100]`}
+          >
+            Older posts
+          </Link>
+        </div>
+        {/* {showSong && song && <Spotify song={song} />} */}
       </ContentWrapper>
     </>
   );

@@ -36,7 +36,7 @@ const Post = ({ metadata, content }: PostProps) => {
         <meta property="og:site_name" content="Gustavo Fior" />
         <meta
           property="og:image"
-          content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}
+          content={`https://www.gustavofior.com/api/og`}
         />
       </Head>
 

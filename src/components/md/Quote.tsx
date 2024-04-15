@@ -1,12 +1,15 @@
+import { primaryOrange } from "~/utils/colors";
+
 interface QuoteProps {
   children: string;
 }
 
 const Quote = ({ children }: QuoteProps) => {
   return (
-    <blockquote className="rounded-lg bg-zinc-900 py-4 px-5 text-[#e64100]">
-      {children}
-    </blockquote>
+    <div className="flex gap-4 py-4">
+      <div className={`w-0.5 bg-[${primaryOrange}]`} />
+      <blockquote> {children} </blockquote>
+    </div>
   );
 };
 

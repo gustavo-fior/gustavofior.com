@@ -13,86 +13,63 @@ export type Song = {
 
 const Spotify = ({ song }: { song: Song }) => {
   return (
-    <motion.div
-    initial={{ opacity: 0, y: -6 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4 }}
-    className="fixed bottom-4 left-4 z-50"
+    <motion.footer
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="flex justify-center"
     >
       <Link href={song?.songUrl ?? ""} target="_blank">
-        <div className="group rounded-lg bg-zinc-900 p-1 md:p-2">
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-3 transition duration-300 group-hover:opacity-80 ">
-              <Image
-                className="rounded-full"
-                src={song?.albumImageUrl ?? ""}
-                alt="Album cover"
-                priority
-                fill
-                style={{
-                  objectFit: "cover",
-                }}
-              />
-              <div className="absolute inset-0 rounded-full bg-black opacity-70"></div>
-              <div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background:
-                    "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-                }}
-              ></div>
+        <div className="transition duration-200 hover:opacity-80 fixed bottom-12 left-0 right-0 bg-zinc-400 mx-auto flex flex-col">
+          <div className="flex gap-4">
+            <Image
+              className="rounded-lg"
+              src={song?.albumImageUrl ?? ""}
+              alt="Album cover"
+              priority
+              width={36}
+              height={36}
+              style={{
+                objectFit: "cover",
+              }}
+            />
 
-              <div className="z-50 flex gap-2">
+            <div className="flex flex-col gap-1">
+              <div className="flex gap-3">
+                <p className="truncate text-sm font-medium text-neutral-200">
+                  {song?.title
+                    ? song?.title.length > 25
+                      ? song?.title.substring(0, 25) + "..."
+                      : song?.title
+                    : "Not Playing"}
+                </p>
                 <Image
-                  className="rounded-full"
-                  src={song?.albumImageUrl ?? ""}
-                  alt="Album cover"
+                  src="/gifs/waveform.gif"
+                  alt="Waveform"
+                  width={400}
+                  height={400}
                   priority
-                  width={36}
-                  height={36}
                   style={{
-                    objectFit: "cover",
+                    objectFit: "scale-down",
+                    width: "1rem",
+                    height: "1rem",
                   }}
+                  className="flex-shrink-0"
                 />
-
-                <div className="flex flex-col">
-                  <div className="flex gap-2">
-                    <p className="truncate text-sm font-bold text-white">
-                      {song?.title
-                        ? song?.title.length > 25
-                          ? song?.title.substring(0, 25) + "..."
-                          : song?.title
-                        : "Not Playing"}
-                    </p>
-                    <Image
-                      src="/gifs/waveform.gif"
-                      alt="Waveform"
-                      width={480}
-                      height={480}
-                      priority
-                      style={{
-                        objectFit: "scale-down",
-                        width: "1rem",
-                        height: "1rem",
-                      }}
-                      className="flex-shrink-0"
-                    />
-                  </div>
-                  <p className="truncate text-xs text-slate-300">
-                    {song?.artist
-                      ? song?.artist.length > 25
-                        ? song?.artist.substring(0, 25) + "..."
-                        : song?.artist
-                      : "Spotify"}{" "}
-                    • {song?.album ?? "Not Playing"}
-                  </p>
-                </div>
               </div>
+              <p className="truncate text-xs text-neutral-500">
+                {song?.artist
+                  ? song?.artist.length > 25
+                    ? song?.artist.substring(0, 25) + "..."
+                    : song?.artist
+                  : "Spotify"}{" "}
+                • {song?.album ?? "Not Playing"}
+              </p>
             </div>
           </div>
         </div>
       </Link>
-    </motion.div>
+    </motion.footer>
   );
 };
 

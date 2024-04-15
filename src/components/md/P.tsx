@@ -5,7 +5,7 @@ interface PProps {
 }
 
 const P = ({ children }: PProps) => {
-  return <p className="text-zinc-400 text-base">{children}</p>;
+  return <p className="text-neutral-400 text-base">{children}</p>;
 };
 
 export default P;

@@ -5,7 +5,7 @@ interface H3Props {
 }
 
 const H3 = ({ children }: H3Props) => {
-  return <h3 className="text-lg md:text-xl font-bold pt-8 pb-2">{children}</h3>;
+  return <h3 className="text-lg text-neutral-200 font-medium pt-8 pb-2">{children}</h3>;
 };
 
 export default H3;
