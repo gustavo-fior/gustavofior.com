@@ -58,10 +58,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         />
       </Head>
       <ContentWrapper>
-        <div className="flex items-center justify-between sm:pb-8 pt-16 sm:pt-32">
-          <h1
-            className={`text-lg font-semibold text-neutral-500`}
-          >
+        <div className="flex items-center justify-between pt-16 sm:pb-6 sm:pt-24">
+          <h1 className={`text-lg font-semibold text-neutral-200`}>
             Gustavo Fior
           </h1>
           <div className={`flex gap-8 sm:gap-5`}>
@@ -100,16 +98,42 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </Link>
           </div>
         </div>
-        <p className="mt-12 pb-6 text-base text-neutral-200 sm:mt-0">
+        <p className="pb-6 text-base text-neutral-400">
           Just a brazilian guy who loves to code, surf and learn new things.
         </p>
-
-        <p className="mt-1 pb-12 text-base text-neutral-200 sm:mt-0">
+        <p className="mt-1 pb-12 text-base text-neutral-400 sm:mt-0">
           Currently living in Curitiba, Brazil and working as a Software
           Engineer at <LinkText href="https://sbcash.com.br">SB Cash</LinkText>.
           I also have a B.Sc in Business from FAE.
         </p>
-        <h2 className={`pb-8 text-lg font-semibold text-neutral-500`}>Blog</h2>
+
+        <h2 className={`pb-6 text-lg font-semibold text-neutral-200`}>
+          Projects
+        </h2>
+        <div className="grid grid-cols-3 gap-8">
+          <div className="flex flex-col gap-2">
+            <p className={`text-neutral-200`}>5Devs (wip)</p>
+            <p className="pb-12 text-base text-neutral-400">
+              A website to get fake data for testing purposes.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <LinkText href="https://vayo.cc">VAYØ</LinkText>
+            <p className="pb-12 text-base text-neutral-400">
+              A bookmark tool where you can save, search and share your links.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <p>
+              <LinkText href="https://youtu.be/EuF4Mvld-Kc">Mind</LinkText> (failed)
+            </p>
+            <p className="pb-12 text-base text-neutral-400">
+              A mental health app that helps patient and therapist connect.
+            </p>
+          </div>
+        </div>
+
+        <h2 className={`pb-6 text-lg font-semibold text-neutral-200`}>Blog</h2>
         <ul className="flex flex-col pb-4">
           {sortedPostsMetadata.map((postMetadata) => (
             <motion.li key={postMetadata.slug}>

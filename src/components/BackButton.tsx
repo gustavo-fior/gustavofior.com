@@ -5,7 +5,7 @@ const BackButton = () => {
     <div className="pt-12 pb-6">
 
       <RxArrowLeft
-        className={`cursor-pointer text-2xl transition duration-200 ease-in-out hover:text-[#e64100]`}
+        className={`cursor-pointer text-xl transition duration-200 ease-in-out hover:text-[#e64100]`}
         onClick={() => window.history.back()}
       />
     </div>

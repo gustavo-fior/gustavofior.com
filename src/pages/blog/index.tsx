@@ -45,7 +45,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       <ContentWrapper>
         <BackButton />
         <h1
-          className={`text-lg font-semibold mb-8 text-neutral-400`}
+          className={`text-lg font-semibold mb-8 text-neutral-200`}
         >
           Posts
         </h1>
