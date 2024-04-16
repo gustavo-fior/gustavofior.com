@@ -41,6 +41,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
     }
   }, [asPath]);
 
+  useEffect(() => {
+    console.log(`
+    ..####...##..##...####...######...####...##..##...####..
+    .##......##..##..##........##....##..##..##..##..##..##.
+    .##.###..##..##...####.....##....######..##..##..##..##.
+    .##..##..##..##......##....##....##..##...####...##..##.
+    ..####....####....####.....##....##..##....##.....####..
+    ........................................................    
+`);
+  }, []);
+
   return (
     <>
       <Head>
@@ -125,7 +136,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </div>
           <div className="flex flex-col gap-2">
             <p>
-              <LinkText href="https://youtu.be/EuF4Mvld-Kc">Mind</LinkText> (failed)
+              <LinkText href="https://youtu.be/EuF4Mvld-Kc">Mind</LinkText>{" "}
+              (failed)
             </p>
             <p className="pb-12 text-base text-neutral-400">
               A mental health app that helps patient and therapist connect.
