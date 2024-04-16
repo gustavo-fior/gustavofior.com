@@ -1,4 +1,3 @@
-import { primaryOrange } from "~/utils/colors";
 
 interface QuoteProps {
   children: string;
