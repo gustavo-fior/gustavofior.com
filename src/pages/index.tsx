@@ -109,7 +109,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </Link>
           </div>
         </div>
-        <p className="pb-6 text-base text-neutral-400">
+        <p className="pb-6 sm:mt-0 mt-8 text-base text-neutral-400">
           Just a brazilian guy who loves to code, surf and learn new things.
         </p>
         <p className="mt-1 pb-12 text-base text-neutral-400 sm:mt-0">
