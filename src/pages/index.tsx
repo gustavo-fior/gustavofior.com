@@ -109,7 +109,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </Link>
           </div>
         </div>
-        <p className="pb-6 sm:mt-0 mt-8 text-base text-neutral-400">
+        <p className="mt-8 pb-6 text-base text-neutral-400 sm:mt-0">
           Just a brazilian guy who loves to code, surf and learn new things.
         </p>
         <p className="mt-1 pb-12 text-base text-neutral-400 sm:mt-0">
@@ -123,9 +123,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </h2>
         <div className="grid grid-cols-3 gap-8">
           <div className="flex flex-col gap-2">
-            <p className={`text-neutral-200`}>5Devs (wip)</p>
+            <LinkText href="https://5devs-rho.vercel.app/">5Devs</LinkText>
             <p className="pb-12 text-base text-neutral-400">
-              A website to get fake data for testing purposes.
+              A website to get fake brazilian data for testing purposes.
             </p>
           </div>
           <div className="flex flex-col gap-2">
