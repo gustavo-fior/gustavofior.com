@@ -151,7 +151,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </div>
           <div className="flex flex-col gap-2">
             <p>
-              <LinkText href="https://youtu.be/EuF4Mvld-Kc">Mind</LinkText>{" "}
+              <LinkText href="https://apps.apple.com/us/app/mind/id6467673373">Mind</LinkText>{" "}
               (failed)
             </p>
             <p className="pb-12 text-base text-neutral-400">
