@@ -63,9 +63,24 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.gustavofior.com" />
         <meta property="og:site_name" content="Gustavo Fior" />
+
         <meta
           property="og:image"
           content="https://www.gustavofior.com/api/og"
+        />
+
+        <meta
+          property="twitter:image"
+          content="https://www.gustavofior.com/api/og"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:title"
+          content="Gustavo Fior"
+        />
+        <meta
+          property="twitter:description"
+          content="Software engineer"
         />
       </Head>
       <ContentWrapper>

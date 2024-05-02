@@ -36,8 +36,15 @@ const Post = ({ metadata, content }: PostProps) => {
         <meta property="og:site_name" content="Gustavo Fior" />
         <meta
           property="og:image"
-          content={`https://www.gustavofior.com/api/og`}
+          content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}
         />
+        <meta
+          property="twitter:image"
+          content={`https://www.gustavofior.com/api/post/og?title=${metadata.title}&emoji=${metadata.emoji}`}
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={metadata.title} />
+        <meta property="twitter:description" content={metadata.description} />
       </Head>
 
       <ContentWrapper>
