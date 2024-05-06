@@ -74,14 +74,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           content="https://www.gustavofior.com/api/og"
         />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:title"
-          content="Gustavo Fior"
-        />
-        <meta
-          property="twitter:description"
-          content="Software engineer"
-        />
+        <meta property="twitter:title" content="Gustavo Fior" />
+        <meta property="twitter:description" content="Software engineer" />
       </Head>
       <ContentWrapper>
         <div className="flex items-center justify-between pt-16 sm:pb-6 sm:pt-24">
@@ -127,10 +121,25 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <p className="mt-8 pb-6 text-base text-neutral-400 sm:mt-0">
           Just a brazilian guy who loves to code, surf and learn new things.
         </p>
-        <p className="mt-1 pb-12 text-base text-neutral-400 sm:mt-0">
+        <p className="mt-1 pb-6 text-base text-neutral-400 sm:mt-0">
           Currently living in Curitiba, Brazil and working as a Software
           Engineer at <LinkText href="https://sbcash.com.br">SB Cash</LinkText>.
           I also have a B.Sc in Business from FAE.
+        </p>
+        <p className="mt-1 pb-12 text-base text-neutral-400 sm:mt-0">
+          If you want to know more about me, I keep a list of{" "}
+          <LinkText href="https://www.vayo.cc/bookmarks/public/cltpx1nq70001jw1tc90e4ht6">
+            articles
+          </LinkText>
+          ,{" "}
+          <LinkText href="https://www.vayo.cc/bookmarks/public/cltsyb1520005usxztdabvof5">
+            videos
+          </LinkText>
+          {" "}and{" "}
+          <LinkText href="https://www.vayo.cc/bookmarks/public/clublk9rh000113g5qf4tj038">
+            cool stuff
+          </LinkText>
+          {" "}that I like.
         </p>
 
         <h2 className={`pb-6 text-lg font-semibold text-neutral-200`}>
@@ -151,7 +160,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </div>
           <div className="flex flex-col gap-2">
             <p>
-              <LinkText href="https://apps.apple.com/us/app/mind/id6467673373">Mind</LinkText>{" "}
+              <LinkText href="https://apps.apple.com/us/app/mind/id6467673373">
+                Mind
+              </LinkText>{" "}
               (failed)
             </p>
             <p className="pb-12 text-base text-neutral-400">
