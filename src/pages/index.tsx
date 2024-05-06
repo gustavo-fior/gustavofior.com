@@ -89,7 +89,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             Gustavo Fior
           </h1>
           <div className={`flex gap-8 sm:gap-5`}>
-            <Link target="_blank" href="mailto:gustavo_fior@outlook.com">
+            <Link target="_blank" href="mailto:hey@gustavofior.com">
               <motion.div
                 whileTap={{ scale: 0.9 }}
                 className=" transition duration-200 ease-in-out"
