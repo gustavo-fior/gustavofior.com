@@ -147,7 +147,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </h2>
         <div className="grid grid-cols-3 gap-8">
           <div className="flex flex-col gap-2">
-            <LinkText href="https://5devs-rho.vercel.app/">5Devs</LinkText>
+            <LinkText href="https://5devs.com.br/">5Devs</LinkText>
             <p className="pb-12 text-base text-neutral-400">
               A website to get fake brazilian data for testing purposes.
             </p>
