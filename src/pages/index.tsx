@@ -166,7 +166,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               (failed)
             </p>
             <p className="pb-12 text-base text-neutral-400">
-              A mental health app that helps patient and therapist connect.
+              A mental health app that helps patients and therapists connect.
             </p>
           </div>
         </div>
