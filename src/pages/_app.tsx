@@ -9,6 +9,7 @@ import CustomImage from "~/components/md/CustomImage";
 import H1 from "~/components/md/H1";
 import H2 from "~/components/md/H2";
 import H3 from "~/components/md/H3";
+import Hr from "~/components/md/Hr";
 import Li from "~/components/md/Li";
 import LinkText from "~/components/md/LinkText";
 import OrderedList from "~/components/md/OrderedList";
@@ -33,6 +34,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     ol: OrderedList,
     img: CustomImage,
     pre: Code,
+    hr: Hr
   };
 
   return (
