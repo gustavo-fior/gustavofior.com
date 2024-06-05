@@ -48,7 +48,7 @@ const Post = ({ metadata, content }: PostProps) => {
       </Head>
 
       <ContentWrapper>
-        <BackButton />
+        <BackButton href="/blog" />
         <PostHeader
           title={metadata.title}
           date={metadata.date}

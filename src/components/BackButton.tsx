@@ -1,13 +1,14 @@
+import Link from "next/link";
 import { RxArrowLeft } from "react-icons/rx";
 
-const BackButton = () => {
+const BackButton = ({ href }: { href: string }) => {
   return (
-    <div className="pt-12 pb-6">
-
-      <RxArrowLeft
-        className={`cursor-pointer text-xl transition duration-200 ease-in-out hover:text-[#e64100]`}
-        onClick={() => window.history.back()}
-      />
+    <div className="pb-6 pt-12">
+      <Link href={href}>
+        <RxArrowLeft
+          className={`cursor-pointer text-xl transition duration-200 ease-in-out hover:text-[#e64100]`}
+        />
+      </Link>
     </div>
   );
 };
