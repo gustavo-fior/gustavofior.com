@@ -119,7 +119,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </div>
         </div>
         <p className="mt-8 pb-6 text-base text-neutral-400 sm:mt-0">
-          Just a brazilian guy who loves to code, surf and learn new things.
+          Just a brazilian guy who loves to code, surf, and learn new things.
         </p>
         <p className="mt-1 pb-6 text-base text-neutral-400 sm:mt-0">
           Currently living in Curitiba, Brazil and working as a Software
