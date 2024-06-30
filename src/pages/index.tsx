@@ -47,7 +47,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   return (
     <>
       <Head>
-        <title>Gustavo&apos;s home</title>
+        <title>Gustavo Fior</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Brazilian software engineer" />
         <meta property="og:title" content="Gustavo Fior" />

@@ -29,8 +29,8 @@ export default async function handler() {
             style={{
               display: "flex",
               flexDirection: "column",
-              marginLeft: 240,
-              marginTop: 240,
+              marginLeft: 180,
+              marginTop: 420,
             }}
           >
             <div
