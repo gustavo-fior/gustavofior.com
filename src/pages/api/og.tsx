@@ -15,7 +15,7 @@ export default async function handler() {
       (
         <div
           style={{
-            background: "#171717",
+            background: "#111112",
             height: "100%",
             width: "100%",
             display: "flex",
@@ -30,19 +30,18 @@ export default async function handler() {
               display: "flex",
               flexDirection: "column",
               marginLeft: 240,
-              marginTop: 96,
+              marginTop: 240,
             }}
           >
             <div
               tw="font-bold"
               style={{
                 fontSize: 128,
-                letterSpacing: "-0.025em",
                 fontFamily: "Inter",
                 color: "#e5e5e5",
                 lineHeight: 1.4,
                 whiteSpace: "pre-wrap",
-                fontWeight: 500,
+                fontWeight: 200,
               }}
             >
               Gustavo Fior
@@ -50,14 +49,9 @@ export default async function handler() {
             <div
               tw="font-bold"
               style={{
-                fontSize: 128,
-                letterSpacing: "-0.025em",
+                fontSize: 72,
                 fontFamily: "Inter",
                 color: "#737373",
-                lineHeight: 1.4,
-                whiteSpace: "pre-wrap",
-                fontWeight: 200,
-                fontStyle: "italic",
               }}
             >
               Software Engineer
