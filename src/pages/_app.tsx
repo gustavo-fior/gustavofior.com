@@ -55,7 +55,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             rel="stylesheet"
           />
         </Head>
-        <main className="firefox-scrollbar-fix min-h-screen bg-neutral-900 text-neutral-200">
+        <main className="firefox-scrollbar-fix min-h-screen bg-[#111112] text-neutral-200">
           {/* <Header /> */}
           <Component {...pageProps} />
         </main>

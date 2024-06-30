@@ -10,7 +10,6 @@ const LinkText = ({ children, href }: LinkTextProps) => {
     <Link
       href={href}
       className={`underline transition duration-200 ease-in-out text-neutral-200 decoration-neutral-500 hover:decoration-[#e64100]`}
-      target="_blank"
     >
       {children}
     </Link>

@@ -11,15 +11,15 @@ const PostHeader = ({ title, readTime, date, emoji }: PostHeaderProps) => {
     <>
       <div className="flex flex-row items-center justify-between gap-4 pb-8 align-middle">
         <div>
-          <h1 className="pb-1 text-lg font-semibold text-neutral-200 sm:text-xl">
+          <h1 className="pb-1.5 text-neutral-200">
             {title}
           </h1>
-          <h3 className="text-sm text-neutral-500 md:text-base">
-            {date} <span className={`text-[#e64100]`}>•</span>{" "}
+          <h3 className="text-sm text-neutral-500 whitespace-pre">
+            {date}  <span className={`text-[#e64100] `}>•</span>{"  "}
             <span className="italic">{readTime}</span>
           </h3>
         </div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl mr-4">{emoji}</h1>
+        <h1 className="text-2xl md:text-3xl mr-1">{emoji}</h1>
       </div>
     </>
   );

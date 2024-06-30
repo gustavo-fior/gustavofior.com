@@ -19,7 +19,7 @@ const PostPreview = ({ title, description, date, slug }: PostPreviewProps) => {
           <p className="text-sm text-neutral-500">{description}</p>
         </div>
         <p className="hidden min-w-fit text-sm text-neutral-500 md:block">
-          {new Date(date).toLocaleString('default', { month: 'long' })},{" "}
+          {new Date(date).toLocaleString('default', { month: '2-digit' })}/
           {new Date(date).getFullYear()}
         </p>
       </motion.div>
