@@ -72,7 +72,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <meta property="twitter:description" content="Software engineer" />
       </Head>
       <ContentWrapper>
-        <motion.div
+        <motion.span
           initial={initialAnimation}
           animate={animateAnimation}
           transition={{ duration: 0.4, delay: 0.1 }}
@@ -139,9 +139,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               that I like.
             </p> */}
           </motion.div>
-        </motion.div>
+        </motion.span>
 
-        <motion.div
+        <motion.span
           initial={initialAnimation}
           animate={animateAnimation}
           transition={{ duration: 0.4, delay: 0.3 }}
@@ -185,7 +185,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+        </motion.span>
 
         <motion.div
           initial={initialAnimation}
