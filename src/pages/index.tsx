@@ -39,7 +39,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
   const initialAnimation = shouldAnimate ? { opacity: 0 } : { opacity: 1 };
   const animateAnimation = { opacity: 1 };
-  const initialYAnimation = shouldAnimate ? { y: 40 } : { y: 0 };
+  const initialYAnimation = shouldAnimate ? { y: 15 } : { y: 0 };
   const animateYAnimation = { y: 0 };
 
   return (
