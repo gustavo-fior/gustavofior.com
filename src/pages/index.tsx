@@ -2,20 +2,18 @@
 import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
+import { useAtom } from "jotai";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
-import { useEffect, useState } from "react";
-import { HiEnvelope } from "react-icons/hi2";
+import { useEffect } from "react";
 import { RxEnvelopeOpen, RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostPreview from "~/components/PostPreview";
 import LinkText from "~/components/md/LinkText";
-import { primaryOrange } from "~/utils/colors";
-import { type BlogPageProps, type PostMetadata } from "./blog";
-import { useAtom } from "jotai";
 import { animateAtom } from "~/utils/atoms";
+import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -41,7 +39,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
   const initialAnimation = shouldAnimate ? { opacity: 0 } : { opacity: 1 };
   const animateAnimation = { opacity: 1 };
-  const initialYAnimation = shouldAnimate ? { y: 50 } : { y: 0 };
+  const initialYAnimation = shouldAnimate ? { y: 40 } : { y: 0 };
   const animateYAnimation = { y: 0 };
 
   return (
@@ -191,7 +189,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           transition={{ duration: 0.4, delay: 0.5 }}
         >
           <motion.div
-            initial={shouldAnimate ? { y: 15 } : { y: 0 }}
+            initial={initialYAnimation}
             animate={animateYAnimation}
             transition={{
               delay: 0.5,
