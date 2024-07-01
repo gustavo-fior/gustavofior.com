@@ -17,6 +17,10 @@ import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
+  const stiffness = 490;
+  const mass = 8;
+  const damping = 100;
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -78,9 +82,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.1,
-              damping: 100,
-              mass: 8,
-              stiffness: 370,
+              damping: damping,
+              mass: mass,
+              stiffness: stiffness,
               type: "spring",
             }}
           >
@@ -147,9 +151,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.3,
-              damping: 100,
-              mass: 8,
-              stiffness: 370,
+              damping: damping,
+              mass: mass,
+              stiffness: stiffness,
               type: "spring",
             }}
           >
@@ -193,9 +197,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.5,
-              damping: 100,
-              mass: 8,
-              stiffness: 370,
+              damping: damping,
+              mass: mass,
+              stiffness: stiffness,
               type: "spring",
             }}
           >
@@ -232,9 +236,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.7,
-              damping: 100,
-              mass: 8,
-              stiffness: 390,
+              damping: damping,
+              mass: mass,
+              stiffness: stiffness,
               type: "spring",
             }}
           >
