@@ -45,7 +45,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
     .slice(0, 3);
 
   const initialYAnimation = shouldAnimate
-    ? { y: 25, opacity: 0 }
+    ? { y: 30, opacity: 0 }
     : { y: 0, opacity: 1 };
   const animateYAnimation = { y: 0, opacity: 1 };
 
@@ -79,9 +79,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            delay: 0.1,
-            duration: 5,
-            type: "spring",
+            y : {
+              delay: 0.1,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
+              type: "spring",
+            },
+            opacity: {
+              delay: 0.1,
+              duration: 0.4,
+            }
           }}
         >
           <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
@@ -140,11 +148,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            delay: 0.3,
-            damping: 100,
-            mass: 8,
-            stiffness: 490,
-            type: "spring",
+            y : {
+              delay: 0.3,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
+              type: "spring",
+            },
+            opacity: {
+              delay: 0.3,
+              duration: 0.4,
+            }
           }}
         >
           <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
@@ -179,11 +193,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            delay: 0.5,
-            damping: 100,
-            mass: 8,
-            stiffness: 490,
-            type: "spring",
+            y : {
+              delay: 0.5,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
+              type: "spring",
+            },
+            opacity: {
+              delay: 0.5,
+              duration: 0.4,
+            }
           }}
         >
           <div className="flex justify-between pb-6 align-middle">
@@ -213,11 +233,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            delay: 0.7,
-            damping: 100,
-            mass: 8,
-            stiffness: 490,
-            type: "spring",
+            y : {
+              delay: 0.7,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
+              type: "spring",
+            },
+            opacity: {
+              delay: 0.7 ,
+              duration: 0.4,
+            }
           }}
         >
           <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
