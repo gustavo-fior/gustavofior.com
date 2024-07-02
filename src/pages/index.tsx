@@ -1,17 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { LazyMotion, domAnimation, motion, m } from "framer-motion";
+import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import path from "path";
 import { useEffect } from "react";
-import { RxEnvelopeOpen, RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import ContentWrapper from "~/components/ContentWrapper";
-import PostPreview from "~/components/PostPreview";
-import LinkText from "~/components/md/LinkText";
 import { animateAtom } from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
 
@@ -83,24 +79,22 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             },
           }}
         > */}
-        <LazyMotion features={domAnimation}>
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ ease: "easeOut", duration: 0.35, delay: 0.5 }}
-          >
-            <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
-              <h1 className={`text-lg font-semibold text-neutral-200`}>
-                Gustavo Fior
-              </h1>
-            </div>
-            <p className="mt-4 pb-12 text-base text-neutral-500 sm:mt-0">
-              Just a brazilian software engineer who loves to code, surf, and
-              learn new things.
-            </p>
-          </m.div>
-        </LazyMotion>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ ease: "easeOut", duration: 0.95, delay: 0.5 }}
+        >
+          <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
+            <h1 className={`text-lg font-semibold text-neutral-200`}>
+              Gustavo Fior
+            </h1>
+          </div>
+          <p className="mt-4 pb-12 text-base text-neutral-500 sm:mt-0">
+            Just a brazilian software engineer who loves to code, surf, and
+            learn new things.
+          </p>
+        </motion.div>
 
         {/* <motion.div
           initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
