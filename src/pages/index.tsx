@@ -84,11 +84,13 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           }}
         > */}
           <motion.div
+          key="outer-div"
             initial={{opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
         <motion.div
+          key="inner-div"
           initial={{ y: 20 }} 
           animate={{ y: 0 }}
           transition={{
