@@ -23,6 +23,33 @@
   body {
     background-color: #111112;
   }
+
+  @keyframes smoothFadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-5 {
+    animation: smoothFadeInUp 0.5s cubic-bezier(0,-0.02,.49,.99) 0.1s both;
+  }
+  
+  .animate-7 {
+    animation: smoothFadeInUp 0.5s cubic-bezier(0,-0.02,.49,.99) 0.3s both;
+  }
+  
+  .animate-10 {
+    animation: smoothFadeInUp 0.5s cubic-bezier(0,-0.02,.49,.99) 0.5s both;
+  }
+  
+  .animate-15 {
+    animation: smoothFadeInUp 0.5s cubic-bezier(0,-0.02,.49,.99) 0.7s both;
+  }
 }
 
 

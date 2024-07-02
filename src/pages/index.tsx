@@ -10,6 +10,10 @@ import { useEffect } from "react";
 import ContentWrapper from "~/components/ContentWrapper";
 import { animateAtom } from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
+import LinkText from "~/components/md/LinkText";
+import PostPreview from "~/components/PostPreview";
+import Link from "next/link";
+import { RxEnvelopeOpen, RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -62,57 +66,21 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <meta property="twitter:description" content="Software engineer" />
       </Head>
       <ContentWrapper>
-        {/* <motion.div
-          initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
-          animate={shouldAnimate ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
-          transition={{
-            y: {
-              delay: 0.1,
-              damping: 120,
-              mass: 8,
-              stiffness: 650,
-              type: "spring",
-            },
-            opacity: {
-              delay: 0.1,
-              duration: 0.4,
-            },
-          }}
-        > */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 50 }}
-          transition={{ ease: "easeOut", duration: 0.95, delay: 0.5 }}
-        >
-          <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
-            <h1 className={`text-lg font-semibold text-neutral-200`}>
-              Gustavo Fior
-            </h1>
-          </div>
+        {/* BIO */}
+        <div className="animate-5">
+          <h1
+            className={`pt-16 text-lg font-semibold text-neutral-200 sm:pb-4 sm:pt-24`}
+          >
+            Gustavo Fior
+          </h1>
           <p className="mt-4 pb-12 text-base text-neutral-500 sm:mt-0">
             Just a brazilian software engineer who loves to code, surf, and
             learn new things.
           </p>
-        </motion.div>
+        </div>
 
-        {/* <motion.div
-          initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
-          animate={shouldAnimate ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
-          transition={{
-            y: {
-              delay: 0.3,
-              damping: 120,
-              mass: 8,
-              stiffness: 650,
-              type: "spring",
-            },
-            opacity: {
-              delay: 0.3,
-              duration: 0.4,
-            },
-          }}
-        >
+        {/* PROJECTS */}
+        <div className="animate-7">
           <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
           <div className="grid grid-cols-3 gap-8 pb-12">
             <div className="flex flex-col gap-2">
@@ -139,25 +107,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
-          animate={shouldAnimate ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
-          transition={{
-            y: {
-              delay: 0.5,
-              damping: 120,
-              mass: 8,
-              stiffness: 650,
-              type: "spring",
-            },
-            opacity: {
-              delay: 0.5,
-              duration: 0.4,
-            },
-          }}
-        >
+        {/* WRITING */}
+        <div className="animate-10">
           <div className="flex justify-between pb-6 align-middle">
             <h2 className={`text-sm text-neutral-500`}>Writing</h2>
             <Link
@@ -179,25 +132,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </motion.li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
-          animate={shouldAnimate ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
-          transition={{
-            y: {
-              delay: 0.7,
-              damping: 120,
-              mass: 8,
-              stiffness: 650,
-              type: "spring",
-            },
-            opacity: {
-              delay: 0.7,
-              duration: 0.4,
-            },
-          }}
-        >
+        {/* CONNECT */}
+        <div className="animate-15">
           <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
           <div className="flex gap-8">
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
@@ -225,7 +163,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </LinkText>
             </motion.div>
           </div>
-        </motion.div> */}
+        </div>
       </ContentWrapper>
     </>
   );
