@@ -66,29 +66,49 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <meta property="twitter:description" content="Software engineer" />
       </Head>
       <ContentWrapper>
-        <motion.div
-          initial={shouldAnimate ? { y: 100, opacity: 0 } : { y: 0, opacity: 1 }}
+        {/* <motion.div
+          initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
           animate={shouldAnimate ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
           transition={{
-            duration: 0.4,
-            delay: 0.1,
             y: {
-              type: "spring",
+              delay: 0.1,
               damping: 120,
               mass: 8,
               stiffness: 650,
-            }
+              type: "spring",
+            },
+            opacity: {
+              delay: 0.1,
+              duration: 0.4,
+            },
+          }}
+        > */}
+        <motion.div
+          initial={shouldAnimate ? { y: 20 } : { y: 0 }}
+          animate={{ y: 0 }}
+          transition={{
+            delay: 0.1,
+            damping: 120,
+            mass: 8,
+            stiffness: 650,
+            type: "spring",
           }}
         >
-          <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
-            <h1 className={`text-lg font-semibold text-neutral-200`}>
-              Gustavo Fior
-            </h1>
-          </div>
-          <p className="mt-4 pb-12 text-base text-neutral-500 sm:mt-0">
-            Just a brazilian software engineer who loves to code, surf, and
-            learn new things.
-          </p>
+          <motion.div
+            initial={shouldAnimate ? { opacity: 0 } : { opacity: 1 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
+              <h1 className={`text-lg font-semibold text-neutral-200`}>
+                Gustavo Fior
+              </h1>
+            </div>
+            <p className="mt-4 pb-12 text-base text-neutral-500 sm:mt-0">
+              Just a brazilian software engineer who loves to code, surf, and
+              learn new things.
+            </p>
+          </motion.div>
         </motion.div>
 
         <motion.div
