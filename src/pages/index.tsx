@@ -194,10 +194,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               stiffness: 550,
               type: "spring",
             },
-            // opacity: {
-            //   delay: 0.7,
-            //   duration: 0.4,
-            // },
+            opacity: {
+              delay: 0.7,
+              duration: 0.4,
+            },
           }}
         >
           <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
@@ -227,25 +227,6 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </LinkText>
             </motion.div>
           </div>
-        </motion.div>
-        <motion.div
-          initial={initialYAnimation}
-          animate={animateYAnimation}
-          transition={{
-            y: {
-              delay: 0.7,
-              damping: 120,
-              mass: 8,
-              stiffness: 550,
-              type: "spring",
-            },
-            // opacity: {
-            //   delay: 0.7,
-            //   duration: 0.4,
-            // },
-          }}
-        >
-          <h2 className={`hidden`}>Contact</h2>
         </motion.div>
       </ContentWrapper>
     </>
