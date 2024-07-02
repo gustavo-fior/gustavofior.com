@@ -80,9 +80,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           animate={animateYAnimation}
           transition={{
             delay: 0.1,
-            damping: 100,
-            mass: 8,
-            stiffness: 490,
+            duration: 5,
             type: "spring",
           }}
         >
