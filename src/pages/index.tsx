@@ -19,9 +19,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShouldAnimate(false);
-    }, 1000);
+
+    if (shouldAnimate) {
+      setTimeout(() => {
+        setShouldAnimate(false);
+      }, 1000);
+    }
 
     console.log(`
     ..####...##..##...####...######...####...##..##...####..
