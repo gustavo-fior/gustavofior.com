@@ -17,17 +17,17 @@ import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
+  const initialYAnimation = shouldAnimate
+    ? { y: 30, opacity: 0 }
+    : { y: 0, opacity: 1 };
+  const animateYAnimation = { y: 0, opacity: 1 };
 
   useEffect(() => {
-    // if (shouldAnimate) {
-    //   setTimeout(() => {
-    //     setShouldAnimate(false);
-    //   }, 2000);
-    // }
-
-    window.onload = () => {
-      setShouldAnimate(false);
-    };
+    if (shouldAnimate) {
+      setTimeout(() => {
+        setShouldAnimate(false);
+      }, 2000);
+    }
 
     console.log(`
     ..####...##..##...####...######...####...##..##...####..
@@ -43,11 +43,6 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const sortedPostsMetadata = postsMetadata
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
-
-  const initialYAnimation = shouldAnimate
-    ? { y: 30, opacity: 0 }
-    : { y: 0, opacity: 1 };
-  const animateYAnimation = { y: 0, opacity: 1 };
 
   return (
     <>
@@ -79,86 +74,45 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            y : {
+            y: {
               delay: 0.1,
-              damping: 100,
+              damping: 120,
               mass: 8,
-              stiffness: 490,
+              stiffness: 550,
               type: "spring",
             },
-            opacity: {
-              delay: 0.1,
-              duration: 0.4,
-            }
+            // opacity: {
+            //   delay: 0.1,
+            //   duration: 0.4,
+            // },
           }}
         >
           <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
             <h1 className={`text-lg font-semibold text-neutral-200`}>
               Gustavo Fior
             </h1>
-            {/* <div className={`flex gap-8 sm:gap-5`}>
-                <Link target="_blank" href="mailto:hey@gustavofior.com">
-                  <motion.div className="transition duration-200 ease-in-out">
-                    <HiEnvelope
-                      className={`h-5 w-5 text-neutral-200 hover:text-[${primaryOrange}] transition-colors duration-200`}
-                    />
-                  </motion.div>
-                </Link>
-                <Link target="_blank" href="https://github.com/gustavo-fior">
-                  <motion.div className="transition duration-200 ease-in-out">
-                    <RxGithubLogo
-                      className={`h-5 w-5 text-neutral-200 hover:text-[${primaryOrange}] transition-colors duration-200`}
-                    />
-                  </motion.div>
-                </Link>
-                <Link
-                  target="_blank"
-                  href="https://linkedin.com/in/gustavo-fior-a910781b4/"
-                >
-                  <motion.div className="transition duration-200 ease-in-out">
-                    <RxLinkedinLogo
-                      className={`h-5 w-5 text-neutral-200 hover:text-[${primaryOrange}] transition-colors duration-200`}
-                    />
-                  </motion.div>
-                </Link>
-              </div> */}
           </div>
           <p className="mt-4 pb-12 text-base text-neutral-500 sm:mt-0">
             Just a brazilian software engineer who loves to code, surf, and
             learn new things.
           </p>
-          {/* <p className="mt-1 pb-12 text-base text-neutral-400 sm:mt-0">
-              If you want to know more about me, I keep a list of{" "}
-              <LinkText href="https://www.vayo.cc/bookmarks/public/cltpx1nq70001jw1tc90e4ht6">
-                articles
-              </LinkText>
-              ,{" "}
-              <LinkText href="https://www.vayo.cc/bookmarks/public/cltsyb5020005usxztdabvof5">
-                videos
-              </LinkText>{" "}
-              and{" "}
-              <LinkText href="https://www.vayo.cc/bookmarks/public/clublk9rh000113g5qf4tj038">
-                cool stuff
-              </LinkText>{" "}
-              that I like.
-            </p> */}
         </motion.div>
 
         <motion.div
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            y : {
+            y: {
               delay: 0.3,
-              damping: 100,
+              damping: 120,
               mass: 8,
-              stiffness: 490,
+              stiffness: 550,
               type: "spring",
             },
-            opacity: {
-              delay: 0.3,
-              duration: 0.4,
-            }
+            // opacity: {
+            //   delay: 0.3,
+            //   duration: 0.4,
+            // },
           }}
         >
           <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
@@ -193,17 +147,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            y : {
+            y: {
               delay: 0.5,
-              damping: 100,
+              damping: 120,
               mass: 8,
-              stiffness: 490,
+              stiffness: 550,
               type: "spring",
             },
-            opacity: {
-              delay: 0.5,
-              duration: 0.4,
-            }
+            // opacity: {
+            //   delay: 0.5,
+            //   duration: 0.4,
+            // },
           }}
         >
           <div className="flex justify-between pb-6 align-middle">
@@ -233,17 +187,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           initial={initialYAnimation}
           animate={animateYAnimation}
           transition={{
-            y : {
+            y: {
               delay: 0.7,
-              damping: 100,
+              damping: 120,
               mass: 8,
-              stiffness: 490,
+              stiffness: 550,
               type: "spring",
             },
-            opacity: {
-              delay: 0.7 ,
-              duration: 0.4,
-            }
+            // opacity: {
+            //   delay: 0.7,
+            //   duration: 0.4,
+            // },
           }}
         >
           <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
