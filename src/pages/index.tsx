@@ -83,6 +83,11 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             },
           }}
         > */}
+          <motion.div
+            initial={{opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
         <motion.div
           initial={{ y: 20 }} 
           animate={{ y: 0 }}
@@ -94,11 +99,6 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             type: "spring",
           }}
         >
-          <motion.div
-            initial={{opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
             <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
               <h1 className={`text-lg font-semibold text-neutral-200`}>
                 Gustavo Fior
