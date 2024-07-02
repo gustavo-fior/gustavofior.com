@@ -81,10 +81,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               stiffness: 550,
               type: "spring",
             },
-            // opacity: {
-            //   delay: 0.1,
-            //   duration: 0.4,
-            // },
+            opacity: {
+              delay: 0.1,
+              duration: 0.4,
+            },
           }}
         >
           <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
@@ -109,10 +109,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               stiffness: 550,
               type: "spring",
             },
-            // opacity: {
-            //   delay: 0.3,
-            //   duration: 0.4,
-            // },
+            opacity: {
+              delay: 0.3,
+              duration: 0.4,
+            },
           }}
         >
           <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
