@@ -67,7 +67,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <ContentWrapper>
         {/* BIO */}
-        <div className="animate-5">
+        <div className={`${shouldAnimate ? 'animate-5' : ''}`}>
           <h1
             className={`pt-16 text-lg font-semibold text-neutral-200 sm:pb-4 sm:pt-24`}
           >
@@ -80,7 +80,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </div>
 
         {/* PROJECTS */}
-        <div className="animate-7">
+        <div className={`${shouldAnimate ? 'animate-7' : ''}`}>
           <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
           <div className="grid grid-cols-3 gap-8 pb-12">
             <div className="flex flex-col gap-2">
@@ -110,7 +110,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </div>
 
         {/* WRITING */}
-        <div className="animate-10">
+        <div className={`${shouldAnimate ? 'animate-10' : ''}`}>
           <div className="flex justify-between pb-6 align-middle">
             <h2 className={`text-sm text-neutral-500`}>Writing</h2>
             <Link
@@ -135,7 +135,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </div>
 
         {/* CONNECT */}
-        <div className="animate-15">
+        <div className={`${shouldAnimate ? 'animate-15' : ''}`}>
           <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
           <div className="flex gap-8">
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
