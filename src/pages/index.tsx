@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
+import { useAtom } from "jotai";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -11,11 +12,19 @@ import { RxEnvelopeOpen, RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import ContentWrapper from "~/components/ContentWrapper";
 import PostPreview from "~/components/PostPreview";
 import LinkText from "~/components/md/LinkText";
+import { animateAtom } from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
+  // const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
 
   useEffect(() => {
+    // if (shouldAnimate) {
+    //   setTimeout(() => {
+    //     setShouldAnimate(false);
+    //   }, 1000);
+    // }
+
     console.log(`
     ..####...##..##...####...######...####...##..##...####..
     .##......##..##..##........##....##..##..##..##..##..##.
@@ -24,15 +33,16 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
     ..####....####....####.....##....##..##....##.....####..
     ........................................................    
 `);
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const sortedPostsMetadata = postsMetadata
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
-  const initialAnimation = { opacity: 0 }; 
-  const animateAnimation = { opacity: 1 };
-  const initialYAnimation = { y: 25 };
+  const initialOpacityAnimation = { opacity: 0 };
+  const animateOpacityAnimation = { opacity: 1 };
+  const initialYAnimation = { y: 25 }; 
   const animateYAnimation = { y: 0 };
 
   return (
@@ -62,8 +72,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <ContentWrapper>
         <motion.span
-          initial={initialAnimation}
-          animate={animateAnimation}
+          initial={initialOpacityAnimation}
+          animate={animateOpacityAnimation}
           transition={{ duration: 0.4, delay: 0.1 }}
         >
           <motion.div
@@ -131,8 +141,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </motion.span>
 
         <motion.span
-          initial={initialAnimation}
-          animate={animateAnimation}
+          initial={initialOpacityAnimation}
+          animate={animateOpacityAnimation}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <motion.div
@@ -176,9 +186,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </motion.div>
         </motion.span>
 
-        <motion.div
-          initial={initialAnimation}
-          animate={animateAnimation}
+        <motion.span
+          initial={initialOpacityAnimation}
+          animate={animateOpacityAnimation}
           transition={{ duration: 0.4, delay: 0.5 }}
         >
           <motion.div
@@ -214,10 +224,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               ))}
             </ul>
           </motion.div>
-        </motion.div>
-        <motion.div
-          initial={initialAnimation}
-          animate={animateAnimation}
+        </motion.span>
+        <motion.span
+          initial={initialOpacityAnimation}
+          animate={animateOpacityAnimation}
           transition={{ duration: 0.4, delay: 0.7 }}
         >
           <motion.div
@@ -259,7 +269,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </motion.div>
             </div>
           </motion.div>
-        </motion.div>
+        </motion.span>
       </ContentWrapper>
     </>
   );
