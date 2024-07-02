@@ -17,15 +17,11 @@ import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
-  const stiffness = 490;
-  const mass = 8;
-  const damping = 100;
-
 
   useEffect(() => {
     setTimeout(() => {
       setShouldAnimate(false);
-    }, 2000);
+    }, 1000);
 
     console.log(`
     ..####...##..##...####...######...####...##..##...####..
@@ -82,9 +78,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.1,
-              damping: damping,
-              mass: mass,
-              stiffness: stiffness,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
               type: "spring",
             }}
           >
@@ -151,9 +147,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.3,
-              damping: damping,
-              mass: mass,
-              stiffness: stiffness,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
               type: "spring",
             }}
           >
@@ -197,9 +193,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.5,
-              damping: damping,
-              mass: mass,
-              stiffness: stiffness,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
               type: "spring",
             }}
           >
@@ -236,9 +232,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             animate={animateYAnimation}
             transition={{
               delay: 0.7,
-              damping: damping,
-              mass: mass,
-              stiffness: stiffness,
+              damping: 100,
+              mass: 8,
+              stiffness: 490,
               type: "spring",
             }}
           >
