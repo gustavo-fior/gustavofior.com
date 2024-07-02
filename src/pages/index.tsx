@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, motion, m } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
@@ -83,24 +83,13 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             },
           }}
         > */}
-          <motion.div
-          key="outer-div"
-            initial={{opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
-        <motion.div
-          key="inner-div"
-          initial={{ y: 20 }} 
-          animate={{ y: 0 }}
-          transition={{
-            delay: 0.1,
-            damping: 120,
-            mass: 8,
-            stiffness: 650,
-            type: "spring",
-          }}
-        >
+<LazyMotion features={domAnimation}>
+      <m.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: 'easeOut', duration: 0.35, delay: 0.5 }}
+      >
+      
             <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
               <h1 className={`text-lg font-semibold text-neutral-200`}>
                 Gustavo Fior
@@ -110,8 +99,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               Just a brazilian software engineer who loves to code, surf, and
               learn new things.
             </p>
-          </motion.div>
-        </motion.div>
+            </m.div>
+            </LazyMotion>
 
         <motion.div
           initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
