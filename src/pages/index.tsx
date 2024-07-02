@@ -67,20 +67,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <ContentWrapper>
         <motion.div
-          initial={shouldAnimate ? { y: 20, opacity: 0 } : { y: 0, opacity: 1 }}
+          initial={shouldAnimate ? { y: 100, opacity: 0 } : { y: 0, opacity: 1 }}
           animate={shouldAnimate ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
           transition={{
+            duration: 0.4,
+            delay: 0.1,
             y: {
-              delay: 0.1,
+              type: "spring",
               damping: 120,
               mass: 8,
               stiffness: 650,
-              type: "spring",
-            },
-            opacity: {
-              delay: 0.1,
-              duration: 0.4,
-            },
+            }
           }}
         >
           <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
