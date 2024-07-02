@@ -18,9 +18,9 @@ import { type BlogPageProps, type PostMetadata } from "./blog";
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
   const initialYAnimation = shouldAnimate
-    ? { y: 30, opacity: 0 }
-    : { y: 0, opacity: 1 };
-  const animateYAnimation = { y: 0, opacity: 1 };
+    ? { y: 20 }
+    : { y: 0 };
+  const animateYAnimation = { y: 0 };
 
   useEffect(() => {
     if (shouldAnimate) {
@@ -78,13 +78,13 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               delay: 0.1,
               damping: 120,
               mass: 8,
-              stiffness: 550,
+              stiffness: 650,
               type: "spring",
             },
-            opacity: {
-              delay: 0.1,
-              duration: 0.4,
-            },
+            // opacity: {
+            //   delay: 0.1,
+            //   duration: 0.4,
+            // },
           }}
         >
           <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-24">
@@ -106,13 +106,13 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               delay: 0.3,
               damping: 120,
               mass: 8,
-              stiffness: 550,
+              stiffness: 650,
               type: "spring",
             },
-            opacity: {
-              delay: 0.3,
-              duration: 0.4,
-            },
+            // opacity: {
+            //   delay: 0.3,
+            //   duration: 0.4,
+            // },
           }}
         >
           <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
@@ -151,13 +151,13 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               delay: 0.5,
               damping: 120,
               mass: 8,
-              stiffness: 550,
+              stiffness: 650,
               type: "spring",
             },
-            opacity: {
-              delay: 0.5,
-              duration: 0.4,
-            },
+            // opacity: {
+            //   delay: 0.5,
+            //   duration: 0.4,
+            // },
           }}
         >
           <div className="flex justify-between pb-6 align-middle">
@@ -191,13 +191,13 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               delay: 0.7,
               damping: 120,
               mass: 8,
-              stiffness: 550,
+              stiffness: 650,
               type: "spring",
             },
-            opacity: {
-              delay: 0.7,
-              duration: 0.4,
-            },
+            // opacity: {
+            //   delay: 0.7,
+            //   duration: 0.4,
+            // },
           }}
         >
           <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
