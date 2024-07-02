@@ -154,10 +154,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               stiffness: 550,
               type: "spring",
             },
-            // opacity: {
-            //   delay: 0.5,
-            //   duration: 0.4,
-            // },
+            opacity: {
+              delay: 0.5,
+              duration: 0.4,
+            },
           }}
         >
           <div className="flex justify-between pb-6 align-middle">
@@ -194,10 +194,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               stiffness: 550,
               type: "spring",
             },
-            // opacity: {
-            //   delay: 0.7,
-            //   duration: 0.4,
-            // },
+            opacity: {
+              delay: 0.7,
+              duration: 0.4,
+            },
           }}
         >
           <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
