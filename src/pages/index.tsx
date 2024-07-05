@@ -82,11 +82,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* PROJECTS */}
         <div className={`${shouldAnimate ? 'animate-7' : ''}`}>
           <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
-          <div className="grid grid-cols-3 gap-8 pb-12">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-4 pb-12"> 
             <div className="flex flex-col gap-2">
               <LinkText href="https://5devs.com.br/">5Devs</LinkText>
               <p className="text-sm text-neutral-500">
-                A website to get fake brazilian data for testing purposes.
+                A tool to get fake brazilian data for testing purposes.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <LinkText href="https://acheopet.com/">Ache o Pet</LinkText>
+              <p className="text-sm text-neutral-500">
+                A lost and found platform for dogs and cats.
               </p>
             </div>
             <div className="flex flex-col gap-2">
@@ -115,7 +121,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <h2 className={`text-sm text-neutral-500`}>Writing</h2>
             <Link
               href="/blog"
-              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#e64100]`}
+              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#00e645]`}
             >
               Older...
             </Link>

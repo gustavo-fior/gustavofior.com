@@ -6,7 +6,7 @@ const BackButton = ({ href }: { href: string }) => {
     <div className="pb-6 pt-12">
       <Link href={href}>
         <RxArrowLeft
-          className={`cursor-pointer text-xl transition duration-200 ease-in-out hover:text-[#e64100]`}
+          className={`cursor-pointer text-xl transition duration-200 ease-in-out hover:text-[#00e645]`}
         />
       </Link>
     </div>
