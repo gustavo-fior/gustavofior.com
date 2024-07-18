@@ -13,7 +13,14 @@ import { type BlogPageProps, type PostMetadata } from "./blog";
 import LinkText from "~/components/md/LinkText";
 import PostPreview from "~/components/PostPreview";
 import Link from "next/link";
-import { RxEnvelopeOpen, RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
+import {
+  RxEnvelopeOpen,
+  RxFace,
+  RxGithubLogo,
+  RxLightningBolt,
+  RxLinkedinLogo,
+  RxPencil1,
+} from "react-icons/rx";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -67,7 +74,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <ContentWrapper>
         {/* BIO */}
-        <div className={`${shouldAnimate ? 'animate-5' : ''}`}>
+        <div className={`${shouldAnimate ? "animate-5" : ""}`}>
           <h1
             className={`pt-16 text-lg font-semibold text-neutral-200 sm:pb-4 sm:pt-24`}
           >
@@ -80,9 +87,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </div>
 
         {/* PROJECTS */}
-        <div className={`${shouldAnimate ? 'animate-7' : ''}`}>
-          <h2 className={`pb-6 text-sm text-neutral-500`}>Projects</h2>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-4 pb-12"> 
+        <div className={`${shouldAnimate ? "animate-7" : ""}`}>
+          <div className="flex items-center gap-2 pb-6">
+            <RxLightningBolt className={`h-3 w-3 text-neutral-200`} />
+            <h2 className={`text-sm text-neutral-500`}>Projects</h2>
+          </div>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-4 pb-12">
             <div className="flex flex-col gap-2">
               <LinkText href="https://5devs.com.br/">5Devs</LinkText>
               <p className="text-sm text-neutral-500">
@@ -116,9 +126,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </div>
 
         {/* WRITING */}
-        <div className={`${shouldAnimate ? 'animate-10' : ''}`}>
+        <div className={`${shouldAnimate ? "animate-10" : ""}`}>
           <div className="flex justify-between pb-6 align-middle">
-            <h2 className={`text-sm text-neutral-500`}>Writing</h2>
+            <div className="flex items-center gap-2">
+              <RxPencil1 className={`h-3 w-3 text-neutral-200`} />
+              <h2 className={`text-sm text-neutral-500`}>Writing</h2>
+            </div>
             <Link
               href="/blog"
               className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#00e645]`}
@@ -141,8 +154,11 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </div>
 
         {/* CONNECT */}
-        <div className={`${shouldAnimate ? 'animate-15' : ''}`}>
-          <h2 className={`pb-6 pt-8 text-sm text-neutral-500`}>Connect</h2>
+        <div className={`${shouldAnimate ? "animate-15" : ""}`}>
+          <div className="flex items-center gap-2 pb-6 pt-8 ">
+            <RxFace className={`h-3 w-3 text-neutral-200`} />
+            <h2 className={`text-sm text-neutral-500`}>Connect</h2>
+          </div>
           <div className="flex gap-8">
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
               <RxEnvelopeOpen
