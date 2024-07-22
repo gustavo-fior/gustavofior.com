@@ -14,9 +14,13 @@ import LinkText from "~/components/md/LinkText";
 import PostPreview from "~/components/PostPreview";
 import Link from "next/link";
 import {
+  RxBackpack,
+  RxEnvelopeClosed,
   RxEnvelopeOpen,
   RxFace,
+  RxFileText,
   RxGithubLogo,
+  RxIdCard,
   RxLightningBolt,
   RxLinkedinLogo,
   RxPencil1,
@@ -161,14 +165,6 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </div>
           <div className="flex gap-8">
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <RxEnvelopeOpen
-                className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
-              />
-              <LinkText href="mailto:hey@gustavofior.com">
-                <p className="text-sm">Email</p>
-              </LinkText>
-            </motion.div>
-            <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
               <RxGithubLogo
                 className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
               />
@@ -182,6 +178,22 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               />
               <LinkText href="https://linkedin.com/in/gustavo-fior-a910781b4/">
                 <p className="text-sm">LinkedIn</p>
+              </LinkText>
+            </motion.div>
+            <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
+              <RxEnvelopeClosed
+                className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
+              />
+              <LinkText href="mailto:hey@gustavofior.com">
+                <p className="text-sm">Email</p>
+              </LinkText>
+            </motion.div>
+            <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
+              <RxFileText
+                className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
+              />
+              <LinkText href="https://gustavofior.notion.site/Gustavo-Fior-691d87d4797b44ebb547f7c06fc3f9a4">
+                <p className="text-sm">CV</p>
               </LinkText>
             </motion.div>
           </div>
