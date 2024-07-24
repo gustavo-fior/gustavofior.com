@@ -106,13 +106,14 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <div className="flex flex-col gap-2">
               <LinkText href="https://acheopet.com/">Ache o Pet</LinkText>
               <p className="text-sm text-neutral-500">
-                A lost and found platform for dogs and cats.
+                A lost & found platform for dogs and cats.
               </p>
             </div>
             <div className="flex flex-col gap-2">
               <LinkText href="https://vayo.cc">VAYØ</LinkText>
               <p className="text-sm text-neutral-500">
-                A bookmark tool where you can save, search, and share your links.
+                A bookmark tool where you can save, search, and share your
+                links.
               </p>
             </div>
             <div className="flex flex-col gap-2">
