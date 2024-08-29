@@ -93,7 +93,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* PROJECTS */}
         <div className={`${shouldAnimate ? "animate-7" : ""}`}>
           <div className="flex items-center gap-2 pb-6">
-            <RxLightningBolt className={`h-3 w-3 text-neutral-200`} />
+            <RxLightningBolt className={`h-3 w-3 text-[#e2e600]`} />
             <h2 className={`text-sm text-neutral-500`}>Projects</h2>
           </div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-4 pb-12">
@@ -134,12 +134,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <div className={`${shouldAnimate ? "animate-10" : ""}`}>
           <div className="flex justify-between pb-6 align-middle">
             <div className="flex items-center gap-2">
-              <RxPencil1 className={`h-3 w-3 text-neutral-200`} />
+              <RxPencil1 className={`h-3 w-3 text-[#e2e600]`} />
               <h2 className={`text-sm text-neutral-500`}>Writing</h2>
             </div>
             <Link
               href="/blog"
-              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#00e645]`}
+              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#e2e600]`}
             >
               Older...
             </Link>
@@ -161,7 +161,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* CONNECT */}
         <div className={`${shouldAnimate ? "animate-15" : ""}`}>
           <div className="flex items-center gap-2 pb-6 pt-8 ">
-            <RxFace className={`h-3 w-3 text-neutral-200`} />
+            <RxFace className={`h-3 w-3 text-[#e2e600]`} />
             <h2 className={`text-sm text-neutral-500`}>Connect</h2>
           </div>
           <div className="flex gap-8">

@@ -1,1 +1,1 @@
-export const primaryOrange = "#00e645";
+export const primaryOrange = "#e2e600";
