@@ -3,28 +3,17 @@ import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
+import { CodeXml, FileText, Github, Linkedin, Mail, PencilLine, User } from "lucide-react";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import path from "path";
 import { useEffect } from "react";
 import ContentWrapper from "~/components/ContentWrapper";
-import { animateAtom } from "~/utils/atoms";
-import { type BlogPageProps, type PostMetadata } from "./blog";
 import LinkText from "~/components/md/LinkText";
 import PostPreview from "~/components/PostPreview";
-import Link from "next/link";
-import {
-  RxBackpack,
-  RxEnvelopeClosed,
-  RxEnvelopeOpen,
-  RxFace,
-  RxFileText,
-  RxGithubLogo,
-  RxIdCard,
-  RxLightningBolt,
-  RxLinkedinLogo,
-  RxPencil1,
-} from "react-icons/rx";
+import { animateAtom } from "~/utils/atoms";
+import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -93,7 +82,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* PROJECTS */}
         <div className={`${shouldAnimate ? "animate-7" : ""}`}>
           <div className="flex items-center gap-2 pb-6">
-            <RxLightningBolt className={`h-3 w-3 text-[#e2e600]`} />
+            <CodeXml className={`h-3.5 w-3.5 text-neutral-200`} />
             <h2 className={`text-sm text-neutral-500`}>Projects</h2>
           </div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-4 pb-12">
@@ -134,7 +123,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <div className={`${shouldAnimate ? "animate-10" : ""}`}>
           <div className="flex justify-between pb-6 align-middle">
             <div className="flex items-center gap-2">
-              <RxPencil1 className={`h-3 w-3 text-[#e2e600]`} />
+              <PencilLine className={`h-3.5 w-3.5 text-neutral-200`} />
               <h2 className={`text-sm text-neutral-500`}>Writing</h2>
             </div>
             <Link
@@ -161,12 +150,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* CONNECT */}
         <div className={`${shouldAnimate ? "animate-15" : ""}`}>
           <div className="flex items-center gap-2 pb-6 pt-8 ">
-            <RxFace className={`h-3 w-3 text-[#e2e600]`} />
+            <User className={`h-3.5 w-3.5 text-neutral-200`} />
             <h2 className={`text-sm text-neutral-500`}>Connect</h2>
           </div>
           <div className="flex gap-8">
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <RxGithubLogo
+              <Github
                 className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
               />
               <LinkText href="https://github.com/gustavo-fior">
@@ -174,7 +163,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </LinkText>
             </motion.div>
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <RxLinkedinLogo
+              <Linkedin
                 className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
               />
               <LinkText href="https://linkedin.com/in/gustavo-fior-a910781b4/">
@@ -182,7 +171,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </LinkText>
             </motion.div>
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <RxEnvelopeClosed
+              <Mail
                 className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
               />
               <LinkText href="mailto:hey@gustavofior.com">
@@ -190,7 +179,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </LinkText>
             </motion.div>
             <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <RxFileText
+              <FileText
                 className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
               />
               <LinkText href="https://gustavofior.notion.site/Gustavo-Fior-691d87d4797b44ebb547f7c06fc3f9a4">
