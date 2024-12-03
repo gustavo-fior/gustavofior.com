@@ -15,7 +15,7 @@ const PostHeader = ({ title, readTime, date, emoji }: PostHeaderProps) => {
             {title}
           </h1>
           <h3 className="text-sm text-neutral-500 whitespace-pre">
-            {date}  <span className={`text-[#e2e600] `}>•</span>{"  "}
+            {date}  <span className={`text-[#ff743d] `}>•</span>{"  "}
             <span className="italic">{readTime}</span>
           </h3>
         </div>
