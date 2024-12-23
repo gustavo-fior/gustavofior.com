@@ -107,7 +107,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </div>
             <div className="flex flex-col gap-2">
               <p>
-                <LinkText href="https://apps.apple.com/us/app/mind/id6467673373">
+                <LinkText href="https://mind.abdulhdr.com">
                   Mind
                 </LinkText>{" "}
               </p>
