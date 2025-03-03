@@ -99,7 +99,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <LinkText href="https://vayo.cc">VAYØ</LinkText>
+              <LinkText href="https://vayo.me">VAYØ</LinkText>
               <p className="text-sm text-neutral-500">
                 A bookmark tool where you can save, search, and share your
                 links.
