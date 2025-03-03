@@ -107,7 +107,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </div>
             <div className="flex flex-col gap-2">
               <p>
-                <LinkText href="https://apps.apple.com/us/app/mind/id6467673373">
+                <LinkText href="https://mind.abdulhdr.com">
                   Mind
                 </LinkText>{" "}
               </p>
@@ -128,7 +128,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </div>
             <Link
               href="/blog"
-              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#e2e600]`}
+              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#ff743d]`}
             >
               Older...
             </Link>
