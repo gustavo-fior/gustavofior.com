@@ -149,7 +149,6 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                   alt="Rafa Resumos"
                   width={16}
                   height={16}
-                  className="rounded-sm"
                 />
                 <LinkText href="https://rafaresumos.com.br">
                   Rafa Resumos
