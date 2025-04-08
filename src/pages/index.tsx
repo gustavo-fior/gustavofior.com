@@ -3,7 +3,15 @@ import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
-import { CodeXml, FileText, Github, Linkedin, Mail, PencilLine, User } from "lucide-react";
+import {
+  CodeXml,
+  FileText,
+  Github,
+  Linkedin,
+  Mail,
+  PencilLine,
+  User,
+} from "lucide-react";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -14,6 +22,7 @@ import LinkText from "~/components/md/LinkText";
 import PostPreview from "~/components/PostPreview";
 import { animateAtom } from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
+import Image from "next/image";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -69,7 +78,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* BIO */}
         <div className={`${shouldAnimate ? "animate-5" : ""}`}>
           <h1
-            className={`pt-16 text-lg font-semibold text-neutral-200 sm:pb-4 sm:pt-24`}
+            className={`pt-16 text-lg font-semibold text-neutral-200 sm:pb-4 sm:pt-20`}
           >
             Gustavo Fior
           </h1>
@@ -85,35 +94,119 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <CodeXml className={`h-3.5 w-3.5 text-neutral-200`} />
             <h2 className={`text-sm text-neutral-500`}>Projects</h2>
           </div>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-4 pb-12">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-5 pb-12">
             <div className="flex flex-col gap-2">
-              <LinkText href="https://5devs.com.br/">5Devs</LinkText>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logos/itzam.svg"
+                  alt="Itzam"
+                  width={16}
+                  height={16}
+                />
+                <LinkText href="https://itz.am/">Itzam</LinkText>
+              </div>
               <p className="text-sm text-neutral-500">
-                A tool to get fake brazilian data for testing purposes.
+                AI integration has never been so easy.
               </p>
             </div>
+
             <div className="flex flex-col gap-2">
-              <LinkText href="https://acheopet.com/">Ache o Pet</LinkText>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logos/5devs.png"
+                  alt="5Devs"
+                  width={16}
+                  height={16}
+                />
+                <LinkText href="https://5devs.com.br/">5Devs</LinkText>
+              </div>
+
               <p className="text-sm text-neutral-500">
-                A lost & found platform for dogs and cats.
+                Fake data for testing purposes.
               </p>
             </div>
+
             <div className="flex flex-col gap-2">
-              <LinkText href="https://vayo.me">VAYØ</LinkText>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logos/vayo.png"
+                  alt="VAYØ"
+                  width={16}
+                  height={16}
+                />
+                <LinkText href="https://vayo.me">VAYØ</LinkText>
+              </div>
+
               <p className="text-sm text-neutral-500">
-                A bookmark tool where you can save, search, and share your
-                links.
+                My favorite bookmark tool.
               </p>
             </div>
+
             <div className="flex flex-col gap-2">
-              <p>
-                <LinkText href="https://mind.abdulhdr.com">
-                  Mind
-                </LinkText>{" "}
-              </p>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logos/rafa.png"
+                  alt="Rafa Resumos"
+                  width={16}
+                  height={16}
+                  className="rounded-sm"
+                />
+                <LinkText href="https://rafaresumos.com.br">
+                  Rafa Resumos
+                </LinkText>
+              </div>
+
               <p className="text-sm text-neutral-500">
-                A mental health app that helps patients and therapists connect{" "}
-                <span className="italic">(failed)</span>.
+                My girlfriend&apos;s med-school writings.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logos/censorfy.png"
+                  alt="Censorfy"
+                  width={16}
+                  height={16}
+                />
+                <LinkText href="https://censorfy.com">Censorfy</LinkText>
+              </div>
+              <p className="text-sm text-neutral-500">
+                AI content moderation API.{" "}
+                <span className="italic text-neutral-600">(failed)</span>
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logos/ache-o-pet.png"
+                  alt="Ache o Pet"
+                  width={16}
+                  height={16}
+                />
+                <LinkText href="https://acheopet.com/">Ache o Pet</LinkText>
+              </div>
+              <p className="text-sm text-neutral-500">
+                Lost & found for dogs and cats.{" "}
+                <span className="italic text-neutral-600">(inactive)</span>
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logos/mind.png"
+                  alt="Mind"
+                  width={16}
+                  height={16}
+                  className="rounded-sm p-[1px]"
+                />
+                <LinkText href="https://mind.abdulhdr.com">Mind</LinkText>
+              </div>
+              <p className="text-sm text-neutral-500">
+                Connecting patients and therapists.{" "}
+                <span className="italic text-neutral-600">(failed)</span>
               </p>
             </div>
           </div>
