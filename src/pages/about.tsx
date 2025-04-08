@@ -23,7 +23,7 @@ const About: NextPage = () => {
       </Head>
       <ContentWrapper>
         <h1 className="pt-24 text-2xl font-bold md:text-3xl">About me</h1>
-        <div className="mb-12 mt-1 w-24 rounded-full border-[0.1rem] border-[#ff743d]" />
+        <div className="mb-12 mt-1 w-24 rounded-full border-[0.1rem] border-orange-600" />
         <motion.ul className="flex flex-col gap-4"></motion.ul>
         <h1 className="pb-6 text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
           🙋🏼‍♂️

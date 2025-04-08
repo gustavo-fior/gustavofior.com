@@ -220,7 +220,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </div>
             <Link
               href="/blog"
-              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-[#ff743d]`}
+              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-orange-600 hover:decoration-[1.5px]`}
             >
               Older...
             </Link>
