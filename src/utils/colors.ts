@@ -1,1 +1,0 @@
-export const primaryOrange = "#ff743d";

@@ -3,17 +3,10 @@ import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
-import {
-  CodeXml,
-  FileText,
-  Github,
-  Linkedin,
-  Mail,
-  PencilLine,
-  User,
-} from "lucide-react";
+import { Mail, PencilLine } from "lucide-react";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import path from "path";
 import { useEffect } from "react";
@@ -22,7 +15,8 @@ import LinkText from "~/components/md/LinkText";
 import PostPreview from "~/components/PostPreview";
 import { animateAtom } from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
-import Image from "next/image";
+import X from "~/components/x";
+import GitHub from "~/components/github";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -77,23 +71,18 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       <ContentWrapper>
         {/* BIO */}
         <div className={`${shouldAnimate ? "animate-5" : ""}`}>
-          <h1
-            className={`pt-16 text-lg font-semibold text-neutral-200 sm:pb-4 sm:pt-20`}
-          >
+          <h1 className={`pt-16 font-serif text-2xl sm:pb-4 sm:pt-20`}>
             Gustavo Fior
           </h1>
-          <p className="mt-4 pb-12 text-base text-neutral-500 sm:mt-0">
-            Just a brazilian software engineer who loves to code, surf, and
-            learn new things.
+          <p className="mt-4 pb-12 text-sm font-normal text-neutral-400 sm:mt-0">
+            Brazilian software engineer who loves to code, surf, and learn new
+            things.
           </p>
         </div>
 
         {/* PROJECTS */}
         <div className={`${shouldAnimate ? "animate-7" : ""}`}>
-          <div className="flex items-center gap-2 pb-6">
-            <CodeXml className={`h-3.5 w-3.5 text-neutral-200`} />
-            <h2 className={`text-sm text-neutral-500`}>Projects</h2>
-          </div>
+          <h2 className={`pb-6 text-sm text-neutral-400`}>Projects</h2>
           <div className="grid grid-cols-2 gap-x-8 gap-y-5 pb-12">
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
@@ -108,6 +97,14 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               <p className="text-sm text-neutral-500">
                 AI integration has never been so easy.
               </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <Image src="/logos/ccc.png" alt="CCC" width={16} height={16} />
+                <LinkText href="https://ccc.com.br/">CCC</LinkText>
+              </div>
+              <p className="text-sm text-neutral-500">Curitiba Coding Club.</p>
             </div>
 
             <div className="flex flex-col gap-2">
@@ -241,43 +238,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* CONNECT */}
         <div className={`${shouldAnimate ? "animate-15" : ""}`}>
-          <div className="flex items-center gap-2 pb-6 pt-8 ">
-            <User className={`h-3.5 w-3.5 text-neutral-200`} />
-            <h2 className={`text-sm text-neutral-500`}>Connect</h2>
-          </div>
-          <div className="flex gap-8">
-            <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <Github
-                className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
+          <div className="flex items-center justify-center gap-4 pt-0">
+            <Link href="https://x.com/heyimgustavo">
+              <X
+                className={`h-3 w-3 text-neutral-500 transition-colors duration-200 hover:text-neutral-400`}
               />
-              <LinkText href="https://github.com/gustavo-fior">
-                <p className="text-sm">GitHub</p>
-              </LinkText>
-            </motion.div>
-            <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <Linkedin
-                className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
-              />
-              <LinkText href="https://linkedin.com/in/gustavo-fior-a910781b4/">
-                <p className="text-sm">LinkedIn</p>
-              </LinkText>
-            </motion.div>
-            <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
+            </Link>
+            <Link href="mailto:hey@gustavofior.com">
               <Mail
-                className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
+                className={`h-4 w-4 text-neutral-500 transition-colors duration-200 hover:text-neutral-400`}
               />
-              <LinkText href="mailto:hey@gustavofior.com">
-                <p className="text-sm">Email</p>
-              </LinkText>
-            </motion.div>
-            <motion.div className="flex items-center gap-2 transition duration-200 ease-in-out">
-              <FileText
-                className={`h-4 w-4 text-neutral-500 transition-colors duration-200`}
-              />
-              <LinkText href="https://gustavofior.notion.site/Gustavo-Fior-691d87d4797b44ebb547f7c06fc3f9a4">
-                <p className="text-sm">CV</p>
-              </LinkText>
-            </motion.div>
+            </Link>
           </div>
         </div>
       </ContentWrapper>
