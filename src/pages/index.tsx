@@ -230,7 +230,11 @@ const ProjectPreview = ({
   tag?: string;
 }) => {
   return (
-    <div className="group flex cursor-pointer flex-col gap-1.5">
+    <Link
+      href={link}
+      target="_blank"
+      className="group flex cursor-pointer flex-col gap-1.5"
+    >
       <div className="flex items-center gap-1.5">
         <Image
           src={logo}
@@ -239,9 +243,7 @@ const ProjectPreview = ({
           height={14}
           className="h-3.5 w-3.5 transition-all duration-200 ease-in-out group-hover:scale-[1.03]"
         />
-        <Link
-          href={link}
-          target="_blank"
+        <div
           className={`flex items-center gap-1 transition-all duration-200 ease-in-out group-hover:text-neutral-500`}
         >
           {title}
@@ -250,7 +252,7 @@ const ProjectPreview = ({
             className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:text-neutral-400 group-hover:opacity-100`}
             strokeWidth={1.5}
           />
-        </Link>
+        </div>
       </div>
       <p className="text-sm text-neutral-400">
         {description}{" "}
@@ -258,7 +260,7 @@ const ProjectPreview = ({
           <span className="font-light italic text-neutral-300">({tag})</span>
         )}
       </p>
-    </div>
+    </Link>
   );
 };
 

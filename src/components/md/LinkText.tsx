@@ -11,11 +11,11 @@ const LinkText = ({ children, href }: LinkTextProps) => {
     <Link
       href={href}
       target="_blank"
-      className={`group cursor-pointer underline decoration-neutral-300 decoration-1 underline-offset-2 transition-all duration-100 ease-in-out hover:decoration-neutral-400`}
+      className={`group cursor-pointer underline decoration-neutral-300 decoration-1 underline-offset-2 transition-all duration-200 ease-in-out hover:decoration-neutral-400`}
     >
       {children}
 
-      <ArrowUpRight className="ml-0.5 inline-block h-2.5 w-2.5 text-neutral-400 transition-all duration-100 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
+      <ArrowUpRight className="ml-0.5 inline-block h-2.5 w-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
     </Link>
   );
 };
