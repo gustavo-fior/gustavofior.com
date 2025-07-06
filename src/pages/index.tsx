@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
-import { Mail, PencilLine } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -11,12 +11,11 @@ import Link from "next/link";
 import path from "path";
 import { useEffect } from "react";
 import ContentWrapper from "~/components/ContentWrapper";
-import LinkText from "~/components/md/LinkText";
+import LinkArrow from "~/components/LinkArrow";
 import PostPreview from "~/components/PostPreview";
+import X from "~/components/x";
 import { animateAtom } from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
-import X from "~/components/x";
-import GitHub from "~/components/github";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -69,190 +68,197 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <meta property="twitter:description" content="Software engineer" />
       </Head>
       <ContentWrapper>
-        {/* BIO */}
-        <div className={`${shouldAnimate ? "animate-5" : ""}`}>
-          <h1 className={`pt-16 font-serif text-2xl sm:pb-4 sm:pt-20`}>
-            Gustavo Fior
-          </h1>
-          <p className="mt-4 pb-12 text-sm font-normal text-neutral-400 sm:mt-0">
-            Brazilian software engineer who loves to code, surf, and learn new
-            things.
+        {/* MAIN CONTENT */}
+        <div className="flex-1">
+          {/* BIO */}
+          <div className={`${shouldAnimate ? "animate-5" : ""}`}>
+            <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-20">
+              <h1 className={`font-serif text-3xl`}>Gustavo Fior</h1>
+              <div className="flex items-center justify-center gap-4">
+                <Link
+                  href="https://x.com/heyimgustavo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <X
+                    className={`h-3 w-3 transition-opacity duration-200 hover:opacity-80`}
+                  />
+                </Link>
+                <Link href="mailto:hey@gustavofior.com">
+                  <Mail
+                    className={`h-4 w-4 text-neutral-500 transition-opacity duration-200 hover:opacity-80`}
+                    strokeWidth={1.5}
+                  />
+                </Link>
+              </div>
+            </div>
+            <p className="mt-4 pb-12 text-sm font-normal text-neutral-400 sm:mt-0">
+              Brazilian software engineer who loves to code, surf, and learn new
+              things.
+            </p>
+          </div>
+
+          {/* PROJECTS */}
+          <div className={`${shouldAnimate ? "animate-7" : ""}`}>
+            <h2 className={`pb-4 text-sm text-neutral-400`}>Projects</h2>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 pb-12 sm:grid-cols-2">
+              <ProjectPreview
+                title="Itzam"
+                description="AI integration has never been so easy."
+                link="https://itz.am/"
+                logo="/logos/itzam.svg"
+              />
+              <ProjectPreview
+                title="CCC"
+                description="Curitiba Coding Club."
+                link="https://lu.ma/-ccc"
+                logo="/logos/ccc.png"
+              />
+              <ProjectPreview
+                title="5Devs"
+                description="Fake data for testing purposes."
+                link="https://5devs.com.br/"
+                logo="/logos/5devs.png"
+              />
+              <ProjectPreview
+                title="VAYØ"
+                description="My favorite bookmark tool."
+                link="https://vayo.me/"
+                logo="/logos/vayo.png"
+              />
+              <ProjectPreview
+                title="Rafa Resumos"
+                description="My girlfriend's med-school writings."
+                link="https://rafaresumos.com.br/"
+                logo="/logos/rafa.png"
+              />
+              <ProjectPreview
+                title="Censorfy"
+                description="AI content moderation API."
+                link="https://censorfy.com/"
+                logo="/logos/censorfy.png"
+                tag="failed"
+              />
+              <ProjectPreview
+                title="Ache o Pet"
+                description="Lost & found for dogs and cats."
+                link="https://acheopet.com/"
+                logo="/logos/ache-o-pet.png"
+                tag="inactive"
+              />
+              <ProjectPreview
+                title="Mind"
+                description="Connecting patients and therapists."
+                link="https://mind.abdulhdr.com/"
+                logo="/logos/mind.png"
+                tag="failed"
+              />
+            </div>
+          </div>
+
+          {/* WRITING */}
+          <div className={`${shouldAnimate ? "animate-10" : ""}`}>
+            <div className="flex justify-between pb-4 align-middle">
+              <h2 className={`text-sm text-neutral-400`}>Writing</h2>
+              <LinkArrow
+                href="/blog"
+                className="-mr-3.5 text-sm text-neutral-400"
+              >
+                Older...
+              </LinkArrow>
+            </div>
+            <ul className="flex flex-col pb-12">
+              {sortedPostsMetadata.map((postMetadata) => (
+                <motion.li key={postMetadata.slug}>
+                  <PostPreview
+                    title={postMetadata.title}
+                    description={postMetadata.description}
+                    date={postMetadata.date}
+                    slug={postMetadata.slug}
+                    showDate={false}
+                  />
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+
+          {/* OTHERS */}
+          <div className={`${shouldAnimate ? "animate-15" : ""}`}>
+            <div className="flex gap-4">
+              <LinkArrow
+                href="https://www.vayo.me/bookmarks/public/cltpx1nq70001jw1tc90e4ht6"
+                className="text-sm text-neutral-400"
+              >
+                Bookmarks
+              </LinkArrow>
+              <LinkArrow
+                href="https://gustavofior.notion.site/Books-dad36ee3ac9f4e8486029f9b2fccb478"
+                className="text-sm text-neutral-400"
+              >
+                Books
+              </LinkArrow>
+            </div>
+          </div>
+        </div>
+
+        {/* FOOTER */}
+        <footer
+          className={`flex items-center justify-center pb-8 pt-16 ${
+            shouldAnimate ? "animate-25" : ""
+          }`}
+        >
+          <p className="font-serif text-xs text-neutral-200">
+            The life of every human being is a journey towards oneself.
           </p>
-        </div>
-
-        {/* PROJECTS */}
-        <div className={`${shouldAnimate ? "animate-7" : ""}`}>
-          <h2 className={`pb-6 text-sm text-neutral-400`}>Projects</h2>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-5 pb-12">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/itzam.svg"
-                  alt="Itzam"
-                  width={16}
-                  height={16}
-                />
-                <LinkText href="https://itz.am/">Itzam</LinkText>
-              </div>
-              <p className="text-sm text-neutral-500">
-                AI integration has never been so easy.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image src="/logos/ccc.png" alt="CCC" width={16} height={16} />
-                <LinkText href="https://ccc.com.br/">CCC</LinkText>
-              </div>
-              <p className="text-sm text-neutral-500">Curitiba Coding Club.</p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/5devs.png"
-                  alt="5Devs"
-                  width={16}
-                  height={16}
-                />
-                <LinkText href="https://5devs.com.br/">5Devs</LinkText>
-              </div>
-
-              <p className="text-sm text-neutral-500">
-                Fake data for testing purposes.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/vayo.png"
-                  alt="VAYØ"
-                  width={16}
-                  height={16}
-                />
-                <LinkText href="https://vayo.me">VAYØ</LinkText>
-              </div>
-
-              <p className="text-sm text-neutral-500">
-                My favorite bookmark tool.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/rafa.png"
-                  alt="Rafa Resumos"
-                  width={16}
-                  height={16}
-                />
-                <LinkText href="https://rafaresumos.com.br">
-                  Rafa Resumos
-                </LinkText>
-              </div>
-
-              <p className="text-sm text-neutral-500">
-                My girlfriend&apos;s med-school writings.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/censorfy.png"
-                  alt="Censorfy"
-                  width={16}
-                  height={16}
-                />
-                <LinkText href="https://censorfy.com">Censorfy</LinkText>
-              </div>
-              <p className="text-sm text-neutral-500">
-                AI content moderation API.{" "}
-                <span className="italic text-neutral-600">(failed)</span>
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/ache-o-pet.png"
-                  alt="Ache o Pet"
-                  width={16}
-                  height={16}
-                />
-                <LinkText href="https://acheopet.com/">Ache o Pet</LinkText>
-              </div>
-              <p className="text-sm text-neutral-500">
-                Lost & found for dogs and cats.{" "}
-                <span className="italic text-neutral-600">(inactive)</span>
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/logos/mind.png"
-                  alt="Mind"
-                  width={16}
-                  height={16}
-                  className="rounded-sm p-[1px]"
-                />
-                <LinkText href="https://mind.abdulhdr.com">Mind</LinkText>
-              </div>
-              <p className="text-sm text-neutral-500">
-                Connecting patients and therapists.{" "}
-                <span className="italic text-neutral-600">(failed)</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* WRITING */}
-        <div className={`${shouldAnimate ? "animate-10" : ""}`}>
-          <div className="flex justify-between pb-6 align-middle">
-            <div className="flex items-center gap-2">
-              <PencilLine className={`h-3.5 w-3.5 text-neutral-200`} />
-              <h2 className={`text-sm text-neutral-500`}>Writing</h2>
-            </div>
-            <Link
-              href="/blog"
-              className={`text-sm text-neutral-200 underline decoration-neutral-500 transition duration-200 ease-in-out hover:decoration-orange-600 hover:decoration-[1.5px]`}
-            >
-              Older...
-            </Link>
-          </div>
-          <ul className="flex flex-col">
-            {sortedPostsMetadata.map((postMetadata) => (
-              <motion.li key={postMetadata.slug}>
-                <PostPreview
-                  title={postMetadata.title}
-                  description={postMetadata.description}
-                  date={postMetadata.date}
-                  slug={postMetadata.slug}
-                />
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-
-        {/* CONNECT */}
-        <div className={`${shouldAnimate ? "animate-15" : ""}`}>
-          <div className="flex items-center justify-center gap-4 pt-0">
-            <Link href="https://x.com/heyimgustavo">
-              <X
-                className={`h-3 w-3 text-neutral-500 transition-colors duration-200 hover:text-neutral-400`}
-              />
-            </Link>
-            <Link href="mailto:hey@gustavofior.com">
-              <Mail
-                className={`h-4 w-4 text-neutral-500 transition-colors duration-200 hover:text-neutral-400`}
-              />
-            </Link>
-          </div>
-        </div>
+        </footer>
       </ContentWrapper>
     </>
+  );
+};
+
+const ProjectPreview = ({
+  title,
+  description,
+  link,
+  logo,
+  tag,
+}: {
+  title: string;
+  description: string;
+  link: string;
+  logo: string;
+  tag?: string;
+}) => {
+  return (
+    <div className="group flex cursor-pointer flex-col gap-1.5">
+      <div className="flex items-center gap-1.5">
+        <Image
+          src={logo}
+          alt={title}
+          width={14}
+          height={14}
+          className="h-3.5 w-3.5 transition-all duration-200 ease-in-out group-hover:scale-[1.03]"
+        />
+        <Link
+          href={link}
+          target="_blank"
+          className={`flex items-center gap-1 transition-all duration-200 ease-in-out group-hover:text-neutral-500`}
+        >
+          {title}
+
+          <ArrowUpRight
+            className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:text-neutral-400 group-hover:opacity-100`}
+            strokeWidth={1.5}
+          />
+        </Link>
+      </div>
+      <p className="text-sm text-neutral-400">
+        {description}{" "}
+        {tag && (
+          <span className="font-light italic text-neutral-300">({tag})</span>
+        )}
+      </p>
+    </div>
   );
 };
 

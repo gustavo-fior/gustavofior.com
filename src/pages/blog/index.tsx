@@ -46,23 +46,12 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           content="https://www.gustavofior.com/api/og"
         />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:title"
-          content="Gustavo Fior"
-        />
-        <meta
-          property="twitter:description"
-          content="Blog"
-        />
+        <meta property="twitter:title" content="Gustavo Fior" />
+        <meta property="twitter:description" content="Blog" />
       </Head>
       <ContentWrapper>
         <BackButton href="/" />
-        <h1
-          className={`text-sm mb-6 text-neutral-500`}
-        >
-          Posts
-        </h1>
-        <motion.ul className="flex flex-col">
+        <motion.ul className="flex flex-col pb-48">
           {sortedPostsMetadata.map((post) => {
             return (
               <motion.li key={post.slug}>

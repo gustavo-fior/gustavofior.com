@@ -5,7 +5,7 @@ interface H1Props {
 }
 
 const H1 = ({ children }: H1Props) => {
-  return <h1 className="text-3xl font-medium text-neutral-200 py-2">{children}</h1>;
+  return <h1 className="py-2 text-3xl font-medium">{children}</h1>;
 };
 
 export default H1;

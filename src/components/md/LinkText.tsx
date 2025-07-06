@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 interface LinkTextProps {
   href: string;
@@ -12,10 +11,11 @@ const LinkText = ({ children, href }: LinkTextProps) => {
     <Link
       href={href}
       target="_blank"
-      className={`group relative flex items-center gap-0.5 text-neutral-600 transition-all duration-100 ease-in-out hover:text-neutral-800`}
+      className={`group cursor-pointer underline decoration-neutral-300 decoration-1 underline-offset-2 transition-all duration-100 ease-in-out hover:decoration-neutral-400`}
     >
       {children}
-      <ArrowUpRight className="h-2.5 w-2.5 opacity-0 transition-all duration-100 ease-in-out group-hover:h-3 group-hover:w-3 group-hover:translate-x-1 group-hover:text-neutral-400 group-hover:opacity-100" />
+
+      <ArrowUpRight className="ml-0.5 inline-block h-2.5 w-2.5 text-neutral-400 transition-all duration-100 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
     </Link>
   );
 };

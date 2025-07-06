@@ -8,14 +8,14 @@ export const config = {
 export default async function handler() {
   try {
     const fontData = await fetch(
-      new URL("../../../assets/Inter-Regular.ttf", import.meta.url)
+      new URL("../../../assets/InstrumentSerif-Regular.ttf", import.meta.url)
     ).then((res) => res.arrayBuffer());
 
     return new ImageResponse(
       (
         <div
           style={{
-            background: "#111112",
+            background: "#f5f5f5",
             height: "100%",
             width: "100%",
             display: "flex",
@@ -29,42 +29,30 @@ export default async function handler() {
             style={{
               display: "flex",
               flexDirection: "column",
-              marginLeft: 180,
-              marginTop: 420,
+              marginLeft: 64,
+              marginTop: 320,
             }}
           >
             <div
-              tw="font-bold"
               style={{
                 fontSize: 128,
-                fontFamily: "Inter",
-                color: "#e5e5e5",
+                fontFamily: "Instrument Serif",
+                color: "#000000",
                 lineHeight: 1.4,
                 whiteSpace: "pre-wrap",
-                fontWeight: 200,
               }}
             >
               Gustavo Fior
-            </div>
-            <div
-              tw="font-bold"
-              style={{
-                fontSize: 72,
-                fontFamily: "Inter",
-                color: "#737373",
-              }}
-            >
-              Software Engineer
             </div>
           </div>
         </div>
       ),
       {
-        width: 1920,
-        height: 1080,
+        width: 1200,
+        height: 630,
         fonts: [
           {
-            name: "Inter",
+            name: "Instrument Serif",
             data: fontData,
             style: "normal",
           },

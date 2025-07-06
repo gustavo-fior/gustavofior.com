@@ -6,8 +6,10 @@ type ContentWrapperProps = {
 
 const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
   return (
-    <div className="flex w-full flex-col items-center justify-center pb-12">
-      <div className="mx-8 sm:mx-0 sm:w-[30rem] md:w-[40rem]">{children}</div>
+    <div className="flex h-full min-h-screen w-full md:flex-col md:items-center">
+      <div className="mx-6 flex h-full min-h-screen w-full flex-col sm:mx-0 sm:w-[30rem] md:w-[40rem]">
+        {children}
+      </div>
     </div>
   );
 };

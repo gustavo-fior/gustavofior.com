@@ -3,7 +3,7 @@ import React from "react";
 const Hr = () => {
   return (
     <div className="flex items-center justify-center">
-      <div className="w-4 h-0.5 bg-orange-600 rounded-full" />
+      <div className="h-0.5 w-4 rounded-full bg-orange-600" />
     </div>
   );
 };

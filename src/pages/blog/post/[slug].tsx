@@ -48,14 +48,16 @@ const Post = ({ metadata, content }: PostProps) => {
       </Head>
 
       <ContentWrapper>
-        <BackButton href="/blog" />
-        <PostHeader
-          title={metadata.title}
-          date={metadata.date}
-          readTime={metadata.readTime}
-          emoji={metadata.emoji}
-        />
-        <MDXRemote {...content} />
+        <div className="flex flex-col pb-48">
+          <BackButton href="/blog" />
+          <PostHeader
+            title={metadata.title}
+            date={metadata.date}
+            readTime={metadata.readTime}
+            emoji={metadata.emoji}
+          />
+          <MDXRemote {...content} />
+        </div>
       </ContentWrapper>
     </div>
   );
