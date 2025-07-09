@@ -142,7 +142,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               <ProjectPreview
                 title="Ache o Pet"
                 description="Lost & found for dogs and cats."
-                link="https://acheopet.com/"
+                link="https://acheopet.vercel.app/"
                 logo="/logos/ache-o-pet.png"
                 tag="inactive"
               />

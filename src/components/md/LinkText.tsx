@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 interface LinkTextProps {
@@ -15,7 +15,11 @@ const LinkText = ({ children, href }: LinkTextProps) => {
     >
       {children}
 
-      <ArrowUpRight className="ml-0.5 inline-block h-2.5 w-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
+      {href.startsWith("http") ? (
+        <ArrowUpRight className="ml-0.5 inline-block h-2.5 w-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
+      ) : (
+        <ArrowRight className="ml-0.5 inline-block h-2.5 w-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
+      )}
     </Link>
   );
 };
