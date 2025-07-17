@@ -10,7 +10,7 @@ const PostHeader = ({ title, readTime, date, emoji }: PostHeaderProps) => {
     <>
       <div className="flex flex-row items-center justify-between gap-4 pb-8 align-middle">
         <div>
-          <h1 className="pb-2 font-serif text-3xl">{title}</h1>
+          <h1 className="pb-2 font-serif text-4xl font-medium">{title}</h1>
           <h3 className="whitespace-pre text-sm text-neutral-400">
             {date}
             {"  "}
