@@ -43,12 +43,13 @@ export default async function handler(request: NextRequest) {
           >
             <div
               style={{
-                fontSize: 64,
+                fontSize: 48,
                 fontFamily: "Instrument Serif",
                 color: "#000000",
                 lineHeight: 1.4,
                 whiteSpace: "pre-wrap",
                 marginTop: 64,
+                flexWrap: "nowrap",
               }}
             >
               {emoji}
@@ -59,7 +60,7 @@ export default async function handler(request: NextRequest) {
                 fontFamily: "Instrument Serif",
                 color: "#000000",
                 whiteSpace: "pre-wrap",
-                marginTop: 180,
+                marginTop: title && title.length > 30 ? 180 : 280,
                 marginRight: 64,
               }}
             >

@@ -73,7 +73,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           {/* BIO */}
           <div className={`${shouldAnimate ? "animate-5" : ""}`}>
             <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-20">
-              <h1 className={`font-serif text-4xl font-medium`}>
+              <h1 className={`font-serif text-4xl font-semibold`}>
                 Gustavo Fior
               </h1>
               <div className="flex items-center justify-center gap-4">
@@ -141,18 +141,18 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 logo="/logos/rafa.png"
               />
               <ProjectPreview
-                title="Censorfy"
-                description="AI content moderation API."
-                link="https://censorfy.com/"
-                logo="/logos/censorfy.png"
-                tag="failed"
-              />
-              <ProjectPreview
                 title="Ache o Pet"
                 description="Lost & found for dogs and cats."
                 link="https://acheopet.vercel.app/"
                 logo="/logos/ache-o-pet.png"
                 tag="inactive"
+              />
+              <ProjectPreview
+                title="Censorfy"
+                description="AI content moderation API."
+                link="https://censorfy.com/"
+                logo="/logos/censorfy.png"
+                tag="failed"
               />
               <ProjectPreview
                 title="Mind"
