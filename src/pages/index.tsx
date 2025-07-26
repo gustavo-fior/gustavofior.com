@@ -73,7 +73,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           {/* BIO */}
           <div className={`${shouldAnimate ? "animate-5" : ""}`}>
             <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-20">
-              <h1 className={`font-serif text-4xl font-semibold`}>
+              <h1 className={`font-serif text-4xl font-medium`}>
                 Gustavo Fior
               </h1>
               <div className="flex items-center justify-center gap-4">
@@ -103,7 +103,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           {/* PROJECTS */}
           <div className={`${shouldAnimate ? "animate-7" : ""}`}>
             <h2 className={`pb-4 text-sm text-neutral-400`}>Projects</h2>
-            <div className="grid grid-cols-1 gap-x-12 gap-y-6 pb-12 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-x-16 gap-y-6 pb-12 sm:grid-cols-3">
               <ProjectPreview
                 title="Itzam"
                 description="AI integration has never been so easy."
@@ -118,7 +118,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               />
               <ProjectPreview
                 title="CCC"
-                description="Curitiba Coding Club."
+                description="A coding (but not only) club in Curitiba."
                 link="https://lu.ma/-ccc"
                 logo="/logos/ccc.png"
               />
@@ -130,7 +130,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               />
               <ProjectPreview
                 title="VAYØ"
-                description="My favorite bookmark tool."
+                description="Bookmark tool to keep and share links."
                 link="https://vayo.me/"
                 logo="/logos/vayo.png"
               />

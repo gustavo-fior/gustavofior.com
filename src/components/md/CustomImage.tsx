@@ -17,7 +17,7 @@ const CustomImage = ({ src, alt, width = 1920, height = 1080 }: ImageProps) => {
 
   return shouldRender ? (
     <div className="text-center">
-      <div className="rounded-lg bg-neutral-100 p-1">
+      <div className="rounded-lg bg-neutral-200 p-1">
         <Image
           src={src}
           alt={alt}

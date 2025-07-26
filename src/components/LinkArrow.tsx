@@ -20,7 +20,7 @@ const LinkArrow = ({ children, href, className }: LinkArrowProps) => {
 
       {href.startsWith("http") ? (
         <ArrowUpRight
-          className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:text-neutral-400 group-hover:opacity-100`}
+          className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
           strokeWidth={1.5}
         />
       ) : (

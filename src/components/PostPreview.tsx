@@ -30,7 +30,7 @@ const PostPreview = ({
               strokeWidth={1.5}
             />
           </div>
-          <p className="text-sm text-neutral-400">{description}</p>
+          <p className="max-w-lg text-sm text-neutral-400">{description}</p>
         </div>
         {showDate && (
           <p className="hidden min-w-fit text-sm text-neutral-400 md:block">
