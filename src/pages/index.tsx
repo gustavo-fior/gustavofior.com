@@ -150,7 +150,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               <ProjectPreview
                 title="Censorfy"
                 description="AI content moderation API."
-                link="https://censorfy.com/"
+                link="https://censorfy.vercel.app/"
                 logo="/logos/censorfy.png"
                 tag="failed"
               />
