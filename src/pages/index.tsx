@@ -194,7 +194,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           <div className={`${shouldAnimate ? "animate-15" : ""}`}>
             <div className="flex gap-4">
               <LinkArrow
-                href="https://www.vayo.me/bookmarks/public/cltpx1nq70001jw1tc90e4ht6"
+                href="https://www.vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
                 className="text-sm text-neutral-400"
               >
                 Bookmarks
