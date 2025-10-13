@@ -120,7 +120,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 title="CCC"
                 description="A coding (but not only) club in Curitiba."
                 link="https://curitibacodingclub.com"
-                logo="/logos/ccc.png"
+                logo="/logos/ccc-black-bold.png"
               />
               <ProjectPreview
                 title="5Devs"
