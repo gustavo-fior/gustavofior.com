@@ -69,13 +69,11 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       </Head>
       <ContentWrapper>
         {/* MAIN CONTENT */}
-        <div className="flex-1">
+        <div className="flex flex-col gap-2">
           {/* BIO */}
           <div className={`${shouldAnimate ? "animate-5" : ""}`}>
-            <div className="flex items-center justify-between pt-16 sm:pb-4 sm:pt-20">
-              <h1 className={`font-serif text-4xl font-medium`}>
-                Gustavo Fior
-              </h1>
+            <div className="flex items-center justify-between pt-16 sm:pb-2 sm:pt-24">
+              <h1 className={`font-serif text-xl font-medium`}>Gustavo Fior</h1>
               <div className="flex items-center justify-center gap-4">
                 <Link
                   href="https://x.com/heyimgustavo"
@@ -192,12 +190,18 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
           {/* OTHERS */}
           <div className={`${shouldAnimate ? "animate-15" : ""}`}>
-            <div className="flex gap-4">
+            <div className="flex gap-6">
               <LinkArrow
                 href="https://www.vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
                 className="text-sm text-neutral-400"
               >
                 Bookmarks
+              </LinkArrow>
+              <LinkArrow
+                href="https://vayo.me/bookmarks/clublk9rh000113g5qf4tj038"
+                className="text-sm text-neutral-400"
+              >
+                Cool Stuff
               </LinkArrow>
               <LinkArrow
                 href="https://gustavofior.notion.site/Books-dad36ee3ac9f4e8486029f9b2fccb478"
@@ -211,7 +215,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* FOOTER */}
         <footer
-          className={`flex items-center justify-center pb-8 pt-16 ${
+          className={`flex items-center justify-center pb-8 pt-24 ${
             shouldAnimate ? "animate-25" : ""
           }`}
         >
@@ -243,7 +247,7 @@ const ProjectPreview = ({
       target="_blank"
       className="group flex cursor-pointer flex-col gap-1.5"
     >
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-2">
         <Image
           src={logo}
           alt={title}

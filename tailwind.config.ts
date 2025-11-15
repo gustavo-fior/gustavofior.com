@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        serif: ["Instrument Serif", ...defaultTheme.fontFamily.serif],
+        serif: ["EB Garamond", ...defaultTheme.fontFamily.serif],
       },
     },
   },
