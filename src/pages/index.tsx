@@ -190,7 +190,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
           {/* OTHERS */}
           <div className={`${shouldAnimate ? "animate-15" : ""}`}>
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6">
               <LinkArrow
                 href="https://www.vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
                 className="text-sm text-neutral-400"
