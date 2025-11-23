@@ -11,7 +11,7 @@ interface CodeProps {
   children: ReactNode;
 }
 
-const Code = ({ lang, children }: CodeProps) => {
+export default function Code({ lang, children }: CodeProps) {
   useEffect(() => {
     hljs.highlightAll();
   }, []);
@@ -21,6 +21,4 @@ const Code = ({ lang, children }: CodeProps) => {
       <code lang={lang}>{children}</code>
     </pre>
   );
-};
-
-export default Code;
+}
