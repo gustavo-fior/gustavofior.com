@@ -8,7 +8,7 @@ export const config = {
 export default async function handler(request: NextRequest) {
   try {
     const fontData = await fetch(
-      new URL("../../../../assets/InstrumentSerif-Regular.ttf", import.meta.url)
+      new URL("../../../../assets/EBGaramond-Medium.ttf", import.meta.url)
     ).then((res) => res.arrayBuffer());
 
     const { searchParams } = new URL(request.url);
@@ -17,9 +17,6 @@ export default async function handler(request: NextRequest) {
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
       : "Some blog post by";
-
-    const hasEmoji = searchParams.has("emoji");
-    const emoji = hasEmoji ? searchParams.get("emoji")?.slice(0, 100) : "👋";
 
     return new ImageResponse(
       (
@@ -38,30 +35,17 @@ export default async function handler(request: NextRequest) {
             style={{
               display: "flex",
               flexDirection: "column",
-              marginLeft: 64,
+              marginLeft: 96,
             }}
           >
             <div
               style={{
-                fontSize: 48,
-                fontFamily: "Instrument Serif",
-                color: "#000000",
-                lineHeight: 1.4,
-                whiteSpace: "pre-wrap",
-                marginTop: 64,
-                flexWrap: "nowrap",
-              }}
-            >
-              {emoji}
-            </div>
-            <div
-              style={{
                 fontSize: 96,
-                fontFamily: "Instrument Serif",
+                fontFamily: "EB Garamond",
                 color: "#000000",
                 whiteSpace: "pre-wrap",
-                marginTop: title && title.length > 30 ? 180 : 280,
-                marginRight: 64,
+                marginTop: title && title.length > 30 ? 280 : 380,
+                marginRight: 96,
               }}
             >
               {title && title.length > 60 ? title.slice(0, 60) + "..." : title}
@@ -74,7 +58,7 @@ export default async function handler(request: NextRequest) {
         height: 630,
         fonts: [
           {
-            name: "Instrument Serif",
+            name: "EB Garamond",
             data: fontData,
             style: "normal",
           },

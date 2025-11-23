@@ -3,12 +3,11 @@ import { ImageResponse } from "@vercel/og";
 export const config = {
   runtime: "edge",
 };
-//
 
 export default async function handler() {
   try {
     const fontData = await fetch(
-      new URL("../../../assets/InstrumentSerif-Regular.ttf", import.meta.url)
+      new URL("../../../assets/EBGaramond-Medium.ttf", import.meta.url)
     ).then((res) => res.arrayBuffer());
 
     return new ImageResponse(
@@ -29,14 +28,14 @@ export default async function handler() {
             style={{
               display: "flex",
               flexDirection: "column",
-              marginLeft: 64,
-              marginTop: 320,
+              marginLeft: 96,
+              marginTop: 280,
             }}
           >
             <div
               style={{
-                fontSize: 128,
-                fontFamily: "Instrument Serif",
+                fontSize: 96,
+                fontFamily: "EB Garamond",
                 color: "#000000",
                 lineHeight: 1.4,
                 whiteSpace: "pre-wrap",
@@ -52,7 +51,7 @@ export default async function handler() {
         height: 630,
         fonts: [
           {
-            name: "Instrument Serif",
+            name: "EB Garamond",
             data: fontData,
             style: "normal",
           },

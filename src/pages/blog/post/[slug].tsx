@@ -5,9 +5,7 @@ import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import path from "path";
-import BackButton from "~/components/BackButton";
-import ContentWrapper from "~/components/ContentWrapper";
-import PostHeader from "~/components/PostHeader";
+import PostHeader from "~/components/posts/post-header";
 
 interface PostMetadata {
   title: string;
@@ -47,18 +45,15 @@ const Post = ({ metadata, content }: PostProps) => {
         <meta property="twitter:description" content={metadata.description} />
       </Head>
 
-      <ContentWrapper>
-        <div className="flex flex-col pb-48">
-          <BackButton href="/blog" />
-          <PostHeader
-            title={metadata.title}
-            date={metadata.date}
-            readTime={metadata.readTime}
-            emoji={metadata.emoji}
-          />
-          <MDXRemote {...content} />
-        </div>
-      </ContentWrapper>
+      <div className="flex flex-col pb-48">
+        <PostHeader
+          title={metadata.title}
+          date={metadata.date}
+          readTime={metadata.readTime}
+          emoji={metadata.emoji}
+        />
+        <MDXRemote {...content} />
+      </div>
     </div>
   );
 };

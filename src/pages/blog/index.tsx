@@ -4,9 +4,7 @@ import matter from "gray-matter";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import path from "path";
-import BackButton from "~/components/BackButton";
-import ContentWrapper from "~/components/ContentWrapper";
-import PostPreview from "~/components/PostPreview";
+import PostPreview from "~/components/posts/post-preview";
 
 export interface BlogPageProps {
   postsMetadata: PostMetadata[];
@@ -49,8 +47,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         <meta property="twitter:title" content="Gustavo Fior" />
         <meta property="twitter:description" content="Blog" />
       </Head>
-      <ContentWrapper>
-        <BackButton href="/" />
+      <div className="flex flex-col">
         <motion.ul className="flex flex-col pb-48">
           {sortedPostsMetadata.map((post) => {
             return (
@@ -65,7 +62,7 @@ const Blog: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             );
           })}
         </motion.ul>
-      </ContentWrapper>
+      </div>
     </>
   );
 };

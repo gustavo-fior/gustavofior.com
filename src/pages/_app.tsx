@@ -4,21 +4,22 @@ import { type Components } from "@mdx-js/react/lib";
 import { Analytics } from "@vercel/analytics/react";
 import { type AppType } from "next/app";
 import Head from "next/head";
-import Code from "~/components/md/Code";
-import CustomImage from "~/components/md/CustomImage";
-import H1 from "~/components/md/H1";
-import H2 from "~/components/md/H2";
-import H3 from "~/components/md/H3";
-import Hr from "~/components/md/Hr";
-import Li from "~/components/md/Li";
-import LinkText from "~/components/md/LinkText";
-import OrderedList from "~/components/md/OrderedList";
-import P from "~/components/md/P";
-import Quote from "~/components/md/Quote";
-import Strong from "~/components/md/Strong";
-import UnorderedList from "~/components/md/UnorderedList";
+import BackButton from "~/components/back-button";
+import ContentWrapper from "~/components/content-wrapper";
+import Code from "~/components/md/code";
+import CustomImage from "~/components/md/custom-image";
+import H1 from "~/components/md/h1";
+import H2 from "~/components/md/h2";
+import H3 from "~/components/md/h3";
+import Hr from "~/components/md/hr";
+import Li from "~/components/md/li";
+import LinkText from "~/components/md/link-text";
+import OrderedList from "~/components/md/ol";
+import P from "~/components/md/p";
+import Quote from "~/components/md/quote";
+import Strong from "~/components/md/strong";
+import UnorderedList from "~/components/md/ul";
 import "~/styles/globals.css";
-import { api } from "~/utils/api";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const components = {
@@ -49,7 +50,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
             rel="stylesheet"
           />
           <script
@@ -60,11 +61,14 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         </Head>
         <main className="firefox-scrollbar-fix min-h-screen bg-neutral-100 text-neutral-900">
           {/* <Header /> */}
-          <Component {...pageProps} />
+          <ContentWrapper>
+            <BackButton />
+            <Component {...pageProps} />
+          </ContentWrapper>
         </main>
       </MDXProvider>
     </>
   );
 };
 
-export default api.withTRPC(MyApp);
+export default MyApp;
