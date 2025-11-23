@@ -6,7 +6,6 @@ import { type AppType } from "next/app";
 import Head from "next/head";
 import BackButton from "~/components/back-button";
 import ContentWrapper from "~/components/content-wrapper";
-import Code from "~/components/md/code";
 import CustomImage from "~/components/md/custom-image";
 import H1 from "~/components/md/h1";
 import H2 from "~/components/md/h2";
@@ -34,7 +33,6 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     ul: UnorderedList,
     ol: OrderedList,
     img: CustomImage,
-    pre: Code,
     hr: Hr,
   };
 
