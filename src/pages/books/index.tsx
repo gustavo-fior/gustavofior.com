@@ -132,13 +132,13 @@ export default function Books() {
         <div className="grid grid-cols-2 gap-8 gap-y-16 md:grid-cols-4">
           {sortedBooks.map((book) => (
             <div key={book.name} className="flex flex-col gap-4">
-              <div className="book book-fade book-hover-open group relative w-fit rounded-sm will-change-transform">
+              <div className="book book-fade book-hover-open group relative w-fit rounded-sm rounded-r-none">
                 <Image
                   src={book.coverImageUrl}
                   alt={book.name}
                   width={1920}
                   height={1080}
-                  className="pointer-events-none block h-[75px] w-[50px] object-cover transition-all duration-100 ease-in-out will-change-transform group-hover:border-r-[3px] group-hover:border-neutral-200"
+                  className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-neutral-200 object-cover transition-all duration-100 ease-in-out"
                   priority
                   loading="eager"
                 />
