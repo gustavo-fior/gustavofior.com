@@ -198,7 +198,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               href="https://vayo.me/bookmarks/clublk9rh000113g5qf4tj038"
               className="text-sm text-neutral-400"
             >
-              Cool Stuff
+              Cool <span className="hidden md:inline">Stuff</span>
             </LinkArrow>
             <LinkArrow href="/books" className="text-sm text-neutral-400">
               Books
