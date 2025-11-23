@@ -6,18 +6,19 @@ import { type AppType } from "next/app";
 import Head from "next/head";
 import BackButton from "~/components/back-button";
 import ContentWrapper from "~/components/content-wrapper";
-import CustomImage from "~/components/md/custom-image";
-import H1 from "~/components/md/h1";
-import H2 from "~/components/md/h2";
-import H3 from "~/components/md/h3";
-import Hr from "~/components/md/hr";
-import Li from "~/components/md/li";
-import LinkText from "~/components/md/link-text";
-import OrderedList from "~/components/md/ol";
-import P from "~/components/md/p";
-import Quote from "~/components/md/quote";
-import Strong from "~/components/md/strong";
-import UnorderedList from "~/components/md/ul";
+import Code from "~/components/md/Code";
+import CustomImage from "~/components/md/CustomImage";
+import H1 from "~/components/md/H1";
+import H2 from "~/components/md/H2";
+import H3 from "~/components/md/H3";
+import Hr from "~/components/md/Hr";
+import Li from "~/components/md/Li";
+import LinkText from "~/components/md/LinkText";
+import OrderedList from "~/components/md/Ol";
+import P from "~/components/md/P";
+import Quote from "~/components/md/Quote";
+import Strong from "~/components/md/Strong";
+import UnorderedList from "~/components/md/Ul";
 import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
@@ -33,6 +34,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     ul: UnorderedList,
     ol: OrderedList,
     img: CustomImage,
+    pre: Code,
     hr: Hr,
   };
 
