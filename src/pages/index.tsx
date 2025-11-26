@@ -12,6 +12,7 @@ import path from "path";
 import { useEffect, useState } from "react";
 import LinkArrow from "~/components/link-arrow";
 import PostPreview from "~/components/posts/post-preview";
+import { books } from "~/data/books";
 import { animateAtom } from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
 

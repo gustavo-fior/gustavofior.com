@@ -132,7 +132,7 @@ export default function Books() {
         <div className="grid grid-cols-2 gap-8 gap-y-16 md:grid-cols-4">
           {sortedBooks.map((book) => (
             <div key={book.name} className="flex flex-col gap-4">
-              <div className="book book-fade book-hover-open group relative w-fit rounded-sm rounded-r-none">
+              <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
                 <Image
                   src={book.coverImageUrl}
                   alt={book.name}
@@ -152,7 +152,7 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("READ")
                     }
-                    className="flex w-fit items-center gap-1 text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-1 text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
                   >
                     <BookCheckIcon
                       className="mb-[1px] size-[9px] fill-emerald-100"
@@ -168,7 +168,7 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("READING")
                     }
-                    className="flex w-fit items-center gap-1 text-[10px] text-orange-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-1 text-[10px] text-orange-500 transition-opacity hover:opacity-70"
                   >
                     <BookOpen
                       className="size-[9px] fill-orange-100"
@@ -184,7 +184,7 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("BUY")
                     }
-                    className="flex w-fit items-center gap-1 text-[10px] text-sky-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-1 text-[10px] text-sky-500 transition-opacity hover:opacity-70"
                   >
                     <ShoppingBag
                       className="mb-[1px] size-[9px] fill-sky-100"
@@ -200,7 +200,7 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("WILL_READ")
                     }
-                    className="flex w-fit items-center gap-1 text-[10px] text-amber-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-1 text-[10px] text-amber-500 transition-opacity hover:opacity-70"
                   >
                     <LibraryBigIcon
                       className="mb-px size-[9px] fill-amber-100"
@@ -216,7 +216,7 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("LOST")
                     }
-                    className="flex w-fit items-center gap-[3px] text-[10px] text-red-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-red-500 transition-opacity hover:opacity-70"
                   >
                     <BookXIcon
                       className="mb-[1px] size-[9px] fill-red-100"

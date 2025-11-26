@@ -33,7 +33,7 @@ const BackButton = () => {
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="top-0 pb-4 pt-0 md:absolute md:-left-24 md:pb-0 md:pt-2 lg:-left-32"
+          className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.5rem] md:pb-0 md:pt-0 lg:left-[calc(50%-28rem)]"
         >
           <Link
             href={pathname.includes("/blog/post/") ? "/blog" : "/"}
