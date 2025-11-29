@@ -23,12 +23,12 @@ const LinkArrow = ({ children, href, className }: LinkArrowProps) => {
       {href.startsWith("http") || href.startsWith("mailto") ? (
         <ArrowUpRight
           className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
-          strokeWidth={1.5}
+          strokeWidth={2.6}
         />
       ) : (
         <ArrowRight
           className={`h-2.5 w-2.5 text-neutral-400 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
-          strokeWidth={1.5}
+          strokeWidth={2.6}
         />
       )}
     </Link>

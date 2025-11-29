@@ -6,6 +6,7 @@ export const books = [
     createdAt: "2022-11-06T05:52:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61D+pmrgjtL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "A Revolta de Atlas",
@@ -13,6 +14,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-12-19T01:40:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/61R8bWX3YDL.jpg",
+    stars: 5,
   },
   {
     name: "Roube como um Artista",
@@ -21,6 +23,7 @@ export const books = [
     createdAt: "2022-11-08T11:16:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71ey17QwvmL._UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "O Lado Certo da História",
@@ -29,6 +32,7 @@ export const books = [
     createdAt: "2022-11-06T05:45:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81aSONLmQiL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "O Processo",
@@ -37,6 +41,7 @@ export const books = [
     createdAt: "2022-11-06T06:28:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71n7HqKTzFL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "O Behaviorismo Clássico",
@@ -53,6 +58,7 @@ export const books = [
     createdAt: "2022-11-08T11:17:00.000Z",
     coverImageUrl:
       "https://img.notionusercontent.com/ext/https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61LR1rBrVtL.jpg/size/w=1510?exp=1763870319&sig=cgGm_fXbCDfFWHzXK3_ISN2x1AT9SBnSeaj3LEBRP4U&id=12c1fddd-459a-41f0-9b37-84a476c697b8&table=block&userId=4f072f7a-2964-4d07-8db3-11f949ba7eb5",
+    stars: 4.5,
   },
   {
     name: "Como Fazer Amigos e Influenciar Pessoas",
@@ -60,6 +66,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:32:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71x-i7sKSvL.jpg",
+    stars: 3.5,
   },
   {
     name: "Nudge",
@@ -68,6 +75,7 @@ export const books = [
     createdAt: "2022-11-06T06:10:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71yP-aq1H6L._AC_UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "The Accidental Superpower",
@@ -76,6 +84,7 @@ export const books = [
     createdAt: "2022-11-05T23:51:13.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81cVHYGpTWL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "O Mapa da Mente",
@@ -84,6 +93,7 @@ export const books = [
     createdAt: "2022-12-13T00:22:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/810+G64v4yL._UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "Meditações",
@@ -92,6 +102,7 @@ export const books = [
     createdAt: "2022-11-06T06:08:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/612B0id4gNL._AC_UF1000,1000_QL80_.jpg",
+    stars: 5,
   },
   {
     name: "O Homem e seus Símbolos",
@@ -113,6 +124,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-12-14T00:51:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81KdmY4M-7L.jpg",
+    stars: 4,
   },
   {
     name: "Receita Previsível",
@@ -143,6 +155,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:32:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81OTdstvbuL.jpg",
+    stars: 4,
   },
   {
     name: "The Lean Startup",
@@ -196,6 +209,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:08:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/61i9Y7xDeBL.jpg",
+    stars: 4.5,
   },
   {
     name: "O Menino da Lista de Schindler",
@@ -203,6 +217,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:03:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71cyWqWti3L.jpg",
+    stars: 5,
   },
   {
     name: "Dieter Rams: The Complete Works",
@@ -219,6 +234,7 @@ export const books = [
     createdAt: "2022-11-06T05:47:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61kqthVRWOL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "Bilhões e Lágrimas",
@@ -227,6 +243,7 @@ export const books = [
     createdAt: "2022-11-06T06:05:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71Fk4T3gifL._UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "Pequeno Príncipe",
@@ -235,6 +252,7 @@ export const books = [
     createdAt: "2022-11-06T06:33:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81SVIwe5L9L._UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "Gengis Khan",
@@ -250,6 +268,7 @@ export const books = [
     createdAt: "2022-11-06T05:39:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81bPmiLl9uL._AC_UF1000,1000_QL80_.jpg",
+    stars: 1,
   },
   {
     name: "Sapiens: uma breve história da humanidade",
@@ -257,6 +276,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:24:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81BTkpMrLYL.jpg",
+    stars: 4,
   },
   {
     name: "Inabalável",
@@ -265,6 +285,7 @@ export const books = [
     createdAt: "2022-11-06T05:44:00.000Z",
     coverImageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx1Ko7v-P4DyehHD7jW1ZF63LZSgyunRHCHA&s",
+    stars: 3,
   },
   {
     name: "Breve Respostas para Grandes Questões",
@@ -273,6 +294,7 @@ export const books = [
     createdAt: "2022-11-06T06:18:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81jXbJv685L._UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "Código de um Cavaleiro",
@@ -281,6 +303,7 @@ export const books = [
     createdAt: "2022-11-06T05:56:00.000Z",
     coverImageUrl:
       "https://harpercollins.com.br/cdn/shop/products/9788569514312_787bf93b-59cb-4753-a0ee-a7a447f01579.jpg?v=1686058524",
+    stars: 5,
   },
   {
     name: "A Arte de ter Razão",
@@ -289,6 +312,7 @@ export const books = [
     createdAt: "2022-11-06T05:42:00.000Z",
     coverImageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLN6gYTE7oDLhcQT11Si46vIwW0uM6K9m8kA&s",
+    stars: 4,
   },
   {
     name: "Sociedade do Cansaço",
@@ -297,6 +321,7 @@ export const books = [
     createdAt: "2022-11-06T05:35:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/615xknuR6CL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "O Jeito Disney de Encantar os Clientes",
@@ -304,6 +329,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:51:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81r9h14myiS.jpg",
+    stars: 3,
   },
   {
     name: "O Livro do Ego",
@@ -312,6 +338,7 @@ export const books = [
     createdAt: "2022-11-06T05:27:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81RiQL0QiRL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Sobre a Brevidade da Vida",
@@ -320,6 +347,7 @@ export const books = [
     createdAt: "2022-11-06T06:15:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81TNzkUcNzL._AC_UF1000,1000_QL80_.jpg",
+    stars: 5,
   },
   {
     name: "O Poder do Hábito",
@@ -327,6 +355,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:31:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/815iPX0SgkL.jpg",
+    stars: 4,
   },
   {
     name: "O Homem Mais Rico da Babilônia",
@@ -335,6 +364,7 @@ export const books = [
     createdAt: "2022-11-06T05:48:00.000Z",
     coverImageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/81ehX6Quw2L._AC_UL900_SR615,900_.jpg",
+    stars: 3.5,
   },
   {
     name: "Laranja Mecânica",
@@ -343,6 +373,7 @@ export const books = [
     createdAt: "2022-11-06T05:23:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61HgbCkcz4L._AC_UF1000,1000_QL80_.jpg",
+    stars: 5,
   },
   {
     name: "Admirável Mundo Novo",
@@ -350,6 +381,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:27:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/61hOp6UFvCL.jpg",
+    stars: 4.5,
   },
   {
     name: "A Biblioteca da Meia-noite",
@@ -364,6 +396,7 @@ export const books = [
     status: "READ",
     createdAt: "2023-02-09T02:48:39.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/812qwlotv+L.jpg",
+    stars: 4.5,
   },
   {
     name: "Geração de Valor",
@@ -372,6 +405,7 @@ export const books = [
     createdAt: "2022-11-06T05:42:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/51D2KF-05oL._AC_UF1000,1000_QL80_.jpg",
+    stars: 2,
   },
   {
     name: "Neuromancer",
@@ -380,6 +414,7 @@ export const books = [
     createdAt: "2022-11-06T05:49:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/91Bx5ilP+EL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Faça Fortuna com Ações",
@@ -388,6 +423,7 @@ export const books = [
     createdAt: "2022-11-06T06:03:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71VC1WBFjwL._UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Hard thing about hard things",
@@ -404,6 +440,7 @@ export const books = [
     createdAt: "2022-11-06T05:47:00.000Z",
     coverImageUrl:
       "https://www.lpm.com.br/livros/imagens/a_morte_de_ivan_ilitch_9788525406002_hd.jpg",
+    stars: 4,
   },
   {
     name: "12 Regras para a Vida",
@@ -411,6 +448,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:28:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71geoUmEoQL.jpg",
+    stars: 4,
   },
   {
     name: "Justiça",
@@ -419,6 +457,7 @@ export const books = [
     createdAt: "2022-11-06T19:22:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71O9CXzcFDL._SL1500_.jpg",
+    stars: 4.5,
   },
   {
     name: "A Sutil Arte de Ligar o Foda-se",
@@ -426,6 +465,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-08T11:41:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/6175IU0qFgL.jpg",
+    stars: 4,
   },
   {
     name: "A Revolução dos Bichos",
@@ -433,6 +473,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:35:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/91BsZhxCRjL.jpg",
+    stars: 4,
   },
   {
     name: "Crash",
@@ -441,6 +482,7 @@ export const books = [
     createdAt: "2023-01-06T02:06:01.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61dwGXKtrBL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "Armas, germes e aço",
@@ -448,6 +490,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T00:08:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/91R9whRsQ0L.jpg",
+    stars: 4,
   },
   {
     name: "Eram os Deuses Astronautas",
@@ -456,6 +499,7 @@ export const books = [
     createdAt: "2022-11-08T03:13:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81yIkzXC4yL._UF894,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Dedique-se de Coração",
@@ -464,6 +508,7 @@ export const books = [
     createdAt: "2022-11-06T05:44:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/51E6JefALvL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "O Momento Decisivo",
@@ -472,6 +517,7 @@ export const books = [
     createdAt: "2022-11-06T06:10:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71oU2Ji6zUL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3.5,
   },
   {
     name: "1984",
@@ -480,6 +526,7 @@ export const books = [
     createdAt: "2022-11-06T06:34:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/91g5gcjTxsL._UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "O Jeito Peter Lynch de Investir",
@@ -487,6 +534,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:01:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81QQKoq2vbL.jpg",
+    stars: 3.5,
   },
   {
     name: "Manual de Limpeza de um Monge Budista",
@@ -495,6 +543,7 @@ export const books = [
     createdAt: "2022-11-06T02:25:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81CSK96-2PL._UF350,350_QL50_.jpg",
+    stars: 1,
   },
   {
     name: "A Arte da Guerra",
@@ -502,6 +551,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:12:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71FMCr5Z9rL.jpg",
+    stars: 4,
   },
   {
     name: "Amor, solitude e liberdade",
@@ -509,6 +559,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:50:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71whu34jdgL.jpg",
+    stars: 2,
   },
   {
     name: "Almanaque de Naval Ravikant",
@@ -524,6 +575,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:22:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/91qVTRzBNgL.jpg",
+    stars: 4,
   },
   {
     name: "Medicina dos Horrores",
@@ -532,6 +584,7 @@ export const books = [
     createdAt: "2022-11-06T05:54:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61LvikPgICL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Buda",
@@ -540,6 +593,7 @@ export const books = [
     createdAt: "2022-11-06T06:00:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81m1Xpap5PL._AC_UF1000,1000_QL80_.jpg",
+    stars: 2,
   },
   {
     name: "McMafia",
@@ -564,6 +618,7 @@ export const books = [
     createdAt: "2022-11-06T05:51:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61Q78KCNeaL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3.5,
   },
   {
     name: "Iludidos pelo Acaso",
@@ -572,6 +627,7 @@ export const books = [
     createdAt: "2023-08-31T15:38:47.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81j15XZb34L._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Why Not?",
@@ -588,6 +644,7 @@ export const books = [
     createdAt: "2022-11-06T05:53:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71XIOHhYu4L._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "A Insustentável Leveza do Ser",
@@ -595,6 +652,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:11:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81U1hX2wybS.jpg",
+    stars: 5,
   },
   {
     name: "Crime e Castigo",
@@ -603,6 +661,7 @@ export const books = [
     createdAt: "2022-11-06T00:06:00.000Z",
     coverImageUrl:
       "https://cdn.awsli.com.br/2551/2551876/produto/2427291902deb25de03.jpg",
+    stars: 5,
   },
   {
     name: "Manual do Guerreiro da Luz",
@@ -610,6 +669,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-05T23:51:13.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81tn8YW-I+L.jpg",
+    stars: 3.5,
   },
   {
     name: "Gestão de Alta Performance",
@@ -625,6 +685,7 @@ export const books = [
     createdAt: "2022-11-06T05:41:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/714g7vcAqAL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "Ser Livre com Sartre",
@@ -633,6 +694,7 @@ export const books = [
     createdAt: "2022-11-06T06:29:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71+otmQ7HFL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "A Marca da Vitória",
@@ -640,6 +702,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:59:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/51PDs0RT7vL.jpg",
+    stars: 4.5,
   },
   {
     name: "Steve Jobs",
@@ -648,6 +711,7 @@ export const books = [
     createdAt: "2022-11-06T06:14:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81wbmWlRNEL._AC_UF1000,1000_QL80_.jpg",
+    stars: 5,
   },
   {
     name: "A Natureza da Mordida",
@@ -664,6 +728,7 @@ export const books = [
     createdAt: "2022-12-14T00:50:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71jB8udw-TL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "O Livro Vermelho",
@@ -679,6 +744,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:34:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71CNkduqZRL.jpg",
+    stars: 3.5,
   },
   {
     name: "Mais Esperto que o Diabo",
@@ -686,6 +752,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:57:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/819ERrDHRcL.jpg",
+    stars: 3,
   },
   {
     name: "Acredite, estou mentindo",
@@ -701,6 +768,7 @@ export const books = [
     createdAt: "2022-11-06T06:00:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/9118AmQ2ONL._AC_UF1000,1000_QL80_.jpg",
+    stars: 4.5,
   },
   {
     name: "O Deserto dos Tártaros",
@@ -715,6 +783,7 @@ export const books = [
     status: "LOST",
     createdAt: "2022-11-08T03:09:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71TWVC8ehAL.jpg",
+    stars: 1,
   },
   {
     name: "Guerra e Paz",
@@ -738,6 +807,7 @@ export const books = [
     createdAt: "2022-11-08T03:17:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71xGPI6L0fL._AC_UF1000,1000_QL80_.jpg",
+    stars: 2,
   },
   {
     name: "O Fim da Infância",
@@ -745,6 +815,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:02:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71aSbmu4MzL.jpg",
+    stars: 5,
   },
   {
     name: "Hamlet",
@@ -753,6 +824,7 @@ export const books = [
     createdAt: "2022-11-06T05:26:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81D314P1V9L._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Noites Brancas",
@@ -761,6 +833,7 @@ export const books = [
     createdAt: "2024-04-17T23:00:40.000Z",
     coverImageUrl:
       "https://www.lpm.com.br/livros/imagens/noites_brancas_plus_nova_9788525417480_hd.jpg",
+    stars: 2,
   },
   {
     name: "Os Mentirosos",
@@ -768,6 +841,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:32:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71bJYZfcrKL.jpg",
+    stars: 3.5,
   },
   {
     name: "O Caibalion",
@@ -776,6 +850,7 @@ export const books = [
     createdAt: "2022-11-06T06:31:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81lilYEmcYS._UF1000,1000_QL80_.jpg",
+    stars: 5,
   },
   {
     name: "A Voz do Silêncio",
@@ -791,6 +866,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:55:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/61RyKTGFp5L.jpg",
+    stars: 3.5,
   },
   {
     name: "A Fórmula Mágica de Joel Greenblatt",
@@ -798,6 +874,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-08T03:16:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/61jUVcZOZcL.jpg",
+    stars: 3.5,
   },
   {
     name: "Código Limpo",
@@ -806,6 +883,7 @@ export const books = [
     createdAt: "2022-11-08T03:12:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71JpZHEGvWL._UF1000,1000_QL80_.jpg",
+    stars: 1,
   },
   {
     name: "O Testamento",
@@ -814,6 +892,7 @@ export const books = [
     createdAt: "2022-11-06T05:30:00.000Z",
     coverImageUrl:
       "https://cdn.awsli.com.br/800x800/1639/1639761/produto/79552866/dad6d5a9e5.jpg",
+    stars: 3,
   },
   {
     name: "A Vida Intelectual",
@@ -822,6 +901,7 @@ export const books = [
     createdAt: "2022-11-06T05:40:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61Qro2FtsqL._AC_UF1000,1000_QL80_.jpg",
+    stars: 2,
   },
   {
     name: "O Velho e o Mar",
@@ -830,6 +910,7 @@ export const books = [
     createdAt: "2022-11-06T06:09:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71wo6d7Ex3L._AC_UF1000,1000_QL80_.jpg",
+    stars: 4,
   },
   {
     name: "Palavras de Fogo",
@@ -838,6 +919,7 @@ export const books = [
     createdAt: "2022-11-08T03:12:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71VtgNxAEQL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "Além do Bem e do Mal",
@@ -846,6 +928,7 @@ export const books = [
     createdAt: "2022-11-06T05:29:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71rYIRYQ7MS._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "Uma Breve História do Tempo",
@@ -853,6 +936,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T05:46:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/61AaXcdHXKS.jpg",
+    stars: 4,
   },
   {
     name: "Um Barril de Risadas um Vale de Lágrimas",
@@ -861,6 +945,7 @@ export const books = [
     createdAt: "2022-11-06T06:13:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81MNg2GYsRL._AC_UF1000,1000_QL80_.jpg",
+    stars: 3,
   },
   {
     name: "Leonardo da Vinci",
@@ -868,6 +953,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-05T23:51:13.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/91Ey0+6N-LL.jpg",
+    stars: 5,
   },
   {
     name: "A Montanha Mágica",
@@ -882,6 +968,7 @@ export const books = [
     status: "READ",
     createdAt: "2022-11-06T06:11:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71mTVDqs-+L.jpg",
+    stars: 3,
   },
   {
     name: "Demian",
@@ -890,6 +977,7 @@ export const books = [
     createdAt: "2022-12-14T00:52:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81A2vG0k3yL._AC_UF1000,1000_QL80_.jpg",
+    stars: 5,
   },
   {
     name: "Cosmos",
@@ -914,6 +1002,7 @@ export const books = [
     createdAt: "2024-07-11T16:45:05.000Z",
     coverImageUrl:
       "https://upload.wikimedia.org/wikipedia/en/f/fd/Mythical_man-month_%28book_cover%29.jpg",
+    stars: 2,
   },
   {
     name: "O Príncipe",
@@ -922,5 +1011,6 @@ export const books = [
     createdAt: "2022-11-06T05:39:00.000Z",
     coverImageUrl:
       "https://www.lpm.com.br/livros/imagens/o_principe_14x21_9788525437754_9788525407986_hd.jpg",
+    stars: 4,
   },
 ];

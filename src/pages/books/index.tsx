@@ -1,37 +1,61 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { useAtom } from "jotai";
 import {
   BookCheckIcon,
   BookOpen,
   BookXIcon,
   LibraryBigIcon,
   ShoppingBag,
-  XIcon,
+  StarIcon,
 } from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
 import { books } from "~/data/books";
-
-type BookStatus = "READ" | "READING" | "BUY" | "WILL_READ" | "LOST";
+import { filtersAtom, sortsAtom } from "~/utils/atoms";
 
 export default function Books() {
   // State to track the selected status filter. When a status badge is clicked, filter the books by that status
-  const [selectedStatus, setSelectedStatus] = useState<BookStatus | null>(null);
+  const [selectedStatus, setSelectedStatus] = useAtom(filtersAtom);
+  const [selectedSort] = useAtom(sortsAtom);
 
   const filteredBooks = selectedStatus
     ? books.filter((book) => book.status === selectedStatus)
     : books;
 
-  const readingBooks = filteredBooks.filter(
-    (book) => book.status === "READING"
-  );
-  const nonReadingBooks = filteredBooks
-    .filter((book) => book.status !== "READING")
-    .sort(
-      (a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    );
-  const sortedBooks = [...readingBooks, ...nonReadingBooks];
+  // Apply sorting based on selectedSort
+  const getSortedBooks = () => {
+    const booksCopy = [...filteredBooks];
+
+    switch (selectedSort) {
+      case "BEST":
+        return booksCopy.sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0));
+      case "WORST":
+        return booksCopy.sort((a, b) => {
+          // Books without stars go to the end
+          if (a.stars == null && b.stars == null) return 0;
+          if (a.stars == null) return 1;
+          if (b.stars == null) return -1;
+          return a.stars - b.stars;
+        });
+      case "ABC":
+        return booksCopy.sort((a, b) => a.name.localeCompare(b.name));
+      case "ZXY":
+        return booksCopy.sort((a, b) => b.name.localeCompare(a.name));
+      default:
+        // Default: reading books first, then by date
+        const readingBooks = booksCopy.filter(
+          (book) => book.status === "READING"
+        );
+        const nonReadingBooks = booksCopy
+          .filter((book) => book.status !== "READING")
+          .sort(
+            (a, b) =>
+              new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
+        return [...readingBooks, ...nonReadingBooks];
+    }
+  };
+
+  const sortedBooks = getSortedBooks();
 
   return (
     <>
@@ -67,67 +91,6 @@ export default function Books() {
               My own little library
             </h3>
           </div>
-          {/* Show the active filter with an X button to clear it */}
-          <AnimatePresence>
-            {selectedStatus && (
-              <motion.button
-                initial={{ opacity: 0, filter: "blur(4px)" }}
-                whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, filter: "blur(4px)" }}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
-                viewport={{ once: true }}
-                onClick={() => setSelectedStatus(null)}
-                className="group flex w-fit items-center gap-1 text-xs transition-opacity hover:opacity-70"
-              >
-                {selectedStatus === "READ" && (
-                  <>
-                    <BookCheckIcon
-                      className="mb-[1px] size-[11px] fill-emerald-100 text-emerald-500"
-                      strokeWidth={2.5}
-                    />
-                    <span className="text-emerald-500">Read</span>
-                  </>
-                )}
-                {selectedStatus === "READING" && (
-                  <>
-                    <BookOpen
-                      className="size-[11px] fill-orange-100 text-orange-500"
-                      strokeWidth={2.5}
-                    />
-                    <span className="text-orange-500">Reading</span>
-                  </>
-                )}
-                {selectedStatus === "BUY" && (
-                  <>
-                    <ShoppingBag
-                      className="mb-[1px] size-[11px] fill-sky-100 text-sky-500"
-                      strokeWidth={2.5}
-                    />
-                    <span className="text-sky-500">Buy</span>
-                  </>
-                )}
-                {selectedStatus === "WILL_READ" && (
-                  <>
-                    <LibraryBigIcon
-                      className="mb-px size-[11px] fill-amber-100 text-amber-500"
-                      strokeWidth={2.3}
-                    />
-                    <span className="text-amber-500">Will Read</span>
-                  </>
-                )}
-                {selectedStatus === "LOST" && (
-                  <>
-                    <BookXIcon
-                      className="mb-[1px] size-[11px] fill-red-100 text-red-500"
-                      strokeWidth={2.5}
-                    />
-                    <span className="text-red-500">Dropped</span>
-                  </>
-                )}
-                <XIcon className="ml-1 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
-              </motion.button>
-            )}
-          </AnimatePresence>
         </div>
         <div className="grid grid-cols-2 gap-8 gap-y-16 md:grid-cols-4">
           {sortedBooks.map((book) => (
@@ -140,6 +103,8 @@ export default function Books() {
                   height={1080}
                   className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-neutral-200 object-cover transition-all duration-100 ease-in-out"
                   priority
+                  quality={100}
+                  sizes="50px"
                   loading="eager"
                 />
                 <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/10"></div>
@@ -225,10 +190,44 @@ export default function Books() {
                     Dropped
                   </button>
                 )}
-                <p className="line-clamp-2 text-sm">{book.name}</p>
-                <p className="mb-1 text-xs tracking-wide text-neutral-400">
+                <p className="pointer-events-none line-clamp-2 text-sm">
+                  {book.name}
+                </p>
+                <p className="pointer-events-none mb-1 text-xs tracking-wide text-neutral-400">
                   {book.author}
                 </p>
+                {book.stars && (
+                  <div className="flex items-center gap-0.5">
+                    {/* Full stars */}
+                    {Array.from({ length: Math.floor(book.stars) }).map(
+                      (_, index) => (
+                        <StarIcon
+                          key={index}
+                          className="size-[9px] fill-yellow-200 text-yellow-500"
+                          strokeWidth={2.5}
+                        />
+                      )
+                    )}
+                    {/* Half star */}
+                    {book.stars % 1 !== 0 && (
+                      <div className="relative size-[9px]">
+                        <StarIcon
+                          className="absolute size-[9px] text-transparent"
+                          strokeWidth={2.5}
+                        />
+                        <div
+                          className="absolute overflow-hidden"
+                          style={{ width: "50%" }}
+                        >
+                          <StarIcon
+                            className="size-[9px] fill-yellow-200 text-yellow-500"
+                            strokeWidth={2.5}
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}

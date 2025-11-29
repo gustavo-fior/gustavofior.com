@@ -26,14 +26,21 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       }, 2000);
     }
 
-    console.log(`
-    ..####...##..##...####...######...####...##..##...####..
-    .##......##..##..##........##....##..##..##..##..##..##.
-    .##.###..##..##...####.....##....######..##..##..##..##.
-    .##..##..##..##......##....##....##..##...####...##..##.
-    ..####....####....####.....##....##..##....##.....####..
-    ........................................................    
-`);
+    console.log(`                                       ___-------___
+                                   _-~~             ~~-_
+                                _-~                    /~-_
+             /^\\__/^\\         /~  \\                   /    \\
+           /|  O|| O|        /      \\_______________/        \\
+          | |___||__|      /       /                \\          \\
+          |          \\    /      /                    \\          \\
+          |   (_______) /______/                        \\_________ \\
+          |         / /         \\                      /            \\
+           \\         \\^\\\\         \\                  /               \\     /
+             \\         ||           \\______________/      _-_       //\\__//
+               \\       ||------_-~~-_ ------------- \\ --/~   ~\\    || __/
+                 ~-----||====/~     |==================|       |/~~~~~
+                  (_(__/  ./     /                    \\_\\      \\.
+                         (_(___/                         \\_____)_)`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -73,7 +80,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           <div className="flex items-center justify-between sm:pb-2">
             <h1 className={`font-serif text-2xl font-medium`}>Gustavo Fior</h1>
           </div>
-          <p className="mt-4 pb-12 text-sm font-normal text-neutral-400 sm:mt-0">
+          <p className="mt-4 pb-10 text-sm font-normal tracking-[0.005em] text-neutral-400 sm:mt-0">
             Brazilian software engineer who loves to code, surf, and learn new
             things.
           </p>
@@ -130,34 +137,26 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               description="Lost & found for dogs and cats."
               link="https://acheopet.vercel.app/"
               logo="/logos/ache-o-pet.png"
-              tag="inactive"
             />
             <ProjectPreview
               title="Censorfy"
               description="AI content moderation API."
               link="https://censorfy.vercel.app/"
               logo="/logos/censorfy.png"
-              tag="failed"
             />
             <ProjectPreview
               title="Mind"
               description="Connecting patients and therapists."
               link="https://mind.abdulhdr.com/"
               logo="/logos/mind.png"
-              tag="failed"
             />
           </div>
         </div>
 
         {/* WRITING */}
         <div className={`${shouldAnimate ? "animate-10" : ""}`}>
-          <div className="flex justify-between pb-4 align-middle">
-            <LinkArrow
-              href="/blog"
-              className="-mr-3.5 text-sm text-neutral-400"
-            >
-              Writing
-            </LinkArrow>
+          <div className="flex justify-between pb-4 align-middle text-sm text-neutral-400">
+            Writing
           </div>
           <ul className="flex flex-col pb-12">
             {sortedPostsMetadata.map((postMetadata) => (
@@ -171,6 +170,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 />
               </motion.li>
             ))}
+            <LinkArrow
+              href="/blog"
+              className="flex w-fit text-sm text-neutral-400"
+            >
+              More
+            </LinkArrow>
           </ul>
         </div>
 
@@ -190,7 +195,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               Email
             </LinkArrow>
             <LinkArrow
-              href="https://www.vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
+              href="https://vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
               className="text-sm text-neutral-400"
             >
               Bookmarks
@@ -217,25 +222,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </footer>
       </div>
 
-      {/* <div className="flex items-center justify-center">
-            <pre className="text-xs leading-tight text-neutral-400">
-              {`                                       ___-------___
-                                   _-~~             ~~-_
-                                _-~                    /~-_
-             /^\\__/^\\         /~  \\                   /    \\
-           /|  O|| O|        /      \\_______________/        \\
-          | |___||__|      /       /                \\          \\
-          |          \\    /      /                    \\          \\
-          |   (_______) /______/                        \\_________ \\
-          |         / /         \\                      /            \\
-           \\         \\^\\\\         \\                  /               \\     /
-             \\         ||           \\______________/      _-_       //\\__//
-               \\       ||------_-~~-_ ------------- \\ --/~   ~\\    || __/
-                 ~-----||====/~     |==================|       |/~~~~~
-                  (_(__/  ./     /                    \\_\\      \\.
-                         (_(___/                         \\_____)_)`}
-            </pre>
-          </div> */}
+      <div className="flex items-center justify-center">
+        <pre className="text-xs leading-tight text-neutral-400"></pre>
+      </div>
     </>
   );
 };
@@ -245,13 +234,11 @@ const ProjectPreview = ({
   description,
   link,
   logo,
-  tag,
 }: {
   title: string;
   description: string;
   link: string;
   logo: string;
-  tag?: string;
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
@@ -269,7 +256,7 @@ const ProjectPreview = ({
           alt={title}
           width={14}
           height={14}
-          className="h-3.5 w-3.5"
+          className="mb-0.5 h-3.5 w-3.5"
         />
         <div
           className={`flex items-center transition-all duration-200 ease-in-out group-hover:text-neutral-500 `}
@@ -284,17 +271,14 @@ const ProjectPreview = ({
                 exit={{ opacity: 0, width: 0, marginLeft: 0, scale: 0.95 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
-                <ArrowUpRight className={`h-2.5 w-2.5`} strokeWidth={1.5} />
+                <ArrowUpRight className={`h-2.5 w-2.5`} strokeWidth={2.6} />
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
-      <p className="text-sm text-neutral-400">
-        {description}{" "}
-        {tag && (
-          <span className="font-light italic text-neutral-300">({tag})</span>
-        )}
+      <p className="text-sm tracking-[0.005em] text-neutral-400">
+        {description}
       </p>
     </Link>
   );
