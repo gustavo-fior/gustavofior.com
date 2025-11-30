@@ -3,21 +3,42 @@ import { AnimatePresence, motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  BookCheckIcon,
+  BookOpen,
+  BookXIcon,
+  LibraryBigIcon,
+  ShoppingBag,
+} from "lucide-react";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import path from "path";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import LinkArrow from "~/components/link-arrow";
 import PostPreview from "~/components/posts/post-preview";
 import { books } from "~/data/books";
-import { animateAtom } from "~/utils/atoms";
+import {
+  animateAtom,
+  expandedProjectsAtom,
+  languagesAtom,
+} from "~/utils/atoms";
 import { type BlogPageProps, type PostMetadata } from "./blog";
+import { useIsMobile } from "~/utils/is-mobile";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
+  const [language] = useAtom(languagesAtom);
+  const [showMoreProjects, setShowMoreProjects] = useAtom(expandedProjectsAtom);
+  const isMobile = useIsMobile();
+  const wasExpandedOnMount = useRef(showMoreProjects);
+
+  useEffect(() => {
+    // Reset after initial render so future expand/collapse will animate
+    wasExpandedOnMount.current = false;
+  }, []);
 
   useEffect(() => {
     if (shouldAnimate) {
@@ -48,6 +69,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
+  const sortedBooks = books
+    .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
+    .slice(0, isMobile ? 3 : 4);
+
   return (
     <>
       <Head>
@@ -76,37 +101,37 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       {/* MAIN CONTENT */}
       <div className="flex flex-col gap-2">
         {/* BIO */}
-        <div className={`${shouldAnimate ? "animate-5" : ""}`}>
-          <div className="flex items-center justify-between sm:pb-2">
-            <h1 className={`font-serif text-2xl font-medium`}>Gustavo Fior</h1>
+        <div className={`${shouldAnimate ? "animate-10" : ""}`}>
+          <div className="flex items-center justify-between sm:pb-3">
+            <h1 className={`font-serif text-2xl font-medium tracking-[0.01em]`}>
+              Gustavo Fior
+            </h1>
           </div>
-          <p className="mt-4 pb-10 text-sm font-normal tracking-[0.005em] text-neutral-400 sm:mt-0">
+          <p className="pb-8 text-sm font-normal tracking-[0.01em] text-neutral-400">
             Brazilian software engineer who loves to code, surf, and learn new
             things.
           </p>
         </div>
 
         {/* PROJECTS */}
-        <div className={`${shouldAnimate ? "animate-7" : ""}`}>
-          <h2 className={`pb-1 text-sm text-neutral-400`}>Projects</h2>
-          <div className="grid grid-cols-1 pb-12">
+        <div className={`${shouldAnimate ? "animate-15" : ""}`}>
+          <h2
+            className={`flex items-center justify-between pb-1 text-sm tracking-[0.01em] text-neutral-400`}
+          >
+            Projects
+            <button
+              onClick={() => setShowMoreProjects(!showMoreProjects)}
+              className="flex w-fit text-sm text-neutral-400"
+            >
+              {showMoreProjects ? "Less" : "More"}
+            </button>
+          </h2>
+          <div className="grid grid-cols-1 pb-8">
             <ProjectPreview
               title="Option"
               description="The best GEO platform for marketing teams."
               link="https://tryoption.ai/"
               logo="/logos/option.png"
-            />
-            <ProjectPreview
-              title="Itzam"
-              description="AI integration has never been so easy."
-              link="https://itz.am/"
-              logo="/logos/itzam.svg"
-            />
-            <ProjectPreview
-              title="Aello"
-              description="AI that knows your company."
-              link="https://aello.chat/"
-              logo="/logos/aello.png"
             />
             <ProjectPreview
               title="CCC"
@@ -115,50 +140,97 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               logo="/logos/ccc-black-bold.png"
             />
             <ProjectPreview
-              title="5Devs"
-              description="Fake data for testing purposes."
-              link="https://5devs.com.br/"
-              logo="/logos/5devs.png"
-            />
-            <ProjectPreview
               title="VAYØ"
               description="Bookmark tool to keep and share links."
               link="https://vayo.me/"
               logo="/logos/vayo.png"
             />
-            <ProjectPreview
-              title="Rafa Resumos"
-              description="My girlfriend's med-school writings."
-              link="https://rafaresumos.com.br/"
-              logo="/logos/rafa.png"
-            />
-            <ProjectPreview
-              title="Ache o Pet"
-              description="Lost & found for dogs and cats."
-              link="https://acheopet.vercel.app/"
-              logo="/logos/ache-o-pet.png"
-            />
-            <ProjectPreview
-              title="Censorfy"
-              description="AI content moderation API."
-              link="https://censorfy.vercel.app/"
-              logo="/logos/censorfy.png"
-            />
-            <ProjectPreview
-              title="Mind"
-              description="Connecting patients and therapists."
-              link="https://mind.abdulhdr.com/"
-              logo="/logos/mind.png"
-            />
+            <AnimatePresence>
+              {showMoreProjects && (
+                <motion.div
+                  initial={
+                    wasExpandedOnMount.current
+                      ? false
+                      : {
+                          opacity: 0,
+                          filter: "blur(4px)",
+                          height: 0,
+                        }
+                  }
+                  animate={{
+                    opacity: 1,
+                    filter: "blur(0px)",
+                    height: "auto",
+                  }}
+                  exit={{
+                    opacity: 0,
+                    filter: "blur(4px)",
+                    height: 0,
+                  }}
+                  transition={{ duration: 0.4, type: "spring", bounce: 0 }}
+                  className="grid grid-cols-1"
+                >
+                  <ProjectPreview
+                    title="Itzam"
+                    description="AI integration has never been so easy."
+                    link="https://itz.am/"
+                    logo="/logos/itzam.svg"
+                  />
+                  <ProjectPreview
+                    title="Aello"
+                    description="AI that knows your company."
+                    link="https://aello.chat/"
+                    logo="/logos/aello.png"
+                  />
+                  <ProjectPreview
+                    title="5Devs"
+                    description="Fake data for testing purposes."
+                    link="https://5devs.com.br/"
+                    logo="/logos/5devs.png"
+                  />
+
+                  <ProjectPreview
+                    title="Rafa Resumos"
+                    description="My girlfriend's med-school writings."
+                    link="https://rafaresumos.com.br/"
+                    logo="/logos/rafa.png"
+                  />
+                  <ProjectPreview
+                    title="Ache o Pet"
+                    description="Lost & found for dogs and cats."
+                    link="https://acheopet.vercel.app/"
+                    logo="/logos/ache-o-pet.png"
+                  />
+                  <ProjectPreview
+                    title="Censorfy"
+                    description="AI content moderation API."
+                    link="https://censorfy.vercel.app/"
+                    logo="/logos/censorfy.png"
+                  />
+                  <ProjectPreview
+                    title="Mind"
+                    description="Connecting patients and therapists."
+                    link="https://mind.abdulhdr.com/"
+                    logo="/logos/mind.png"
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
         {/* WRITING */}
-        <div className={`${shouldAnimate ? "animate-10" : ""}`}>
-          <div className="flex justify-between pb-4 align-middle text-sm text-neutral-400">
+        <div className={`${shouldAnimate ? "animate-20" : ""}`}>
+          <div className="flex justify-between pb-4 align-middle text-sm tracking-[0.01em] text-neutral-400">
             Writing
+            <LinkArrow
+              href="/blog"
+              className="flex w-fit text-sm text-neutral-400"
+            >
+              Older
+            </LinkArrow>
           </div>
-          <ul className="flex flex-col pb-12">
+          <ul className="flex flex-col pb-8">
             {sortedPostsMetadata.map((postMetadata) => (
               <motion.li key={postMetadata.slug}>
                 <PostPreview
@@ -170,18 +242,53 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 />
               </motion.li>
             ))}
+          </ul>
+        </div>
+
+        {/* BOOKS */}
+        <div className={`${shouldAnimate ? "animate-20" : ""}`}>
+          <div className="flex justify-between pb-6 align-middle text-sm tracking-[0.01em] text-neutral-400">
+            Books
             <LinkArrow
-              href="/blog"
+              href="/books"
               className="flex w-fit text-sm text-neutral-400"
             >
               More
             </LinkArrow>
+          </div>
+          <ul className="grid grid-cols-3 grid-rows-1 gap-x-8 pb-20 md:grid-cols-4">
+            {sortedBooks.map((book) => (
+              <div key={book.name} className="flex flex-col gap-4">
+                <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
+                  <Image
+                    src={book.coverImageUrl}
+                    alt={book.englishName ?? book.name}
+                    width={1920}
+                    height={1080}
+                    className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
+                    priority
+                    quality={100}
+                    sizes="50px"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/20"></div>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="pointer-events-none line-clamp-2 text-sm">
+                    {language === "PT" ? book.name : book.englishName}
+                  </p>
+                  <p className="pointer-events-none mb-1 text-xs tracking-wide text-neutral-400">
+                    {book.author}
+                  </p>
+                </div>
+              </div>
+            ))}
           </ul>
         </div>
 
         {/* OTHERS */}
-        <div className={`${shouldAnimate ? "animate-15" : ""}`}>
-          <div className="flex gap-4 md:gap-6">
+        <div className={`${shouldAnimate ? "animate-25" : ""}`}>
+          <div className="flex gap-4 tracking-[0.01em] md:gap-6">
             <LinkArrow
               href="https://x.com/heyimgustavo"
               className="text-sm text-neutral-400"
@@ -206,24 +313,17 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             >
               Cool <span className="hidden md:inline">Stuff</span>
             </LinkArrow>
-            <LinkArrow href="/books" className="text-sm text-neutral-400">
-              Books
-            </LinkArrow>
           </div>
         </div>
         <footer
-          className={`flex items-center justify-center pb-8 pt-24 ${
+          className={`flex items-center justify-center pb-24 pt-24 ${
             shouldAnimate ? "animate-25" : ""
           }`}
         >
-          <p className="font-serif text-xs text-neutral-200">
+          <p className="font-serif text-xs font-medium tracking-[0.01em] text-neutral-200">
             The life of every human being is a journey towards oneself.
           </p>
         </footer>
-      </div>
-
-      <div className="flex items-center justify-center">
-        <pre className="text-xs leading-tight text-neutral-400"></pre>
       </div>
     </>
   );
@@ -277,7 +377,7 @@ const ProjectPreview = ({
           </AnimatePresence>
         </div>
       </div>
-      <p className="text-sm tracking-[0.005em] text-neutral-400">
+      <p className="text-sm tracking-[0.01em] text-neutral-400">
         {description}
       </p>
     </Link>

@@ -46,7 +46,9 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 : setSelectedSort("BEST")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
-              selectedSort === "BEST" ? "opacity-70" : ""
+              selectedSort === "BEST" || selectedSort === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
             <ThumbsUpIcon
@@ -74,7 +76,9 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 : setSelectedSort("WORST")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
-              selectedSort === "WORST" ? "opacity-70" : ""
+              selectedSort === "WORST" || selectedSort === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
             <ThumbsDownIcon
@@ -102,7 +106,9 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 : setSelectedSort("ABC")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
-              selectedSort === "ABC" ? "opacity-70" : ""
+              selectedSort === "ABC" || selectedSort === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
             <ArrowDownAzIcon
@@ -130,7 +136,9 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 : setSelectedSort("ZXY")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
-              selectedSort === "ZXY" ? "opacity-70" : ""
+              selectedSort === "ZXY" || selectedSort === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
             <ArrowDownZaIcon

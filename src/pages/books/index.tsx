@@ -1,22 +1,21 @@
 import { useAtom } from "jotai";
 import {
-  BookCheckIcon,
-  BookOpen,
-  BookXIcon,
-  LibraryBigIcon,
-  ShoppingBag,
+  BookmarkCheckIcon,
+  BookmarkIcon,
+  BookmarkPlusIcon,
+  BookmarkXIcon,
   StarIcon,
 } from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
 import { books } from "~/data/books";
-import { filtersAtom, sortsAtom } from "~/utils/atoms";
+import { filtersAtom, languagesAtom, sortsAtom } from "~/utils/atoms";
 
 export default function Books() {
   // State to track the selected status filter. When a status badge is clicked, filter the books by that status
   const [selectedStatus, setSelectedStatus] = useAtom(filtersAtom);
   const [selectedSort] = useAtom(sortsAtom);
-
+  const [selectedLanguage] = useAtom(languagesAtom);
   const filteredBooks = selectedStatus
     ? books.filter((book) => book.status === selectedStatus)
     : books;
@@ -101,7 +100,7 @@ export default function Books() {
                   alt={book.name}
                   width={1920}
                   height={1080}
-                  className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-neutral-200 object-cover transition-all duration-100 ease-in-out"
+                  className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
                   priority
                   quality={100}
                   sizes="50px"
@@ -117,9 +116,9 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("READ")
                     }
-                    className="flex w-fit select-none items-center gap-1 text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
                   >
-                    <BookCheckIcon
+                    <BookmarkCheckIcon
                       className="mb-[1px] size-[9px] fill-emerald-100"
                       strokeWidth={2.5}
                     />
@@ -133,10 +132,10 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("READING")
                     }
-                    className="flex w-fit select-none items-center gap-1 text-[10px] text-orange-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-orange-500 transition-opacity hover:opacity-70"
                   >
-                    <BookOpen
-                      className="size-[9px] fill-orange-100"
+                    <BookmarkIcon
+                      className="mb-[1px] size-[9px] fill-orange-100"
                       strokeWidth={2.5}
                     />
                     Reading
@@ -149,9 +148,9 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("BUY")
                     }
-                    className="flex w-fit select-none items-center gap-1 text-[10px] text-sky-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-sky-500 transition-opacity hover:opacity-70"
                   >
-                    <ShoppingBag
+                    <BookmarkPlusIcon
                       className="mb-[1px] size-[9px] fill-sky-100"
                       strokeWidth={2.5}
                     />
@@ -165,11 +164,11 @@ export default function Books() {
                         ? setSelectedStatus(null)
                         : setSelectedStatus("WILL_READ")
                     }
-                    className="flex w-fit select-none items-center gap-1 text-[10px] text-amber-500 transition-opacity hover:opacity-70"
+                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-amber-500 transition-opacity hover:opacity-70"
                   >
-                    <LibraryBigIcon
-                      className="mb-px size-[9px] fill-amber-100"
-                      strokeWidth={2.3}
+                    <BookmarkIcon
+                      className="mb-[1px] size-[9px] fill-amber-100"
+                      strokeWidth={2.5}
                     />
                     Will Read
                   </button>
@@ -183,7 +182,7 @@ export default function Books() {
                     }
                     className="flex w-fit select-none items-center gap-[3px] text-[10px] text-red-500 transition-opacity hover:opacity-70"
                   >
-                    <BookXIcon
+                    <BookmarkXIcon
                       className="mb-[1px] size-[9px] fill-red-100"
                       strokeWidth={2.5}
                     />
@@ -191,7 +190,7 @@ export default function Books() {
                   </button>
                 )}
                 <p className="pointer-events-none line-clamp-2 text-sm">
-                  {book.name}
+                  {selectedLanguage === "PT" ? book.name : book.englishName}
                 </p>
                 <p className="pointer-events-none mb-1 text-xs tracking-wide text-neutral-400">
                   {book.author}

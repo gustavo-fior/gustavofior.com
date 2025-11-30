@@ -1,11 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useAtom } from "jotai";
 import {
-  BookCheckIcon,
-  BookOpen,
-  BookXIcon,
-  LibraryBigIcon,
-  ShoppingBag,
+  BookmarkCheckIcon,
+  BookmarkIcon,
+  BookmarkPlusIcon,
+  BookmarkXIcon,
   XIcon,
 } from "lucide-react";
 import { filtersAtom } from "~/utils/atoms";
@@ -47,10 +46,12 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 : setSelectedStatus("READ")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-emerald-500 transition-opacity hover:opacity-70 ${
-              selectedStatus === "READ" ? "opacity-70" : ""
+              selectedStatus === "READ" || selectedStatus === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
-            <BookCheckIcon
+            <BookmarkCheckIcon
               className="mb-[1px] ml-0.5 size-2.5 fill-emerald-100"
               strokeWidth={2.5}
             />
@@ -75,11 +76,13 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 : setSelectedStatus("READING")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-orange-500 transition-opacity hover:opacity-70 ${
-              selectedStatus === "READING" ? "opacity-70" : ""
+              selectedStatus === "READING" || selectedStatus === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
-            <BookOpen
-              className="ml-0.5 size-2.5 fill-orange-100"
+            <BookmarkIcon
+              className="mb-[1px] ml-0.5 size-2.5 fill-orange-100"
               strokeWidth={2.5}
             />
             Reading
@@ -103,10 +106,12 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 : setSelectedStatus("BUY")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-sky-500 transition-opacity hover:opacity-70 ${
-              selectedStatus === "BUY" ? "opacity-70" : ""
+              selectedStatus === "BUY" || selectedStatus === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
-            <ShoppingBag
+            <BookmarkPlusIcon
               className="mb-[1px] ml-0.5 size-2.5 fill-sky-100"
               strokeWidth={2.5}
             />
@@ -131,12 +136,14 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 : setSelectedStatus("WILL_READ")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-amber-500 transition-opacity hover:opacity-70 ${
-              selectedStatus === "WILL_READ" ? "opacity-70" : ""
+              selectedStatus === "WILL_READ" || selectedStatus === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
-            <LibraryBigIcon
-              className="mb-px ml-0.5 size-2.5 fill-amber-100"
-              strokeWidth={2.3}
+            <BookmarkIcon
+              className="mb-[1px] ml-0.5 size-2.5 fill-amber-100"
+              strokeWidth={2.5}
             />
             Will Read
             <AnimatePresence>
@@ -159,10 +166,12 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 : setSelectedStatus("LOST")
             }
             className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-red-500 transition-opacity hover:opacity-70 ${
-              selectedStatus === "LOST" ? "opacity-70" : ""
+              selectedStatus === "LOST" || selectedStatus === null
+                ? "opacity-100"
+                : "opacity-50 "
             }`}
           >
-            <BookXIcon
+            <BookmarkXIcon
               className="mb-[1px] ml-0.5 size-2.5 fill-red-100"
               strokeWidth={2.5}
             />

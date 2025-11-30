@@ -1,17 +1,37 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDownUpIcon, ListFilterIcon, Redo2Icon } from "lucide-react";
+import {
+  ArrowDownUpIcon,
+  LanguagesIcon,
+  ListFilterIcon,
+  Redo2Icon,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useIsMobile } from "~/utils/is-mobile";
 import Filters from "./books/filters";
 import Sorts from "./books/sorts";
+import Languages from "./books/languages";
 
 const BackButton = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const isMobile = useIsMobile();
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [isSortsOpen, setIsSortsOpen] = useState(false);
+  const [isLanguagesOpen, setIsLanguagesOpen] = useState(false);
+
+  const handleBackFromBooks = () => {
+    // Close all menus first
+    setIsFiltersOpen(false);
+    setIsSortsOpen(false);
+    setIsLanguagesOpen(false);
+    // Wait for exit animations to complete, then navigate
+    setTimeout(() => {
+      void router.push("/");
+    }, 400);
+  };
 
   if (isMobile && pathname !== "/" && pathname !== "/books") {
     return (
@@ -58,22 +78,22 @@ const BackButton = () => {
               exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
             >
-              <Link
-                href="/"
-                className="group flex items-center gap-1.5 text-neutral-300 transition-all duration-200 ease-in-out hover:text-neutral-400"
+              <button
+                onClick={handleBackFromBooks}
+                className="group flex cursor-pointer items-center gap-1.5 text-neutral-300 transition-all duration-200 ease-in-out hover:text-neutral-400"
               >
                 <Redo2Icon
                   className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
                   strokeWidth={2.5}
                 />
                 <span className="text-sm">Back</span>
-              </Link>
+              </button>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
+              initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
+              transition={{ duration: 0.4, ease: "easeInOut", delay: 0.1 }}
               className="pt-6"
             >
               <button
@@ -88,10 +108,10 @@ const BackButton = () => {
             </motion.div>
             <Filters isOpen={isFiltersOpen} />
             <motion.div
-              initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
+              initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
+              transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
               className="pt-6"
             >
               <button
@@ -105,6 +125,24 @@ const BackButton = () => {
               </button>
             </motion.div>
             <Sorts isOpen={isSortsOpen} />
+            <motion.div
+              initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
+              transition={{ duration: 0.4, ease: "easeInOut", delay: 0.3 }}
+              className="pt-6"
+            >
+              <button
+                onClick={() => setIsLanguagesOpen(!isLanguagesOpen)}
+                className={`group flex cursor-pointer items-center gap-1.5 ${
+                  isLanguagesOpen ? "text-neutral-400" : "text-neutral-300"
+                } transition-all duration-200 ease-in-out hover:text-neutral-400`}
+              >
+                <LanguagesIcon className="mb-0.5 size-3" strokeWidth={2.5} />
+                <span className="text-sm">Lang</span>
+              </button>
+            </motion.div>
+            <Languages isOpen={isLanguagesOpen} />
           </div>
         )}
       </AnimatePresence>

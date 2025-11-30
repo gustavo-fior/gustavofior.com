@@ -64,6 +64,10 @@
     animation: smoothFadeInUp 0.5s cubic-bezier(0, -0.02, 0.49, 0.99) 0.7s both;
   }
 
+  .animate-20 {
+    animation: smoothFadeInUp 0.5s cubic-bezier(0, -0.02, 0.49, 0.99) 0.9s both;
+  }
+
   .animate-25 {
     animation: smoothFadeIn 0.5s cubic-bezier(0, -0.02, 0.49, 0.99) 1.1s both;
   }

@@ -1,6 +1,7 @@
 export const books = [
   {
     name: "O Livro Completo da Meditação",
+    englishName: "The Complete Guide to Meditation",
     author: "Osho",
     status: "READ",
     createdAt: "2022-11-06T05:52:00.000Z",
@@ -10,6 +11,7 @@ export const books = [
   },
   {
     name: "A Revolta de Atlas",
+    englishName: "Atlas Shrugged",
     author: "Ayn Rand",
     status: "READ",
     createdAt: "2022-12-19T01:40:00.000Z",
@@ -18,6 +20,7 @@ export const books = [
   },
   {
     name: "Roube como um Artista",
+    englishName: "Steal Like an Artist",
     author: "Austin Kleon",
     status: "READ",
     createdAt: "2022-11-08T11:16:00.000Z",
@@ -27,6 +30,7 @@ export const books = [
   },
   {
     name: "O Lado Certo da História",
+    englishName: "The Right Side of History",
     author: "Ben Shapiro",
     status: "READ",
     createdAt: "2022-11-06T05:45:00.000Z",
@@ -36,6 +40,7 @@ export const books = [
   },
   {
     name: "O Processo",
+    englishName: "The Process",
     author: "Franz Kafka",
     status: "READ",
     createdAt: "2022-11-06T06:28:00.000Z",
@@ -45,6 +50,7 @@ export const books = [
   },
   {
     name: "O Behaviorismo Clássico",
+    englishName: "Classical Behaviorism",
     author: "John Watson",
     status: "BUY",
     createdAt: "2022-11-25T14:24:00.000Z",
@@ -53,6 +59,7 @@ export const books = [
   },
   {
     name: "Contos",
+    englishName: "Tales",
     author: "Edgar Allan Poe",
     status: "READ",
     createdAt: "2022-11-08T11:17:00.000Z",
@@ -62,6 +69,7 @@ export const books = [
   },
   {
     name: "Como Fazer Amigos e Influenciar Pessoas",
+    englishName: "How to Win Friends and Influence People",
     author: "Dale Carnegie",
     status: "READ",
     createdAt: "2022-11-06T05:32:00.000Z",
@@ -70,6 +78,7 @@ export const books = [
   },
   {
     name: "Nudge",
+    englishName: "Nudge",
     author: "Richard Taller",
     status: "READ",
     createdAt: "2022-11-06T06:10:00.000Z",
@@ -79,6 +88,7 @@ export const books = [
   },
   {
     name: "The Accidental Superpower",
+    englishName: "The Accidental Superpower",
     author: "Peter Zeihan",
     status: "LOST",
     createdAt: "2022-11-05T23:51:13.000Z",
@@ -88,6 +98,7 @@ export const books = [
   },
   {
     name: "O Mapa da Mente",
+    englishName: "The Map of the Mind",
     author: "Augusto Cury",
     status: "READ",
     createdAt: "2022-12-13T00:22:00.000Z",
@@ -97,15 +108,17 @@ export const books = [
   },
   {
     name: "Meditações",
+    englishName: "Meditations",
     author: "Marco Aurélio",
     status: "READ",
     createdAt: "2022-11-06T06:08:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/612B0id4gNL._AC_UF1000,1000_QL80_.jpg",
-    stars: 5,
+    stars: 4.6,
   },
   {
     name: "O Homem e seus Símbolos",
+    englishName: "Man and His Symbols",
     author: "Carl Jung",
     status: "WILL_READ",
     createdAt: "2022-11-06T00:09:00.000Z",
@@ -113,6 +126,7 @@ export const books = [
   },
   {
     name: "Zero to One",
+    englishName: "Zero to One",
     author: "Peter Thiel",
     status: "BUY",
     createdAt: "2025-07-04T15:44:35.000Z",
@@ -120,6 +134,7 @@ export const books = [
   },
   {
     name: "O Andar do Bêbado",
+    englishName: "The Drunkard's Walk",
     author: "Leonard Mlodinow",
     status: "READ",
     createdAt: "2022-12-14T00:51:00.000Z",
@@ -128,6 +143,7 @@ export const books = [
   },
   {
     name: "Receita Previsível",
+    englishName: "Predictable Revenue",
     author: "Aaron Ross",
     status: "BUY",
     createdAt: "2025-08-19T14:15:48.000Z",
@@ -136,6 +152,7 @@ export const books = [
   },
   {
     name: "Democracia, o Deus que falhou",
+    englishName: "Democracy: The God That Failed",
     author: "Hans-Hermann Hoppe",
     status: "BUY",
     createdAt: "2025-08-23T18:04:00.000Z",
@@ -144,6 +161,7 @@ export const books = [
   },
   {
     name: "As seis lições",
+    englishName: "Six Lessons",
     author: "Ludwig von Mises",
     status: "BUY",
     createdAt: "2025-08-27T14:13:42.000Z",
@@ -151,6 +169,7 @@ export const books = [
   },
   {
     name: "Sem Filtro",
+    englishName: "No Filter",
     author: "Sarah Frier",
     status: "READ",
     createdAt: "2022-11-06T06:32:00.000Z",
@@ -159,6 +178,7 @@ export const books = [
   },
   {
     name: "The Lean Startup",
+    englishName: "The Lean Startup",
     author: "Eric Ries",
     status: "BUY",
     createdAt: "2025-09-10T22:32:10.000Z",
@@ -167,6 +187,7 @@ export const books = [
   },
   {
     name: "High Growth Handbook",
+    englishName: "High Growth Handbook",
     author: "Elad Gil",
     status: "READING",
     createdAt: "2025-09-16T14:35:04.000Z",
@@ -175,6 +196,7 @@ export const books = [
   },
   {
     name: "Livro Vermelho de Vendas",
+    englishName: "Little Red Book of Selling",
     author: "Jeffrey Gitomer",
     status: "BUY",
     createdAt: "2025-10-02T00:10:49.000Z",
@@ -183,6 +205,7 @@ export const books = [
   },
   {
     name: "When Genius Failed",
+    englishName: "When Genius Failed",
     author: "Roger Lowenstein",
     status: "BUY",
     createdAt: "2025-10-20T12:25:13.000Z",
@@ -190,6 +213,7 @@ export const books = [
   },
   {
     name: "Assim Falou Zaratustra",
+    englishName: "Thus Spoke Zarathustra",
     author: "Friedrich Nietzsche",
     status: "WILL_READ",
     createdAt: "2022-11-06T06:16:00.000Z",
@@ -197,6 +221,7 @@ export const books = [
   },
   {
     name: "O Homem em Busca de um Sentido",
+    englishName: "Man's Search for Meaning",
     author: "Vitor Frankl",
     status: "BUY",
     createdAt: "2025-10-30T16:24:10.000Z",
@@ -205,6 +230,7 @@ export const books = [
   },
   {
     name: "As Upstarts",
+    englishName: "The Startups",
     author: "Brad Stone",
     status: "READ",
     createdAt: "2022-11-06T06:08:00.000Z",
@@ -213,14 +239,16 @@ export const books = [
   },
   {
     name: "O Menino da Lista de Schindler",
+    englishName: "Schindler's List",
     author: "Leon Leyson",
     status: "READ",
     createdAt: "2022-11-06T06:03:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71cyWqWti3L.jpg",
-    stars: 5,
+    stars: 4.6,
   },
   {
     name: "Dieter Rams: The Complete Works",
+    englishName: "Dieter Rams: The Complete Works",
     author: "Klaus Kemp",
     status: "BUY",
     createdAt: "2025-11-21T22:50:10.000Z",
@@ -229,6 +257,7 @@ export const books = [
   },
   {
     name: "A Maior Mágica de Todas",
+    englishName: "The Greatest Magic",
     author: "James Doty",
     status: "READ",
     createdAt: "2022-11-06T05:47:00.000Z",
@@ -238,6 +267,7 @@ export const books = [
   },
   {
     name: "Bilhões e Lágrimas",
+    englishName: "Billions and Tears",
     author: "Consuelo Rodriguez",
     status: "READ",
     createdAt: "2022-11-06T06:05:00.000Z",
@@ -247,6 +277,7 @@ export const books = [
   },
   {
     name: "Pequeno Príncipe",
+    englishName: "The Little Prince",
     author: "Antoine de Saint-Exupéry",
     status: "READ",
     createdAt: "2022-11-06T06:33:00.000Z",
@@ -256,6 +287,7 @@ export const books = [
   },
   {
     name: "Gengis Khan",
+    englishName: "Genghis Khan",
     author: "Jack Weatherford",
     status: "BUY",
     createdAt: "2022-11-06T06:24:00.000Z",
@@ -263,6 +295,7 @@ export const books = [
   },
   {
     name: "Meditar Transforma",
+    englishName: "Meditate Transform",
     author: "Amanda Dreher",
     status: "READ",
     createdAt: "2022-11-06T05:39:00.000Z",
@@ -272,6 +305,7 @@ export const books = [
   },
   {
     name: "Sapiens: uma breve história da humanidade",
+    englishName: "Sapiens: A Brief History of Humankind",
     author: "Yuval Noah Harari",
     status: "READ",
     createdAt: "2022-11-06T05:24:00.000Z",
@@ -280,6 +314,7 @@ export const books = [
   },
   {
     name: "Inabalável",
+    englishName: "Unshakeable",
     author: "Tony Robbins",
     status: "READ",
     createdAt: "2022-11-06T05:44:00.000Z",
@@ -289,6 +324,7 @@ export const books = [
   },
   {
     name: "Breve Respostas para Grandes Questões",
+    englishName: "Brief Answers to the Big Questions",
     author: "Stephen Hawking",
     status: "READ",
     createdAt: "2022-11-06T06:18:00.000Z",
@@ -298,15 +334,17 @@ export const books = [
   },
   {
     name: "Código de um Cavaleiro",
+    englishName: "Knights Code",
     author: "Ethan Hawke",
     status: "READ",
     createdAt: "2022-11-06T05:56:00.000Z",
     coverImageUrl:
       "https://harpercollins.com.br/cdn/shop/products/9788569514312_787bf93b-59cb-4753-a0ee-a7a447f01579.jpg?v=1686058524",
-    stars: 5,
+    stars: 4.6,
   },
   {
     name: "A Arte de ter Razão",
+    englishName: "The Art of Being Right",
     author: "Arthur Schopenhauer",
     status: "READ",
     createdAt: "2022-11-06T05:42:00.000Z",
@@ -316,6 +354,7 @@ export const books = [
   },
   {
     name: "Sociedade do Cansaço",
+    englishName: "The Burnout Society",
     author: "Byung-Chul Han",
     status: "READ",
     createdAt: "2022-11-06T05:35:00.000Z",
@@ -325,6 +364,7 @@ export const books = [
   },
   {
     name: "O Jeito Disney de Encantar os Clientes",
+    englishName: "The Disney Way",
     author: "Michael Eisner",
     status: "READ",
     createdAt: "2022-11-06T05:51:00.000Z",
@@ -333,6 +373,7 @@ export const books = [
   },
   {
     name: "O Livro do Ego",
+    englishName: "The Book of the Ego",
     author: "Osho",
     status: "READ",
     createdAt: "2022-11-06T05:27:00.000Z",
@@ -342,15 +383,17 @@ export const books = [
   },
   {
     name: "Sobre a Brevidade da Vida",
+    englishName: "On the Shortness of Life",
     author: "Sêneca",
     status: "READ",
     createdAt: "2022-11-06T06:15:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/81TNzkUcNzL._AC_UF1000,1000_QL80_.jpg",
-    stars: 5,
+    stars: 4.6,
   },
   {
     name: "O Poder do Hábito",
+    englishName: "The Power of Habit",
     author: "Charles Duhigg",
     status: "READ",
     createdAt: "2022-11-06T06:31:00.000Z",
@@ -359,6 +402,7 @@ export const books = [
   },
   {
     name: "O Homem Mais Rico da Babilônia",
+    englishName: "The Richest Man in Babylon",
     author: "George Clason",
     status: "READ",
     createdAt: "2022-11-06T05:48:00.000Z",
@@ -368,15 +412,17 @@ export const books = [
   },
   {
     name: "Laranja Mecânica",
+    englishName: "Clockwork Orange",
     author: "Anthony Burgess",
     status: "READ",
     createdAt: "2022-11-06T05:23:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61HgbCkcz4L._AC_UF1000,1000_QL80_.jpg",
-    stars: 5,
+    stars: 4.8,
   },
   {
     name: "Admirável Mundo Novo",
+    englishName: "Brave New World",
     author: "Aldous Huxley",
     status: "READ",
     createdAt: "2022-11-06T06:27:00.000Z",
@@ -385,6 +431,7 @@ export const books = [
   },
   {
     name: "A Biblioteca da Meia-noite",
+    englishName: "The Midnight Library",
     author: "Matt Haig",
     status: "READING",
     createdAt: "2024-09-03T00:41:39.000Z",
@@ -392,6 +439,7 @@ export const books = [
   },
   {
     name: "O Lobo da Estepe",
+    englishName: "Steppenwolf",
     author: "Herman Hesse",
     status: "READ",
     createdAt: "2023-02-09T02:48:39.000Z",
@@ -400,6 +448,7 @@ export const books = [
   },
   {
     name: "Geração de Valor",
+    englishName: "Value Generation",
     author: "Flávio Augusto",
     status: "READ",
     createdAt: "2022-11-06T05:42:00.000Z",
@@ -409,6 +458,7 @@ export const books = [
   },
   {
     name: "Neuromancer",
+    englishName: "Neuromancer",
     author: "William Gibson",
     status: "READ",
     createdAt: "2022-11-06T05:49:00.000Z",
@@ -418,6 +468,7 @@ export const books = [
   },
   {
     name: "Faça Fortuna com Ações",
+    englishName: "Make Money with Stocks",
     author: "Décio Bazin",
     status: "READ",
     createdAt: "2022-11-06T06:03:00.000Z",
@@ -427,6 +478,7 @@ export const books = [
   },
   {
     name: "Hard thing about hard things",
+    englishName: "The Hard Thing About Hard Things",
     author: "Ben Horowitz",
     status: "BUY",
     createdAt: "2024-04-29T19:45:32.000Z",
@@ -435,6 +487,7 @@ export const books = [
   },
   {
     name: "A Morte de Ivan Ilitch",
+    englishName: "Death of Ivan Ilyich",
     author: "Liev Tolstói",
     status: "READ",
     createdAt: "2022-11-06T05:47:00.000Z",
@@ -444,6 +497,7 @@ export const books = [
   },
   {
     name: "12 Regras para a Vida",
+    englishName: "12 Rules for Life",
     author: "Jordan Peterson",
     status: "READ",
     createdAt: "2022-11-06T05:28:00.000Z",
@@ -452,6 +506,7 @@ export const books = [
   },
   {
     name: "Justiça",
+    englishName: "Justice",
     author: "Michael Sandel",
     status: "READ",
     createdAt: "2022-11-06T19:22:00.000Z",
@@ -461,6 +516,7 @@ export const books = [
   },
   {
     name: "A Sutil Arte de Ligar o Foda-se",
+    englishName: "The Subtle Art of Not Giving a Fuck",
     author: "Mark Manson",
     status: "READ",
     createdAt: "2022-11-08T11:41:00.000Z",
@@ -469,6 +525,7 @@ export const books = [
   },
   {
     name: "A Revolução dos Bichos",
+    englishName: "Animal Farm",
     author: "George Orwell",
     status: "READ",
     createdAt: "2022-11-06T06:35:00.000Z",
@@ -477,6 +534,7 @@ export const books = [
   },
   {
     name: "Crash",
+    englishName: "Crash",
     author: "Alexandre Versignassi",
     status: "READ",
     createdAt: "2023-01-06T02:06:01.000Z",
@@ -486,6 +544,7 @@ export const books = [
   },
   {
     name: "Armas, germes e aço",
+    englishName: "Guns, Germs, and Steel",
     author: "Jared Diamond",
     status: "READ",
     createdAt: "2022-11-06T00:08:00.000Z",
@@ -503,6 +562,7 @@ export const books = [
   },
   {
     name: "Dedique-se de Coração",
+    englishName: "Onward",
     author: "Howard Schultz",
     status: "READ",
     createdAt: "2022-11-06T05:44:00.000Z",
@@ -512,6 +572,7 @@ export const books = [
   },
   {
     name: "O Momento Decisivo",
+    englishName: "How We Decide",
     author: "Jonah Lehrer",
     status: "READ",
     createdAt: "2022-11-06T06:10:00.000Z",
@@ -521,6 +582,7 @@ export const books = [
   },
   {
     name: "1984",
+    englishName: "1984",
     author: "George Orwell",
     status: "READ",
     createdAt: "2022-11-06T06:34:00.000Z",
@@ -530,6 +592,7 @@ export const books = [
   },
   {
     name: "O Jeito Peter Lynch de Investir",
+    englishName: "The Peter Lynch Way",
     author: "Peter Lynch",
     status: "READ",
     createdAt: "2022-11-06T06:01:00.000Z",
@@ -538,6 +601,7 @@ export const books = [
   },
   {
     name: "Manual de Limpeza de um Monge Budista",
+    englishName: "The Monk's Manual of Cleaning",
     author: "Matsumoto Shoukei",
     status: "READ",
     createdAt: "2022-11-06T02:25:00.000Z",
@@ -547,6 +611,7 @@ export const books = [
   },
   {
     name: "A Arte da Guerra",
+    englishName: "The Art of War",
     author: "Sun Tzu",
     status: "READ",
     createdAt: "2022-11-06T06:12:00.000Z",
@@ -555,6 +620,7 @@ export const books = [
   },
   {
     name: "Amor, solitude e liberdade",
+    englishName: "Love, Solitude, and Freedom",
     author: "Osho",
     status: "READ",
     createdAt: "2022-11-06T05:50:00.000Z",
@@ -563,6 +629,7 @@ export const books = [
   },
   {
     name: "Almanaque de Naval Ravikant",
+    englishName: "Naval's Almanac",
     author: "Eric Jorgenson",
     status: "READING",
     createdAt: "2023-06-04T03:29:44.000Z",
@@ -571,6 +638,7 @@ export const books = [
   },
   {
     name: "A Metamorfose",
+    englishName: "The Metamorphosis",
     author: "Franz Kafka",
     status: "READ",
     createdAt: "2022-11-06T05:22:00.000Z",
@@ -579,6 +647,7 @@ export const books = [
   },
   {
     name: "Medicina dos Horrores",
+    englishName: "The Butchering Art",
     author: "Lindsey Fitzharris",
     status: "READ",
     createdAt: "2022-11-06T05:54:00.000Z",
@@ -588,6 +657,7 @@ export const books = [
   },
   {
     name: "Buda",
+    englishName: "Buddha",
     author: "Osho",
     status: "READ",
     createdAt: "2022-11-06T06:00:00.000Z",
@@ -597,6 +667,7 @@ export const books = [
   },
   {
     name: "McMafia",
+    englishName: "McMafia",
     author: "Misha Glenny",
     status: "BUY",
     createdAt: "2022-11-06T06:19:00.000Z",
@@ -605,6 +676,7 @@ export const books = [
   },
   {
     name: "O Obstáculo é o Caminho",
+    englishName: "The Obstacle is the Way",
     author: "Ryan Holiday",
     status: "BUY",
     createdAt: "2022-11-06T06:21:00.000Z",
@@ -613,6 +685,7 @@ export const books = [
   },
   {
     name: "Dez Drogas",
+    englishName: "Ten Drugs",
     author: "Thomas Hager",
     status: "READ",
     createdAt: "2022-11-06T05:51:00.000Z",
@@ -622,6 +695,7 @@ export const books = [
   },
   {
     name: "Iludidos pelo Acaso",
+    englishName: "Fooled by Randomness",
     author: "Nassim Nicholas Taleb",
     status: "READ",
     createdAt: "2023-08-31T15:38:47.000Z",
@@ -631,6 +705,7 @@ export const books = [
   },
   {
     name: "Why Not?",
+    englishName: "Why Not?",
     author: "Raquel Landim",
     status: "BUY",
     createdAt: "2022-11-06T06:36:00.000Z",
@@ -639,6 +714,7 @@ export const books = [
   },
   {
     name: "O Homem do Castelo Alto",
+    englishName: "The Man in the High Castle",
     author: "Philip Dick",
     status: "READ",
     createdAt: "2022-11-06T05:53:00.000Z",
@@ -648,23 +724,26 @@ export const books = [
   },
   {
     name: "A Insustentável Leveza do Ser",
+    englishName: "The Unbearable Lightness of Being",
     author: "Milan Kundera",
     status: "READ",
     createdAt: "2022-11-06T06:11:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81U1hX2wybS.jpg",
-    stars: 5,
+    stars: 4.5,
   },
   {
     name: "Crime e Castigo",
+    englishName: "Crime and Punishment",
     author: "Fiódor Dostoiévski",
     status: "READ",
     createdAt: "2022-11-06T00:06:00.000Z",
     coverImageUrl:
       "https://cdn.awsli.com.br/2551/2551876/produto/2427291902deb25de03.jpg",
-    stars: 5,
+    stars: 4.9,
   },
   {
     name: "Manual do Guerreiro da Luz",
+    englishName: "Warrior of the Light",
     author: "Paulo Coelho",
     status: "READ",
     createdAt: "2022-11-05T23:51:13.000Z",
@@ -673,6 +752,7 @@ export const books = [
   },
   {
     name: "Gestão de Alta Performance",
+    englishName: "High Output Management",
     author: "Andrew Grove",
     status: "WILL_READ",
     createdAt: "2022-11-06T06:26:00.000Z",
@@ -680,6 +760,7 @@ export const books = [
   },
   {
     name: "Negocie Qualquer Coisa com Qualquer Pessoa",
+    englishName: "Negotiate Anything with Anyone",
     author: "Eduardo Ferraz",
     status: "READ",
     createdAt: "2022-11-06T05:41:00.000Z",
@@ -689,6 +770,7 @@ export const books = [
   },
   {
     name: "Ser Livre com Sartre",
+    englishName: "Be Free with Sartre",
     author: "Frédérich Allouche",
     status: "READ",
     createdAt: "2022-11-06T06:29:00.000Z",
@@ -698,6 +780,7 @@ export const books = [
   },
   {
     name: "A Marca da Vitória",
+    englishName: "Shoe Dog",
     author: "Phil Knigth",
     status: "READ",
     createdAt: "2022-11-06T05:59:00.000Z",
@@ -706,6 +789,7 @@ export const books = [
   },
   {
     name: "Steve Jobs",
+    englishName: "Steve Jobs",
     author: "Walter Isaacson",
     status: "READ",
     createdAt: "2022-11-06T06:14:00.000Z",
@@ -715,6 +799,7 @@ export const books = [
   },
   {
     name: "A Natureza da Mordida",
+    englishName: "The Nature of the Bite",
     author: "Carla Madeira",
     status: "WILL_READ",
     createdAt: "2024-09-03T00:42:56.000Z",
@@ -723,6 +808,7 @@ export const books = [
   },
   {
     name: "Como me tornei Estúpido",
+    englishName: "How I Became Stupid",
     author: "Martin Page",
     status: "READ",
     createdAt: "2022-12-14T00:50:00.000Z",
@@ -732,6 +818,7 @@ export const books = [
   },
   {
     name: "O Livro Vermelho",
+    englishName: "The Red Book",
     author: "Carl Jung",
     status: "BUY",
     createdAt: "2022-11-06T02:22:00.000Z",
@@ -740,6 +827,7 @@ export const books = [
   },
   {
     name: "O Quarto Reich",
+    englishName: "The Fourth Reich",
     author: "Marcelo Costa",
     status: "READ",
     createdAt: "2022-11-06T05:34:00.000Z",
@@ -748,6 +836,7 @@ export const books = [
   },
   {
     name: "Mais Esperto que o Diabo",
+    englishName: "Outwitting the Devil",
     author: "Napoleon Hill",
     status: "READ",
     createdAt: "2022-11-06T05:57:00.000Z",
@@ -756,6 +845,7 @@ export const books = [
   },
   {
     name: "Acredite, estou mentindo",
+    englishName: "Trust Me, I'm Lying",
     author: "Ryan Holiday",
     status: "WILL_READ",
     createdAt: "2022-11-06T06:20:00.000Z",
@@ -763,6 +853,7 @@ export const books = [
   },
   {
     name: "Um Homem Chamado Ove",
+    englishName: "A Man Called Ove",
     author: "Fredrik Backman",
     status: "READ",
     createdAt: "2022-11-06T06:00:00.000Z",
@@ -772,6 +863,7 @@ export const books = [
   },
   {
     name: "O Deserto dos Tártaros",
+    englishName: "Tartar Steppe",
     author: "Dino Buzzati",
     status: "BUY",
     createdAt: "2023-10-22T05:31:36.000Z",
@@ -779,6 +871,7 @@ export const books = [
   },
   {
     name: "O Homem mais Rico que já existiu",
+    englishName: "The Richest Man in Babylon",
     author: "Steven Scott",
     status: "LOST",
     createdAt: "2022-11-08T03:09:00.000Z",
@@ -787,6 +880,7 @@ export const books = [
   },
   {
     name: "Guerra e Paz",
+    englishName: "War and Peace",
     author: "Liev Tolstói",
     status: "WILL_READ",
     createdAt: "2022-11-06T06:21:00.000Z",
@@ -795,6 +889,7 @@ export const books = [
   },
   {
     name: "Flores para Algernon",
+    englishName: "Flowers for Algernon",
     author: "Daniel Keyes",
     status: "BUY",
     createdAt: "2024-02-05T16:17:22.000Z",
@@ -802,6 +897,7 @@ export const books = [
   },
   {
     name: "O Algoritmo Mestre",
+    englishName: "The Master Algorithm",
     author: "Pedro Domingos",
     status: "LOST",
     createdAt: "2022-11-08T03:17:00.000Z",
@@ -811,14 +907,16 @@ export const books = [
   },
   {
     name: "O Fim da Infância",
+    englishName: "Childhood's End",
     author: "Arthur Clarke",
     status: "READ",
     createdAt: "2022-11-06T06:02:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71aSbmu4MzL.jpg",
-    stars: 5,
+    stars: 4.7,
   },
   {
     name: "Hamlet",
+    englishName: "Hamlet",
     author: "William Shakespeare",
     status: "READ",
     createdAt: "2022-11-06T05:26:00.000Z",
@@ -828,6 +926,7 @@ export const books = [
   },
   {
     name: "Noites Brancas",
+    englishName: "White Nights",
     author: "Fiodor Dostoiévski",
     status: "READ",
     createdAt: "2024-04-17T23:00:40.000Z",
@@ -837,6 +936,7 @@ export const books = [
   },
   {
     name: "Os Mentirosos",
+    englishName: "We Were Liars",
     author: "E. Lockhart",
     status: "READ",
     createdAt: "2022-11-06T06:32:00.000Z",
@@ -845,6 +945,7 @@ export const books = [
   },
   {
     name: "O Caibalion",
+    englishName: "The Caibalion",
     author: "Três Iniciados",
     status: "READ",
     createdAt: "2022-11-06T06:31:00.000Z",
@@ -854,6 +955,7 @@ export const books = [
   },
   {
     name: "A Voz do Silêncio",
+    englishName: "The Voice of Silence",
     author: "Helena Blavatski",
     status: "WILL_READ",
     createdAt: "2022-11-06T06:25:00.000Z",
@@ -862,6 +964,7 @@ export const books = [
   },
   {
     name: "101 Perguntas e Respostas para Investidores Iniciantes",
+    englishName: "101 Questions and Answers for Beginner Investors",
     author: "Thiago Reis",
     status: "READ",
     createdAt: "2022-11-06T05:55:00.000Z",
@@ -870,6 +973,7 @@ export const books = [
   },
   {
     name: "A Fórmula Mágica de Joel Greenblatt",
+    englishName: "The Little Book that Beats the Market",
     author: "Joel Greenblatt",
     status: "READ",
     createdAt: "2022-11-08T03:16:00.000Z",
@@ -878,6 +982,7 @@ export const books = [
   },
   {
     name: "Código Limpo",
+    englishName: "Clean Code",
     author: "Robert Martin",
     status: "LOST",
     createdAt: "2022-11-08T03:12:00.000Z",
@@ -887,6 +992,7 @@ export const books = [
   },
   {
     name: "O Testamento",
+    englishName: "The Testament",
     author: "John Grisham",
     status: "READ",
     createdAt: "2022-11-06T05:30:00.000Z",
@@ -896,6 +1002,7 @@ export const books = [
   },
   {
     name: "A Vida Intelectual",
+    englishName: "The Intellectual Life",
     author: "Antonin Sertillanges",
     status: "READ",
     createdAt: "2022-11-06T05:40:00.000Z",
@@ -905,6 +1012,7 @@ export const books = [
   },
   {
     name: "O Velho e o Mar",
+    englishName: "The Old Man and the Sea",
     author: "Ernest Hemingway",
     status: "READ",
     createdAt: "2022-11-06T06:09:00.000Z",
@@ -914,6 +1022,7 @@ export const books = [
   },
   {
     name: "Palavras de Fogo",
+    englishName: "Words of Fire",
     author: "Osho",
     status: "READ",
     createdAt: "2022-11-08T03:12:00.000Z",
@@ -923,6 +1032,7 @@ export const books = [
   },
   {
     name: "Além do Bem e do Mal",
+    englishName: "Beyond Good and Evil",
     author: "Friedrich Nietzsche",
     status: "READ",
     createdAt: "2022-11-06T05:29:00.000Z",
@@ -932,6 +1042,7 @@ export const books = [
   },
   {
     name: "Uma Breve História do Tempo",
+    englishName: "A Brief History of Time",
     author: "Stephen Hawking",
     status: "READ",
     createdAt: "2022-11-06T05:46:00.000Z",
@@ -940,6 +1051,7 @@ export const books = [
   },
   {
     name: "Um Barril de Risadas um Vale de Lágrimas",
+    englishName: "A Barrel of Laughs, a Vale of Tears",
     author: "Jules Feiffer",
     status: "READ",
     createdAt: "2022-11-06T06:13:00.000Z",
@@ -949,14 +1061,16 @@ export const books = [
   },
   {
     name: "Leonardo da Vinci",
+    englishName: "Leonardo da Vinci",
     author: "Walter Isaacson",
     status: "READ",
     createdAt: "2022-11-05T23:51:13.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/91Ey0+6N-LL.jpg",
-    stars: 5,
+    stars: 4.7,
   },
   {
     name: "A Montanha Mágica",
+    englishName: "The Magic Mountain",
     author: "Thomas Mann",
     status: "WILL_READ",
     createdAt: "2022-11-06T06:23:00.000Z",
@@ -964,6 +1078,7 @@ export const books = [
   },
   {
     name: "No More Mr. Nice Guy",
+    englishName: "No More Mr. Nice Guy",
     author: "Robert Glover",
     status: "READ",
     createdAt: "2022-11-06T06:11:00.000Z",
@@ -972,6 +1087,7 @@ export const books = [
   },
   {
     name: "Demian",
+    englishName: "Demian",
     author: "Herman Hesse",
     status: "READ",
     createdAt: "2022-12-14T00:52:00.000Z",
@@ -981,6 +1097,7 @@ export const books = [
   },
   {
     name: "Cosmos",
+    englishName: "Cosmos",
     author: "Carl Sagan",
     status: "WILL_READ",
     createdAt: "2022-11-08T03:11:00.000Z",
@@ -989,6 +1106,7 @@ export const books = [
   },
   {
     name: "Bilhões e Bilhões",
+    englishName: "Billions and Billions",
     author: "Carl Sagan",
     status: "BUY",
     createdAt: "2022-11-06T06:05:00.000Z",
@@ -997,6 +1115,7 @@ export const books = [
   },
   {
     name: "The Mythical Man-Month",
+    englishName: "The Mythical Man-Month",
     author: "Frederick P. Brooks, Jr.",
     status: "LOST",
     createdAt: "2024-07-11T16:45:05.000Z",
@@ -1006,6 +1125,7 @@ export const books = [
   },
   {
     name: "O Príncipe",
+    englishName: "The Prince",
     author: "Nicolau Maquiavel",
     status: "READ",
     createdAt: "2022-11-06T05:39:00.000Z",

@@ -33,7 +33,7 @@ const PostPreview = ({
               strokeWidth={2.6}
             />
           </div>
-          <p className="max-w-lg text-sm tracking-[0.005em] text-neutral-400">
+          <p className="max-w-lg text-sm tracking-[0.01em] text-neutral-400">
             {description}
           </p>
         </div>

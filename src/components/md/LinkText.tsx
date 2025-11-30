@@ -1,5 +1,8 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { getGoogleFavicon } from "~/utils/google-favicon";
 
 interface LinkTextProps {
@@ -8,11 +11,18 @@ interface LinkTextProps {
 }
 
 const LinkText = ({ children, href }: LinkTextProps) => {
+  const [isHovering, setIsHovering] = useState(false);
   return (
     <Link
       href={href}
       target="_blank"
-      className={`group inline-block cursor-pointer transition-all duration-200 ease-in-out`}
+      onMouseEnter={() => {
+        setIsHovering(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovering(false);
+      }}
+      className={`group inline-block cursor-pointer underline transition-all duration-200 ease-in-out`}
     >
       {href.startsWith("http") && (
         <Image
@@ -28,11 +38,19 @@ const LinkText = ({ children, href }: LinkTextProps) => {
         {children}
       </p>
 
-      {/* {href.startsWith("http") ? (
-        <ArrowUpRight className="ml-0.5 inline-block size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
-      ) : (
-        <ArrowRight className="ml-0.5 inline-block size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:-translate-y-[1px] group-hover:translate-x-[1px] group-hover:text-neutral-500" />
-      )} */}
+      <AnimatePresence>
+        {isHovering && (
+          <motion.div
+            initial={{ opacity: 0, x: -4, filter: "blur(4px)", width: 0 }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)", width: "auto" }}
+            exit={{ opacity: 0, x: -4, filter: "blur(4px)", width: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="inline-block"
+          >
+            <ArrowUpRight className="ml-0.5 size-3 translate-x-[1px] translate-y-[1px] text-neutral-400 transition-all duration-200 ease-in-out " />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Link>
   );
 };
