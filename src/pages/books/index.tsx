@@ -9,13 +9,19 @@ import {
 import Head from "next/head";
 import Image from "next/image";
 import { books } from "~/data/books";
-import { filtersAtom, languagesAtom, sortsAtom } from "~/utils/atoms";
+import {
+  filtersAtom,
+  isBooksFilterOpenAtom,
+  languagesAtom,
+  sortsAtom,
+} from "~/utils/atoms";
 
 export default function Books() {
   // State to track the selected status filter. When a status badge is clicked, filter the books by that status
   const [selectedStatus, setSelectedStatus] = useAtom(filtersAtom);
   const [selectedSort] = useAtom(sortsAtom);
   const [selectedLanguage] = useAtom(languagesAtom);
+  const [isFiltersOpen, setIsFiltersOpen] = useAtom(isBooksFilterOpenAtom);
   const filteredBooks = selectedStatus
     ? books.filter((book) => book.status === selectedStatus)
     : books;
@@ -36,9 +42,17 @@ export default function Books() {
           return a.stars - b.stars;
         });
       case "ABC":
-        return booksCopy.sort((a, b) => a.name.localeCompare(b.name));
+        return booksCopy.sort((a, b) => {
+          return selectedLanguage === "PT"
+            ? a.name.localeCompare(b.name)
+            : a.englishName.localeCompare(b.englishName);
+        });
       case "ZXY":
-        return booksCopy.sort((a, b) => b.name.localeCompare(a.name));
+        return booksCopy.sort((a, b) => {
+          return selectedLanguage === "PT"
+            ? b.name.localeCompare(a.name)
+            : b.englishName.localeCompare(a.englishName);
+        });
       default:
         // Default: reading books first, then by date
         const readingBooks = booksCopy.filter(
@@ -111,11 +125,12 @@ export default function Books() {
               <div className="flex flex-col gap-1">
                 {book.status === "READ" && (
                   <button
-                    onClick={() =>
+                    onClick={() => {
+                      if (!isFiltersOpen) setIsFiltersOpen(true);
                       selectedStatus === "READ"
                         ? setSelectedStatus(null)
-                        : setSelectedStatus("READ")
-                    }
+                        : setSelectedStatus("READ");
+                    }}
                     className="flex w-fit select-none items-center gap-[3px] text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
                   >
                     <BookmarkCheckIcon
@@ -127,11 +142,12 @@ export default function Books() {
                 )}
                 {book.status === "READING" && (
                   <button
-                    onClick={() =>
+                    onClick={() => {
+                      if (!isFiltersOpen) setIsFiltersOpen(true);
                       selectedStatus === "READING"
                         ? setSelectedStatus(null)
-                        : setSelectedStatus("READING")
-                    }
+                        : setSelectedStatus("READING");
+                    }}
                     className="flex w-fit select-none items-center gap-[3px] text-[10px] text-orange-500 transition-opacity hover:opacity-70"
                   >
                     <BookmarkIcon
@@ -143,11 +159,12 @@ export default function Books() {
                 )}
                 {book.status === "BUY" && (
                   <button
-                    onClick={() =>
+                    onClick={() => {
+                      if (!isFiltersOpen) setIsFiltersOpen(true);
                       selectedStatus === "BUY"
                         ? setSelectedStatus(null)
-                        : setSelectedStatus("BUY")
-                    }
+                        : setSelectedStatus("BUY");
+                    }}
                     className="flex w-fit select-none items-center gap-[3px] text-[10px] text-sky-500 transition-opacity hover:opacity-70"
                   >
                     <BookmarkPlusIcon
@@ -159,11 +176,12 @@ export default function Books() {
                 )}
                 {book.status === "WILL_READ" && (
                   <button
-                    onClick={() =>
+                    onClick={() => {
+                      if (!isFiltersOpen) setIsFiltersOpen(true);
                       selectedStatus === "WILL_READ"
                         ? setSelectedStatus(null)
-                        : setSelectedStatus("WILL_READ")
-                    }
+                        : setSelectedStatus("WILL_READ");
+                    }}
                     className="flex w-fit select-none items-center gap-[3px] text-[10px] text-amber-500 transition-opacity hover:opacity-70"
                   >
                     <BookmarkIcon
@@ -175,11 +193,12 @@ export default function Books() {
                 )}
                 {book.status === "LOST" && (
                   <button
-                    onClick={() =>
+                    onClick={() => {
+                      if (!isFiltersOpen) setIsFiltersOpen(true);
                       selectedStatus === "LOST"
                         ? setSelectedStatus(null)
-                        : setSelectedStatus("LOST")
-                    }
+                        : setSelectedStatus("LOST");
+                    }}
                     className="flex w-fit select-none items-center gap-[3px] text-[10px] text-red-500 transition-opacity hover:opacity-70"
                   >
                     <BookmarkXIcon

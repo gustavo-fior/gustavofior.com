@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import {
   BookmarkCheckIcon,
   BookmarkIcon,
@@ -7,10 +7,12 @@ import {
   BookmarkXIcon,
   XIcon,
 } from "lucide-react";
-import { filtersAtom } from "~/utils/atoms";
+import { filtersAtom, isBooksFilterOpenAtom } from "~/utils/atoms";
 
-export default function Filters({ isOpen }: { isOpen: boolean }) {
+export default function Filters() {
   const [selectedStatus, setSelectedStatus] = useAtom(filtersAtom);
+  const isOpen = useAtomValue(isBooksFilterOpenAtom);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -40,11 +42,11 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
           className="flex w-40 flex-col gap-2 overflow-hidden"
         >
           <button
-            onClick={() =>
+            onClick={() => {
               selectedStatus === "READ"
                 ? setSelectedStatus(null)
-                : setSelectedStatus("READ")
-            }
+                : setSelectedStatus("READ");
+            }}
             className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-emerald-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "READ" || selectedStatus === null
                 ? "opacity-100"

@@ -262,7 +262,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
                   <Image
                     src={book.coverImageUrl}
-                    alt={book.englishName ?? book.name}
+                    alt={language === "PT" ? book.name : book.englishName}
                     width={1920}
                     height={1080}
                     className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"

@@ -553,6 +553,7 @@ export const books = [
   },
   {
     name: "Eram os Deuses Astronautas",
+    englishName: "The Gods Were Astronauts",
     author: "Eric Von Daniken",
     status: "READ",
     createdAt: "2022-11-08T03:13:00.000Z",

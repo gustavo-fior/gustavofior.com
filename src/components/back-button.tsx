@@ -13,12 +13,14 @@ import { useIsMobile } from "~/utils/is-mobile";
 import Filters from "./books/filters";
 import Sorts from "./books/sorts";
 import Languages from "./books/languages";
+import { useAtom } from "jotai";
+import { isBooksFilterOpenAtom } from "~/utils/atoms";
 
 const BackButton = () => {
   const pathname = usePathname();
   const router = useRouter();
   const isMobile = useIsMobile();
-  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const [isFiltersOpen, setIsFiltersOpen] = useAtom(isBooksFilterOpenAtom);
   const [isSortsOpen, setIsSortsOpen] = useState(false);
   const [isLanguagesOpen, setIsLanguagesOpen] = useState(false);
 
@@ -104,7 +106,7 @@ const BackButton = () => {
                 <span className="text-sm">Filters</span>
               </button>
             </motion.div>
-            <Filters isOpen={isFiltersOpen} />
+            <Filters />
             <motion.div
               initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
