@@ -23,14 +23,12 @@ const BackButton = () => {
   const [isLanguagesOpen, setIsLanguagesOpen] = useState(false);
 
   const handleBackFromBooks = () => {
-    // Close all menus first
+    // Close all menus and navigate immediately
+    // Animations will play during the navigation transition
     setIsFiltersOpen(false);
     setIsSortsOpen(false);
     setIsLanguagesOpen(false);
-    // Wait for exit animations to complete, then navigate
-    setTimeout(() => {
-      void router.push("/");
-    }, 400);
+    void router.push("/");
   };
 
   if (isMobile && pathname !== "/" && pathname !== "/books") {

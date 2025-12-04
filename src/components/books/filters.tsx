@@ -45,14 +45,14 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("READ")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-emerald-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-emerald-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "READ" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <BookmarkCheckIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-emerald-100"
+              className="mb-[1px] mr-px size-3 fill-emerald-100"
               strokeWidth={2.5}
             />
             Read
@@ -64,7 +64,7 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -75,14 +75,14 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("READING")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-orange-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-orange-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "READING" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <BookmarkIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-orange-100"
+              className="mb-[1px] mr-px size-3 fill-orange-100"
               strokeWidth={2.5}
             />
             Reading
@@ -94,7 +94,7 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -105,14 +105,14 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("BUY")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-sky-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-sky-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "BUY" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <BookmarkPlusIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-sky-100"
+              className="mb-[1px] mr-px size-3 fill-sky-100"
               strokeWidth={2.5}
             />
             Buy
@@ -124,7 +124,7 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -135,14 +135,14 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("WILL_READ")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-amber-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-amber-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "WILL_READ" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <BookmarkIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-amber-100"
+              className="mb-[1px] mr-px size-3 fill-amber-100"
               strokeWidth={2.5}
             />
             Will Read
@@ -165,14 +165,14 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("LOST")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-red-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-red-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "LOST" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <BookmarkXIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-red-100"
+              className="mb-[1px] mr-px size-3 fill-red-100"
               strokeWidth={2.5}
             />
             Dropped
@@ -184,7 +184,7 @@ export default function Filters({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>

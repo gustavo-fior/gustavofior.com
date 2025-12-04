@@ -35,28 +35,28 @@ export default function Languages({ isOpen }: { isOpen: boolean }) {
         >
           <button
             onClick={() => setSelectedLanguage("PT")}
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedLanguage === "PT" || selectedLanguage === null
                 ? "opacity-100"
                 : "opacity-50"
             }`}
           >
             <HouseIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-neutral-200"
+              className="mb-[1px] mr-px size-3 fill-neutral-200"
               strokeWidth={2.5}
             />
             PT
           </button>
           <button
             onClick={() => setSelectedLanguage("EN")}
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedLanguage === "EN" || selectedLanguage === null
                 ? "opacity-100"
                 : "opacity-50"
             }`}
           >
             <PlaneIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-neutral-200"
+              className="mb-[1px] mr-px size-3 fill-neutral-200"
               strokeWidth={2.5}
             />
             EN

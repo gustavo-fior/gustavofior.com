@@ -45,14 +45,14 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("BEST")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "BEST" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <ThumbsUpIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-neutral-200"
+              className="mb-[1px] mr-px size-3 fill-neutral-200"
               strokeWidth={2.5}
             />
             Best
@@ -75,14 +75,14 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("WORST")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "WORST" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <ThumbsDownIcon
-              className="mb-[1px] ml-0.5 size-2.5 fill-neutral-200"
+              className="mb-[1px] mr-px size-3 fill-neutral-200"
               strokeWidth={2.5}
             />
             Worst
@@ -105,14 +105,14 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("ABC")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "ABC" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <ArrowDownAzIcon
-              className="mb-[1px] ml-0.5 size-2.5 "
+              className="mb-[1px] mr-px size-3 "
               strokeWidth={2.5}
             />
             ABC
@@ -135,16 +135,13 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("ZXY")
             }
-            className={`flex w-fit select-none items-center gap-1.5 text-[12px] text-neutral-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "ZXY" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
-            <ArrowDownZaIcon
-              className="mb-px ml-0.5 size-2.5"
-              strokeWidth={2.3}
-            />
+            <ArrowDownZaIcon className="mb-px mr-px size-3" strokeWidth={2.3} />
             ZXY
             <AnimatePresence>
               {selectedSort === "ZXY" && (
