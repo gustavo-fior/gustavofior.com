@@ -35,7 +35,7 @@ const BackButton = () => {
 
   if (isMobile && pathname !== "/" && pathname !== "/books") {
     return (
-      <div className="pb-4 pt-0">
+      <div className="pb-7 pt-0">
         <Link
           href={pathname.includes("/blog/post/") ? "/blog" : "/"}
           className="group flex items-center gap-1.5 text-neutral-300 transition-all duration-200 ease-in-out hover:text-neutral-400"
