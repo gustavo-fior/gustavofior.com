@@ -8,7 +8,7 @@ interface PostHeaderProps {
 const PostHeader = ({ title, readTime, date, emoji }: PostHeaderProps) => {
   return (
     <>
-      <div className="flex flex-row items-center justify-between gap-4 pb-8 align-middle">
+      <div className="flex flex-row items-center justify-between gap-4 md:pb-8 pb-6 align-middle">
         <div>
           <h1 className="pb-1.5 font-serif text-2xl font-medium tracking-[0.01em]">
             {title}
