@@ -101,7 +101,7 @@ export default function Books() {
           <div>
             <h1 className="pb-1.5 font-serif text-2xl font-medium">Books</h1>
             <h3 className="whitespace-pre text-sm text-neutral-400">
-              My own little library
+              My own little library.
             </h3>
           </div>
         </div>
