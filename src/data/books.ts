@@ -163,7 +163,7 @@ export const books = [
     name: "As seis lições",
     englishName: "Six Lessons",
     author: "Ludwig von Mises",
-    status: "BUY",
+    status: "WILL_READ",
     createdAt: "2025-08-27T14:13:42.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71M-fsD472L.jpg",
   },
