@@ -1,13 +1,73 @@
 export const books = [
   {
-    name: "O Livro Completo da Meditação",
-    englishName: "The Complete Guide to Meditation",
-    author: "Osho",
-    status: "READ",
-    createdAt: "2022-11-06T05:52:00.000Z",
+    name: "The Time Machine",
+    englishName: "The Time Machine",
+    author: "H. G. Wells",
+    status: "WILL_READ",
+    createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
-      "https://m.media-amazon.com/images/I/61D+pmrgjtL._AC_UF1000,1000_QL80_.jpg",
-    stars: 3,
+      "https://http2.mlstatic.com/D_NQ_NP_828061-MLA85690286021_062025-O.webp",
+    love: true,
+  },
+  {
+    name: "O Homem Invisível",
+    englishName: "The Invisible Man",
+    author: "H. G. Wells",
+    status: "WILL_READ",
+    createdAt: "2025-12-27T05:52:00.000Z",
+    coverImageUrl:
+      "https://http2.mlstatic.com/D_NQ_NP_852882-MLA86166450362_062025-O.webp",
+    love: true,
+  },
+  {
+    name: "O Grande Gatsby",
+    englishName: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    status: "WILL_READ",
+    createdAt: "2025-12-27T05:52:00.000Z",
+    coverImageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjSg1goqirhanN9haE2_hSRCM2N1cXlj47H6FjYj1bsbfy1yiy",
+    love: true,
+  },
+  {
+    name: "A Origem",
+    englishName: "The Origin",
+    author: "Dan Brown",
+    status: "WILL_READ",
+    createdAt: "2025-12-27T05:52:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/71+EodYVrnL._UF1000,1000_QL80_.jpg",
+    love: true,
+  },
+  {
+    name: "The Art of Doing Science and Engineering",
+    englishName: "The Art of Doing Science and Engineering",
+    author: "Richard W. Hamming",
+    status: "WILL_READ",
+    createdAt: "2025-12-27T05:52:00.000Z",
+    coverImageUrl:
+      "https://unsw-prod.s3.amazonaws.com/media/images/9781732265172.width-1000.jpg",
+    love: true,
+  },
+  {
+    name: "The Big Score",
+    englishName: "The Big Score",
+    author: "Michael S. Malone",
+    status: "WILL_READ",
+    createdAt: "2025-12-27T05:52:00.000Z",
+    coverImageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPBrBRbUsawmMK8lKj7nLQUCoGDP3ve6sL11CPejxkqpZ-hv-5IFAfBiuvuWun7CghGaG81D-SNvIPcUZZjs0xIT5NvZw9IxFO_R1QX7w&s=10",
+    love: true,
+  },
+  {
+    name: "Working in Public",
+    englishName: "Working in Public",
+    author: "Nadia Eghbal",
+    status: "WILL_READ",
+    createdAt: "2025-12-27T05:52:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/71BQ5MWd0bL._SL1500_.jpg",
+    love: true,
   },
   {
     name: "A Revolta de Atlas",
@@ -17,6 +77,7 @@ export const books = [
     createdAt: "2022-12-19T01:40:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/61R8bWX3YDL.jpg",
     stars: 5,
+    love: true,
   },
   {
     name: "Roube como um Artista",
@@ -193,6 +254,7 @@ export const books = [
     createdAt: "2025-09-16T14:35:04.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/51wn9eThjtL._AC_UF1000,1000_QL80_.jpg",
+    love: true,
   },
   {
     name: "Livro Vermelho de Vendas",
@@ -436,6 +498,7 @@ export const books = [
     status: "READING",
     createdAt: "2024-09-03T00:41:39.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81iqH8dpjuL.jpg",
+    love: true,
   },
   {
     name: "O Lobo da Estepe",
@@ -806,6 +869,7 @@ export const books = [
     createdAt: "2024-09-03T00:42:56.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/91B5NWWKuzL._AC_UF1000,1000_QL80_.jpg",
+    love: true,
   },
   {
     name: "Como me tornei Estúpido",
@@ -892,9 +956,10 @@ export const books = [
     name: "Flores para Algernon",
     englishName: "Flowers for Algernon",
     author: "Daniel Keyes",
-    status: "BUY",
+    status: "WILL_READ",
     createdAt: "2024-02-05T16:17:22.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71VrMtcmE9L.jpg",
+    love: true,
   },
   {
     name: "O Algoritmo Mestre",
@@ -934,6 +999,7 @@ export const books = [
     coverImageUrl:
       "https://www.lpm.com.br/livros/imagens/noites_brancas_plus_nova_9788525417480_hd.jpg",
     stars: 2,
+    love: true,
   },
   {
     name: "Os Mentirosos",

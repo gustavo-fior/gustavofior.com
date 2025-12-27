@@ -71,7 +71,7 @@ const BackButton = () => {
     return (
       <AnimatePresence>
         {pathname === "/books" && (
-          <div className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.3rem] md:pb-0 md:pt-0 lg:left-[calc(50%-28rem)]">
+          <div className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.3rem] md:pb-0 md:pt-0 lg:left-[calc(50%-29rem)]">
             <motion.div
               initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
@@ -157,7 +157,7 @@ const BackButton = () => {
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.3rem] md:pb-0 md:pt-0 lg:left-[calc(50%-28rem)]"
+          className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.3rem] md:pb-0 md:pt-0 lg:left-[calc(50%-29rem)]"
         >
           <Link
             href={pathname.includes("/blog/post/") ? "/blog" : "/"}

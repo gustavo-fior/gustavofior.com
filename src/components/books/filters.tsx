@@ -8,6 +8,7 @@ import {
   XIcon,
 } from "lucide-react";
 import { filtersAtom, isBooksFilterOpenAtom } from "~/utils/atoms";
+import { BookmarkHeartIcon } from "../icons/bookmark-heart";
 
 export default function Filters() {
   const [selectedStatus, setSelectedStatus] = useAtom(filtersAtom);
@@ -180,6 +181,33 @@ export default function Filters() {
             Dropped
             <AnimatePresence>
               {selectedStatus === "LOST" && (
+                <motion.div
+                  initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
+                  animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                >
+                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
+          <button
+            onClick={() =>
+              selectedStatus === "LOVE"
+                ? setSelectedStatus(null)
+                : setSelectedStatus("LOVE")
+            }
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-pink-500 transition-opacity hover:opacity-70 ${
+              selectedStatus === "LOVE" || selectedStatus === null
+                ? "opacity-100"
+                : "opacity-50 "
+            }`}
+          >
+            <BookmarkHeartIcon size={12} color="pink" />
+            Rafa&apos;s
+            <AnimatePresence>
+              {selectedStatus === "LOVE" && (
                 <motion.div
                   initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}

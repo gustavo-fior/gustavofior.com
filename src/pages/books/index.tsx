@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
+import { BookmarkHeartIcon } from "~/components/icons/bookmark-heart";
 import { books } from "~/data/books";
 import {
   filtersAtom,
@@ -23,7 +24,9 @@ export default function Books() {
   const [selectedLanguage] = useAtom(languagesAtom);
   const [isFiltersOpen, setIsFiltersOpen] = useAtom(isBooksFilterOpenAtom);
   const filteredBooks = selectedStatus
-    ? books.filter((book) => book.status === selectedStatus)
+    ? books.filter((book) =>
+        selectedStatus === "LOVE" ? book.love : book.status === selectedStatus
+      )
     : books;
 
   // Apply sorting based on selectedSort
@@ -114,100 +117,123 @@ export default function Books() {
                   alt={book.name}
                   width={1920}
                   height={1080}
-                  className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
+                  className="pointer-events-none block h-[75px] w-[50px] border-r-[1.5px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
                   priority
                   quality={100}
                   sizes="50px"
                   loading="eager"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/10"></div>
               </div>
               <div className="flex flex-col gap-1">
-                {book.status === "READ" && (
-                  <button
-                    onClick={() => {
-                      if (!isFiltersOpen) setIsFiltersOpen(true);
-                      selectedStatus === "READ"
-                        ? setSelectedStatus(null)
-                        : setSelectedStatus("READ");
-                    }}
-                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
-                  >
-                    <BookmarkCheckIcon
-                      className="mb-[1px] size-[9px] fill-emerald-100"
-                      strokeWidth={2.5}
-                    />
-                    Read
-                  </button>
-                )}
-                {book.status === "READING" && (
-                  <button
-                    onClick={() => {
-                      if (!isFiltersOpen) setIsFiltersOpen(true);
-                      selectedStatus === "READING"
-                        ? setSelectedStatus(null)
-                        : setSelectedStatus("READING");
-                    }}
-                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-orange-500 transition-opacity hover:opacity-70"
-                  >
-                    <BookmarkIcon
-                      className="mb-[1px] size-[9px] fill-orange-100"
-                      strokeWidth={2.5}
-                    />
-                    Reading
-                  </button>
-                )}
-                {book.status === "BUY" && (
-                  <button
-                    onClick={() => {
-                      if (!isFiltersOpen) setIsFiltersOpen(true);
-                      selectedStatus === "BUY"
-                        ? setSelectedStatus(null)
-                        : setSelectedStatus("BUY");
-                    }}
-                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-sky-500 transition-opacity hover:opacity-70"
-                  >
-                    <BookmarkPlusIcon
-                      className="mb-[1px] size-[9px] fill-sky-100"
-                      strokeWidth={2.5}
-                    />
-                    Buy
-                  </button>
-                )}
-                {book.status === "WILL_READ" && (
-                  <button
-                    onClick={() => {
-                      if (!isFiltersOpen) setIsFiltersOpen(true);
-                      selectedStatus === "WILL_READ"
-                        ? setSelectedStatus(null)
-                        : setSelectedStatus("WILL_READ");
-                    }}
-                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-amber-500 transition-opacity hover:opacity-70"
-                  >
-                    <BookmarkIcon
-                      className="mb-[1px] size-[9px] fill-amber-100"
-                      strokeWidth={2.5}
-                    />
-                    Will Read
-                  </button>
-                )}
-                {book.status === "LOST" && (
-                  <button
-                    onClick={() => {
-                      if (!isFiltersOpen) setIsFiltersOpen(true);
-                      selectedStatus === "LOST"
-                        ? setSelectedStatus(null)
-                        : setSelectedStatus("LOST");
-                    }}
-                    className="flex w-fit select-none items-center gap-[3px] text-[10px] text-red-500 transition-opacity hover:opacity-70"
-                  >
-                    <BookmarkXIcon
-                      className="mb-[1px] size-[9px] fill-red-100"
-                      strokeWidth={2.5}
-                    />
-                    Dropped
-                  </button>
-                )}
+                <div className="flex flex-row items-center gap-1.5">
+                  {book.status === "READ" && (
+                    <button
+                      onClick={() => {
+                        if (!isFiltersOpen) setIsFiltersOpen(true);
+                        selectedStatus === "READ"
+                          ? setSelectedStatus(null)
+                          : setSelectedStatus("READ");
+                      }}
+                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
+                    >
+                      {book.love ? (
+                        <BookmarkHeartIcon size={9} color="emerald" />
+                      ) : (
+                        <BookmarkCheckIcon
+                          className="mb-[1px] size-[9px] fill-emerald-100"
+                          strokeWidth={2.5}
+                        />
+                      )}
+                      Read
+                    </button>
+                  )}
+                  {book.status === "READING" && (
+                    <button
+                      onClick={() => {
+                        if (!isFiltersOpen) setIsFiltersOpen(true);
+                        selectedStatus === "READING"
+                          ? setSelectedStatus(null)
+                          : setSelectedStatus("READING");
+                      }}
+                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-orange-500 transition-opacity hover:opacity-70"
+                    >
+                      {book.love ? (
+                        <BookmarkHeartIcon size={9} color="orange" />
+                      ) : (
+                        <BookmarkIcon
+                          className="mb-[1px] size-[9px] fill-orange-100"
+                          strokeWidth={2.5}
+                        />
+                      )}
+                      Reading
+                    </button>
+                  )}
+                  {book.status === "BUY" && (
+                    <button
+                      onClick={() => {
+                        if (!isFiltersOpen) setIsFiltersOpen(true);
+                        selectedStatus === "BUY"
+                          ? setSelectedStatus(null)
+                          : setSelectedStatus("BUY");
+                      }}
+                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-sky-500 transition-opacity hover:opacity-70"
+                    >
+                      {book.love ? (
+                        <BookmarkHeartIcon size={9} color="sky" />
+                      ) : (
+                        <BookmarkPlusIcon
+                          className="mb-[1px] size-[9px] fill-sky-100"
+                          strokeWidth={2.5}
+                        />
+                      )}
+                      Buy
+                    </button>
+                  )}
+                  {book.status === "WILL_READ" && (
+                    <button
+                      onClick={() => {
+                        if (!isFiltersOpen) setIsFiltersOpen(true);
+                        selectedStatus === "WILL_READ"
+                          ? setSelectedStatus(null)
+                          : setSelectedStatus("WILL_READ");
+                      }}
+                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-amber-500 transition-opacity hover:opacity-70"
+                    >
+                      {book.love ? (
+                        <BookmarkHeartIcon size={9} color="amber" />
+                      ) : (
+                        <BookmarkIcon
+                          className="mb-[1px] size-[9px] fill-amber-100"
+                          strokeWidth={2.5}
+                        />
+                      )}
+                      Will Read
+                    </button>
+                  )}
+                  {book.status === "LOST" && (
+                    <button
+                      onClick={() => {
+                        if (!isFiltersOpen) setIsFiltersOpen(true);
+                        selectedStatus === "LOST"
+                          ? setSelectedStatus(null)
+                          : setSelectedStatus("LOST");
+                      }}
+                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-red-500 transition-opacity hover:opacity-70"
+                    >
+                      {book.love ? (
+                        <BookmarkHeartIcon size={9} color="red" />
+                      ) : (
+                        <BookmarkXIcon
+                          className="mb-[1px] size-[9px] fill-red-100"
+                          strokeWidth={2.5}
+                        />
+                      )}
+                      Dropped
+                    </button>
+                  )}
+                </div>
                 <p className="pointer-events-none line-clamp-2 text-sm">
                   {selectedLanguage === "PT" ? book.name : book.englishName}
                 </p>
