@@ -3,7 +3,7 @@ export const books = [
     name: "The Time Machine",
     englishName: "The Time Machine",
     author: "H. G. Wells",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_828061-MLA85690286021_062025-O.webp",
@@ -221,7 +221,7 @@ export const books = [
       "https://m.media-amazon.com/images/I/61qFTbQ8BWL._AC_UF1000,1000_QL80_.jpg",
   },
   {
-    name: "As seis lições",
+    name: "As Seis Lições",
     englishName: "Six Lessons",
     author: "Ludwig von Mises",
     status: "WILL_READ",
@@ -385,7 +385,7 @@ export const books = [
     stars: 3,
   },
   {
-    name: "Breve Respostas para Grandes Questões",
+    name: "Breves Respostas para Grandes Questões",
     englishName: "Brief Answers to the Big Questions",
     author: "Stephen Hawking",
     status: "READ",
@@ -1199,5 +1199,69 @@ export const books = [
     coverImageUrl:
       "https://www.lpm.com.br/livros/imagens/o_principe_14x21_9788525437754_9788525407986_hd.jpg",
     stars: 4,
+  },
+  // ------------------------------------------------------------------
+  {
+    name: "Incidente em Antares",
+    englishName: "Antares Incident",
+    author: "Érico Veríssimo",
+    status: "WILL_READ",
+    createdAt: "2026-01-05T05:39:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/81AcXYW2ONL._AC_UF1000,1000_QL80_.jpg",
+  },
+  {
+    name: "Gente de Resultados",
+    englishName: "Results People",
+    author: "Eduardo Ferraz",
+    status: "READ",
+    createdAt: "2026-01-05T05:39:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/71-2R3bm-LL._AC_UF1000,1000_QL80_.jpg",
+    stars: 2,
+  },
+  {
+    name: "Confissões do Crematório",
+    englishName: "Smoke Gets in Your Eyes",
+    author: "Caitlin Doughty",
+    status: "WILL_READ",
+    createdAt: "2026-01-05T05:39:00.000Z",
+    coverImageUrl:
+      "https://darkside.vtexassets.com/arquivos/ids/167741/78-confissoes-do-crematorio.jpg?v=636802532960000000",
+  },
+  {
+    name: "A Sacada",
+    englishName: "The Knack",
+    author: "Norm Brodsky",
+    status: "WILL_READ",
+    createdAt: "2026-01-05T05:39:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/810Ml1mW7rL._AC_UF1000,1000_QL80_.jpg",
+  },
+  {
+    name: "Por que as Nações Fracassam?",
+    englishName: "Why Nations Fail?",
+    author: "Daron Acemoglu",
+    status: "WILL_READ",
+    createdAt: "2026-01-05T05:39:00.000Z",
+    coverImageUrl: "https://i.ytimg.com/vi/MEXis6bjTBI/sddefault.jpg",
+  },
+  {
+    name: "Elon Musk",
+    englishName: "Elon Musk",
+    author: "Ashlee Vance",
+    status: "READ",
+    createdAt: "2026-01-05T05:39:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/910GrHP3u+L._AC_UF1000,1000_QL80_.jpg",
+    stars: 4.5,
+  },
+  {
+    name: "Vinte Mil Léguas Submarinas",
+    englishName: "Twenty Thousand Leagues Under the Sea",
+    author: "Jules Verne",
+    status: "WILL_READ",
+    createdAt: "2026-01-05T05:39:00.000Z",
+    coverImageUrl: "https://m.media-amazon.com/images/I/71FAg0++U2L.jpg",
   },
 ];

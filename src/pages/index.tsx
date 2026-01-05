@@ -263,13 +263,15 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                   <Image
                     src={book.coverImageUrl}
                     alt={language === "PT" ? book.name : book.englishName}
-                    width={1920}
-                    height={1080}
+                    width={1000}
+                    height={1000}
                     className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
                     priority
                     quality={100}
-                    sizes="50px"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     loading="eager"
+                    placeholder="blur"
+                    blurDataURL={book.coverImageUrl}
                   />
                   <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/20"></div>
                 </div>
