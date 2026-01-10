@@ -1245,6 +1245,7 @@ export const books = [
     status: "WILL_READ",
     createdAt: "2026-01-05T05:39:00.000Z",
     coverImageUrl: "https://i.ytimg.com/vi/MEXis6bjTBI/sddefault.jpg",
+    love: true,
   },
   {
     name: "Elon Musk",
