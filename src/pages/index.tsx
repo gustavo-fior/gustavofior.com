@@ -102,7 +102,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       <div className="flex flex-col gap-2">
         {/* BIO */}
         <div className={`${shouldAnimate ? "animate-10" : ""}`}>
-          <div className="flex items-center justify-between sm:pb-3">
+          <div className="flex items-center justify-between pb-1.5 sm:pb-3">
             <h1 className={`font-serif text-2xl font-medium tracking-[0.01em]`}>
               Gustavo Fior
             </h1>
