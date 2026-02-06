@@ -47,7 +47,7 @@ export const books = [
     status: "READING",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
-      "https://unsw-prod.s3.amazonaws.com/media/images/9781732265172.width-1000.jpg",
+      "https://m.media-amazon.com/images/I/61Qg6M7uV9L._UF1000,1000_QL80_.jpg",
     love: true,
   },
   {
