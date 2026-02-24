@@ -3,14 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
-import {
-  ArrowUpRight,
-  BookCheckIcon,
-  BookOpen,
-  BookXIcon,
-  LibraryBigIcon,
-  ShoppingBag,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { type GetStaticProps, type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -25,8 +18,8 @@ import {
   expandedProjectsAtom,
   languagesAtom,
 } from "~/utils/atoms";
-import { type BlogPageProps, type PostMetadata } from "./blog";
 import { useIsMobile } from "~/utils/is-mobile";
+import { type BlogPageProps, type PostMetadata } from "./blog";
 
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
@@ -102,7 +95,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       <div className="flex flex-col gap-2">
         {/* BIO */}
         <div className={`${shouldAnimate ? "animate-10" : ""}`}>
-          <div className="flex items-center justify-between sm:pb-3">
+          <div className="flex items-center justify-between pb-1.5 sm:pb-3">
             <h1 className={`font-serif text-[1.6rem] font-medium`}>
               Gustavo Fior
             </h1>
@@ -369,7 +362,7 @@ const ProjectPreview = ({
             {isHovering && (
               <motion.div
                 initial={{ opacity: 0, width: 0, marginLeft: 0, scale: 0.95 }}
-                animate={{ opacity: 1, width: "auto", marginLeft: 4, scale: 1 }}
+                animate={{ opacity: 1, width: "auto", marginLeft: 6, scale: 1 }}
                 exit={{ opacity: 0, width: 0, marginLeft: 0, scale: 0.95 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >

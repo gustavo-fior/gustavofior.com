@@ -3,11 +3,12 @@ export const books = [
     name: "The Time Machine",
     englishName: "The Time Machine",
     author: "H. G. Wells",
-    status: "READING",
+    status: "READ",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_828061-MLA85690286021_062025-O.webp",
     love: true,
+    stars: 4
   },
   {
     name: "O Homem Invisível",
@@ -43,10 +44,10 @@ export const books = [
     name: "The Art of Doing Science and Engineering",
     englishName: "The Art of Doing Science and Engineering",
     author: "Richard W. Hamming",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
-      "https://unsw-prod.s3.amazonaws.com/media/images/9781732265172.width-1000.jpg",
+      "https://m.media-amazon.com/images/I/61Qg6M7uV9L._UF1000,1000_QL80_.jpg",
     love: true,
   },
   {
@@ -1245,6 +1246,7 @@ export const books = [
     status: "WILL_READ",
     createdAt: "2026-01-05T05:39:00.000Z",
     coverImageUrl: "https://i.ytimg.com/vi/MEXis6bjTBI/sddefault.jpg",
+    love: true,
   },
   {
     name: "Elon Musk",
