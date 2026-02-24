@@ -102,7 +102,9 @@ export default function Books() {
       <div className="flex flex-col pb-48">
         <div className="flex flex-row items-center justify-between gap-4 pb-8 align-middle">
           <div>
-            <h1 className="pb-1.5 font-serif text-2xl font-medium">Books</h1>
+            <h1 className="pb-1.5 font-serif text-[1.6rem] font-medium">
+              Books
+            </h1>
             <h3 className="whitespace-pre text-sm text-neutral-400">
               My own little library.
             </h3>

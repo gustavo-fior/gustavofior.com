@@ -6,7 +6,7 @@ interface PProps {
 
 const P = ({ children }: PProps) => {
   return (
-    <p className="text-base leading-relaxed text-neutral-600">{children}</p>
+    <p className="text-base leading-[1.72] text-neutral-600">{children}</p>
   );
 };
 
