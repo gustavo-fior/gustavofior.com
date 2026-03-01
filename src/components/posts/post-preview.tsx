@@ -24,7 +24,7 @@ const PostPreview = ({
     >
       <motion.div className="group flex justify-between pb-6">
         <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <h2 className="text-base transition duration-200 ease-in-out group-hover:text-neutral-500">
               {title}
             </h2>
@@ -33,12 +33,12 @@ const PostPreview = ({
               strokeWidth={2.6}
             />
           </div>
-          <p className="max-w-lg text-sm tracking-[0.01em] text-neutral-400">
+          <p className="max-w-lg text-sm font-[350] tracking-[0.01em] text-neutral-400">
             {description}
           </p>
         </div>
         {showDate && (
-          <p className="hidden min-w-fit text-xs tabular-nums tracking-tighter text-neutral-300 md:block">
+          <p className="hidden min-w-fit text-xs font-[350] tabular-nums tracking-tighter text-neutral-300 md:block">
             {new Date(date).toLocaleString("default", { month: "2-digit" })}/
             {new Date(date).getFullYear()}
           </p>

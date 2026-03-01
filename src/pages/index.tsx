@@ -96,12 +96,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* BIO */}
         <div className={`${shouldAnimate ? "animate-10" : ""}`}>
           <div className="flex items-center justify-between pb-1.5 sm:pb-3">
-            <h1 className={`font-serif text-[1.6rem] font-medium`}>
+            <h1 className={`font-serif text-[1.6rem] font-[450]`}>
               Gustavo Fior
             </h1>
           </div>
-          <p className="pb-8 text-sm font-normal tracking-[0.01em] text-neutral-400">
-            Brazilian software engineer who loves to code, surf, and learn new
+          <p className="pb-8 text-sm font-[350] tracking-[0.01em] text-neutral-400">
+            Brazilian software engineer who loves to build, surf, and learn new
             things.
           </p>
         </div>
@@ -109,12 +109,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* PROJECTS */}
         <div className={`${shouldAnimate ? "animate-15" : ""}`}>
           <h2
-            className={`flex items-center justify-between pb-1 text-sm tracking-[0.01em] text-neutral-400`}
+            className={`flex items-center justify-between pb-1 text-sm font-[350] tracking-[0.01em] text-neutral-400`}
           >
             Projects
             <button
               onClick={() => setShowMoreProjects(!showMoreProjects)}
-              className="flex w-fit text-sm text-neutral-400"
+              className="flex w-fit text-sm text-neutral-400 transition-all duration-200 ease-in-out hover:text-neutral-500"
             >
               {showMoreProjects ? "Less" : "More"}
             </button>
@@ -214,7 +214,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* WRITING */}
         <div className={`${shouldAnimate ? "animate-20" : ""}`}>
-          <div className="flex justify-between pb-4 align-middle text-sm tracking-[0.01em] text-neutral-400">
+          <div className="flex justify-between pb-4 align-middle text-sm font-[350] tracking-[0.01em] text-neutral-400">
             Writing
             <LinkArrow
               href="/blog"
@@ -240,7 +240,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* BOOKS */}
         <div className={`${shouldAnimate ? "animate-20" : ""}`}>
-          <div className="flex justify-between pb-6 align-middle text-sm tracking-[0.01em] text-neutral-400">
+          <div className="flex justify-between pb-6 align-middle text-sm font-[350] tracking-[0.01em] text-neutral-400">
             Books
             <LinkArrow
               href="/books"
@@ -251,7 +251,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           </div>
           <ul className="grid grid-cols-3 grid-rows-1 gap-x-8 pb-20 md:grid-cols-4">
             {sortedBooks.map((book) => (
-              <div key={book.name} className="flex flex-col gap-4">
+              <div key={book.name} className="flex flex-col gap-5">
                 <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
                   <Image
                     src={book.coverImageUrl}
@@ -272,7 +272,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                   <p className="pointer-events-none line-clamp-2 text-sm">
                     {language === "PT" ? book.name : book.englishName}
                   </p>
-                  <p className="pointer-events-none mb-1 text-xs tracking-wide text-neutral-400">
+                  <p className="pointer-events-none mb-1 text-xs font-[350] tracking-wide text-neutral-400">
                     {book.author}
                   </p>
                 </div>
@@ -283,7 +283,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* OTHERS */}
         <div className={`${shouldAnimate ? "animate-25" : ""}`}>
-          <div className="flex gap-4 tracking-[0.01em] md:gap-6">
+          <div className="flex gap-4 font-[350] tracking-[0.01em] md:gap-6">
             <LinkArrow
               href="https://x.com/heyimgustavo"
               className="text-sm text-neutral-400"
@@ -366,13 +366,16 @@ const ProjectPreview = ({
                 exit={{ opacity: 0, width: 0, marginLeft: 0, scale: 0.95 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
-                <ArrowUpRight className={`h-2.5 w-2.5`} strokeWidth={2.6} />
+                <ArrowUpRight
+                  className={`h-2.5 w-2.5 text-neutral-400`}
+                  strokeWidth={2.6}
+                />
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
-      <p className="text-sm tracking-[0.01em] text-neutral-400">
+      <p className="text-sm font-[350] tracking-[0.01em] text-neutral-400">
         {description}
       </p>
     </Link>

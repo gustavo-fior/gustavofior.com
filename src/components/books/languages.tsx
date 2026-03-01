@@ -35,7 +35,7 @@ export default function Languages({ isOpen }: { isOpen: boolean }) {
         >
           <button
             onClick={() => setSelectedLanguage("PT")}
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedLanguage === "PT" || selectedLanguage === null
                 ? "opacity-100"
                 : "opacity-50"
@@ -49,7 +49,7 @@ export default function Languages({ isOpen }: { isOpen: boolean }) {
           </button>
           <button
             onClick={() => setSelectedLanguage("EN")}
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] text-neutral-400 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedLanguage === "EN" || selectedLanguage === null
                 ? "opacity-100"
                 : "opacity-50"

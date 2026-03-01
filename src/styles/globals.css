@@ -4,7 +4,7 @@
 
 @layer components {
   ::selection {
-    background: #aaaaaa49;
+    background: #c0c0c049;
     text-decoration-color: #b2b2b2;
   }
 

@@ -6,7 +6,7 @@ interface H3Props {
 
 const H3 = ({ children }: H3Props) => {
   return (
-    <h3 className="tracking-tigh pb-4 pt-8 text-base font-semibold">
+    <h3 className="pb-4 pt-8 text-base font-medium tracking-tight text-neutral-800">
       {children}
     </h3>
   );

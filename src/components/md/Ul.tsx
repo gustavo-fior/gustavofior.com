@@ -6,7 +6,7 @@ interface UnorderedListProps {
 
 const UnorderedList = ({ children }: UnorderedListProps) => {
   return (
-    <ul className="mt-2 list-disc pl-8 text-base text-neutral-600 marker:text-neutral-300">
+    <ul className="mt-2 list-disc pl-8 text-base font-[350] text-neutral-600 marker:text-neutral-300">
       {children}
     </ul>
   );

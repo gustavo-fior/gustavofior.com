@@ -105,21 +105,21 @@ export default function Books() {
             <h1 className="pb-1.5 font-serif text-[1.6rem] font-medium">
               Books
             </h1>
-            <h3 className="whitespace-pre text-sm text-neutral-400">
+            <h3 className="whitespace-pre text-sm font-[350] tracking-[0.01em] text-neutral-400">
               My own little library.
             </h3>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-8 gap-y-16 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-12 gap-y-16 md:grid-cols-4">
           {sortedBooks.map((book) => (
-            <div key={book.name} className="flex flex-col gap-4">
+            <div key={book.name} className="flex flex-col gap-5">
               <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
                 <Image
                   src={book.coverImageUrl}
                   alt={book.name}
                   width={1920}
                   height={1080}
-                  className="pointer-events-none block h-[75px] w-[50px] border-r-[1.5px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
+                  className="pointer-events-none block h-[80px] w-[53px] border-r-[1.5px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
                   priority
                   quality={100}
                   sizes="50px"
@@ -239,7 +239,7 @@ export default function Books() {
                 <p className="pointer-events-none line-clamp-2 text-sm">
                   {selectedLanguage === "PT" ? book.name : book.englishName}
                 </p>
-                <p className="pointer-events-none mb-1 text-xs tracking-wide text-neutral-400">
+                <p className="pointer-events-none mb-1 text-xs font-[350] tracking-wide text-neutral-400">
                   {book.author}
                 </p>
                 {book.stars && (

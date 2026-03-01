@@ -6,11 +6,11 @@ import { useState } from "react";
 import { getGoogleFavicon } from "~/utils/google-favicon";
 
 interface LinkTextProps {
-  href: string;
-  children: React.ReactNode;
+  href?: string;
+  children?: React.ReactNode;
 }
 
-const LinkText = ({ children, href }: LinkTextProps) => {
+const LinkText = ({ children, href = "" }: LinkTextProps) => {
   const [isHovering, setIsHovering] = useState(false);
   return (
     <Link
@@ -30,7 +30,7 @@ const LinkText = ({ children, href }: LinkTextProps) => {
           alt=""
           width={256}
           height={256}
-          className="my-0 mb-[3px] ml-[3px] mr-1.5 inline-block size-[13px] rounded-sm"
+          className="my-0 mb-[3px] ml-[3px] mr-1.5 inline-block size-[12px] rounded-sm"
         />
       )}
 
@@ -47,7 +47,7 @@ const LinkText = ({ children, href }: LinkTextProps) => {
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="inline-block"
           >
-            <ArrowUpRight className="ml-0.5 size-3 translate-x-[1px] translate-y-[1px] text-neutral-400 transition-all duration-200 ease-in-out " />
+            <ArrowUpRight className="ml-1 size-3 translate-x-[1px] translate-y-[1px] text-neutral-400 transition-all duration-200 ease-in-out" />
           </motion.div>
         )}
       </AnimatePresence>
