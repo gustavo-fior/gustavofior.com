@@ -45,7 +45,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("BEST")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "BEST" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -75,7 +75,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("WORST")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "WORST" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -105,7 +105,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("ABC")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "ABC" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -135,7 +135,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 ? setSelectedSort(null)
                 : setSelectedSort("ZXY")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-neutral-400 transition-opacity hover:opacity-70 ${
               selectedSort === "ZXY" || selectedSort === null
                 ? "opacity-100"
                 : "opacity-50 "

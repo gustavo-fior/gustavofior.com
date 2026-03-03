@@ -105,7 +105,7 @@ export default function Books() {
             <h1 className="pb-1.5 font-serif text-[1.6rem] font-medium">
               Books
             </h1>
-            <h3 className="whitespace-pre text-sm font-[350] tracking-[0.01em] text-neutral-400">
+            <h3 className="whitespace-pre text-sm font-[370] tracking-[0.01em] text-neutral-400">
               My own little library.
             </h3>
           </div>
@@ -239,7 +239,7 @@ export default function Books() {
                 <p className="pointer-events-none line-clamp-2 text-sm">
                   {selectedLanguage === "PT" ? book.name : book.englishName}
                 </p>
-                <p className="pointer-events-none mb-1 text-xs font-[350] tracking-wide text-neutral-400">
+                <p className="pointer-events-none mb-1 text-xs font-[370] tracking-wide text-neutral-400">
                   {book.author}
                 </p>
                 {book.stars && (

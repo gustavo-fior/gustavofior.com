@@ -100,7 +100,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               Gustavo Fior
             </h1>
           </div>
-          <p className="pb-8 text-sm font-[350] tracking-[0.01em] text-neutral-400">
+          <p className="pb-8 text-sm font-[370] tracking-[0.01em] text-neutral-400">
             Brazilian software engineer who loves to build, surf, and learn new
             things.
           </p>
@@ -109,7 +109,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* PROJECTS */}
         <div className={`${shouldAnimate ? "animate-15" : ""}`}>
           <h2
-            className={`flex items-center justify-between pb-1 text-sm font-[350] tracking-[0.01em] text-neutral-400`}
+            className={`flex items-center justify-between pb-1 text-sm font-[370] tracking-[0.01em] text-neutral-400`}
           >
             Projects
             <button
@@ -214,7 +214,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* WRITING */}
         <div className={`${shouldAnimate ? "animate-20" : ""}`}>
-          <div className="flex justify-between pb-4 align-middle text-sm font-[350] tracking-[0.01em] text-neutral-400">
+          <div className="flex justify-between pb-4 align-middle text-sm font-[370] tracking-[0.01em] text-neutral-400">
             Writing
             <LinkArrow
               href="/blog"
@@ -240,7 +240,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* BOOKS */}
         <div className={`${shouldAnimate ? "animate-20" : ""}`}>
-          <div className="flex justify-between pb-6 align-middle text-sm font-[350] tracking-[0.01em] text-neutral-400">
+          <div className="flex justify-between pb-6 align-middle text-sm font-[370] tracking-[0.01em] text-neutral-400">
             Books
             <LinkArrow
               href="/books"
@@ -272,7 +272,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                   <p className="pointer-events-none line-clamp-2 text-sm">
                     {language === "PT" ? book.name : book.englishName}
                   </p>
-                  <p className="pointer-events-none mb-1 text-xs font-[350] tracking-wide text-neutral-400">
+                  <p className="pointer-events-none mb-1 text-xs font-[370] tracking-wide text-neutral-400">
                     {book.author}
                   </p>
                 </div>
@@ -283,7 +283,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
 
         {/* OTHERS */}
         <div className={`${shouldAnimate ? "animate-25" : ""}`}>
-          <div className="flex gap-4 font-[350] tracking-[0.01em] md:gap-6">
+          <div className="flex gap-4 font-[370] tracking-[0.01em] md:gap-6">
             <LinkArrow
               href="https://x.com/heyimgustavo"
               className="text-sm text-neutral-400"
@@ -375,7 +375,7 @@ const ProjectPreview = ({
           </AnimatePresence>
         </div>
       </div>
-      <p className="text-sm font-[350] tracking-[0.01em] text-neutral-400">
+      <p className="text-sm font-[370] tracking-[0.01em] text-neutral-400">
         {description}
       </p>
     </Link>

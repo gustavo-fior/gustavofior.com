@@ -48,7 +48,7 @@ export default function Filters() {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("READ");
             }}
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-emerald-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-emerald-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "READ" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -78,7 +78,7 @@ export default function Filters() {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("READING")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-orange-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-orange-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "READING" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -108,7 +108,7 @@ export default function Filters() {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("BUY")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-sky-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-sky-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "BUY" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -138,7 +138,7 @@ export default function Filters() {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("WILL_READ")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-amber-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-amber-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "WILL_READ" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -168,7 +168,7 @@ export default function Filters() {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("LOST")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-red-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-red-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "LOST" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
@@ -198,7 +198,7 @@ export default function Filters() {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("LOVE")
             }
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[350] tracking-[0.01em] text-pink-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] font-[370] tracking-[0.01em] text-pink-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "LOVE" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
