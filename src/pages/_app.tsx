@@ -27,7 +27,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           data-website-id="6f872615-95f7-4efa-bd8f-4111ad56f0b9"
         ></script>
       </Head>
-      <main className="firefox-scrollbar-fix min-h-screen bg-neutral-100 text-neutral-900">
+      <main className="firefox-scrollbar-fix min-h-screen bg-neutral-100 text-neutral-900 antialiased">
         {/* <Header /> */}
         <ContentWrapper>
           <BackButton />

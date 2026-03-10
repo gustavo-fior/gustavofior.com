@@ -44,7 +44,7 @@ const BackButton = () => {
             className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
             strokeWidth={2.5}
           />
-          <span className="text-sm font-[370] tracking-[0.01em]">Back</span>
+          <span className="text-sm  tracking-[0.01em]">Back</span>
         </Link>
       </div>
     );
@@ -61,7 +61,7 @@ const BackButton = () => {
             className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
             strokeWidth={2.5}
           />
-          <span className="text-sm font-[370] tracking-[0.01em]">Back</span>
+          <span className="text-sm  tracking-[0.01em]">Back</span>
         </Link>
       </div>
     );
@@ -86,9 +86,7 @@ const BackButton = () => {
                   className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
                   strokeWidth={2.5}
                 />
-                <span className="text-sm font-[370] tracking-[0.01em]">
-                  Back
-                </span>
+                <span className="text-sm  tracking-[0.01em]">Back</span>
               </button>
             </motion.div>
             <motion.div
@@ -105,9 +103,7 @@ const BackButton = () => {
                 } transition-all duration-200 ease-in-out hover:text-neutral-400`}
               >
                 <ListFilterIcon className="mb-0.5 size-3" strokeWidth={2.5} />
-                <span className="text-sm font-[370] tracking-[0.01em]">
-                  Filters
-                </span>
+                <span className="text-sm  tracking-[0.01em]">Filters</span>
               </button>
             </motion.div>
             <Filters />
@@ -125,9 +121,7 @@ const BackButton = () => {
                 } transition-all duration-200 ease-in-out hover:text-neutral-400`}
               >
                 <ArrowDownUpIcon className="mb-0.5 size-3" strokeWidth={2.5} />
-                <span className="text-sm font-[370] tracking-[0.01em]">
-                  Sort
-                </span>
+                <span className="text-sm  tracking-[0.01em]">Sort</span>
               </button>
             </motion.div>
             <Sorts isOpen={isSortsOpen} />
@@ -145,9 +139,7 @@ const BackButton = () => {
                 } transition-all duration-200 ease-in-out hover:text-neutral-400`}
               >
                 <LanguagesIcon className="mb-0.5 size-3" strokeWidth={2.5} />
-                <span className="text-sm font-[370] tracking-[0.01em]">
-                  Lang
-                </span>
+                <span className="text-sm  tracking-[0.01em]">Lang</span>
               </button>
             </motion.div>
             <Languages isOpen={isLanguagesOpen} />
@@ -175,7 +167,7 @@ const BackButton = () => {
               className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
               strokeWidth={2.5}
             />
-            <span className="text-sm font-[370] tracking-[0.01em]">Back</span>
+            <span className="text-sm  tracking-[0.01em]">Back</span>
           </Link>
         </motion.div>
       )}

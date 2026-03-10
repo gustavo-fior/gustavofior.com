@@ -5,11 +5,7 @@ interface StrongProps {
 }
 
 const Strong = ({ children }: StrongProps) => {
-  return (
-    <span className="font-[450] leading-relaxed text-neutral-800">
-      {children}
-    </span>
-  );
+  return <span className=" leading-relaxed text-neutral-800">{children}</span>;
 };
 
 export default Strong;
