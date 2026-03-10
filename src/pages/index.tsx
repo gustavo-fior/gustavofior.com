@@ -141,7 +141,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             />
             <ProjectPreview
               title="VAYØ"
-              description="Bookmark tool to keep and share links."
+              description="A home for your best internet finds."
               link="https://vayo.me/"
               logo="/logos/vayo.png"
             />
