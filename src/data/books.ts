@@ -38,6 +38,7 @@ export const books = [
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71+EodYVrnL._UF1000,1000_QL80_.jpg",
+    stars: 4.4,
     love: true,
   },
   {
