@@ -34,7 +34,7 @@ export const books = [
     name: "A Origem",
     englishName: "The Origin",
     author: "Dan Brown",
-    status: "WILL_READ",
+    status: "READ",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71+EodYVrnL._UF1000,1000_QL80_.jpg",
@@ -225,7 +225,7 @@ export const books = [
     name: "As Seis Lições",
     englishName: "Six Lessons",
     author: "Ludwig von Mises",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2025-08-27T14:13:42.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71M-fsD472L.jpg",
   },
