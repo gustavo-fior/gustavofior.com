@@ -55,7 +55,7 @@ export const books = [
     name: "The Big Score",
     englishName: "The Big Score",
     author: "Michael S. Malone",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPBrBRbUsawmMK8lKj7nLQUCoGDP3ve6sL11CPejxkqpZ-hv-5IFAfBiuvuWun7CghGaG81D-SNvIPcUZZjs0xIT5NvZw9IxFO_R1QX7w&s=10",
@@ -226,9 +226,10 @@ export const books = [
     name: "As Seis Lições",
     englishName: "Six Lessons",
     author: "Ludwig von Mises",
-    status: "READING",
+    status: "READ",
     createdAt: "2025-08-27T14:13:42.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71M-fsD472L.jpg",
+    stars: 4.4,
   },
   {
     name: "Sem Filtro",
