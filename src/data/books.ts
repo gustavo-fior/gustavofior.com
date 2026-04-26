@@ -1,4 +1,13 @@
 export const books = [
+    {
+    name: "From Third World to First: Singapore and the Asian Economic Boom",
+    englishName: "From Third World to First: Singapore and the Asian Economic Boom",
+    author: "Lee Kuan Yew",
+    status: "BUY",
+    createdAt: "2026-04-26T11:25:12Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/81X3BmIBd3L._SL1500_.jpg",
+  },
   {
     name: "The Time Machine",
     englishName: "The Time Machine",
