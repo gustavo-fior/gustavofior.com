@@ -34,13 +34,13 @@ const LinkText = ({ children, href = "" }: LinkTextProps) => {
         />
       )}
 
-      <p className="inline-block text-neutral-800 underline decoration-neutral-300 decoration-1 underline-offset-2 transition-all duration-200 ease-in-out group-hover:decoration-neutral-400">
+      <span className="inline-block text-neutral-800 underline decoration-neutral-300 decoration-1 underline-offset-2 transition-all duration-200 ease-in-out group-hover:decoration-neutral-400">
         {children}
-      </p>
+      </span>
 
       <AnimatePresence>
         {isHovering && (
-          <motion.div
+          <motion.span
             initial={{ opacity: 0, x: -4, filter: "blur(4px)", width: 0 }}
             animate={{ opacity: 1, x: 0, filter: "blur(0px)", width: "auto" }}
             exit={{ opacity: 0, x: -4, filter: "blur(4px)", width: 0 }}
@@ -48,7 +48,7 @@ const LinkText = ({ children, href = "" }: LinkTextProps) => {
             className="inline-block"
           >
             <ArrowUpRight className="ml-1 size-3 translate-x-[1px] translate-y-[1px] text-neutral-400 transition-all duration-200 ease-in-out" />
-          </motion.div>
+          </motion.span>
         )}
       </AnimatePresence>
     </Link>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import { useAtom } from "jotai";
@@ -12,6 +12,7 @@ import path from "path";
 import { useEffect, useRef, useState } from "react";
 import LinkArrow from "~/components/link-arrow";
 import PostPreview from "~/components/posts/post-preview";
+import ScrambleIn, { type ScrambleInHandle } from "~/components/scramble-in";
 import { books } from "~/data/books";
 import {
   animateAtom,
@@ -21,12 +22,59 @@ import {
 import { useIsMobile } from "~/utils/is-mobile";
 import { type BlogPageProps, type PostMetadata } from "./blog";
 
+// Staggered entrance animation. Each animated element gets a sequential index;
+// `staggerDelay(i)` turns it into a delay so items cascade in one after another.
+const STAGGER_STEP = 0.06;
+const STAGGER_START = 0.1;
+const staggerDelay = (index: number) => STAGGER_START + index * STAGGER_STEP;
+
+const FadeIn = ({
+  index,
+  animate,
+  as = "div",
+  className,
+  children,
+}: {
+  index: number;
+  animate: boolean;
+  as?: "div" | "li";
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  const MotionTag = as === "li" ? motion.li : motion.div;
+  return (
+    <MotionTag
+      initial={animate ? { opacity: 0, y: 24, filter: "blur(4px)" } : false}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{
+        duration: 0.5,
+        delay: animate ? staggerDelay(index) : 0,
+        ease: [0, -0.02, 0.49, 0.99],
+      }}
+      className={className}
+    >
+      {children}
+    </MotionTag>
+  );
+};
+
 const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
   const [shouldAnimate, setShouldAnimate] = useAtom(animateAtom);
   const [language] = useAtom(languagesAtom);
   const [showMoreProjects, setShowMoreProjects] = useAtom(expandedProjectsAtom);
   const isMobile = useIsMobile();
   const wasExpandedOnMount = useRef(showMoreProjects);
+
+  // Footer phrase scrambles in only once it scrolls into view.
+  const footerRef = useRef<HTMLElement>(null);
+  const footerInView = useInView(footerRef, { once: true, amount: 0.6 });
+  const scrambleRef = useRef<ScrambleInHandle>(null);
+
+  useEffect(() => {
+    if (footerInView) {
+      scrambleRef.current?.start();
+    }
+  }, [footerInView]);
 
   useEffect(() => {
     // Reset after initial render so future expand/collapse will animate
@@ -94,57 +142,71 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       {/* MAIN CONTENT */}
       <div className="flex flex-col gap-2">
         {/* BIO */}
-        <div className={`pb-2 ${shouldAnimate ? "animate-10" : ""}`}>
-          <div className="flex items-center justify-between pb-1.5 sm:pb-3">
-            <h1 className={`font-serif text-[1.6rem] font-[450]`}>
+        <div className="pb-2">
+          <FadeIn
+            index={0}
+            animate={shouldAnimate}
+            className="flex items-center justify-between pb-1.5 sm:pb-2"
+          >
+            <h1 className={`font-serif text-[1.4rem] font-medium`}>
               Gustavo Fior
             </h1>
-          </div>
-          <p className="pb-8 text-sm  tracking-[0.01em] text-neutral-400">
-            Brazilian software engineer who loves to build, surf, and learn new
-            things.
-          </p>
+          </FadeIn>
+          <FadeIn index={1} animate={shouldAnimate}>
+            <p className="pb-8 text-sm tracking-[0.01em] text-neutral-400">
+              Brazilian software engineer who loves to build, surf, and learn
+              new things.
+            </p>
+          </FadeIn>
         </div>
 
         {/* PROJECTS */}
-        <div className={`${shouldAnimate ? "animate-15" : ""}`}>
-          <h2
-            className={`flex items-center justify-between pb-1 text-sm tracking-[0.01em] text-neutral-400`}
-          >
-            Projects
-            <button
-              onClick={() => setShowMoreProjects(!showMoreProjects)}
-              className="group flex items-center gap-1 transition-all duration-200 ease-in-out hover:text-neutral-500"
+        <div>
+          <FadeIn index={2} animate={shouldAnimate}>
+            <h2
+              className={`flex items-center justify-between pb-1 text-sm tracking-[0.01em] text-neutral-400`}
             >
-              {showMoreProjects ? "Less" : "More"}
+              Projects
+              <button
+                onClick={() => setShowMoreProjects(!showMoreProjects)}
+                className="group flex items-center gap-1 transition-all duration-200 ease-in-out hover:text-neutral-500"
+              >
+                {showMoreProjects ? "Less" : "More"}
 
-              <ArrowUp
-                className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100 ${
-                  showMoreProjects ? "" : "rotate-180"
-                }`}
-                strokeWidth={2.6}
-              />
-            </button>
-          </h2>
+                <ArrowUp
+                  className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100 ${
+                    showMoreProjects ? "" : "rotate-180"
+                  }`}
+                  strokeWidth={2.6}
+                />
+              </button>
+            </h2>
+          </FadeIn>
           <div className="grid grid-cols-1 pb-8">
-            <ProjectPreview
-              title="Option"
-              description="The best GEO platform for marketing teams."
-              link="https://tryoption.ai/"
-              logo="/logos/option.png"
-            />
-            <ProjectPreview
-              title="CCC"
-              description="A coding (but not only) club in Curitiba."
-              link="https://curitibacodingclub.com"
-              logo="/logos/ccc-black-bold.png"
-            />
-            <ProjectPreview
-              title="VAYØ"
-              description="A home for your best internet finds."
-              link="https://vayo.me/"
-              logo="/logos/vayo.png"
-            />
+            <FadeIn index={3} animate={shouldAnimate}>
+              <ProjectPreview
+                title="Foglamp"
+                description="Open source tool to make better AI agents."
+                link="https://foglamp.dev/"
+                logo="/logos/foglamp.png"
+              />
+            </FadeIn>
+            <FadeIn index={4} animate={shouldAnimate}>
+              <ProjectPreview
+                title="CCC"
+                description="A coding (but not only) club in Curitiba."
+                link="https://curitibacodingclub.com"
+                logo="/logos/ccc-black-bold.png"
+              />
+            </FadeIn>
+            <FadeIn index={5} animate={shouldAnimate}>
+              <ProjectPreview
+                title="VAYØ"
+                description="A home for your best internet finds."
+                link="https://vayo.me/"
+                logo="/logos/vayo.png"
+              />
+            </FadeIn>
             <AnimatePresence>
               {showMoreProjects && (
                 <motion.div
@@ -167,9 +229,21 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                     filter: "blur(4px)",
                     height: 0,
                   }}
-                  transition={{ duration: 0.4, type: "spring", bounce: 0 }}
+                  transition={{ duration: 0.3, type: "spring", bounce: 0 }}
                   className="grid grid-cols-1"
                 >
+                  <ProjectPreview
+                    title="Olwen"
+                    description="GEO agent for busy founders."
+                    link="https://olwen.io"
+                    logo="/logos/olwen.svg"
+                  />
+                  <ProjectPreview
+                    title="Option"
+                    description="The best GEO platform for marketing teams."
+                    link="https://tryoption.ai/"
+                    logo="/logos/option.png"
+                  />
                   <ProjectPreview
                     title="Itzam"
                     description="AI integration has never been so easy."
@@ -220,8 +294,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         </div>
 
         {/* WRITING */}
-        <div className={`${shouldAnimate ? "animate-20" : ""}`}>
-          <div className="flex justify-between pb-4 align-middle text-sm  tracking-[0.01em] text-neutral-400">
+        <div>
+          <FadeIn
+            index={6}
+            animate={shouldAnimate}
+            className="flex justify-between pb-4 align-middle text-sm  tracking-[0.01em] text-neutral-400"
+          >
             Writing
             <LinkArrow
               href="/blog"
@@ -229,10 +307,15 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             >
               Older
             </LinkArrow>
-          </div>
+          </FadeIn>
           <ul className="flex flex-col pb-8">
-            {sortedPostsMetadata.map((postMetadata) => (
-              <motion.li key={postMetadata.slug}>
+            {sortedPostsMetadata.map((postMetadata, i) => (
+              <FadeIn
+                as="li"
+                index={7 + i}
+                animate={shouldAnimate}
+                key={postMetadata.slug}
+              >
                 <PostPreview
                   title={postMetadata.title}
                   description={postMetadata.description}
@@ -240,14 +323,18 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                   slug={postMetadata.slug}
                   showDate={false}
                 />
-              </motion.li>
+              </FadeIn>
             ))}
           </ul>
         </div>
 
         {/* BOOKS */}
-        <div className={`${shouldAnimate ? "animate-25" : ""}`}>
-          <div className="flex justify-between pb-6 align-middle text-sm  tracking-[0.01em] text-neutral-400">
+        <div>
+          <FadeIn
+            index={10}
+            animate={shouldAnimate}
+            className="flex justify-between pb-6 align-middle text-sm  tracking-[0.01em] text-neutral-400"
+          >
             Books
             <LinkArrow
               href="/books"
@@ -255,75 +342,92 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             >
               More
             </LinkArrow>
-          </div>
-          <ul className="grid grid-cols-3 grid-rows-1 gap-x-8 pb-20 md:grid-cols-4">
-            {sortedBooks.map((book) => (
-              <div key={book.name} className="flex flex-col gap-5">
-                <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
-                  <Image
-                    src={book.coverImageUrl}
-                    alt={language === "PT" ? book.name : book.englishName}
-                    width={1000}
-                    height={1000}
-                    className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
-                    priority
-                    quality={100}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    loading="eager"
-                    placeholder="blur"
-                    blurDataURL={book.coverImageUrl}
-                  />
-                  <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/20"></div>
+          </FadeIn>
+          <FadeIn index={11} animate={shouldAnimate}>
+            <ul className="grid grid-cols-3 grid-rows-1 gap-x-8 pb-20 md:grid-cols-4">
+              {sortedBooks.map((book) => (
+                <div key={book.name} className="flex flex-col gap-5">
+                  <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
+                    <Image
+                      src={book.coverImageUrl}
+                      alt={language === "PT" ? book.name : book.englishName}
+                      width={1000}
+                      height={1000}
+                      className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
+                      priority
+                      quality={100}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      loading="eager"
+                      placeholder="blur"
+                      blurDataURL={book.coverImageUrl}
+                    />
+                    <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/20"></div>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="pointer-events-none line-clamp-2 text-sm">
+                      {language === "PT" ? book.name : book.englishName}
+                    </p>
+                    <p className="pointer-events-none mb-1 text-xs tracking-[0.01em] text-neutral-400">
+                      {book.author}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <p className="pointer-events-none line-clamp-2 text-sm">
-                    {language === "PT" ? book.name : book.englishName}
-                  </p>
-                  <p className="pointer-events-none mb-1 text-xs  tracking-wide text-neutral-400">
-                    {book.author}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </FadeIn>
         </div>
 
         {/* OTHERS */}
-        <div className={`${shouldAnimate ? "animate-25" : ""}`}>
+        <div>
           <div className="flex gap-4  tracking-[0.01em] md:gap-6">
-            <LinkArrow
-              href="https://x.com/heyimgustavo"
-              className="text-sm text-neutral-400"
-            >
-              X
-            </LinkArrow>
-            <LinkArrow
-              href="mailto:hey@gustavofior.com"
-              className="text-sm text-neutral-400"
-            >
-              Email
-            </LinkArrow>
-            <LinkArrow
-              href="https://vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
-              className="text-sm text-neutral-400"
-            >
-              Bookmarks
-            </LinkArrow>
-            <LinkArrow
-              href="https://vayo.me/bookmarks/clublk9rh000113g5qf4tj038"
-              className="text-sm text-neutral-400"
-            >
-              Cool <span className="hidden md:inline">Stuff</span>
-            </LinkArrow>
+            <FadeIn index={12} animate={shouldAnimate}>
+              <LinkArrow
+                href="https://x.com/heyimgustavo"
+                className="text-sm text-neutral-400"
+              >
+                X
+              </LinkArrow>
+            </FadeIn>
+            <FadeIn index={13} animate={shouldAnimate}>
+              <LinkArrow
+                href="mailto:hey@gustavofior.com"
+                className="text-sm text-neutral-400"
+              >
+                Email
+              </LinkArrow>
+            </FadeIn>
+            <FadeIn index={14} animate={shouldAnimate}>
+              <LinkArrow
+                href="https://vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
+                className="text-sm text-neutral-400"
+              >
+                Bookmarks
+              </LinkArrow>
+            </FadeIn>
+            <FadeIn index={15} animate={shouldAnimate}>
+              <LinkArrow
+                href="https://vayo.me/bookmarks/clublk9rh000113g5qf4tj038"
+                className="text-sm text-neutral-400"
+              >
+                Cool <span className="hidden md:inline">Stuff</span>
+              </LinkArrow>
+            </FadeIn>
           </div>
         </div>
         <footer
-          className={`flex items-center justify-center pb-24 pt-24 ${
-            shouldAnimate ? "animate-25" : ""
-          }`}
+          ref={footerRef}
+          className="flex items-center justify-center pb-24 pt-24"
         >
           <p className="font-serif text-xs font-medium tracking-[0.01em] text-neutral-200">
-            The life of every human being is a journey towards oneself.
+            <ScrambleIn
+              ref={scrambleRef}
+              text="The life of every human being is a journey towards oneself."
+              autoStart={false}
+              scrambleSpeed={35}
+              scrambledLetterCount={4}
+              characters="abcdefghijklmnopqrstuvwxyz"
+              scrambledClassName="text-neutral-300"
+            />
           </p>
         </footer>
       </div>
@@ -358,10 +462,10 @@ const ProjectPreview = ({
           alt={title}
           width={12}
           height={12}
-          className="mb-0.5 h-3 w-3"
+          className=" h-3 w-3"
         />
         <div
-          className={`flex items-center transition-all duration-200 ease-in-out group-hover:text-neutral-500 `}
+          className={`flex items-center transition-all duration-200 ease-in-out group-hover:text-neutral-500`}
         >
           {title}
 

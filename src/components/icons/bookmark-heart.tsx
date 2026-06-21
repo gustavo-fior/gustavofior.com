@@ -1,3 +1,13 @@
+// Full class strings must appear literally so Tailwind doesn't purge them.
+const colorClasses: Record<string, string> = {
+  pink: "fill-pink-200 text-pink-500",
+  emerald: "fill-emerald-200 text-emerald-500",
+  orange: "fill-orange-200 text-orange-500",
+  sky: "fill-sky-200 text-sky-500",
+  amber: "fill-amber-200 text-amber-500",
+  red: "fill-red-200 text-red-500",
+};
+
 export const BookmarkHeartIcon = ({
   size = 12,
   color = "pink",
@@ -7,17 +17,16 @@ export const BookmarkHeartIcon = ({
 }) => {
   return (
     <svg
-      className={`mb-[1px] mr-px size-[${size}px] fill-${color}-100 stroke-${color}-500 text-${color}-500`}
+      className={colorClasses[color] ?? colorClasses.pink}
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M19 21L12 17L5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21Z"
         stroke="currentColor"
-        stroke-width="2.5"
+        stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />

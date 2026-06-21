@@ -48,15 +48,15 @@ export default function Filters() {
                 ? setSelectedStatus(null)
                 : setSelectedStatus("READ");
             }}
-            className={`flex w-fit select-none items-center gap-[5px] text-[12px]  tracking-[0.01em] text-emerald-500 transition-opacity hover:opacity-70 ${
+            className={`flex w-fit select-none items-center gap-[5px] text-[12px] tracking-[0.01em] text-emerald-500 transition-opacity hover:opacity-70 ${
               selectedStatus === "READ" || selectedStatus === null
                 ? "opacity-100"
                 : "opacity-50 "
             }`}
           >
             <BookmarkCheckIcon
-              className="mb-[1px] mr-px size-3 fill-emerald-100"
-              strokeWidth={2.5}
+              className="mr-px size-3 fill-emerald-200"
+              strokeWidth={2}
             />
             Read
             <AnimatePresence>
@@ -65,9 +65,9 @@ export default function Filters() {
                   initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -85,8 +85,8 @@ export default function Filters() {
             }`}
           >
             <BookmarkIcon
-              className="mb-[1px] mr-px size-3 fill-orange-100"
-              strokeWidth={2.5}
+              className="mr-px size-3 fill-orange-200"
+              strokeWidth={2}
             />
             Reading
             <AnimatePresence>
@@ -95,9 +95,9 @@ export default function Filters() {
                   initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -115,8 +115,8 @@ export default function Filters() {
             }`}
           >
             <BookmarkPlusIcon
-              className="mb-[1px] mr-px size-3 fill-sky-100"
-              strokeWidth={2.5}
+              className="mr-px size-3 fill-sky-200"
+              strokeWidth={2}
             />
             Buy
             <AnimatePresence>
@@ -125,9 +125,9 @@ export default function Filters() {
                   initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -145,8 +145,8 @@ export default function Filters() {
             }`}
           >
             <BookmarkIcon
-              className="mb-[1px] mr-px size-3 fill-amber-100"
-              strokeWidth={2.5}
+              className="mr-px size-3 fill-amber-200"
+              strokeWidth={2}
             />
             Will Read
             <AnimatePresence>
@@ -155,9 +155,9 @@ export default function Filters() {
                   initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -175,8 +175,8 @@ export default function Filters() {
             }`}
           >
             <BookmarkXIcon
-              className="mb-[1px] mr-px size-3 fill-red-100"
-              strokeWidth={2.5}
+              className="mr-px size-3 fill-red-200"
+              strokeWidth={2}
             />
             Dropped
             <AnimatePresence>
@@ -185,9 +185,9 @@ export default function Filters() {
                   initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -212,9 +212,9 @@ export default function Filters() {
                   initial={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>

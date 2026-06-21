@@ -18,7 +18,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
         <script
@@ -27,7 +27,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           data-website-id="6f872615-95f7-4efa-bd8f-4111ad56f0b9"
         ></script>
       </Head>
-      <main className="firefox-scrollbar-fix min-h-screen bg-neutral-100 text-neutral-900 antialiased">
+      <main className="firefox-scrollbar-fix min-h-screen bg-neutral-50 text-neutral-900 antialiased">
         {/* <Header /> */}
         <ContentWrapper>
           <BackButton />

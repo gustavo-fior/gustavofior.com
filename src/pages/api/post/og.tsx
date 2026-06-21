@@ -8,7 +8,7 @@ export const config = {
 export default async function handler(request: NextRequest) {
   try {
     const fontData = await fetch(
-      new URL("../../../../assets/EBGaramond-Medium.ttf", import.meta.url)
+      new URL("../../../../assets/Amiri-Regular.ttf", import.meta.url)
     ).then((res) => res.arrayBuffer());
 
     const { searchParams } = new URL(request.url);
@@ -41,7 +41,7 @@ export default async function handler(request: NextRequest) {
             <div
               style={{
                 fontSize: 96,
-                fontFamily: "EB Garamond",
+                fontFamily: "Amiri",
                 color: "#000000",
                 whiteSpace: "pre-wrap",
                 marginTop: title && title.length > 30 ? 280 : 380,
@@ -58,7 +58,7 @@ export default async function handler(request: NextRequest) {
         height: 630,
         fonts: [
           {
-            name: "EB Garamond",
+            name: "Amiri",
             data: fontData,
             style: "normal",
           },

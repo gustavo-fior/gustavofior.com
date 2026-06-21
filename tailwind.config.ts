@@ -6,8 +6,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        serif: ["EB Garamond", ...defaultTheme.fontFamily.serif],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Inter",
+          ...defaultTheme.fontFamily.sans,
+        ],
+        serif: ["Amiri", ...defaultTheme.fontFamily.serif],
       },
     },
   },

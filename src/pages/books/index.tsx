@@ -100,17 +100,7 @@ export default function Books() {
       </Head>
       {/* MAIN CONTENT */}
       <div className="flex flex-col pb-48">
-        <div className="flex flex-row items-center justify-between gap-4 pb-8 align-middle">
-          <div>
-            <h1 className="pb-1.5 font-serif text-[1.6rem] font-[450]">
-              Books
-            </h1>
-            <h3 className="whitespace-pre text-sm  tracking-[0.01em] text-neutral-400">
-              My own little library.
-            </h3>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-12 gap-y-16 md:grid-cols-4">
+        <div className="mt-2 grid grid-cols-2 gap-12 gap-y-16 md:grid-cols-4">
           {sortedBooks.map((book) => (
             <div key={book.name} className="flex flex-col gap-5">
               <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
@@ -119,7 +109,7 @@ export default function Books() {
                   alt={book.name}
                   width={1920}
                   height={1080}
-                  className="pointer-events-none block h-[80px] w-[53px] border-r-[1.5px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
+                  className="pointer-events-none block h-[90px] w-[58px] border-r-[1.5px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
                   priority
                   quality={100}
                   sizes="50px"
@@ -138,14 +128,14 @@ export default function Books() {
                           ? setSelectedStatus(null)
                           : setSelectedStatus("READ");
                       }}
-                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-emerald-500 transition-opacity hover:opacity-70"
+                      className="flex w-fit select-none items-center gap-[3px] text-[11px] leading-none text-emerald-500 transition-opacity hover:opacity-70"
                     >
                       {book.love ? (
                         <BookmarkHeartIcon size={9} color="emerald" />
                       ) : (
                         <BookmarkCheckIcon
-                          className="mb-[1px] size-[9px] fill-emerald-100"
-                          strokeWidth={2.5}
+                          className="size-[9px] fill-emerald-100"
+                          strokeWidth={2}
                         />
                       )}
                       Read
@@ -159,14 +149,14 @@ export default function Books() {
                           ? setSelectedStatus(null)
                           : setSelectedStatus("READING");
                       }}
-                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-orange-500 transition-opacity hover:opacity-70"
+                      className="flex w-fit select-none items-center gap-[3px] text-[11px] leading-none text-orange-500 transition-opacity hover:opacity-70"
                     >
                       {book.love ? (
                         <BookmarkHeartIcon size={9} color="orange" />
                       ) : (
                         <BookmarkIcon
-                          className="mb-[1px] size-[9px] fill-orange-100"
-                          strokeWidth={2.5}
+                          className="size-[9px] fill-orange-100"
+                          strokeWidth={2}
                         />
                       )}
                       Reading
@@ -180,14 +170,14 @@ export default function Books() {
                           ? setSelectedStatus(null)
                           : setSelectedStatus("BUY");
                       }}
-                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-sky-500 transition-opacity hover:opacity-70"
+                      className="flex w-fit select-none items-center gap-[3px] text-[11px] leading-none text-sky-500 transition-opacity hover:opacity-70"
                     >
                       {book.love ? (
                         <BookmarkHeartIcon size={9} color="sky" />
                       ) : (
                         <BookmarkPlusIcon
-                          className="mb-[1px] size-[9px] fill-sky-100"
-                          strokeWidth={2.5}
+                          className="size-[9px] fill-sky-100"
+                          strokeWidth={2}
                         />
                       )}
                       Buy
@@ -201,14 +191,14 @@ export default function Books() {
                           ? setSelectedStatus(null)
                           : setSelectedStatus("WILL_READ");
                       }}
-                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-amber-500 transition-opacity hover:opacity-70"
+                      className="flex w-fit select-none items-center gap-[3px] text-[11px] leading-none text-amber-500 transition-opacity hover:opacity-70"
                     >
                       {book.love ? (
                         <BookmarkHeartIcon size={9} color="amber" />
                       ) : (
                         <BookmarkIcon
-                          className="mb-[1px] size-[9px] fill-amber-100"
-                          strokeWidth={2.5}
+                          className="size-[9px] fill-amber-100"
+                          strokeWidth={2}
                         />
                       )}
                       Will Read
@@ -222,14 +212,14 @@ export default function Books() {
                           ? setSelectedStatus(null)
                           : setSelectedStatus("LOST");
                       }}
-                      className="flex w-fit select-none items-center gap-[3px] text-[10px] text-red-500 transition-opacity hover:opacity-70"
+                      className="flex w-fit select-none items-center gap-[3px] text-[11px] leading-none text-red-500 transition-opacity hover:opacity-70"
                     >
                       {book.love ? (
                         <BookmarkHeartIcon size={9} color="red" />
                       ) : (
                         <BookmarkXIcon
-                          className="mb-[1px] size-[9px] fill-red-100"
-                          strokeWidth={2.5}
+                          className="size-[9px] fill-red-100"
+                          strokeWidth={2}
                         />
                       )}
                       Dropped
@@ -239,7 +229,7 @@ export default function Books() {
                 <p className="pointer-events-none line-clamp-2 text-sm">
                   {selectedLanguage === "PT" ? book.name : book.englishName}
                 </p>
-                <p className="pointer-events-none mb-1 text-xs  tracking-wide text-neutral-400">
+                <p className="pointer-events-none mb-1 text-xs tracking-[0.01em] text-neutral-400">
                   {book.author}
                 </p>
                 {book.stars && (
@@ -250,7 +240,7 @@ export default function Books() {
                         <StarIcon
                           key={index}
                           className="size-[9px] fill-yellow-200 text-yellow-500"
-                          strokeWidth={2.5}
+                          strokeWidth={2}
                         />
                       )
                     )}
@@ -259,7 +249,7 @@ export default function Books() {
                       <div className="relative size-[9px]">
                         <StarIcon
                           className="absolute size-[9px] text-transparent"
-                          strokeWidth={2.5}
+                          strokeWidth={2}
                         />
                         <div
                           className="absolute overflow-hidden"
@@ -267,7 +257,7 @@ export default function Books() {
                         >
                           <StarIcon
                             className="size-[9px] fill-yellow-200 text-yellow-500"
-                            strokeWidth={2.5}
+                            strokeWidth={2}
                           />
                         </div>
                       </div>

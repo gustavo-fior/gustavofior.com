@@ -1,7 +1,8 @@
 export const books = [
-    {
+  {
     name: "From Third World to First: Singapore and the Asian Economic Boom",
-    englishName: "From Third World to First: Singapore and the Asian Economic Boom",
+    englishName:
+      "From Third World to First: Singapore and the Asian Economic Boom",
     author: "Lee Kuan Yew",
     status: "BUY",
     createdAt: "2026-04-26T11:25:12Z",
@@ -17,7 +18,7 @@ export const books = [
     coverImageUrl:
       "https://http2.mlstatic.com/D_NQ_NP_828061-MLA85690286021_062025-O.webp",
     love: true,
-    stars: 4
+    stars: 4,
   },
   {
     name: "O Homem Invisível",
@@ -54,7 +55,7 @@ export const books = [
     name: "The Art of Doing Science and Engineering",
     englishName: "The Art of Doing Science and Engineering",
     author: "Richard W. Hamming",
-    status: "READING",
+    status: "WILL_READ",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/61Qg6M7uV9L._UF1000,1000_QL80_.jpg",
@@ -64,7 +65,7 @@ export const books = [
     name: "The Big Score",
     englishName: "The Big Score",
     author: "Michael S. Malone",
-    status: "READING",
+    status: "WILL_READ",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPBrBRbUsawmMK8lKj7nLQUCoGDP3ve6sL11CPejxkqpZ-hv-5IFAfBiuvuWun7CghGaG81D-SNvIPcUZZjs0xIT5NvZw9IxFO_R1QX7w&s=10",
@@ -74,7 +75,7 @@ export const books = [
     name: "Working in Public",
     englishName: "Working in Public",
     author: "Nadia Eghbal",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71BQ5MWd0bL._SL1500_.jpg",
@@ -262,7 +263,7 @@ export const books = [
     name: "High Growth Handbook",
     englishName: "High Growth Handbook",
     author: "Elad Gil",
-    status: "READING",
+    status: "WILL_READ",
     createdAt: "2025-09-16T14:35:04.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/51wn9eThjtL._AC_UF1000,1000_QL80_.jpg",
@@ -507,7 +508,7 @@ export const books = [
     name: "A Biblioteca da Meia-noite",
     englishName: "The Midnight Library",
     author: "Matt Haig",
-    status: "READING",
+    status: "WILL_READ",
     createdAt: "2024-09-03T00:41:39.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/81iqH8dpjuL.jpg",
     love: true,
@@ -707,7 +708,7 @@ export const books = [
     name: "Almanaque de Naval Ravikant",
     englishName: "Naval's Almanac",
     author: "Eric Jorgenson",
-    status: "READING",
+    status: "WILL_READ",
     createdAt: "2023-06-04T03:29:44.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/51BHDRSC0xL._AC_UF1000,1000_QL80_.jpg",
@@ -745,7 +746,7 @@ export const books = [
     name: "McMafia",
     englishName: "McMafia",
     author: "Misha Glenny",
-    status: "BUY",
+    status: "READING",
     createdAt: "2022-11-06T06:19:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71RnR7LgqXL._UF1000,1000_QL80_.jpg",
@@ -968,10 +969,11 @@ export const books = [
     name: "Flores para Algernon",
     englishName: "Flowers for Algernon",
     author: "Daniel Keyes",
-    status: "WILL_READ",
+    status: "READ",
     createdAt: "2024-02-05T16:17:22.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/71VrMtcmE9L.jpg",
     love: true,
+    stars: 4.2,
   },
   {
     name: "O Algoritmo Mestre",
@@ -1036,7 +1038,7 @@ export const books = [
     name: "A Voz do Silêncio",
     englishName: "The Voice of Silence",
     author: "Helena Blavatski",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2022-11-06T06:25:00.000Z",
     coverImageUrl:
       "https://static.cedet.com.br/produtos_imagem_principal_large/16623-525x791.jpg?v=1750275820",

@@ -52,8 +52,8 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
             }`}
           >
             <ThumbsUpIcon
-              className="mb-[1px] mr-px size-3 fill-neutral-200"
-              strokeWidth={2.5}
+              className="mr-px size-3 fill-neutral-200"
+              strokeWidth={2}
             />
             Best
             <AnimatePresence>
@@ -82,8 +82,8 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
             }`}
           >
             <ThumbsDownIcon
-              className="mb-[1px] mr-px size-3 fill-neutral-200"
-              strokeWidth={2.5}
+              className="mr-px size-3 fill-neutral-200"
+              strokeWidth={2}
             />
             Worst
             <AnimatePresence>
@@ -111,10 +111,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                 : "opacity-50 "
             }`}
           >
-            <ArrowDownAzIcon
-              className="mb-[1px] mr-px size-3 "
-              strokeWidth={2.5}
-            />
+            <ArrowDownAzIcon className="mr-px size-3" strokeWidth={2} />
             ABC
             <AnimatePresence>
               {selectedSort === "ABC" && (

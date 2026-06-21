@@ -21,6 +21,7 @@ import Strong from "~/components/md/Strong";
 import UnorderedList from "~/components/md/Ul";
 import PostHeader from "~/components/posts/post-header";
 import Italic from "~/components/md/Italic";
+import { TextHighlighter } from "~/components/text-highlighter";
 
 const mdComponents = {
   h1: H1,
@@ -38,6 +39,7 @@ const mdComponents = {
   pre: Code,
   hr: Hr,
   em: Italic,
+  TextHighlighter,
 };
 
 interface PostMetadata {
