@@ -64,7 +64,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className=" size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -94,7 +94,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -121,7 +121,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -148,7 +148,7 @@ export default function Sorts({ isOpen }: { isOpen: boolean }) {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <XIcon className=" size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5  size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>

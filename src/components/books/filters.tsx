@@ -67,7 +67,7 @@ export default function Filters() {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -97,7 +97,7 @@ export default function Filters() {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -127,7 +127,7 @@ export default function Filters() {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -157,7 +157,7 @@ export default function Filters() {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -187,7 +187,7 @@ export default function Filters() {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -214,7 +214,7 @@ export default function Filters() {
                   exit={{ opacity: 0, x: -4, filter: "blur(4px)" }}
                   transition={{ duration: 0.15, ease: "easeInOut" }}
                 >
-                  <XIcon className="ml-px mt-0.5 size-2.5 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
+                  <XIcon className="ml-px mt-0.5 size-3 text-neutral-400 transition-all duration-200 ease-in-out group-hover:text-neutral-500" />
                 </motion.div>
               )}
             </AnimatePresence>
