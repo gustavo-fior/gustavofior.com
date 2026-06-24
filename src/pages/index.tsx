@@ -44,10 +44,10 @@ const FadeIn = ({
   const MotionTag = as === "li" ? motion.li : motion.div;
   return (
     <MotionTag
-      initial={animate ? { opacity: 0, y: 24, filter: "blur(4px)" } : false}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={animate ? { opacity: 0, filter: "blur(6px)" } : false}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{
-        duration: 0.5,
+        duration: 0.35,
         delay: animate ? staggerDelay(index) : 0,
         ease: [0, -0.02, 0.49, 0.99],
       }}
@@ -239,6 +239,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                     logo="/logos/olwen.svg"
                   />
                   <ProjectPreview
+                    title="5Devs"
+                    description="Fake data for testing purposes."
+                    link="https://5devs.com.br/"
+                    logo="/logos/5devs.png"
+                  />
+                  <ProjectPreview
                     title="Option"
                     description="The best GEO platform for marketing teams."
                     link="https://tryoption.ai/"
@@ -249,18 +255,6 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                     description="AI integration has never been so easy."
                     link="https://itz.am/"
                     logo="/logos/itzam.svg"
-                  />
-                  <ProjectPreview
-                    title="Aello"
-                    description="AI that knows your company."
-                    link="https://aello.chat/"
-                    logo="/logos/aello.png"
-                  />
-                  <ProjectPreview
-                    title="5Devs"
-                    description="Fake data for testing purposes."
-                    link="https://5devs.com.br/"
-                    logo="/logos/5devs.png"
                   />
 
                   <ProjectPreview
@@ -465,7 +459,7 @@ const ProjectPreview = ({
           className=" h-3 w-3"
         />
         <div
-          className={`flex items-center transition-all duration-200 ease-in-out group-hover:text-neutral-500`}
+          className={`flex items-center transition-all duration-[150] ease-in-out group-hover:text-neutral-500`}
         >
           {title}
 
@@ -475,7 +469,7 @@ const ProjectPreview = ({
                 initial={{ opacity: 0, width: 0, marginLeft: 0, scale: 0.95 }}
                 animate={{ opacity: 1, width: "auto", marginLeft: 6, scale: 1 }}
                 exit={{ opacity: 0, width: 0, marginLeft: 0, scale: 0.95 }}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
+                transition={{ duration: 0.15, ease: "easeInOut" }}
               >
                 <ArrowUpRight
                   className={`h-2.5 w-2.5 text-neutral-400`}

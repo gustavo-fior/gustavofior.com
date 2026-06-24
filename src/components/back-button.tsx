@@ -38,7 +38,7 @@ const BackButton = () => {
       <div className="pb-6 pt-0">
         <Link
           href={pathname.includes("/blog/post/") ? "/blog" : "/"}
-          className="group flex items-center gap-1.5 text-neutral-400 transition-all duration-200 ease-in-out hover:text-neutral-500"
+          className="group flex items-center gap-1.5 text-neutral-400 transition-all duration-[150] ease-in-out hover:text-neutral-500"
         >
           <Redo2Icon
             className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
@@ -55,7 +55,7 @@ const BackButton = () => {
       <div className="flex items-center gap-12 pb-6 pt-0">
         <Link
           href={pathname.includes("/blog/post/") ? "/blog" : "/"}
-          className="group flex items-center gap-1.5 text-neutral-400 transition-all duration-200 ease-in-out hover:text-neutral-500"
+          className="group flex items-center gap-1.5 text-neutral-400 transition-all duration-[150] ease-in-out hover:text-neutral-500"
         >
           <Redo2Icon
             className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
@@ -76,11 +76,11 @@ const BackButton = () => {
               initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
             >
               <button
                 onClick={handleBackFromBooks}
-                className="group flex cursor-pointer items-center gap-1.5 text-neutral-400 transition-all duration-200 ease-in-out hover:text-neutral-500"
+                className="group flex cursor-pointer items-center gap-1.5 text-neutral-400 transition-all duration-[150] ease-in-out hover:text-neutral-500"
               >
                 <Redo2Icon
                   className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
@@ -93,14 +93,14 @@ const BackButton = () => {
               initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
-              transition={{ duration: 0.4, ease: "easeInOut", delay: 0.1 }}
+              transition={{ duration: 0.25, ease: "easeInOut", delay: 0.1 }}
               className="pt-6"
             >
               <button
                 onClick={() => setIsFiltersOpen(!isFiltersOpen)}
                 className={`group flex cursor-pointer items-center gap-1.5 ${
                   isFiltersOpen ? "text-neutral-400" : "text-neutral-400"
-                } transition-all duration-200 ease-in-out hover:text-neutral-500`}
+                } transition-all duration-[150] ease-in-out hover:text-neutral-500`}
               >
                 <ListFilterIcon className="mb-0.5 size-3" strokeWidth={2} />
                 <span className="text-sm  tracking-[0.01em]">Filters</span>
@@ -111,14 +111,14 @@ const BackButton = () => {
               initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
-              transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+              transition={{ duration: 0.25, ease: "easeInOut", delay: 0.2 }}
               className="pt-6"
             >
               <button
                 onClick={() => setIsSortsOpen(!isSortsOpen)}
                 className={`group flex cursor-pointer items-center gap-1.5 ${
                   isSortsOpen ? "text-neutral-400" : "text-neutral-400"
-                } transition-all duration-200 ease-in-out hover:text-neutral-500`}
+                } transition-all duration-[150] ease-in-out hover:text-neutral-500`}
               >
                 <ArrowDownUpIcon className="mb-0.5 size-3" strokeWidth={2} />
                 <span className="text-sm  tracking-[0.01em]">Sort</span>
@@ -129,14 +129,14 @@ const BackButton = () => {
               initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
-              transition={{ duration: 0.4, ease: "easeInOut", delay: 0.3 }}
+              transition={{ duration: 0.25, ease: "easeInOut", delay: 0.3 }}
               className="pt-6"
             >
               <button
                 onClick={() => setIsLanguagesOpen(!isLanguagesOpen)}
                 className={`group flex cursor-pointer items-center gap-1.5 ${
                   isLanguagesOpen ? "text-neutral-400" : "text-neutral-400"
-                } transition-all duration-200 ease-in-out hover:text-neutral-500`}
+                } transition-all duration-[150] ease-in-out hover:text-neutral-500`}
               >
                 <LanguagesIcon className="mb-0.5 size-3" strokeWidth={2} />
                 <span className="text-sm  tracking-[0.01em]">Lang</span>
@@ -156,12 +156,12 @@ const BackButton = () => {
           initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
           className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.3rem] md:pb-0 md:pt-0 lg:left-[calc(50%-29rem)]"
         >
           <Link
             href={pathname.includes("/blog/post/") ? "/blog" : "/"}
-            className="group flex items-center gap-1.5 text-neutral-400 transition-all duration-200 ease-in-out hover:text-neutral-500"
+            className="group flex items-center gap-1.5 text-neutral-400 transition-all duration-[150] ease-in-out hover:text-neutral-500"
           >
             <Redo2Icon
               className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"

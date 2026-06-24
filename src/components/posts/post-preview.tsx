@@ -25,11 +25,11 @@ const PostPreview = ({
       <motion.div className="group flex justify-between pb-6">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-1.5">
-            <h2 className="text-base transition duration-200 ease-in-out group-hover:text-neutral-500">
+            <h2 className="text-base transition duration-[150] ease-in-out group-hover:text-neutral-500">
               {title}
             </h2>
             <ArrowRight
-              className={`h-2.5 w-2.5 text-neutral-400 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
+              className={`h-2.5 w-2.5 text-neutral-400 opacity-0 transition-all duration-[150] ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
               strokeWidth={2.6}
             />
           </div>
