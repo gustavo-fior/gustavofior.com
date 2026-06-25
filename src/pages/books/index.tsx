@@ -226,7 +226,7 @@ export default function Books() {
                     </button>
                   )}
                 </div>
-                <p className="pointer-events-none line-clamp-2 text-sm">
+                <p className="pointer-events-none line-clamp-2 text-balance text-sm">
                   {selectedLanguage === "PT" ? book.name : book.englishName}
                 </p>
                 <p className="pointer-events-none mb-1 text-xs tracking-[0.01em] text-neutral-400">

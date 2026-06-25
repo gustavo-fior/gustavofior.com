@@ -153,7 +153,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </h1>
           </FadeIn>
           <FadeIn index={1} animate={shouldAnimate}>
-            <p className="pb-8 text-sm tracking-[0.01em] text-neutral-400">
+            <p className="text-balance pb-8 text-sm tracking-[0.01em] text-neutral-400">
               Brazilian software engineer who loves to build, surf, and learn
               new things.
             </p>
