@@ -5,11 +5,7 @@ interface PProps {
 }
 
 const P = ({ children }: PProps) => {
-  return (
-    <p className="text-pretty text-base leading-[1.8] text-neutral-600">
-      {children}
-    </p>
-  );
+  return <p className="text-base leading-[1.8] text-neutral-600">{children}</p>;
 };
 
 export default P;
