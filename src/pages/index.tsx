@@ -45,7 +45,7 @@ const FadeIn = ({
   const MotionTag = as === "li" ? motion.li : motion.div;
   return (
     <MotionTag
-      initial={animate ? { opacity: 0, filter: "blur(4px)", y: 24 } : false}
+      initial={animate ? { opacity: 0, filter: "blur(4px)", y: 12 } : false}
       animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
       transition={{
         // opacity + blur resolve quickly so crisp content appears early...
