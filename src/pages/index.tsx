@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import path from "path";
 import { useEffect, useRef, useState } from "react";
+import AnimatedAvatar from "~/components/animated-avatar";
 import LinkArrow from "~/components/link-arrow";
 import PostPreview from "~/components/posts/post-preview";
 import ScrambleIn, { type ScrambleInHandle } from "~/components/scramble-in";
@@ -44,12 +45,21 @@ const FadeIn = ({
   const MotionTag = as === "li" ? motion.li : motion.div;
   return (
     <MotionTag
-      initial={animate ? { opacity: 0, filter: "blur(6px)" } : false}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
+      initial={animate ? { opacity: 0, filter: "blur(4px)", y: 42 } : false}
+      animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
       transition={{
-        duration: 0.35,
+        // opacity + blur resolve quickly so crisp content appears early...
+        duration: 0.3,
         delay: animate ? staggerDelay(index) : 0,
         ease: [0, -0.02, 0.49, 0.99],
+        // ...while `y` keeps sliding on a gentler easeOutCubic well after the
+        // blur is gone, so the movement is actually perceived rather than
+        // hidden under the blur.
+        y: {
+          duration: 0.7,
+          delay: animate ? staggerDelay(index) : 0,
+          ease: [0.33, 1, 0.68, 1],
+        },
       }}
       className={className}
     >
@@ -119,9 +129,9 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
       <Head>
         <title>Gustavo Fior</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Brazilian software engineer" />
+        <meta name="description" content="Brazilian technologist" />
         <meta property="og:title" content="Gustavo Fior" />
-        <meta property="og:description" content="Brazilian software engineer" />
+        <meta property="og:description" content="Brazilian technologist" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.gustavofior.com" />
         <meta property="og:site_name" content="Gustavo Fior" />
@@ -137,7 +147,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="Gustavo Fior" />
-        <meta property="twitter:description" content="Software engineer" />
+        <meta property="twitter:description" content="Brazilian technologist" />
       </Head>
       {/* MAIN CONTENT */}
       <div className="flex flex-col gap-2">
@@ -146,23 +156,34 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           <FadeIn
             index={0}
             animate={shouldAnimate}
-            className="flex items-center justify-between pb-1.5 sm:pb-2"
+            className="flex flex-col items-start"
           >
-            <h1 className={`font-serif text-[1.4rem] font-medium`}>
+            <AnimatedAvatar
+              size={96}
+              alt="Gustavo Fior"
+              className="-ml-[1.38rem]"
+            />
+          </FadeIn>
+          <FadeIn
+            index={1}
+            animate={shouldAnimate}
+            className="flex flex-col items-start pb-1.5 sm:pb-2"
+          >
+            <h1 className={`font-serif text-[1.6rem] font-medium`}>
               Gustavo Fior
             </h1>
           </FadeIn>
-          <FadeIn index={1} animate={shouldAnimate}>
+          <FadeIn index={2} animate={shouldAnimate}>
             <p className="text-balance pb-8 text-sm tracking-[0.01em] text-neutral-400">
-              Brazilian software engineer who loves to build, surf, and learn
-              new things.
+              Brazilian technologist who loves to build, surf, and learn new
+              things.
             </p>
           </FadeIn>
         </div>
 
         {/* PROJECTS */}
         <div>
-          <FadeIn index={2} animate={shouldAnimate}>
+          <FadeIn index={3} animate={shouldAnimate}>
             <h2
               className={`flex items-center justify-between pb-1 text-sm tracking-[0.01em] text-neutral-400`}
             >
@@ -183,7 +204,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </h2>
           </FadeIn>
           <div className="grid grid-cols-1 pb-8">
-            <FadeIn index={3} animate={shouldAnimate}>
+            <FadeIn index={4} animate={shouldAnimate}>
               <ProjectPreview
                 title="Foglamp"
                 description="Open source tool to make better AI agents."
@@ -191,7 +212,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 logo="/logos/foglamp.png"
               />
             </FadeIn>
-            <FadeIn index={4} animate={shouldAnimate}>
+            <FadeIn index={5} animate={shouldAnimate}>
               <ProjectPreview
                 title="CCC"
                 description="A coding (but not only) club in Curitiba."
@@ -199,7 +220,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 logo="/logos/ccc-black-bold.png"
               />
             </FadeIn>
-            <FadeIn index={5} animate={shouldAnimate}>
+            <FadeIn index={6} animate={shouldAnimate}>
               <ProjectPreview
                 title="VAYØ"
                 description="A home for your best internet finds."
@@ -290,7 +311,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* WRITING */}
         <div>
           <FadeIn
-            index={6}
+            index={7}
             animate={shouldAnimate}
             className="flex justify-between pb-4 align-middle text-sm  tracking-[0.01em] text-neutral-400"
           >
@@ -306,7 +327,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             {sortedPostsMetadata.map((postMetadata, i) => (
               <FadeIn
                 as="li"
-                index={7 + i}
+                index={8 + i}
                 animate={shouldAnimate}
                 key={postMetadata.slug}
               >
@@ -325,7 +346,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* BOOKS */}
         <div>
           <FadeIn
-            index={10}
+            index={11}
             animate={shouldAnimate}
             className="flex justify-between pb-6 align-middle text-sm  tracking-[0.01em] text-neutral-400"
           >
@@ -337,7 +358,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               More
             </LinkArrow>
           </FadeIn>
-          <FadeIn index={11} animate={shouldAnimate}>
+          <FadeIn index={12} animate={shouldAnimate}>
             <ul className="grid grid-cols-3 grid-rows-1 gap-x-8 pb-20 md:grid-cols-4">
               {sortedBooks.map((book) => (
                 <div key={book.name} className="flex flex-col gap-5">
@@ -374,7 +395,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
         {/* OTHERS */}
         <div>
           <div className="flex gap-4  tracking-[0.01em] md:gap-6">
-            <FadeIn index={12} animate={shouldAnimate}>
+            <FadeIn index={13} animate={shouldAnimate}>
               <LinkArrow
                 href="https://x.com/heyimgustavo"
                 className="text-sm text-neutral-400"
@@ -382,7 +403,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 X
               </LinkArrow>
             </FadeIn>
-            <FadeIn index={13} animate={shouldAnimate}>
+            <FadeIn index={14} animate={shouldAnimate}>
               <LinkArrow
                 href="mailto:hey@gustavofior.com"
                 className="text-sm text-neutral-400"
@@ -390,7 +411,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 Email
               </LinkArrow>
             </FadeIn>
-            <FadeIn index={14} animate={shouldAnimate}>
+            <FadeIn index={15} animate={shouldAnimate}>
               <LinkArrow
                 href="https://vayo.me/bookmarks/cltpx1nq70001jw1tc90e4ht6"
                 className="text-sm text-neutral-400"
@@ -398,7 +419,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 Bookmarks
               </LinkArrow>
             </FadeIn>
-            <FadeIn index={15} animate={shouldAnimate}>
+            <FadeIn index={16} animate={shouldAnimate}>
               <LinkArrow
                 href="https://vayo.me/bookmarks/clublk9rh000113g5qf4tj038"
                 className="text-sm text-neutral-400"
@@ -408,11 +429,8 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </FadeIn>
           </div>
         </div>
-        <footer
-          ref={footerRef}
-          className="flex items-center justify-center pb-24 pt-24"
-        >
-          <p className="font-serif text-xs font-medium tracking-[0.01em] text-neutral-200">
+        <footer ref={footerRef} className="flex pb-12 pt-20">
+          <p className="font-serif text-xs font-medium tracking-[0.01em] text-neutral-300/70">
             <ScrambleIn
               ref={scrambleRef}
               text="The life of every human being is a journey towards oneself."

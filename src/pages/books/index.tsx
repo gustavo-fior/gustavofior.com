@@ -78,9 +78,9 @@ export default function Books() {
       <Head>
         <title>Gustavo Fior</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Brazilian software engineer" />
+        <meta name="description" content="Brazilian technologist" />
         <meta property="og:title" content="Gustavo Fior" />
-        <meta property="og:description" content="Brazilian software engineer" />
+        <meta property="og:description" content="Brazilian technologist" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.gustavofior.com" />
         <meta property="og:site_name" content="Gustavo Fior" />
@@ -96,7 +96,7 @@ export default function Books() {
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="Gustavo Fior" />
-        <meta property="twitter:description" content="Software engineer" />
+        <meta property="twitter:description" content="Brazilian technologist" />
       </Head>
       {/* MAIN CONTENT */}
       <div className="flex flex-col pb-48">
