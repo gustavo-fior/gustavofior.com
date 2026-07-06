@@ -27,10 +27,10 @@ const BLINK_MIN_DELAY = 2000;
 const BLINK_MAX_DELAY = 4000;
 
 // A rarer, subtler flourish: the hair shifts for a beat, then settles back.
-const HAIR_MIN_DELAY = 2000;
-const HAIR_MAX_DELAY = 2000;
-const HAIR_HOLD_MIN = 2000;
-const HAIR_HOLD_MAX = 2000;
+const HAIR_MIN_DELAY = 700;
+const HAIR_MAX_DELAY = 700;
+const HAIR_HOLD_MIN = 700;
+const HAIR_HOLD_MAX = 700;
 
 const rand = (min: number, max: number) => min + Math.random() * (max - min);
 
