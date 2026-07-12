@@ -14,20 +14,17 @@ const LinkArrow = ({ children, href, className }: LinkArrowProps) => {
       target={`${
         href.startsWith("http") || href.startsWith("mailto") ? "_blank" : ""
       }`}
-      className={`group flex items-center gap-1 transition-all duration-[150] ease-in-out hover:text-neutral-500 ${
+      className={`group flex items-center transition-all duration-[150] ease-in-out hover:text-neutral-500 ${
         className ?? ""
       }`}
     >
       {children}
 
       {href.startsWith("http") || href.startsWith("mailto") ? (
-        <ArrowUpRight
-          className={`h-2.5 w-2.5 opacity-0 transition-all duration-[150] ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
-          strokeWidth={2.6}
-        />
+        <ArrowUpRight className="arrow-reveal h-2.5" strokeWidth={2.6} />
       ) : (
         <ArrowRight
-          className={`h-2.5 w-2.5 text-neutral-400 opacity-0 transition-all duration-[150] ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
+          className="arrow-reveal h-2.5 text-neutral-400"
           strokeWidth={2.6}
         />
       )}

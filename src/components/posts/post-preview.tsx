@@ -18,18 +18,15 @@ const PostPreview = ({
   showDate = true,
 }: PostPreviewProps) => {
   return (
-    <Link
-      href={`/blog/post/${slug}`}
-      className={`${showDate ? "w-full" : "flex w-fit"}`}
-    >
+    <Link href={`/blog/post/${slug}`} className="block w-full">
       <motion.div className="group flex justify-between pb-6">
         <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center">
             <h2 className="text-base transition duration-[150] ease-in-out group-hover:text-neutral-500">
               {title}
             </h2>
             <ArrowRight
-              className={`h-2.5 w-2.5 text-neutral-400 opacity-0 transition-all duration-[150] ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100`}
+              className="arrow-reveal h-2.5 text-neutral-400"
               strokeWidth={2.6}
             />
           </div>

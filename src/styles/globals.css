@@ -12,6 +12,35 @@
     width: 0px;
   }
 
+  /* Arrow that slides in on hover/focus. Width collapses to 0 when hidden so it
+     reserves no space — otherwise it leaves a gap inside the focus background. */
+  .arrow-reveal {
+    width: 0;
+    opacity: 0;
+    transition: width 150ms ease-in-out, margin-left 150ms ease-in-out,
+      opacity 150ms ease-in-out, translate 150ms ease-in-out;
+  }
+
+  /* `translate`, not `transform` — the latter would clobber Tailwind's rotate-180
+     on the collapsible "More" arrow. */
+  .group:hover .arrow-reveal,
+  a:focus-visible .arrow-reveal,
+  button:focus-visible .arrow-reveal {
+    width: 0.625rem;
+    margin-left: 0.25rem;
+    opacity: 1;
+    translate: 2px 0;
+  }
+
+  :where(a, button, [tabindex]):focus-visible {
+    outline: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    /* Spread shadow fakes padding around the element without shifting layout */
+    box-shadow: 0 0 0 4px #f0f0f0;
+    transition: background-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+  }
+
   firefox-scrollbar-fix {
     scrollbar-width: none;
   }

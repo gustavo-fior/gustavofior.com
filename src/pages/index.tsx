@@ -190,12 +190,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
               Projects
               <button
                 onClick={() => setShowMoreProjects(!showMoreProjects)}
-                className="group flex items-center gap-1 transition-all duration-200 ease-in-out hover:text-neutral-500"
+                className="group flex items-center transition-all duration-200 ease-in-out hover:text-neutral-500"
               >
                 {showMoreProjects ? "Less" : "More"}
 
                 <ArrowUp
-                  className={`h-2.5 w-2.5 opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:opacity-100 ${
+                  className={`arrow-reveal h-2.5 ${
                     showMoreProjects ? "" : "rotate-180"
                   }`}
                   strokeWidth={2.6}
@@ -424,7 +424,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 href="https://vayo.me/bookmarks/clublk9rh000113g5qf4tj038"
                 className="text-sm text-neutral-400"
               >
-                Cool <span className="hidden md:inline">Stuff</span>
+                Cool Stuff
               </LinkArrow>
             </FadeIn>
           </div>
@@ -466,7 +466,7 @@ const ProjectPreview = ({
       target="_blank"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      className="group flex w-fit cursor-pointer flex-col gap-1 py-3"
+      className="group flex w-full cursor-pointer flex-col gap-1 py-3"
     >
       <div className="flex items-center gap-2">
         <Image
