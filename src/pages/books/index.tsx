@@ -7,7 +7,7 @@ import {
   StarIcon,
 } from "lucide-react";
 import Head from "next/head";
-import Image from "next/image";
+import { BookCover } from "~/components/book-cover";
 import { BookmarkHeartIcon } from "~/components/icons/bookmark-heart";
 import { books } from "~/data/books";
 import {
@@ -103,21 +103,12 @@ export default function Books() {
         <div className="mt-2 grid grid-cols-2 gap-12 gap-y-16 md:grid-cols-4">
           {sortedBooks.map((book) => (
             <div key={book.name} className="flex flex-col gap-5">
-              <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
-                <Image
-                  src={book.coverImageUrl}
-                  alt={book.name}
-                  width={1920}
-                  height={1080}
-                  className="pointer-events-none block h-[90px] w-[58px] border-r-[1.5px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
-                  priority
-                  quality={100}
-                  sizes="50px"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-                <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/10"></div>
-              </div>
+              <BookCover
+                src={book.coverImageUrl}
+                alt={book.name}
+                width={58}
+                height={90}
+              />
               <div className="flex flex-col gap-1">
                 <div className="flex flex-row items-center gap-1.5">
                   {book.status === "READ" && (

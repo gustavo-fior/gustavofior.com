@@ -92,6 +92,15 @@ export const books = [
     love: true,
   },
   {
+    name: "A Nascente",
+    englishName: "The Fountainhead",
+    author: "Ayn Rand",
+    status: "BUY",
+    createdAt: "2026-07-13T01:40:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/816+Ihpj-GL._AC_UF1000,1000_QL80_.jpg",
+  },
+  {
     name: "Roube como um Artista",
     englishName: "Steal Like an Artist",
     author: "Austin Kleon",
@@ -746,7 +755,7 @@ export const books = [
     name: "McMafia",
     englishName: "McMafia",
     author: "Misha Glenny",
-    status: "READING",
+    status: "READ",
     createdAt: "2022-11-06T06:19:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71RnR7LgqXL._UF1000,1000_QL80_.jpg",
@@ -925,7 +934,7 @@ export const books = [
     name: "Acredite, estou mentindo",
     englishName: "Trust Me, I'm Lying",
     author: "Ryan Holiday",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2022-11-06T06:20:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/91J4EdrspUL.jpg",
   },

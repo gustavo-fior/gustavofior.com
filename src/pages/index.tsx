@@ -11,6 +11,7 @@ import Link from "next/link";
 import path from "path";
 import { useEffect, useRef, useState } from "react";
 import AnimatedAvatar from "~/components/animated-avatar";
+import { BookCover } from "~/components/book-cover";
 import LinkArrow from "~/components/link-arrow";
 import PostPreview from "~/components/posts/post-preview";
 import ScrambleIn, { type ScrambleInHandle } from "~/components/scramble-in";
@@ -120,7 +121,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
-  const sortedBooks = books
+  const sortedBooks = [...books]
     .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
     .slice(0, isMobile ? 3 : 4);
 
@@ -362,22 +363,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <ul className="grid grid-cols-3 grid-rows-1 gap-x-8 pb-20 md:grid-cols-4">
               {sortedBooks.map((book) => (
                 <div key={book.name} className="flex flex-col gap-5">
-                  <div className="book book-fade book-hover-open group relative w-fit select-none rounded-sm rounded-r-none">
-                    <Image
-                      src={book.coverImageUrl}
-                      alt={language === "PT" ? book.name : book.englishName}
-                      width={1000}
-                      height={1000}
-                      className="pointer-events-none block h-[75px] w-[50px] border-r-[2px] border-amber-50 object-cover transition-all duration-100 ease-in-out"
-                      priority
-                      quality={100}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      loading="eager"
-                      placeholder="blur"
-                      blurDataURL={book.coverImageUrl}
-                    />
-                    <div className="absolute inset-0 left-0.5 w-[calc(100%-99%)] bg-neutral-800/20"></div>
-                  </div>
+                  <BookCover
+                    src={book.coverImageUrl}
+                    alt={language === "PT" ? book.name : book.englishName}
+                    width={50}
+                    height={75}
+                  />
                   <div className="flex flex-col gap-1">
                     <p className="pointer-events-none line-clamp-2 text-sm">
                       {language === "PT" ? book.name : book.englishName}
