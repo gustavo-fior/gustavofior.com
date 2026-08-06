@@ -17,10 +17,6 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          rel="stylesheet"
-        />
         <script
           defer
           src="https://cloud.umami.is/script.js"

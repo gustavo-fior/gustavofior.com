@@ -10,10 +10,8 @@ const PostHeader = ({ title, readTime, date, emoji }: PostHeaderProps) => {
     <>
       <div className="flex flex-row items-center justify-between gap-4 pb-6 align-middle md:pb-8">
         <div>
-          <h1 className="pb-1.5 font-serif text-[1.6rem] font-[450]">
-            {title}
-          </h1>
-          <h3 className="whitespace-pre text-sm  tracking-[0.01em] text-neutral-400">
+          <h1 className="pb-1.5 font-serif text-xl font-normal">{title}</h1>
+          <h3 className="whitespace-pre text-sm  text-neutral-400">
             {date}
             {"  "}
             {/* <span className={`font-light text-neutral-300`}>/</span>

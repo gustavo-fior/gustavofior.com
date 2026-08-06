@@ -12,7 +12,7 @@ export default {
           "Inter",
           ...defaultTheme.fontFamily.sans,
         ],
-        serif: ["Amiri", ...defaultTheme.fontFamily.serif],
+        serif: ["Georgia", ...defaultTheme.fontFamily.serif],
       },
     },
   },

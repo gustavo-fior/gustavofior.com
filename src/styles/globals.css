@@ -112,6 +112,8 @@
     height: var(--bh, 75px);
     perspective: 600px;
     perspective-origin: 50% 40%;
+    /* 3D rotation and shadow extend past the layout box on the left */
+    transform: translateX(3px);
   }
   .book {
     position: relative;
@@ -174,5 +176,4 @@
     );
     filter: blur(4px);
   }
-
 }
