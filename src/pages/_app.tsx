@@ -1,29 +1,41 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import { Analytics } from "@vercel/analytics/react";
 import { type AppType } from "next/app";
 import Head from "next/head";
+import localFont from "next/font/local";
 import BackButton from "~/components/back-button";
 import ContentWrapper from "~/components/content-wrapper";
 import "~/styles/globals.css";
+
+const inter = localFont({
+  src: [
+    {
+      path: "../../node_modules/inter-ui/variable/InterVariable.woff2",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/inter-ui/variable/InterVariable-Italic.woff2",
+      style: "italic",
+    },
+  ],
+  variable: "--font-sans",
+  display: "swap",
+  weight: "100 900",
+});
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Analytics />
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
         <script
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id="6f872615-95f7-4efa-bd8f-4111ad56f0b9"
         ></script>
       </Head>
-      <main className="firefox-scrollbar-fix min-h-screen bg-neutral-50 text-neutral-900 antialiased">
+      <main
+        className={`${inter.variable} firefox-scrollbar-fix min-h-screen bg-neutral-50 font-sans text-neutral-900 antialiased`}
+      >
         {/* <Header /> */}
         <ContentWrapper>
           <BackButton />
