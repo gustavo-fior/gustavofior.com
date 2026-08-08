@@ -6,7 +6,7 @@ interface ItalicProps {
 
 const Italic = ({ children }: ItalicProps) => {
   return (
-    <span className="font-normal italic leading-relaxed text-neutral-600">
+    <span className="font-normal italic leading-relaxed text-neutral-700">
       {children}
     </span>
   );

@@ -35,7 +35,7 @@ const PostPreview = ({
           </p>
         </div>
         {showDate && (
-          <p className="hidden min-w-fit text-xs  tabular-nums tracking-tighter text-neutral-300 md:block">
+          <p className="hidden min-w-fit text-xs  tabular-nums tracking-tighter text-neutral-400/50 md:block">
             {new Date(date).toLocaleString("default", { month: "2-digit" })}/
             {new Date(date).getFullYear()}
           </p>

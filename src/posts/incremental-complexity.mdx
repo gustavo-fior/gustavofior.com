@@ -1,0 +1,256 @@
+---
+title: "Incremental Complexity"
+description: "What turns capable software into a wonderful experience."
+date: "August 8, 2026"
+slug: "incremental-complexity"
+emoji: "🪜"
+---
+
+One of the greatest signals of a well-designed software is how complexity is exposed to the user.
+
+<br />
+
+Nowadays, it's easy to create a complex product with tons of features, menu tabs, heavy tables, etc. You can throw every feature in the sidebar, have a trillion buttons, and show your user everything your software can do.
+
+<br />
+
+It might do the job for your context and make a lot of sense to you, but that's hardly the case for other people using your product.
+
+<br />
+
+The hard part is making it **make sense** for a new user.
+
+<br />
+![](/images/branches.png)
+
+<br />
+
+More specifically, making it make sense without causing a headache or boring them with tutorials. This means allowing the user to progress and discover new features only when they should/need.
+
+<br />
+
+Showing everything all at once, crossing your fingers and hoping the user figures it out is not the way. Thinking about the whole user journey is what takes a capable software to a _wonderful_ experience.
+
+### Why is this so hard?
+
+Short answer: because it requires conscious effort.
+
+<br />
+
+This is one of the hardest tasks when creating a product, even more so now that the distance between thinking and shipping something is so small due to AI. Before AI, friction helped nudge the developer to think more about what he was creating (check [Emil's take](https://emilkowal.ski/ui/friction-as-a-feature) on this).
+
+<br />
+
+What makes this harder is that the person developing the software is already familiar with all the concepts, therefore tends to assume that users have the same knowledge as him.
+
+<br />
+
+For data-heavy software this is especially tricky, because you **need to tell a story**, not throw lots of data to the user and hope they’ll figure it out.
+
+<br />
+
+The challenge for the creator is to take a step back and think like a user seeing the product for the first time. This requires putting all the context you have aside for a bit and emulating a new user’s thought process.
+
+<br />
+
+You have to think about every point where a user interacts with your product:
+
+- dashboard UI
+- API/SDK
+- docs
+- landing page
+- icons
+- wording
+
+<br />
+
+I call this **playing user**. Playing user is one of the most valuable skills nowadays and only becomes more important with AI.
+
+### Cognitive Space
+
+To start “playing user”, the first thing I think about is cognitive space.
+
+<br />
+
+It’s the amount of mental bandwidth the user is allocating to understand your product after seeing it for the first time, which is usually not much.
+
+<br />
+
+The user's cognitive space is **sacred**, it should be respected at all costs. This means that you need to feed the user with small bites of information without exceeding their ability to process it. If you exceed this capacity, your product will feel heavy or cluttered.
+
+<br />
+
+![](/images/willingness-chart.png)
+
+<br />
+
+It's the developer's job to think about how the new user is going to learn to use his product. The goal is to make the user learn and discover what your product can do in a smooth way.
+
+<br />
+
+Most of the time, this means using incremental complexity, for example:
+
+- Starting with a simple use case
+- A simple guide/tutorial
+- Hiding stuff until the user needs it ([Linear](https://linear.app/) is pretty good at this)
+- Having sensible defaults
+- Being forgiving of errors
+
+<br />
+
+But you can't just hide everything on screen 1 and then dump everything on screen 2.
+
+<br />
+
+> Complexity should be contextual, not merely delayed.
+
+<br />
+
+Also, there should always be an escape hatch. If the user is experienced (e.g. has other accounts or domain knowledge), he should be able to skip the learning curve and get to the product's full potential instantly.
+
+### Surfacing complexity
+
+Every interactive choice or piece of information competes for cognitive space. Every option the user has available requires a decision, consuming more cognitive space.
+
+<br />
+
+If you add things that will be shown but won't be used by the majority of the users, you are effectively degrading their experience.
+
+<br />
+
+It's the same thing for restaurant menus, if you have an overly complex menu with 200 options but more than 90% of the customers order the same 3 dishes, that's a problem for a couple of reasons:
+
+- By supporting 200 options, your focus is scattered
+- The customers have the overhead of analyzing the other 197 options in your menu
+- You need to have ingredients for those 200 dishes
+
+<br />
+
+![](/images/menus.png)
+
+<br />
+
+Back to software, I would always choose a product that does 3 or 4 things pretty well and that has a great learning curve than one that does 10 loosely related things and just throws everything at me.
+
+<br />
+
+One thing that's been bothering me is this trend of all apps doing everything instead of perfecting a of couple things.
+
+<br />
+
+As that Apple video says:
+
+<br />
+
+> If everybody is busy making everything, how can anyone perfect anything?
+
+### Examples
+
+The Vercel vs. AWS comparison is a classic, but it's so valid.
+
+<br />
+
+AWS hands you the primitives and lets you build basically anything. It's like saying: “yeah, you can build anything, good luck figuring out how”.
+
+<br />
+
+Vercel, on the other hand, guides you through the entire journey. Yes, you can build more things on top of AWS than you can on Vercel, but for developers whose needs fit Vercel’s abstraction, the experience on Vercel is 10x better.
+
+<br />
+
+![](/images/vercel-vs-aws.png)
+
+<br />
+
+AWS exposes more complexity because it gives you more control. Vercel removes degrees of freedom in exchange for a smoother path. Simplicity is often purchased by constraining the problem space.
+
+<br />
+
+Another classic example is Linear vs. Jira. Actually, I think Linear is probably the best software I've ever used in terms of quality/craft. You can feel the thought behind it when you use the product for the first time.
+
+<br />
+
+![](/images/linear-vs-jira.png)
+
+<br />
+
+Here are a couple more iOS examples I could think of:
+
+<br />
+
+![](/images/ios-examples.png)
+
+### Trade-offs
+
+Well, it’s not all rainbows and butterflies. There are a couple of trade-offs that are worth noting.
+
+#### Feature Discoverability + Product Velocity
+
+It can become harder for users to find features when you hide them, which can make it harder to test new features with users. The challenge is making advanced features discoverable without making them permanently visible.
+
+#### Being opinionated
+
+Your product will inevitably be opinionated, and that comes with trade-offs. But being “non-opinionated” is also a choice: it means prioritizing flexibility.
+
+<br />
+Every product exists because its creators believe there is a certain way to solve
+a problem. You can give users room to customize their environment, but you still
+decide what can be customized and how.
+<br />
+You choose the available filters, layouts, workflows, defaults, visual language,
+and constraints. Those decisions shape the product.
+<br />
+There is no truly neutral software. Even programming languages, arguably some of
+the most flexible software we use, have countless decisions baked in by their creators.
+<br />
+Being “non-opinionated” is simply being opinionated about flexibility.
+
+#### Agent-oriented software
+
+What I mean by agent-oriented software here is a product that will be consumed almost entirely by agents. For this type of product, you now have 2 challenges: think about the human experience and the agent experience.
+
+<br />
+I already talked a lot about the human experience, and everything applies again.
+Think about the dashboard experience, the email after the first action, the alerts
+if limits are reached, etc…
+<br />
+For the agent experience, you also need to think about the journey. How you design
+your prompt, whether it will ask the user something on setup, what will be the output,
+how agents will interact with other parts of your app (e.g. the limits dashboard).
+<br />
+For example, while building Scan, a small product that creates a map of your codebase,
+I wanted to create a good setup experience. So, in the prompt, I instruct the agent
+to ask the user if they're ok with sharing a summary of their architecture. Also,
+after the setup is finished, I instruct the agent to return and open the map link.
+
+```javascript
+// Example
+
+1. Investigate the repo and build the JSON below. Write it to .foglamp/scan.json.
+
+2. Tell the user plainly: "This uploads a high-level summary of your architecture
+(models, tools, integrations, and main flows — no code or secrets) to
+foglamp.dev and creates a public, unlisted link." Continue only if they agree.
+
+3. Upload it (see "Publish") and capture the JSON response.
+
+4. Save the response to .foglamp/scan.lock.json (so a later run updates the same
+URL). Make sure .foglamp/ is gitignored — the edit token is a secret.
+
+5. Open the returned URL and give it to the user.
+```
+
+### Conclusion
+
+Incremental complexity is a huge part of a great product journey. Nowadays, it's even harder because of how easy it has become to ship. This skill, for me, is one of the strongest signals of great product thinking.
+
+<br />
+Also, playing user doesn’t replace user research; it’s the minimum discipline before
+you even get there. Talk to your users.
+<br />
+The craft is not in removing complexity. It's in deciding who should see it, when
+they should see it, and how much of it they need at once.
+
+### References
+
+[https://www.youtube.com/watch?v=-GV814cWiAw](https://www.youtube.com/watch?v=-GV814cWiAw)

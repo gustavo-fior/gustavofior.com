@@ -22,11 +22,13 @@ import UnorderedList from "~/components/md/Ul";
 import PostHeader from "~/components/posts/post-header";
 import Italic from "~/components/md/Italic";
 import { TextHighlighter } from "~/components/text-highlighter";
+import H4 from "~/components/md/H4";
 
 const mdComponents = {
   h1: H1,
   h2: H2,
   h3: H3,
+  h4: H4,
   strong: Strong,
   italic: Italic,
   li: Li,

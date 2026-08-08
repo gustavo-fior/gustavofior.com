@@ -22,9 +22,9 @@ const CustomImage = ({ src, alt, width = 1920, height = 1080 }: ImageProps) => {
         alt={alt}
         width={width}
         height={height}
-        className="rounded-2xl"
+        className="rounded-xl"
         style={{
-          outline: "1px solid rgba(0, 0, 0, 0.1)",
+          outline: "1px solid rgba(0, 0, 0, 0.05)",
           outlineOffset: "-1px",
         }}
       />
