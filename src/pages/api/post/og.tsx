@@ -27,15 +27,17 @@ export default async function handler(request: NextRequest) {
             width: "100%",
             display: "flex",
             alignItems: "flex-start",
+            justifyContent: "flex-end",
             flexDirection: "column",
             flexWrap: "nowrap",
+            padding: 96,
           }}
         >
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              marginLeft: 96,
+              width: "100%",
             }}
           >
             <div
@@ -44,9 +46,8 @@ export default async function handler(request: NextRequest) {
                 fontFamily: "Gelasio",
                 fontWeight: 400,
                 color: "#000000",
+                lineHeight: 1.05,
                 whiteSpace: "pre-wrap",
-                marginTop: title && title.length > 30 ? 280 : 380,
-                marginRight: 96,
               }}
             >
               {title && title.length > 60 ? title.slice(0, 60) + "..." : title}
