@@ -44,7 +44,7 @@ const BackButton = () => {
             className="mb-0.5 size-3 rotate-180 -scale-y-100 cursor-pointer text-xl"
             strokeWidth={2}
           />
-          <span className="text-sm  tracking-[0.01em]">Back</span>
+          <span className="text-sm tracking-[0.01em]">Back</span>
         </Link>
       </div>
     );
@@ -71,7 +71,7 @@ const BackButton = () => {
     return (
       <AnimatePresence>
         {pathname === "/books" && (
-          <div className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.3rem] md:pb-0 md:pt-0 lg:left-[calc(50%-29rem)]">
+          <div className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.2rem] md:pb-0 md:pt-0 lg:left-[calc(50%-29rem)]">
             <motion.div
               initial={{ opacity: 0, x: 4, filter: "blur(4px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
@@ -157,7 +157,7 @@ const BackButton = () => {
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, x: 4, filter: "blur(4px)" }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.3rem] md:pb-0 md:pt-0 lg:left-[calc(50%-29rem)]"
+          className="sticky top-0 pb-4 pt-0 md:fixed md:left-[calc(50%-26rem)] md:top-[5.2rem] md:pb-0 md:pt-0 lg:left-[calc(50%-29rem)]"
         >
           <Link
             href={pathname.includes("/blog/post/") ? "/blog" : "/"}
