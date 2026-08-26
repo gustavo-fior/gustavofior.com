@@ -75,7 +75,7 @@ export const books = [
     name: "Working in Public",
     englishName: "Working in Public",
     author: "Nadia Eghbal",
-    status: "READING",
+    status: "READ",
     createdAt: "2025-12-27T05:52:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/71BQ5MWd0bL._SL1500_.jpg",
