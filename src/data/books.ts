@@ -72,6 +72,16 @@ export const books = [
     love: true,
   },
   {
+    name: "Os Elementos",
+    englishName: "Elements",
+    author: "Euclides",
+    status: "BUY",
+    createdAt: "2026-08-30T05:52:00.000Z",
+    coverImageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Title_page_of_Sir_Henry_Billingsley%27s_first_English_version_of_Euclid%27s_Elements%2C_1570_%28560x900%29.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original",
+    love: false,
+  },
+  {
     name: "Working in Public",
     englishName: "Working in Public",
     author: "Nadia Eghbal",
