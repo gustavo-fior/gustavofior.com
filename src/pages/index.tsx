@@ -191,7 +191,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                 onClick={() => setShowMoreProjects(!showMoreProjects)}
                 className="group flex items-center transition-all duration-200 ease-in-out hover:text-neutral-500"
               >
-                {showMoreProjects ? "Less" : "More"}
+                {showMoreProjects ? "Hide" : "Older"}
 
                 <ArrowUp
                   className={`arrow-reveal h-2.5 ${
