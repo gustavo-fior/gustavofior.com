@@ -162,7 +162,7 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <AnimatedAvatar
               size={96}
               alt="Gustavo Fior"
-              className="-ml-[1.34rem]"
+              className="-ml-[1.33rem]"
             />
           </FadeIn>
           <FadeIn
