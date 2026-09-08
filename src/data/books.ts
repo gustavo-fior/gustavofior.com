@@ -944,7 +944,7 @@ export const books = [
     name: "Acredite, estou mentindo",
     englishName: "Trust Me, I'm Lying",
     author: "Ryan Holiday",
-    status: "READING",
+    status: "WILL_READ",
     createdAt: "2022-11-06T06:20:00.000Z",
     coverImageUrl: "https://m.media-amazon.com/images/I/91J4EdrspUL.jpg",
   },
@@ -979,7 +979,7 @@ export const books = [
     name: "Guerra e Paz",
     englishName: "War and Peace",
     author: "Liev Tolstói",
-    status: "WILL_READ",
+    status: "READING",
     createdAt: "2022-11-06T06:21:00.000Z",
     coverImageUrl:
       "https://m.media-amazon.com/images/I/91uLwQ4Ry8L._AC_UF1000,1000_QL80_.jpg",
@@ -1057,7 +1057,7 @@ export const books = [
     name: "A Voz do Silêncio",
     englishName: "The Voice of Silence",
     author: "Helena Blavatski",
-    status: "READING",
+    status: "WILL_READ",
     createdAt: "2022-11-06T06:25:00.000Z",
     coverImageUrl:
       "https://static.cedet.com.br/produtos_imagem_principal_large/16623-525x791.jpg?v=1750275820",
