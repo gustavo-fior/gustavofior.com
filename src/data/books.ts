@@ -985,6 +985,15 @@ export const books = [
       "https://m.media-amazon.com/images/I/91uLwQ4Ry8L._AC_UF1000,1000_QL80_.jpg",
   },
   {
+    name: "Autobiografia de um Iogue",
+    englishName: "Autobiography of a Yogi",
+    author: "Paramahansa Yogananda",
+    status: "WILL_READ",
+    createdAt: "2026-09-11T06:21:00.000Z",
+    coverImageUrl: "https://m.media-amazon.com/images/I/71HYAGvoX+L.jpg",
+    love: true,
+  },
+  {
     name: "Flores para Algernon",
     englishName: "Flowers for Algernon",
     author: "Daniel Keyes",

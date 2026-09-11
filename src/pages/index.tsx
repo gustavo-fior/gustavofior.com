@@ -162,15 +162,15 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <AnimatedAvatar
               size={96}
               alt="Gustavo Fior"
-              className="-ml-[1.33rem]"
+              className="-ml-[1.35rem] -mt-4"
             />
           </FadeIn>
           <FadeIn
             index={1}
             animate={shouldAnimate}
-            className="flex flex-col items-start pb-2"
+            className="flex flex-col items-start pb-2 pt-2"
           >
-            <h1 className={`font-serif text-xl font-medium`}>Gustavo Fior</h1>
+            <h1 className={`font-serif text-lg font-medium`}>Gustavo Fior</h1>
           </FadeIn>
           <FadeIn index={2} animate={shouldAnimate}>
             <p className="text-balance pb-8 text-sm tracking-[0.01em] text-neutral-400">
