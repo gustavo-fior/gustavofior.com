@@ -985,6 +985,14 @@ export const books = [
       "https://m.media-amazon.com/images/I/91uLwQ4Ry8L._AC_UF1000,1000_QL80_.jpg",
   },
   {
+    name: "O Retrato de Dorian Gray",
+    englishName: "The Picture of Dorian Gray",
+    author: "Oscar Wilde",
+    status: "WILL_READ",
+    createdAt: "2026-09-12T06:21:00.000Z",
+    coverImageUrl: "https://m.media-amazon.com/images/I/51REmr5NmnL.jpg",
+  },
+  {
     name: "Autobiografia de um Iogue",
     englishName: "Autobiography of a Yogi",
     author: "Paramahansa Yogananda",
