@@ -205,26 +205,26 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
           <div className="grid grid-cols-1 pb-8">
             <FadeIn index={4} animate={shouldAnimate}>
               <ProjectPreview
+                title="Craft"
+                description="A collection of design engineering concepts."
+                link="https://craft.gustavofior.com/"
+                logo="/logos/craft.png"
+              />
+            </FadeIn>
+            <FadeIn index={5} animate={shouldAnimate}>
+              <ProjectPreview
                 title="Foglamp"
                 description="Open source tool to make better AI agents."
                 link="https://foglamp.dev/"
                 logo="/logos/foglamp.png"
               />
             </FadeIn>
-            <FadeIn index={5} animate={shouldAnimate}>
+            <FadeIn index={6} animate={shouldAnimate}>
               <ProjectPreview
                 title="CCC"
                 description="A coding (but not only) club in Curitiba."
                 link="https://curitibacodingclub.com"
                 logo="/logos/ccc-black-bold.png"
-              />
-            </FadeIn>
-            <FadeIn index={6} animate={shouldAnimate}>
-              <ProjectPreview
-                title="Craft"
-                description="A collection of design engineering concepts."
-                link="https://craft.gustavofior.com/"
-                logo="/logos/craft.png"
               />
             </FadeIn>
             <AnimatePresence>
