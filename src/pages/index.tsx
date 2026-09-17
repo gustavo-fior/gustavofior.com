@@ -221,10 +221,10 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             </FadeIn>
             <FadeIn index={6} animate={shouldAnimate}>
               <ProjectPreview
-                title="VAYØ"
-                description="A home for your best internet finds."
-                link="https://vayo.me/"
-                logo="/logos/vayo.png"
+                title="Craft"
+                description="A collection of design engineering concepts."
+                link="https://craft.gustavofior.com/"
+                logo="/logos/craft.png"
               />
             </FadeIn>
             <AnimatePresence>
@@ -252,6 +252,12 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
                   transition={{ duration: 0.3, type: "spring", bounce: 0 }}
                   className="grid grid-cols-1"
                 >
+                  <ProjectPreview
+                    title="VAYØ"
+                    description="A home for your best internet finds."
+                    link="https://vayo.me/"
+                    logo="/logos/vayo.png"
+                  />
                   <ProjectPreview
                     title="Olwen"
                     description="GEO agent for busy founders."
