@@ -26,13 +26,6 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Analytics />
-      <Head>
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="6f872615-95f7-4efa-bd8f-4111ad56f0b9"
-        ></script>
-      </Head>
       <main
         className={`${inter.variable} firefox-scrollbar-fix min-h-screen bg-neutral-50 font-sans text-neutral-900 antialiased`}
       >

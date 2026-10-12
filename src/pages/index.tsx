@@ -173,16 +173,16 @@ const Home: NextPage<BlogPageProps> = ({ postsMetadata }) => {
             <h1 className={`font-serif text-lg font-medium`}>Gustavo Fior</h1>
           </FadeIn>
           <FadeIn index={2} animate={shouldAnimate}>
-<p className="text-balance pb-8 text-sm tracking-[0.01em] text-neutral-400">
+            <p className="text-balance pb-8 text-sm tracking-[0.01em] text-neutral-400">
               Brazilian technologist who loves to build, surf, and learn new
-              things. Currently{' '}
+              things. Currently at{" "}
               <Link
                 href="https://vercel.com"
                 target="_blank"
                 className={`group inline-block cursor-pointer underline transition-all duration-200 ease-in-out`}
               >
                 <span className="inline-block underline decoration-neutral-300 decoration-1 underline-offset-2 transition-all duration-200 ease-in-out group-hover:decoration-neutral-400">
-                  ▲ Vercel
+                  <span className="-mr-0.5">▲</span> Vercel
                 </span>
               </Link>
               .

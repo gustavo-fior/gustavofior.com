@@ -62,6 +62,41 @@ export const books = [
     love: true,
   },
   {
+    name: "BOOM",
+    englishName: "BOOM",
+    author: "Byrne Hobart",
+    status: "WILL_READ",
+    createdAt: "2026-10-11T05:52:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/61P+5qMFNoL._SY522_.jpg",
+  },
+  {
+    name: "Stubborn Attachments",
+    englishName: "Stubborn Attachments",
+    author: "Tyler Cowen",
+    status: "WILL_READ",
+    createdAt: "2026-10-11T05:52:00.000Z",
+    coverImageUrl: "https://cdn.quillette.com/2025/09/71DUp04ycOL._SL1480_.jpg",
+  },
+  {
+    name: "Poor Charlie's Almanack",
+    englishName: "Poor Charlie's Almanack",
+    author: "Peter Kaufman",
+    status: "WILL_READ",
+    createdAt: "2026-10-11T05:52:00.000Z",
+    coverImageUrl:
+      "https://assets.unsw.press/media/images/9781953953575_uGlr26X.original.jpg",
+  },
+  {
+    name: "Envisioning Information",
+    englishName: "Envisioning Information",
+    author: "Edward Tufte",
+    status: "WILL_READ",
+    createdAt: "2026-10-11T05:52:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/I/81GNVpYfThL._AC_UF1000,1000_QL80_.jpg",
+  },
+  {
     name: "The Big Score",
     englishName: "The Big Score",
     author: "Michael S. Malone",
