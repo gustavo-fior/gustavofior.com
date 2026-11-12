@@ -77,6 +77,7 @@ export const books = [
     status: "READ",
     createdAt: "2026-10-11T05:52:00.000Z",
     coverImageUrl: "https://cdn.quillette.com/2025/09/71DUp04ycOL._SL1480_.jpg",
+    starts: 4.6,
   },
   {
     name: "Poor Charlie's Almanack",
