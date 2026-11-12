@@ -80,6 +80,15 @@ export const books = [
     starts: 4.6,
   },
   {
+    name: "Wanting: The Power of Mimetic Desire in Everyday Life",
+    englishName: "Wanting: The Power of Mimetic Desire in Everyday Life",
+    author: "Luke Burgis",
+    status: "BUY",
+    createdAt: "2026-11-12T05:52:00.000Z",
+    coverImageUrl:
+      "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/81HazV6A88L._SL1500_.jpg",
+  },
+  {
     name: "Poor Charlie's Almanack",
     englishName: "Poor Charlie's Almanack",
     author: "Peter Kaufman",
